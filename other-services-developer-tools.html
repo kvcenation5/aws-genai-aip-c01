@@ -1,377 +1,1026 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Other Services - Developer Tools – AWS GenAI Developer Pro (AIP-C01)</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-  <nav class="sidebar" id="sidebar">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Other Services - Developer Tools – AWS GenAI Developer Pro (AIP-C01)
+  </title>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="mobile-header">
+   <button class="menu-toggle" onclick="toggleSidebar()">
+    ☰
+   </button>
+   <span class="logo">
+    ☁️ AIP-C01
+   </span>
+  </div>
+  <div class="app-container">
+   <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <span class="logo">☁️ AIP-C01</span>
-      <button class="close-btn" onclick="toggleSidebar()">✕</button>
+     <span class="logo">
+      ☁️ AIP-C01
+     </span>
+     <button class="close-btn" onclick="toggleSidebar()">
+      ✕
+     </button>
     </div>
     <ul class="nav-list">
-      <li><a href="index.html">🏠 Home</a></li>
-      <li class="divider">Course Sections</li>
-      <li class=""><a href="generative-ai-fundamentals-and-bedrock.html">Generative AI Fundamentals and Bedrock</a></li>
-<li class=""><a href="managing-data-for-generative-ai.html">Managing Data for Generative AI</a></li>
-<li class=""><a href="agentic-ai.html">Agentic AI</a></li>
-<li class=""><a href="operations-efficiency-and-optimization.html">Operations Efficiency and Optimization</a></li>
-<li class=""><a href="managing-models-with-sagemaker-ai.html">Managing Models with SageMaker AI</a></li>
-<li class=""><a href="more-tools-for-building-ai-applications.html">More Tools for Building AI Applications</a></li>
-<li class=""><a href="governance-and-qa.html">Governance and QA</a></li>
-<li class=""><a href="security-identity-and-compliance.html">Security, Identity, and Compliance</a></li>
-<li class=""><a href="other-services-analytics.html">Other Services - Analytics</a></li>
-<li class=""><a href="other-services-compute-containers.html">Other Services - Compute & Containers</a></li>
-<li class=""><a href="other-services-database.html">Other Services - Database</a></li>
-<li class="active"><a href="other-services-developer-tools.html">Other Services - Developer Tools</a></li>
-<li class=""><a href="other-services-machine-learning.html">Other Services - Machine Learning</a></li>
-<li class=""><a href="other-services-storage-networking.html">Other Services - Storage & Networking</a></li>
-<li class=""><a href="exam-preparation.html">Exam Preparation</a></li>
-
+     <li>
+      <a href="index.html">
+       🏠 Home
+      </a>
+     </li>
+     <li class="divider">
+      Course Sections
+     </li>
+     <li class="">
+      <a href="generative-ai-fundamentals-and-bedrock.html">
+       Generative AI Fundamentals and Bedrock
+      </a>
+     </li>
+     <li class="">
+      <a href="managing-data-for-generative-ai.html">
+       Managing Data for Generative AI
+      </a>
+     </li>
+     <li class="">
+      <a href="agentic-ai.html">
+       Agentic AI
+      </a>
+     </li>
+     <li class="">
+      <a href="operations-efficiency-and-optimization.html">
+       Operations Efficiency and Optimization
+      </a>
+     </li>
+     <li class="">
+      <a href="managing-models-with-sagemaker-ai.html">
+       Managing Models with SageMaker AI
+      </a>
+     </li>
+     <li class="">
+      <a href="more-tools-for-building-ai-applications.html">
+       More Tools for Building AI Applications
+      </a>
+     </li>
+     <li class="">
+      <a href="governance-and-qa.html">
+       Governance and QA
+      </a>
+     </li>
+     <li class="">
+      <a href="security-identity-and-compliance.html">
+       Security, Identity, and Compliance
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-analytics.html">
+       Other Services - Analytics
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-compute-containers.html">
+       Other Services - Compute &amp; Containers
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-database.html">
+       Other Services - Database
+      </a>
+     </li>
+     <li class="active">
+      <a href="other-services-developer-tools.html">
+       Other Services - Developer Tools
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-machine-learning.html">
+       Other Services - Machine Learning
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-storage-networking.html">
+       Other Services - Storage &amp; Networking
+      </a>
+     </li>
+     <li class="">
+      <a href="exam-preparation.html">
+       Exam Preparation
+      </a>
+     </li>
     </ul>
-  </nav>
-  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
-
-  <main class="main-content">
-    <header class="top-bar">
-      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
-      <div class="breadcrumb">
-        <a href="index.html">AWS GenAI Pro</a> › <span>Other Services - Developer Tools</span>
+   </nav>
+   <div class="main-wrapper">
+    <main class="main-content">
+     <div class="section-hero">
+      <h1>
+       Other Services - Developer Tools
+      </h1>
+      <p class="section-subtitle">
+       AWS Certified Generative AI Developer – Professional (AIP-C01)
+      </p>
+     </div>
+     <div class="doc-container">
+      <div class="doc-section" id="slide-556">
+       <h2 id="slide-556">
+        AWS Cloud Development Kit (CDK)
+       </h2>
+       <div class="slide-number">
+        Slide 556
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Define your cloud infrastructure
+         </li>
+        </ul>
+        <p>
+         using a familiar language:
+        </p>
+        <ul>
+         <li>
+          JavaScript/TypeScript, Python, Java,
+         </li>
+        </ul>
+        <p>
+         and .NET
+        </p>
+        <ul>
+         <li>
+          Contains high level components
+         </li>
+        </ul>
+        <p>
+         called constructs
+        </p>
+        <ul>
+         <li>
+          The code is “compiled” into a
+         </li>
+        </ul>
+        <p>
+         CloudFormation template
+        </p>
+        <p>
+         (JSON/YAML)
+        </p>
+        <ul>
+         <li>
+          You can therefore deploy
+         </li>
+        </ul>
+        <p>
+         infrastructure and application
+        </p>
+        <p>
+         runtime code together
+        </p>
+        <ul>
+         <li>
+          Great for Lambda functions
+         </li>
+         <li>
+          Great for Docker containers in ECS /
+         </li>
+        </ul>
+        <p>
+         EKS
+        </p>
+       </div>
       </div>
-      <div class="page-meta">18 slides · Pages 556–573</div>
-    </header>
-
-    <div class="section-hero">
-      <h1>Other Services - Developer Tools</h1>
-      <p class="section-subtitle">AWS Certified Generative AI Developer – Professional (AIP-C01)</p>
-      <div class="section-stats">
-        <span>📄 18 slides</span>
-        <span>📑 Pages 556–573</span>
+      <div class="doc-section" id="slide-557">
+       <h2 id="slide-557">
+        CDK in a diagram
+       </h2>
+       <div class="slide-number">
+        Slide 557
+       </div>
+       <div class="slide-content">
+        <p>
+         CDK Application Constructs
+        </p>
+        <p>
+         CloudFormation
+        </p>
+        <p>
+         CloudFormation
+        </p>
+        <p>
+         CDK CLI Template
+        </p>
+        <p>
+         cdk synth
+        </p>
+        <p>
+         Programming
+        </p>
+        <p>
+         Languages
+        </p>
+       </div>
       </div>
-    </div>
-
-    <div class="slides-container">
-      
-        <div class="slide" id="slide-556">
-          <div class="slide-number">Slide 556</div>
-          <div class="slide-content"><p>AWS Cloud Development Kit (CDK)</p>
-<ul><li>Define your cloud infrastructure</li>
-</ul><p>using a familiar language:</p>
-<ul><li>JavaScript/TypeScript, Python, Java,</li>
-</ul><p>and .NET</p>
-<ul><li>Contains high level components</li>
-</ul><p>called constructs</p>
-<ul><li>The code is “compiled” into a</li>
-</ul><p>CloudFormation template</p>
-<p>(JSON/YAML)</p>
-<ul><li>You can therefore deploy</li>
-</ul><p>infrastructure and application</p>
-<p>runtime code together</p>
-<ul><li>Great for Lambda functions</li>
-<li>Great for Docker containers in ECS /</li>
-</ul><p>EKS</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-557">
-          <div class="slide-number">Slide 557</div>
-          <div class="slide-content"><p>CDK in a diagram</p>
-<p>CDK Application Constructs</p>
-<p>CloudFormation</p>
-<p>CloudFormation</p>
-<p>CDK CLI Template</p>
-<p>cdk synth</p>
-<p>Programming</p>
-<p>Languages</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-558">
-          <div class="slide-number">Slide 558</div>
-          <div class="slide-content"><p>CDK vs SAM</p>
-<ul><li>SAM:</li>
-<li>Serverless focused</li>
-<li>Write your template declaratively in JSON or YAML</li>
-<li>Great for quickly getting started with Lambda</li>
-<li>Leverages CloudFormation</li>
-<li>CDK:</li>
-<li>All AWS services</li>
-<li>Write infra in a programming language JavaScript/TypeScript, Python,</li>
-</ul><p>Java, and .NET</p>
-<ul><li>Leverages CloudFormation</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-559">
-          <div class="slide-number">Slide 559</div>
-          <div class="slide-content"><p>CDK + SAM</p>
-<ul><li>You can use SAM CLI to locally test your CDK apps</li>
-<li>You must first run cdk synth</li>
-</ul><p>CDK Application</p>
-<p>sam local invoke –t MyCDKStack.template.json myFunction</p>
-<p>(MyCDKApp)</p>
-<p>Lambda function</p>
-<p>cdk synth CloudFormation</p>
-<p>(myFunction)</p>
-<p>SAM CLI</p>
-<p>Template</p>
-<p>(MyCDKStack.template.json)</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-560">
-          <div class="slide-number">Slide 560</div>
-          <div class="slide-content"><p>CDK Hands-On</p>
-<p>Amazon</p>
-<p>Rekognition</p>
-<p>Upload image trigger save results</p>
-<p>Client</p>
-<p>S3 Bucket</p>
-<p>AWS Lambda Amazon DynamoDB</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-561">
-          <div class="slide-number">Slide 561</div>
-          <div class="slide-content"><p>How can users access AWS ?</p>
-<ul><li>To access AWS, you have three options:</li>
-<li>AWS Management Console (protected by password + MFA)</li>
-<li>AWS Command Line Interface (CLI): protected by access keys</li>
-<li>AWS Software Developer Kit (SDK) - for code: protected by access keys</li>
-<li>Access Keys are generated through the AWS Console</li>
-<li>Users manage their own access keys</li>
-<li>Access Keys are secret, just like a password. Don’t share them</li>
-<li>Access Key ID ~= username</li>
-<li>Secret Access Key ~= password</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-562">
-          <div class="slide-number">Slide 562</div>
-          <div class="slide-content"><p>Example (Fake) Access Keys</p>
-<ul><li>Access key ID: AKIASK4E37PV4983d6C</li>
-<li>Secret Access Key:</li>
-</ul><p>AZPN3zojWozWCndIjhB0Unh8239a1bzbzO5fqqkZq</p>
-<ul><li>Remember: don’t share your access keys</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-563">
-          <div class="slide-number">Slide 563</div>
-          <div class="slide-content"><p>What’s the AWS CLI?</p>
-<ul><li>A tool that enables you to interact with AWS services using</li>
-</ul><p>commands in your command-line shell</p>
-<ul><li>Direct access to the public APIs of AWS services</li>
-<li>You can develop scripts to manage your resources</li>
-<li>It’s open-source https://github.com/aws/aws-cli</li>
-<li>Alternative to using AWS Management Console</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-564">
-          <div class="slide-number">Slide 564</div>
-          <div class="slide-content"><p>What’s the AWS SDK?</p>
-<ul><li>AWS Software Development Kit (AWS SDK)</li>
-<li>Language-specific APIs (set of libraries)</li>
-<li>Enables you to access and manage AWS</li>
-</ul><p>services programmatically</p>
-<ul><li>Embedded within your application AWS SDK</li>
-<li>Supports</li>
-<li>SDKs (JavaScript, Python, PHP, .NET, Ruby, Java,</li>
-</ul><p>Go, Node.js, C++)</p>
-<ul><li>Mobile SDKs (Android, iOS, …)</li>
-<li>IoT Device SDKs (Embedded C, Arduino, …)</li>
-</ul><p>Your Application</p>
-<ul><li>Example: AWS CLI is built on AWS SDK for</li>
-</ul><p>Python</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-565">
-          <div class="slide-number">Slide 565</div>
-          <div class="slide-content"><p>What is CloudFormation</p>
-<ul><li>CloudFormation is a declarative way of outlining your AWS</li>
-</ul><p>Infrastructure, for any resources (most of them are supported).</p>
-<ul><li>For example, within a CloudFormation template, you say:</li>
-<li>I want a security group</li>
-<li>I want two EC2 instances using this security group</li>
-<li>I want an S3 bucket</li>
-<li>I want a load balancer (ELB) in front of these machines</li>
-<li>Then CloudFormation creates those for you, in the right order,</li>
-</ul><p>with the exact configuration that you specify</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-566">
-          <div class="slide-number">Slide 566</div>
-          <div class="slide-content"><p>Benefits of AWS CloudFormation (1/2)</p>
-<ul><li>Infrastructure as code</li>
-<li>No resources are manually created, which is excellent for control</li>
-<li>Changes to the infrastructure are reviewed through code</li>
-<li>Cost</li>
-<li>Each resources within the stack is tagged with an identifier so you can</li>
-</ul><p>easily see how much a stack costs you</p>
-<ul><li>You can estimate the costs of your resources using the CloudFormation</li>
-</ul><p>template</p>
-<ul><li>Savings strategy: In Dev, you could automation deletion of templates at 5</li>
-</ul><p>PM and recreated at 8 AM, safely</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-567">
-          <div class="slide-number">Slide 567</div>
-          <div class="slide-content"><p>Benefits of AWS CloudFormation (2/2)</p>
-<ul><li>Productivity</li>
-<li>Ability to destroy and re-create an infrastructure on the cloud on the fly</li>
-<li>Automated generation of Diagram for your templates!</li>
-<li>Declarative programming (no need to figure out ordering and orchestration)</li>
-<li>Don’t re-invent the wheel</li>
-<li>Leverage existing templates on the web!</li>
-<li>Leverage the documentation</li>
-<li>Supports (almost) all AWS resources:</li>
-<li>Everything we’ll see in this course is supported</li>
-<li>You can use “custom resources” for resources that are not supported</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-568">
-          <div class="slide-number">Slide 568</div>
-          <div class="slide-content"><p>CloudFormation + Infrastructure</p>
-<p>Composer</p>
-<ul><li>Example: WordPress CloudFormation Stack</li>
-</ul><p>+</p>
-<p>CloudFormation Infrastructure</p>
-<ul><li>We can see all the resources</li>
-</ul><p>Composer</p>
-<ul><li>We can see the relations between the components</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-569">
-          <div class="slide-number">Slide 569</div>
-          <div class="slide-content"><p>AWS CodeArtifact</p>
-<ul><li>Software packages depend on each other to be built (also called</li>
-</ul><p>code dependencies), and new ones are created</p>
-<ul><li>Storing and retrieving these dependencies is called artifact</li>
-</ul><p>management</p>
-<ul><li>Traditionally you need to setup your own artifact management</li>
-</ul><p>system</p>
-<ul><li>CodeArtifact is a secure, scalable, and cost-effective artifact</li>
-</ul><p>management for software development</p>
-<ul><li>Works with common dependency management tools such as Maven,</li>
-</ul><p>Gradle, npm, yarn, twine, pip, and NuGet</p>
-<ul><li>Developers and CodeBuild can then retrieve dependencies</li>
-</ul><p>straight from CodeArtifact</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-570">
-          <div class="slide-number">Slide 570</div>
-          <div class="slide-content"><p>AWS CodeArtifact</p>
-<p>VPC</p>
-<p>npm</p>
-<p>fetch</p>
-<p>Public Artifact Repositories</p>
-<p>AWS CodeArtifact</p>
-<p>JavaScript</p>
-<p>AWS CodeBuild</p>
-<p>Domain</p>
-<p>pip</p>
-<p>NuGet proxy</p>
-<p>Repository A Repository B</p>
-<p>Python</p>
-<p>NuGet</p>
-<p>Package 1 Package 2</p>
-<p>.NET</p>
-<p>publish/approve Maven</p>
-<p>packages</p>
-<p>Java</p>
-<p>IT Leader</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-571">
-          <div class="slide-number">Slide 571</div>
-          <div class="slide-content"><p>CodeArtifact – EventBridge Integration</p>
-<p>invoke Lambda</p>
-<p>Function</p>
-<p>Event is created when a Package</p>
-<p>version is created, modified, or deleted</p>
-<p>activate Step Functions</p>
-<p>State Machine</p>
-<p>events message</p>
-<p>SNS</p>
-<p>CodeArtifact EventBridge</p>
-<p>message</p>
-<p>SQS</p>
-<p>CodePipeline</p>
-<p>start Rebuild &amp; Redeploy</p>
-<p>an Application</p>
-<p>with the latest</p>
-<p>security fixes</p>
-<p>CodeCommit CodeBuild CodeDeploy</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-572">
-          <div class="slide-number">Slide 572</div>
-          <div class="slide-content"><p>CodeArtifact – Resource Policy</p>
-<ul><li>Can be used to authorize another</li>
-</ul><p>account to access CodeArtifact</p>
-<ul><li>A given principal can either read all the</li>
-</ul><p>packages in a repository or none of</p>
-<p>them</p>
-<p>Account B Account A</p>
-<p>(222333344555) (123456789012)</p>
-<p>read packages</p>
-<p>IAM User</p>
-<p>CodeArtifact</p>
-<p>(bob)</p>
-<p>Repository</p>
-<p>Repository Resource Policy</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-573">
-          <div class="slide-number">Slide 573</div>
-          <div class="slide-content"><p>Other Services You Should</p>
-<p>Know: Machine Learning</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-    </div>
-
-    <div class="section-nav">
-      <a href="index.html" class="btn-back">← Back to Overview</a>
-    </div>
-  </main>
-
+      <div class="doc-section" id="slide-558">
+       <h2 id="slide-558">
+        CDK vs SAM
+       </h2>
+       <div class="slide-number">
+        Slide 558
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          SAM:
+         </li>
+         <li>
+          Serverless focused
+         </li>
+         <li>
+          Write your template declaratively in JSON or YAML
+         </li>
+         <li>
+          Great for quickly getting started with Lambda
+         </li>
+         <li>
+          Leverages CloudFormation
+         </li>
+         <li>
+          CDK:
+         </li>
+         <li>
+          All AWS services
+         </li>
+         <li>
+          Write infra in a programming language JavaScript/TypeScript, Python,
+         </li>
+        </ul>
+        <p>
+         Java, and .NET
+        </p>
+        <ul>
+         <li>
+          Leverages CloudFormation
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-559">
+       <h2 id="slide-559">
+        CDK + SAM
+       </h2>
+       <div class="slide-number">
+        Slide 559
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          You can use SAM CLI to locally test your CDK apps
+         </li>
+         <li>
+          You must first run cdk synth
+         </li>
+        </ul>
+        <p>
+         CDK Application
+        </p>
+        <p>
+         sam local invoke –t MyCDKStack.template.json myFunction
+        </p>
+        <p>
+         (MyCDKApp)
+        </p>
+        <p>
+         Lambda function
+        </p>
+        <p>
+         cdk synth CloudFormation
+        </p>
+        <p>
+         (myFunction)
+        </p>
+        <p>
+         SAM CLI
+        </p>
+        <p>
+         Template
+        </p>
+        <p>
+         (MyCDKStack.template.json)
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-560">
+       <h2 id="slide-560">
+        CDK Hands-On
+       </h2>
+       <div class="slide-number">
+        Slide 560
+       </div>
+       <div class="slide-content">
+        <p>
+         Amazon
+        </p>
+        <p>
+         Rekognition
+        </p>
+        <p>
+         Upload image trigger save results
+        </p>
+        <p>
+         Client
+        </p>
+        <p>
+         S3 Bucket
+        </p>
+        <p>
+         AWS Lambda Amazon DynamoDB
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-561">
+       <h2 id="slide-561">
+        How can users access AWS ?
+       </h2>
+       <div class="slide-number">
+        Slide 561
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          To access AWS, you have three options:
+         </li>
+         <li>
+          AWS Management Console (protected by password + MFA)
+         </li>
+         <li>
+          AWS Command Line Interface (CLI): protected by access keys
+         </li>
+         <li>
+          AWS Software Developer Kit (SDK) - for code: protected by access keys
+         </li>
+         <li>
+          Access Keys are generated through the AWS Console
+         </li>
+         <li>
+          Users manage their own access keys
+         </li>
+         <li>
+          Access Keys are secret, just like a password. Don’t share them
+         </li>
+         <li>
+          Access Key ID ~= username
+         </li>
+         <li>
+          Secret Access Key ~= password
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-562">
+       <h2 id="slide-562">
+        Example (Fake) Access Keys
+       </h2>
+       <div class="slide-number">
+        Slide 562
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Access key ID: AKIASK4E37PV4983d6C
+         </li>
+         <li>
+          Secret Access Key:
+         </li>
+        </ul>
+        <p>
+         AZPN3zojWozWCndIjhB0Unh8239a1bzbzO5fqqkZq
+        </p>
+        <ul>
+         <li>
+          Remember: don’t share your access keys
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-563">
+       <h2 id="slide-563">
+        What’s the AWS CLI?
+       </h2>
+       <div class="slide-number">
+        Slide 563
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          A tool that enables you to interact with AWS services using
+         </li>
+        </ul>
+        <p>
+         commands in your command-line shell
+        </p>
+        <ul>
+         <li>
+          Direct access to the public APIs of AWS services
+         </li>
+         <li>
+          You can develop scripts to manage your resources
+         </li>
+         <li>
+          It’s open-source https://github.com/aws/aws-cli
+         </li>
+         <li>
+          Alternative to using AWS Management Console
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-564">
+       <h2 id="slide-564">
+        What’s the AWS SDK?
+       </h2>
+       <div class="slide-number">
+        Slide 564
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          AWS Software Development Kit (AWS SDK)
+         </li>
+         <li>
+          Language-specific APIs (set of libraries)
+         </li>
+         <li>
+          Enables you to access and manage AWS
+         </li>
+        </ul>
+        <p>
+         services programmatically
+        </p>
+        <ul>
+         <li>
+          Embedded within your application AWS SDK
+         </li>
+         <li>
+          Supports
+         </li>
+         <li>
+          SDKs (JavaScript, Python, PHP, .NET, Ruby, Java,
+         </li>
+        </ul>
+        <p>
+         Go, Node.js, C++)
+        </p>
+        <ul>
+         <li>
+          Mobile SDKs (Android, iOS, …)
+         </li>
+         <li>
+          IoT Device SDKs (Embedded C, Arduino, …)
+         </li>
+        </ul>
+        <p>
+         Your Application
+        </p>
+        <ul>
+         <li>
+          Example: AWS CLI is built on AWS SDK for
+         </li>
+        </ul>
+        <p>
+         Python
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-565">
+       <h2 id="slide-565">
+        What is CloudFormation
+       </h2>
+       <div class="slide-number">
+        Slide 565
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          CloudFormation is a declarative way of outlining your AWS
+         </li>
+        </ul>
+        <p>
+         Infrastructure, for any resources (most of them are supported).
+        </p>
+        <ul>
+         <li>
+          For example, within a CloudFormation template, you say:
+         </li>
+         <li>
+          I want a security group
+         </li>
+         <li>
+          I want two EC2 instances using this security group
+         </li>
+         <li>
+          I want an S3 bucket
+         </li>
+         <li>
+          I want a load balancer (ELB) in front of these machines
+         </li>
+         <li>
+          Then CloudFormation creates those for you, in the right order,
+         </li>
+        </ul>
+        <p>
+         with the exact configuration that you specify
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-566">
+       <h2 id="slide-566">
+        Benefits of AWS CloudFormation (1/2)
+       </h2>
+       <div class="slide-number">
+        Slide 566
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Infrastructure as code
+         </li>
+         <li>
+          No resources are manually created, which is excellent for control
+         </li>
+         <li>
+          Changes to the infrastructure are reviewed through code
+         </li>
+         <li>
+          Cost
+         </li>
+         <li>
+          Each resources within the stack is tagged with an identifier so you can
+         </li>
+        </ul>
+        <p>
+         easily see how much a stack costs you
+        </p>
+        <ul>
+         <li>
+          You can estimate the costs of your resources using the CloudFormation
+         </li>
+        </ul>
+        <p>
+         template
+        </p>
+        <ul>
+         <li>
+          Savings strategy: In Dev, you could automation deletion of templates at 5
+         </li>
+        </ul>
+        <p>
+         PM and recreated at 8 AM, safely
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-567">
+       <h2 id="slide-567">
+        Benefits of AWS CloudFormation (2/2)
+       </h2>
+       <div class="slide-number">
+        Slide 567
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Productivity
+         </li>
+         <li>
+          Ability to destroy and re-create an infrastructure on the cloud on the fly
+         </li>
+         <li>
+          Automated generation of Diagram for your templates!
+         </li>
+         <li>
+          Declarative programming (no need to figure out ordering and orchestration)
+         </li>
+         <li>
+          Don’t re-invent the wheel
+         </li>
+         <li>
+          Leverage existing templates on the web!
+         </li>
+         <li>
+          Leverage the documentation
+         </li>
+         <li>
+          Supports (almost) all AWS resources:
+         </li>
+         <li>
+          Everything we’ll see in this course is supported
+         </li>
+         <li>
+          You can use “custom resources” for resources that are not supported
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-568">
+       <h2 id="slide-568">
+        CloudFormation + Infrastructure
+       </h2>
+       <div class="slide-number">
+        Slide 568
+       </div>
+       <div class="slide-content">
+        <p>
+         Composer
+        </p>
+        <ul>
+         <li>
+          Example: WordPress CloudFormation Stack
+         </li>
+        </ul>
+        <p>
+         +
+        </p>
+        <p>
+         CloudFormation Infrastructure
+        </p>
+        <ul>
+         <li>
+          We can see all the resources
+         </li>
+        </ul>
+        <p>
+         Composer
+        </p>
+        <ul>
+         <li>
+          We can see the relations between the components
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-569">
+       <h2 id="slide-569">
+        AWS CodeArtifact
+       </h2>
+       <div class="slide-number">
+        Slide 569
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Software packages depend on each other to be built (also called
+         </li>
+        </ul>
+        <p>
+         code dependencies), and new ones are created
+        </p>
+        <ul>
+         <li>
+          Storing and retrieving these dependencies is called artifact
+         </li>
+        </ul>
+        <p>
+         management
+        </p>
+        <ul>
+         <li>
+          Traditionally you need to setup your own artifact management
+         </li>
+        </ul>
+        <p>
+         system
+        </p>
+        <ul>
+         <li>
+          CodeArtifact is a secure, scalable, and cost-effective artifact
+         </li>
+        </ul>
+        <p>
+         management for software development
+        </p>
+        <ul>
+         <li>
+          Works with common dependency management tools such as Maven,
+         </li>
+        </ul>
+        <p>
+         Gradle, npm, yarn, twine, pip, and NuGet
+        </p>
+        <ul>
+         <li>
+          Developers and CodeBuild can then retrieve dependencies
+         </li>
+        </ul>
+        <p>
+         straight from CodeArtifact
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-570">
+       <h2 id="slide-570">
+        AWS CodeArtifact
+       </h2>
+       <div class="slide-number">
+        Slide 570
+       </div>
+       <div class="slide-content">
+        <p>
+         VPC
+        </p>
+        <p>
+         npm
+        </p>
+        <p>
+         fetch
+        </p>
+        <p>
+         Public Artifact Repositories
+        </p>
+        <p>
+         AWS CodeArtifact
+        </p>
+        <p>
+         JavaScript
+        </p>
+        <p>
+         AWS CodeBuild
+        </p>
+        <p>
+         Domain
+        </p>
+        <p>
+         pip
+        </p>
+        <p>
+         NuGet proxy
+        </p>
+        <p>
+         Repository A Repository B
+        </p>
+        <p>
+         Python
+        </p>
+        <p>
+         NuGet
+        </p>
+        <p>
+         Package 1 Package 2
+        </p>
+        <p>
+         .NET
+        </p>
+        <p>
+         publish/approve Maven
+        </p>
+        <p>
+         packages
+        </p>
+        <p>
+         Java
+        </p>
+        <p>
+         IT Leader
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-571">
+       <h2 id="slide-571">
+        CodeArtifact – EventBridge Integration
+       </h2>
+       <div class="slide-number">
+        Slide 571
+       </div>
+       <div class="slide-content">
+        <p>
+         invoke Lambda
+        </p>
+        <p>
+         Function
+        </p>
+        <p>
+         Event is created when a Package
+        </p>
+        <p>
+         version is created, modified, or deleted
+        </p>
+        <p>
+         activate Step Functions
+        </p>
+        <p>
+         State Machine
+        </p>
+        <p>
+         events message
+        </p>
+        <p>
+         SNS
+        </p>
+        <p>
+         CodeArtifact EventBridge
+        </p>
+        <p>
+         message
+        </p>
+        <p>
+         SQS
+        </p>
+        <p>
+         CodePipeline
+        </p>
+        <p>
+         start Rebuild &amp; Redeploy
+        </p>
+        <p>
+         an Application
+        </p>
+        <p>
+         with the latest
+        </p>
+        <p>
+         security fixes
+        </p>
+        <p>
+         CodeCommit CodeBuild CodeDeploy
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-572">
+       <h2 id="slide-572">
+        CodeArtifact – Resource Policy
+       </h2>
+       <div class="slide-number">
+        Slide 572
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Can be used to authorize another
+         </li>
+        </ul>
+        <p>
+         account to access CodeArtifact
+        </p>
+        <ul>
+         <li>
+          A given principal can either read all the
+         </li>
+        </ul>
+        <p>
+         packages in a repository or none of
+        </p>
+        <p>
+         them
+        </p>
+        <p>
+         Account B Account A
+        </p>
+        <p>
+         (222333344555) (123456789012)
+        </p>
+        <p>
+         read packages
+        </p>
+        <p>
+         IAM User
+        </p>
+        <p>
+         CodeArtifact
+        </p>
+        <p>
+         (bob)
+        </p>
+        <p>
+         Repository
+        </p>
+        <p>
+         Repository Resource Policy
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-573">
+       <h2 id="slide-573">
+        Other Services You Should
+       </h2>
+       <div class="slide-number">
+        Slide 573
+       </div>
+       <div class="slide-content">
+        <p>
+         Know: Machine Learning
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="section-nav">
+      <a class="btn-back" href="index.html">
+       ← Back to Overview
+      </a>
+     </div>
+    </main>
+    <aside class="toc-sidebar">
+     <div class="toc-title">
+      On this page
+     </div>
+     <ul class="toc-list" id="toc-list">
+      <li>
+       <a href="#slide-556">
+        AWS Cloud Development Kit (CDK)
+       </a>
+      </li>
+      <li>
+       <a href="#slide-557">
+        CDK in a diagram
+       </a>
+      </li>
+      <li>
+       <a href="#slide-558">
+        CDK vs SAM
+       </a>
+      </li>
+      <li>
+       <a href="#slide-559">
+        CDK + SAM
+       </a>
+      </li>
+      <li>
+       <a href="#slide-560">
+        CDK Hands-On
+       </a>
+      </li>
+      <li>
+       <a href="#slide-561">
+        How can users access AWS ?
+       </a>
+      </li>
+      <li>
+       <a href="#slide-562">
+        Example (Fake) Access Keys
+       </a>
+      </li>
+      <li>
+       <a href="#slide-563">
+        What’s the AWS CLI?
+       </a>
+      </li>
+      <li>
+       <a href="#slide-564">
+        What’s the AWS SDK?
+       </a>
+      </li>
+      <li>
+       <a href="#slide-565">
+        What is CloudFormation
+       </a>
+      </li>
+      <li>
+       <a href="#slide-566">
+        Benefits of AWS CloudFormation (1/2)
+       </a>
+      </li>
+      <li>
+       <a href="#slide-567">
+        Benefits of AWS CloudFormation (2/2)
+       </a>
+      </li>
+      <li>
+       <a href="#slide-568">
+        CloudFormation + Infrastructure
+       </a>
+      </li>
+      <li>
+       <a href="#slide-569">
+        AWS CodeArtifact
+       </a>
+      </li>
+      <li>
+       <a href="#slide-570">
+        AWS CodeArtifact
+       </a>
+      </li>
+      <li>
+       <a href="#slide-571">
+        CodeArtifact – EventBridge Integration
+       </a>
+      </li>
+      <li>
+       <a href="#slide-572">
+        CodeArtifact – Resource Policy
+       </a>
+      </li>
+      <li>
+       <a href="#slide-573">
+        Other Services You Should
+       </a>
+      </li>
+     </ul>
+    </aside>
+   </div>
+  </div>
   <script>
-    function toggleSidebar() {
-      document.getElementById('sidebar').classList.toggle('open');
-      document.getElementById('overlay').classList.toggle('show');
-    }
+   function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('open');
+        }
   </script>
-</body>
+ </body>
 </html>

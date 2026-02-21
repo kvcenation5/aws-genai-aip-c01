@@ -1,1070 +1,3083 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Governance and QA – AWS GenAI Developer Pro (AIP-C01)</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-  <nav class="sidebar" id="sidebar">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Governance and QA – AWS GenAI Developer Pro (AIP-C01)
+  </title>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="mobile-header">
+   <button class="menu-toggle" onclick="toggleSidebar()">
+    ☰
+   </button>
+   <span class="logo">
+    ☁️ AIP-C01
+   </span>
+  </div>
+  <div class="app-container">
+   <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <span class="logo">☁️ AIP-C01</span>
-      <button class="close-btn" onclick="toggleSidebar()">✕</button>
+     <span class="logo">
+      ☁️ AIP-C01
+     </span>
+     <button class="close-btn" onclick="toggleSidebar()">
+      ✕
+     </button>
     </div>
     <ul class="nav-list">
-      <li><a href="index.html">🏠 Home</a></li>
-      <li class="divider">Course Sections</li>
-      <li class=""><a href="generative-ai-fundamentals-and-bedrock.html">Generative AI Fundamentals and Bedrock</a></li>
-<li class=""><a href="managing-data-for-generative-ai.html">Managing Data for Generative AI</a></li>
-<li class=""><a href="agentic-ai.html">Agentic AI</a></li>
-<li class=""><a href="operations-efficiency-and-optimization.html">Operations Efficiency and Optimization</a></li>
-<li class=""><a href="managing-models-with-sagemaker-ai.html">Managing Models with SageMaker AI</a></li>
-<li class=""><a href="more-tools-for-building-ai-applications.html">More Tools for Building AI Applications</a></li>
-<li class="active"><a href="governance-and-qa.html">Governance and QA</a></li>
-<li class=""><a href="security-identity-and-compliance.html">Security, Identity, and Compliance</a></li>
-<li class=""><a href="other-services-analytics.html">Other Services - Analytics</a></li>
-<li class=""><a href="other-services-compute-containers.html">Other Services - Compute & Containers</a></li>
-<li class=""><a href="other-services-database.html">Other Services - Database</a></li>
-<li class=""><a href="other-services-developer-tools.html">Other Services - Developer Tools</a></li>
-<li class=""><a href="other-services-machine-learning.html">Other Services - Machine Learning</a></li>
-<li class=""><a href="other-services-storage-networking.html">Other Services - Storage & Networking</a></li>
-<li class=""><a href="exam-preparation.html">Exam Preparation</a></li>
-
+     <li>
+      <a href="index.html">
+       🏠 Home
+      </a>
+     </li>
+     <li class="divider">
+      Course Sections
+     </li>
+     <li class="">
+      <a href="generative-ai-fundamentals-and-bedrock.html">
+       Generative AI Fundamentals and Bedrock
+      </a>
+     </li>
+     <li class="">
+      <a href="managing-data-for-generative-ai.html">
+       Managing Data for Generative AI
+      </a>
+     </li>
+     <li class="">
+      <a href="agentic-ai.html">
+       Agentic AI
+      </a>
+     </li>
+     <li class="">
+      <a href="operations-efficiency-and-optimization.html">
+       Operations Efficiency and Optimization
+      </a>
+     </li>
+     <li class="">
+      <a href="managing-models-with-sagemaker-ai.html">
+       Managing Models with SageMaker AI
+      </a>
+     </li>
+     <li class="">
+      <a href="more-tools-for-building-ai-applications.html">
+       More Tools for Building AI Applications
+      </a>
+     </li>
+     <li class="active">
+      <a href="governance-and-qa.html">
+       Governance and QA
+      </a>
+     </li>
+     <li class="">
+      <a href="security-identity-and-compliance.html">
+       Security, Identity, and Compliance
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-analytics.html">
+       Other Services - Analytics
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-compute-containers.html">
+       Other Services - Compute &amp; Containers
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-database.html">
+       Other Services - Database
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-developer-tools.html">
+       Other Services - Developer Tools
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-machine-learning.html">
+       Other Services - Machine Learning
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-storage-networking.html">
+       Other Services - Storage &amp; Networking
+      </a>
+     </li>
+     <li class="">
+      <a href="exam-preparation.html">
+       Exam Preparation
+      </a>
+     </li>
     </ul>
-  </nav>
-  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
-
-  <main class="main-content">
-    <header class="top-bar">
-      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
-      <div class="breadcrumb">
-        <a href="index.html">AWS GenAI Pro</a> › <span>Governance and QA</span>
+   </nav>
+   <div class="main-wrapper">
+    <main class="main-content">
+     <div class="section-hero">
+      <h1>
+       Governance and QA
+      </h1>
+      <p class="section-subtitle">
+       AWS Certified Generative AI Developer – Professional (AIP-C01)
+      </p>
+     </div>
+     <div class="doc-container">
+      <div class="doc-section" id="slide-397">
+       <h2 id="slide-397">
+        Governance and QA
+       </h2>
+       <div class="slide-number">
+        Slide 397
+       </div>
+       <div class="slide-content">
+       </div>
       </div>
-      <div class="page-meta">54 slides · Pages 397–450</div>
-    </header>
-
-    <div class="section-hero">
-      <h1>Governance and QA</h1>
-      <p class="section-subtitle">AWS Certified Generative AI Developer – Professional (AIP-C01)</p>
-      <div class="section-stats">
-        <span>📄 54 slides</span>
-        <span>📑 Pages 397–450</span>
+      <div class="doc-section" id="slide-398">
+       <h2 id="slide-398">
+        Bedrock Agent Tracing
+       </h2>
+       <div class="slide-number">
+        Slide 398
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Every Agent response includes a trace {
+         </li>
+        </ul>
+        <p>
+         "orchestrationTrace": {
+        </p>
+        <ul>
+         <li>
+          Shows its “reasoning” process
+         </li>
+        </ul>
+        <p>
+         "observation": {
+        </p>
+        <ul>
+         <li>
+          What knowledge bases did it hit, what did
+         </li>
+        </ul>
+        <p>
+         it get back "actionGroupInvocationOutput": {
+        </p>
+        <ul>
+         <li>
+          How did it use action groups "metadata": {
+         </li>
+         <li>
+          Error details "clientRequestId": "75f5e9fc-6981-4887-a793-
+         </li>
+        </ul>
+        <p>
+         77bbd3bd83af",
+        </p>
+        <ul>
+         <li>
+          Different trace types:
+         </li>
+        </ul>
+        <p>
+         "endTime": "2025-06-19T01:56:04.191408Z",
+        </p>
+        <ul>
+         <li>
+          PreProcessing – categorizing user input
+         </li>
+        </ul>
+        <p>
+         "startTime": "2025-06-19T01:56:03.929317Z",
+        </p>
+        <ul>
+         <li>
+          Orchestration – Calling action groups and
+         </li>
+        </ul>
+        <p>
+         "totalTimeMs": 262
+        </p>
+        <p>
+         knowledge bases
+        </p>
+        <p>
+         },
+        </p>
+        <ul>
+         <li>
+          PostProcessing – Collect final response
+         </li>
+        </ul>
+        <p>
+         "text": "The function get_time was called
+        </p>
+        <ul>
+         <li>
+          CustomOrchestration – Determining order
+         </li>
+        </ul>
+        <p>
+         successfully. The current time is 01:56:04"
+        </p>
+        <p>
+         of actions
+        </p>
+        <p>
+         },
+        </p>
+        <ul>
+         <li>
+          RoutingClassifier – How it classified and
+         </li>
+        </ul>
+        <p>
+         routed the request "traceId": "1776395b-435a-4c3a-b66c-4ab947f9dc6c-
+        </p>
+        <ul>
+         <li>
+          Failure – Why a step failed 0",
+         </li>
+        </ul>
+        <p>
+         "type": "ACTION_GROUP"
+        </p>
+        <ul>
+         <li>
+          Guardrail – What your guardrails did
+         </li>
+        </ul>
+        <p>
+         }
+        </p>
+        <p>
+         }
+        </p>
+        <p>
+         }
+        </p>
+       </div>
       </div>
-    </div>
-
-    <div class="slides-container">
-      
-        <div class="slide" id="slide-397">
-          <div class="slide-number">Slide 397</div>
-          <div class="slide-content"><p>Governance and QA</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-398">
-          <div class="slide-number">Slide 398</div>
-          <div class="slide-content"><p>Bedrock Agent Tracing</p>
-<ul><li>Every Agent response includes a trace {</li>
-</ul><p>&quot;orchestrationTrace&quot;: {</p>
-<ul><li>Shows its “reasoning” process</li>
-</ul><p>&quot;observation&quot;: {</p>
-<ul><li>What knowledge bases did it hit, what did</li>
-</ul><p>it get back &quot;actionGroupInvocationOutput&quot;: {</p>
-<ul><li>How did it use action groups &quot;metadata&quot;: {</li>
-<li>Error details &quot;clientRequestId&quot;: &quot;75f5e9fc-6981-4887-a793-</li>
-</ul><p>77bbd3bd83af&quot;,</p>
-<ul><li>Different trace types:</li>
-</ul><p>&quot;endTime&quot;: &quot;2025-06-19T01:56:04.191408Z&quot;,</p>
-<ul><li>PreProcessing – categorizing user input</li>
-</ul><p>&quot;startTime&quot;: &quot;2025-06-19T01:56:03.929317Z&quot;,</p>
-<ul><li>Orchestration – Calling action groups and</li>
-</ul><p>&quot;totalTimeMs&quot;: 262</p>
-<p>knowledge bases</p>
-<p>},</p>
-<ul><li>PostProcessing – Collect final response</li>
-</ul><p>&quot;text&quot;: &quot;The function get_time was called</p>
-<ul><li>CustomOrchestration – Determining order</li>
-</ul><p>successfully. The current time is 01:56:04&quot;</p>
-<p>of actions</p>
-<p>},</p>
-<ul><li>RoutingClassifier – How it classified and</li>
-</ul><p>routed the request &quot;traceId&quot;: &quot;1776395b-435a-4c3a-b66c-4ab947f9dc6c-</p>
-<ul><li>Failure – Why a step failed 0&quot;,</li>
-</ul><p>&quot;type&quot;: &quot;ACTION_GROUP&quot;</p>
-<ul><li>Guardrail – What your guardrails did</li>
-</ul><p>}</p>
-<p>}</p>
-<p>}</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-399">
-          <div class="slide-number">Slide 399</div>
-          <div class="slide-content"><p>Foundation model</p>
-<p>evaluation criteria</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-400">
-          <div class="slide-number">Slide 400</div>
-          <div class="slide-content"><p>Human</p>
-<p>Evaluation</p>
-<ul><li>The complex and non-</li>
-</ul><p>deterministic nature of</p>
-<p>generative AI makes it hard to</p>
-<p>measure.</p>
-<ul><li>Humans are often your best</li>
-</ul><p>source of feedback</p>
-<ul><li>UX: How does it feel to</li>
-</ul><p>use this model?</p>
-<ul><li>Contextual relevancy /</li>
-</ul><p>sensitivity</p>
-<ul><li>Creativity &amp; flexibility</li>
-<li>Handling</li>
-</ul><p>unexpected or</p>
-<p>complex problems</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-401">
-          <div class="slide-number">Slide 401</div>
-          <div class="slide-content"><p>Evaluation against Benchmark Datasets</p>
-<ul><li>Generally a set of sample questions (prompts) and answers generated by</li>
-</ul><p>SME’s</p>
-<ul><li>Might test performance for a specific application</li>
-<li>Might test performance for specific kinds of problems (like reasoning ability) Test prompts</li>
-<li>Can be useful as initial metrics before getting human feedback</li>
-</ul><p>Scores</p>
-<ul><li>Often used for FM “leaderboards”</li>
-<li>Things you can measure</li>
-<li>Accuracy</li>
-<li>How close was the generated result to the “ideal” one? Evaluator</li>
-<li>Speed / Efficiency</li>
-<li>How quickly was the result generated?</li>
-<li>Scalability</li>
-<li>How does it hold up to more data? More users? Longer prompts? More context?</li>
-<li>Context retrieval</li>
-<li>We’re getting there… but if the system retrieves external data, how relevant is that</li>
-</ul><p>data?</p>
-<ul><li>Only as good as your test and evaluation data… these metrics can be flawed</li>
-</ul><p>and incomplete</p>
-<p>Evaluation</p>
-<p>Generated</p>
-<p>responses</p>
-<p>responses</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-402">
-          <div class="slide-number">Slide 402</div>
-          <div class="slide-content"><p>Using another model as a “judge”</p>
-<ul><li>A “trusted” model is used to evaluate responses from your test prompts</li>
-<li>This assumes you have a “trusted” model (who watches the watchers?)</li>
-<li>If your model and the judge model share some of the same problems, that could be a problem.</li>
-<li>Perhaps better for testing “small” language models designed for efficiency</li>
-</ul><p>Generated</p>
-<p>Your model</p>
-<p>responses</p>
-<p>Test prompts</p>
-<p>Scores</p>
-<p>Judge model</p>
-<p>(relevancy,</p>
-<p>Comprehensiveness,</p>
-<p>Evaluation data Accuracy, etc.)</p>
-<p>(answers, context)</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-403">
-          <div class="slide-number">Slide 403</div>
-          <div class="slide-content"><p>Hybrid</p>
-<p>approaches</p>
-<ul><li>Why not both?</li>
-<li>Comparing human</li>
-</ul><p>and benchmark-</p>
-<p>based approaches</p>
-<p>can reveal the</p>
-<p>limitations of both</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-404">
-          <div class="slide-number">Slide 404</div>
-          <div class="slide-content"><p>ROUGE</p>
-<ul><li>Set of metrics for:</li>
-<li>Text summarization</li>
-<li>Machine translation</li>
-</ul><p>Certified AI Practitioner</p>
-<ul><li>Counts number of overlapping “units” between</li>
-</ul><p>Unigrams: Certified, AI, Practitioner</p>
-<p>computer-generated output and evaluation ground-</p>
-<p>Bigrams: Certified AI, AI Practitioner</p>
-<p>truth output.</p>
-<ul><li>Words, n-grams, sentence fragments</li>
-</ul><p>Output: Certified ML Practitioner</p>
-<ul><li>ROUGE-N</li>
-</ul><p>ROUGE-1: 2/3</p>
-<ul><li>Overlap on n-grams (how many words at a time are</li>
-</ul><p>compared) ROUGE-2: 0</p>
-<ul><li>ROUGE-1: unigrams (one word,) ROUGE-2: bigrams</li>
-</ul><p>(two words)</p>
-<ul><li>ROUGE-L</li>
-<li>Uses longest common subsequence between generated</li>
-</ul><p>and reference text</p>
-<ul><li>Good at evaluating coherence and order of narrative</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-405">
-          <div class="slide-number">Slide 405</div>
-          <div class="slide-content"><p>BLEU</p>
-<ul><li>Used for machine translation</li>
-<li>Compares machine translation to human translation</li>
-<li>Measure PRECISION of N-grams</li>
-<li>As opposed to ROUGE, which is recall</li>
-<li>Precision compares to everything, recall just</li>
-</ul><p>to “relevant” results (overlapping results in</p>
-<p>the case of ROUGE)</p>
-<ul><li>Checks how many words / phrases appear in</li>
-</ul><p>the reference translation</p>
-<ul><li>Works at the sentence level</li>
-<li>Brevity penalty</li>
-<li>Overly short translations are penalized</li>
-<li>Limited use in assessing fluency and grammar</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-406">
-          <div class="slide-number">Slide 406</div>
-          <div class="slide-content"><p>BERTscore</p>
-<ul><li>LLM’s rely on “embeddings” that store</li>
-</ul><p>the meaning of a word as a vector The starship</p>
-<p>Enterprise</p>
-<ul><li>I am oversimplifying, but that’s the idea.</li>
-</ul><p>Spaceballs</p>
-<ul><li>BERTscore uses these embedding</li>
-</ul><p>vectors to compare the semantic The</p>
-<p>similarity between a model’s output Orville</p>
-<p>and the ideal output</p>
-<ul><li>BERT is a language model that</li>
-</ul><p>predated GPT</p>
-<ul><li>Less sensitive to synonyms and</li>
-</ul><p>paraphrasing that don’t really change</p>
-<p>the meaning of what’s being</p>
-<p>potato</p>
-<p>generated</p>
-<p>rhubarb</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-407">
-          <div class="slide-number">Slide 407</div>
-          <div class="slide-content"><p>Testing and evaluation: choosing a</p>
-<p>strategy</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-408">
-          <div class="slide-number">Slide 408</div>
-          <div class="slide-content"><p>Bedrock Model Evaluations</p>
-<ul><li>Automatic model evaluations</li>
-<li>Tons of built-in task types, datasets, and</li>
-</ul><p>metrics (seen here)</p>
-<ul><li>Text generation, summarization, Q&amp;A,</li>
-</ul><p>classification</p>
-<ul><li>Human-based</li>
-<li>Humans compare two models</li>
-<li>Given your prompt dataset</li>
-<li>Set up a work team in Cognito,</li>
-</ul><p>SageMaker Ground Truth, or Amazon</p>
-<p>Augmented AI</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-409">
-          <div class="slide-number">Slide 409</div>
-          <div class="slide-content"><p>Bedrock Model Evaluations</p>
-<ul><li>LLM as a judge</li>
-</ul><p>Prompt</p>
-<ul><li>Evaluator model and generator model</li>
-</ul><p>Dataset</p>
-<ul><li>You provide a prompt dataset</li>
-<li>Many metrics available – we talked</li>
-</ul><p>about this before</p>
-<p>Prompts defining Reference</p>
-<ul><li>RAG evaluation jobs Prompts evaluation Responses &amp;</li>
-<li>Retrieve only – measures retrieval metrics Contexts</li>
-</ul><p>from your RAG source</p>
-<ul><li>Relevance and coverage</li>
-</ul><p>Evaluator</p>
-<ul><li>Retrieve and generate – Measures</li>
-</ul><p>RAG System ”judge”</p>
-<p>the response as well</p>
-<p>Model</p>
-<ul><li>Correctness, completeness,</li>
-</ul><p>helpfulness, logical coherence, etc.</p>
-<ul><li>Provide a prompt dataset in S3 in</li>
-</ul><p>JSON line format Contexts,</p>
-<p>Scores</p>
-<ul><li>You can add your own metrics (based Responses</li>
-</ul><p>on prompts for the judge model)</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-410">
-          <div class="slide-number">Slide 410</div>
-          <div class="slide-content"><p>Considerations for Deployment</p>
-<p>Validation</p>
-<ul><li>Synthetic user workflows</li>
-<li>Unit testing often doesn’t cut it, because GenAI is non-</li>
-</ul><p>deterministic</p>
-<ul><li>Simulate end to end usage of your application</li>
-<li>Before and after deployments</li>
-<li>Some useful tools</li>
-<li>Cloudwatch synthetic monitoring (canaries,) Step</li>
-</ul><p>Functions, EventBridge, Lambda</p>
-<ul><li>Store results in S3 / Athena, analyze in QuickSight</li>
-<li>AI-Specific output validation</li>
-<li>Measure hallucination rate, semantic drift, faithfulness,</li>
-</ul><p>compliance, etc.</p>
-<ul><li>Bedrock Model Evaluations does this</li>
-<li>You could roll your own with Lambda + Step Functions</li>
-<li>Checking response consistency</li>
-<li>Best you can do is make sure style is consistent, answers</li>
-</ul><p>are similar for a test prompt dataset</p>
-<ul><li>Test that variability is within an accepted range</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-411">
-          <div class="slide-number">Slide 411</div>
-          <div class="slide-content"><p>Responsible AI: Core Dimensions</p>
-<ul><li>Fairness</li>
-<li>Explainability</li>
-<li>Privacy and Security</li>
-<li>Safety</li>
-<li>Controllability</li>
-<li>Veracity and Robustness</li>
-<li>Governance</li>
-<li>Transparency</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-412">
-          <div class="slide-number">Slide 412</div>
-          <div class="slide-content"><p>AWS Tools for Responsible AI</p>
-<ul><li>Amazon Bedrock</li>
-<li>Model evaluation tools</li>
-<li>SageMaker Clarify</li>
-<li>Bias detection</li>
-<li>Model evaluation</li>
-<li>Explainability</li>
-<li>SageMaker Model Monitor</li>
-<li>Get alerts for inaccurate responses</li>
-<li>Amazon Augmented AI</li>
-<li>Insert humans in the loop to help correct results</li>
-<li>SageMaker ML Governance</li>
-<li>SageMaker Role Manager</li>
-</ul><p>Portion of model card creation UI</p>
-<ul><li>Model</li>
-<li>Model Dashboard</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-413">
-          <div class="slide-number">Slide 413</div>
-          <div class="slide-content"><p>CloudWatch Logs</p>
-<ul><li>Log groups: arbitrary name, usually representing an application</li>
-<li>Log stream: instances within application / log files / containers</li>
-<li>Can define log expiration policies (never expire, 1 day to 10 years…)</li>
-<li>CloudWatch Logs can send logs to:</li>
-<li>Amazon S3 (exports)</li>
-<li>Kinesis Data Streams</li>
-<li>Kinesis Data Firehose</li>
-<li>AWS Lambda</li>
-<li>OpenSearch</li>
-<li>Logs are encrypted by default</li>
-<li>Can setup KMS-based encryption with your own keys</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-414">
-          <div class="slide-number">Slide 414</div>
-          <div class="slide-content"><p>CloudWatch Logs - Sources</p>
-<ul><li>SDK, CloudWatch Logs Agent, CloudWatch Unified</li>
-</ul><p>Agent</p>
-<ul><li>Elastic Beanstalk: collection of logs from application</li>
-<li>ECS: collection from containers</li>
-<li>AWS Lambda: collection from function logs</li>
-<li>VPC Flow Logs: VPC specific logs</li>
-<li>API Gateway</li>
-<li>CloudTrail based on filter</li>
-<li>Route53: Log DNS queries</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-415">
-          <div class="slide-number">Slide 415</div>
-          <div class="slide-content"><p>CloudWatch Logs Insights</p>
-<p>https://mng.workshop.aws/operations-2022/detect/cwlogs.html</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-416">
-          <div class="slide-number">Slide 416</div>
-          <div class="slide-content"><p>CloudWatch Logs Insights</p>
-<ul><li>Search and analyze log data stored in CloudWatch Logs</li>
-<li>Example: find a specific IP inside a log, count occurrences</li>
-</ul><p>of “ERROR” in your logs…</p>
-<ul><li>Provides a purpose-built query language</li>
-<li>Automatically discovers fields from AWS services and JSON log</li>
-</ul><p>events</p>
-<ul><li>Fetch desired event fields, filter based on conditions, calculate</li>
-</ul><p>aggregate statistics, sort events, limit number of events…</p>
-<ul><li>Can save queries and add them to CloudWatch Dashboards</li>
-<li>Can query multiple Log Groups in different AWS accounts</li>
-<li>It’s a query engine, not a real-time engine</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-417">
-          <div class="slide-number">Slide 417</div>
-          <div class="slide-content"><p>CloudWatch Logs – S3 Export</p>
-<ul><li>Log data can take up to 12</li>
-</ul><p>hours to become available for</p>
-<p>export</p>
-<ul><li>The API call is CreateExportTask</li>
-</ul><p>CloudWatch Logs Amazon S3</p>
-<ul><li>Not near-real time or real-time…</li>
-</ul><p>use Logs Subscriptions instead</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-418">
-          <div class="slide-number">Slide 418</div>
-          <div class="slide-content"><p>CloudWatch Logs Subscriptions</p>
-<ul><li>Get a real-time log events from CloudWatch Logs for processing and</li>
-</ul><p>analysis</p>
-<ul><li>Send to Kinesis Data Streams, Kinesis Data Firehose, or Lambda</li>
-<li>Subscription Filter – filter which logs are events delivered to your</li>
-</ul><p>destination</p>
-<p>real-time OpenSearch</p>
-<p>Service</p>
-<p>Lambda</p>
-<p>near</p>
-<p>logs real-time</p>
-<p>S3</p>
-<p>CloudWatch Logs Kinesis Data Firehose</p>
-<p>Subscription Filter</p>
-<p>…</p>
-<p>KDF KDA EC2 Lambda</p>
-<p>Kinesis Data Streams</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-419">
-          <div class="slide-number">Slide 419</div>
-          <div class="slide-content"><p>CloudWatch Alarms</p>
-<ul><li>Alarms are used to trigger notifications for any metric</li>
-<li>Various options (sampling, %, max, min, etc…)</li>
-<li>Alarm States:</li>
-<li>OK</li>
-<li>INSUFFICIENT_DATA</li>
-<li>ALARM</li>
-<li>Period:</li>
-<li>Length of time in seconds to evaluate the metric</li>
-<li>High resolution custom metrics: 10 sec, 30 sec or multiples of 60 sec</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-420">
-          <div class="slide-number">Slide 420</div>
-          <div class="slide-content"><p>CloudWatch Alarm Targets</p>
-<ul><li>Stop, Terminate, Reboot, or Recover an EC2 Instance</li>
-<li>Trigger Auto Scaling Action</li>
-<li>Send notification to SNS (from which you can do pretty much</li>
-</ul><p>anything)</p>
-<p>Amazon EC2 EC2 Auto Scaling Amazon SNS</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-421">
-          <div class="slide-number">Slide 421</div>
-          <div class="slide-content"><p>CloudWatch Alarms – Composite Alarms</p>
-<ul><li>CloudWatch Alarms are on a single metric</li>
-<li>Composite Alarms are monitoring the states of multiple other alarms</li>
-<li>AND and OR conditions</li>
-<li>Helpful to reduce “alarm noise” by creating complex composite alarms</li>
-</ul><p>Composite Alarm</p>
-<p>monitor CPU ALARM</p>
-<p>CW Alarm - A trigger</p>
-<p>EC2 Instance</p>
-<p>monitor IOPS ALARM</p>
-<p>Amazon SNS</p>
-<p>CW Alarm - B</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-422">
-          <div class="slide-number">Slide 422</div>
-          <div class="slide-content"><p>EC2 Instance Recovery</p>
-<ul><li>Status Check:</li>
-<li>Instance status = check the EC2 VM</li>
-<li>System status = check the underlying hardware</li>
-<li>Attached EBS status = check attached EBS volumes</li>
-</ul><p>monitor alert</p>
-<p>EC2 Instance CloudWatch Alarm SNS Topic</p>
-<p>StatusCheckFailed_System</p>
-<p>EC2 Instance Recovery</p>
-<ul><li>Recovery: Same Private, Public, Elastic IP, metadata, placement</li>
-</ul><p>group</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-423">
-          <div class="slide-number">Slide 423</div>
-          <div class="slide-content"><p>CloudWatch Alarm: good to know</p>
-<ul><li>Alarms can be created based on CloudWatch Logs Metrics Filters</li>
-</ul><p>CloudWatch</p>
-<p>Metric Filter</p>
-<p>Alert</p>
-<p>CW Logs</p>
-<p>CW Alarm</p>
-<p>Amazon SNS</p>
-<ul><li>To test alarms and notifications, set the alarm state to Alarm using</li>
-</ul><p>CLI</p>
-<p>aws cloudwatch set-alarm-state --alarm-name &quot;myalarm&quot; --state-</p>
-<p>value ALARM --state-reason &quot;testing purposes&quot;</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-424">
-          <div class="slide-number">Slide 424</div>
-          <div class="slide-content"><p>CloudWatch and GenAI</p>
-<p>Testing prompt regression</p>
-<p>Prompt inputs and model responses</p>
-<p>CloudWatch logs</p>
-<p>Foundational to monitoring and</p>
-<p>troubleshooting</p>
-<p>Prompt effectiveness / response quality</p>
-<p>Monitor KPI’s</p>
-<p>Latency</p>
-<p>Error rates</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-425">
-          <div class="slide-number">Slide 425</div>
-          <div class="slide-content"><p>Other things to monitor</p>
-<ul><li>Foundation model interaction</li>
-</ul><p>tracing</p>
-<ul><li>Business impact metrics</li>
-<li>Prompt effectiveness</li>
-<li>Hallucination rates</li>
-<li>Anomaly detection</li>
-<li>Token burst patterns</li>
-<li>Response drift</li>
-<li>Bedrock model invocation logs</li>
-<li>Cost anomaly detection</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-426">
-          <div class="slide-number">Slide 426</div>
-          <div class="slide-content"><p>CloudWatch Real User</p>
-<p>Monitoring (RUM)</p>
-<ul><li>Mostly for testing mobile apps (iOS</li>
-</ul><p>or Android)</p>
-<ul><li>Measures page load times,</li>
-</ul><p>errors, app launch times, etc.</p>
-<ul><li>From a real user session</li>
-<li>Integrates with Application Signals</li>
-<li>View results in X-Ray traces</li>
-<li>Relevant for measuring end to end</li>
-</ul><p>performance of your mobile GenAI</p>
-<p>apps</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-427">
-          <div class="slide-number">Slide 427</div>
-          <div class="slide-content"><p>AWS CloudTrail</p>
-<ul><li>Provides governance, compliance and audit for your AWS</li>
-</ul><p>Account</p>
-<ul><li>CloudTrail is enabled by default!</li>
-<li>Get an history of events / API calls made within your AWS</li>
-</ul><p>Account by:</p>
-<ul><li>Console</li>
-<li>SDK</li>
-<li>CLI</li>
-<li>AWS Services</li>
-<li>Can put logs from CloudTrail into CloudWatch Logs or S3</li>
-<li>A trail can be applied to All Regions (default) or a single Region.</li>
-<li>If a resource is deleted in AWS, investigate CloudTrail first!</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-428">
-          <div class="slide-number">Slide 428</div>
-          <div class="slide-content"><p>CloudTrail Diagram</p>
-<p>SDK</p>
-<p>CloudWatch Logs</p>
-<p>CloudTrail Console</p>
-<p>CLI</p>
-<p>Console</p>
-<p>Inspect &amp; Audit</p>
-<p>S3 Bucket</p>
-<p>IAM Users &amp;</p>
-<p>IAM Roles</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-429">
-          <div class="slide-number">Slide 429</div>
-          <div class="slide-content"><p>CloudTrail Events</p>
-<ul><li>Management Events:</li>
-<li>Operations that are performed on resources in your AWS account</li>
-<li>Examples:</li>
-<li>Configuring security (IAM AttachRolePolicy)</li>
-<li>Configuring rules for routing data (Amazon EC2 CreateSubnet)</li>
-<li>Setting up logging (AWS CloudTrail CreateTrail)</li>
-<li>By default, trails are configured to log management events.</li>
-<li>Can separate Read Events (that don’t modify resources) from Write Events (that may modify</li>
-</ul><p>resources)</p>
-<ul><li>Data Events:</li>
-<li>By default, data events are not logged (because high volume operations)</li>
-<li>Amazon S3 object-level activity (ex: GetObject, DeleteObject, PutObject): can separate Read and Write Events</li>
-<li>AWS Lambda function execution activity (the Invoke API)</li>
-<li>CloudTrail Insights Events:</li>
-<li>See next slide ☺</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-430">
-          <div class="slide-number">Slide 430</div>
-          <div class="slide-content"><p>CloudTrail Insights</p>
-<ul><li>Enable CloudTrail Insights to detect unusual activity in your account:</li>
-<li>inaccurate resource provisioning</li>
-<li>hitting service limits</li>
-<li>Bursts of AWS IAM actions</li>
-<li>Gaps in periodic maintenance activity</li>
-<li>CloudTrail Insights analyzes normal management events to create a baseline</li>
-<li>And then continuously analyzes write events to detect unusual patterns</li>
-<li>Anomalies appear in the CloudTrail console</li>
-<li>Event is sent to Amazon S3</li>
-<li>An EventBridge event is generated (for automation needs)</li>
-</ul><p>CloudTrail Console</p>
-<p>Continous analysis generate</p>
-<p>Management Events</p>
-<p>Insights Events</p>
-<p>S3 Bucket</p>
-<p>CloudTrail Insights</p>
-<p>EventBridge event</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-431">
-          <div class="slide-number">Slide 431</div>
-          <div class="slide-content"><p>CloudTrail Events Retention</p>
-<ul><li>Events are stored for 90 days in CloudTrail</li>
-<li>To keep events beyond this period, log them to S3 and use Athena</li>
-</ul><p>CloudTrail</p>
-<p>Management Events</p>
-<p>Athena</p>
-<p>log analyze</p>
-<p>Data Events</p>
-<p>S3 Bucket</p>
-<p>90 days</p>
-<p>Insights Events</p>
-<p>Long-term retention</p>
-<p>retention</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-432">
-          <div class="slide-number">Slide 432</div>
-          <div class="slide-content"><p>CloudTrail and GenAI</p>
-<ul><li>CloudTrail can track all API calls to Amazon</li>
-</ul><p>Bedrock</p>
-<ul><li>Audit trails of which prompt resources were used</li>
-<li>When and by who</li>
-<li>This is often a compliance requirement</li>
-<li>Yes, this stuff gets logged</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-433">
-          <div class="slide-number">Slide 433</div>
-          <div class="slide-content"><p>AWS X-Ray</p>
-<ul><li>Debugging in Production, the good old way:</li>
-<li>Test locally</li>
-<li>Add log statements everywhere</li>
-<li>Re-deploy in production</li>
-<li>Log formats differ across applications using CloudWatch and</li>
-</ul><p>analytics is hard.</p>
-<ul><li>Debugging: monolith “easy”, distributed services “hard”</li>
-<li>No common views of your entire architecture!</li>
-<li>Enter… AWS X-Ray!</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-434">
-          <div class="slide-number">Slide 434</div>
-          <div class="slide-content"><p>AWS X-Ray</p>
-<p>Visual analysis of our applications</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-435">
-          <div class="slide-number">Slide 435</div>
-          <div class="slide-content"><p>AWS X-Ray advantages</p>
-<ul><li>Troubleshooting performance (bottlenecks)</li>
-<li>Understand dependencies in a microservice architecture</li>
-<li>Pinpoint service issues</li>
-<li>Review request behavior</li>
-<li>Find errors and exceptions</li>
-<li>Are we meeting time SLA?</li>
-<li>Where I am throttled?</li>
-<li>Identify users that are impacted</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-436">
-          <div class="slide-number">Slide 436</div>
-          <div class="slide-content"><p>X-Ray compatibility</p>
-<ul><li>AWS Lambda</li>
-<li>Elastic Beanstalk</li>
-<li>ECS</li>
-<li>ELB</li>
-<li>API Gateway</li>
-<li>EC2 Instances or any application server (even on premise)</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-437">
-          <div class="slide-number">Slide 437</div>
-          <div class="slide-content"><p>AWS X-Ray Leverages Tracing</p>
-<ul><li>Tracing is an end to end way to following a “request”</li>
-<li>Each component dealing with the request adds its own “trace”</li>
-<li>Tracing is made of segments (+ sub segments)</li>
-<li>Annotations can be added to traces to provide extra-information</li>
-<li>Ability to trace:</li>
-<li>Every request</li>
-<li>Sample request (as a % for example or a rate per minute)</li>
-<li>X-Ray Security:</li>
-<li>IAM for authorization</li>
-<li>KMS for encryption at rest</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-438">
-          <div class="slide-number">Slide 438</div>
-          <div class="slide-content"><p>AWS X-Ray</p>
-<p>EC2 Instance</p>
-<p>How to enable it?</p>
-<p>I) Your code (Java, Python, Go, Node.js, .NET) must import the Application Code</p>
-<p>AWS X-Ray SDK</p>
-<p>+ AWS X-Ray SDK</p>
-<ul><li>Very little code modification needed</li>
-<li>The application SDK will then capture:</li>
-<li>Calls to AWS services Send traces</li>
-<li>HTTP / HTTPS requests</li>
-<li>Database Calls (MySQL, PostgreSQL, DynamoDB)</li>
-<li>Queue calls (SQS) X-Ray Daemon</li>
-</ul><p>Running on</p>
-<p>2) Install the X-Ray daemon or enable X-Ray AWS Integration</p>
-<p>machine</p>
-<ul><li>X-Ray daemon works as a low level UDP packet interceptor</li>
-</ul><p>(Linux / Windows / Mac…)</p>
-<p>Send batch</p>
-<ul><li>AWS Lambda / other AWS services already run the X-Ray</li>
-</ul><p>every 1 second</p>
-<p>daemon for you</p>
-<p>to AWS X-Ray</p>
-<ul><li>Each application must have the IAM rights to write data to X-Ray</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-439">
-          <div class="slide-number">Slide 439</div>
-          <div class="slide-content"><p>The X-Ray magic</p>
-<ul><li>X-Ray service collects data from all the different services</li>
-<li>Service map is computed from all the segments and traces</li>
-<li>X-Ray is graphical, so even non technical people can help</li>
-</ul><p>troubleshoot</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-440">
-          <div class="slide-number">Slide 440</div>
-          <div class="slide-content"><p>AWS X-Ray Troubleshooting</p>
-<ul><li>If X-Ray is not working on EC2</li>
-<li>Ensure the EC2 IAM Role has the proper permissions</li>
-<li>Ensure the EC2 instance is running the X-Ray Daemon</li>
-<li>To enable on AWS Lambda:</li>
-<li>Ensure it has an IAM execution role with proper policy</li>
-</ul><p>(AWSX-RayWriteOnlyAccess)</p>
-<ul><li>Ensure that X-Ray is imported in the code</li>
-<li>Enable Lambda X-Ray Active Tracing</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-441">
-          <div class="slide-number">Slide 441</div>
-          <div class="slide-content"><p>AWS Lake Formation</p>
-<ul><li>“Makes it easy to set up a secure data lake</li>
-</ul><p>in days”</p>
-<ul><li>Loading data &amp; monitoring data flows</li>
-<li>Setting up partitions</li>
-<li>Encryption &amp; managing keys</li>
-<li>Defining transformation jobs &amp; monitoring</li>
-</ul><p>them</p>
-<ul><li>Access control</li>
-<li>Auditing</li>
-<li>Built on top of Glue</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-442">
-          <div class="slide-number">Slide 442</div>
-          <div class="slide-content"><p>AWS Lake Formation</p>
-<p>S3 RDBMS NoSQL On-premises or AWS</p>
-<p>Lake Formation</p>
-<p>Crawlers, ETL, data catalog,</p>
-<p>security, ACL, cleaning,</p>
-<p>transformations (including Parquet S3 Data Lake</p>
-<p>&amp; ORC) – basically anything Glue</p>
-<p>can do</p>
-<p>Athena Redshift EMR</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-443">
-          <div class="slide-number">Slide 443</div>
-          <div class="slide-content"><p>AWS Lake Formation: Pricing</p>
-<ul><li>No cost for Lake Formation itself</li>
-<li>But underlying services incur</li>
-</ul><p>charges</p>
-<ul><li>Glue</li>
-<li>S3</li>
-<li>EMR</li>
-<li>Athena</li>
-<li>Redshift</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-444">
-          <div class="slide-number">Slide 444</div>
-          <div class="slide-content"><p>Create AWS Glue</p>
-<p>Create an IAM user for Create S3 bucket for the</p>
-<p>connection to your data</p>
-<p>Data Analyst lake</p>
-<p>source(s)</p>
-<p>AWS Lake</p>
-<p>Formation:</p>
-<p>Create database in Lake</p>
-<p>Register the S3 path in Use a blueprint for a</p>
-<p>Formation for data</p>
-<p>Lake Formation, grant workflow (ie, Database</p>
-<p>catalog, grant</p>
-<p>Building a</p>
-<p>permissions snapshot)</p>
-<p>permissions</p>
-<p>Data Lake</p>
-<p>Grant SELECT</p>
-<p>permissions to whoever</p>
-<p>Run the workflow</p>
-<p>needs to read it (Athena,</p>
-<p>Redshift Spectrum, etc)</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-445">
-          <div class="slide-number">Slide 445</div>
-          <div class="slide-content"><ul><li>Cross-account Lake Formation permission</li>
-<li>Recipient must be set up as a data lake</li>
-</ul><p>administrator</p>
-<p>AWS Lake • Can use AWS Resource Access Manager</p>
-<p>for accounts external to your organization</p>
-<ul><li>IAM permissions for cross-account access</li>
-</ul><p>Formation:</p>
-<ul><li>Lake Formation does not support manifests in</li>
-</ul><p>Athena or Redshift queries</p>
-<p>The Finer</p>
-<ul><li>IAM permissions on the KMS encryption key</li>
-</ul><p>are needed for encrypted data catalogs in</p>
-<p>Points</p>
-<p>Lake Formation</p>
-<ul><li>IAM permissions needed to create blueprints</li>
-</ul><p>and workflows</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-446">
-          <div class="slide-number">Slide 446</div>
-          <div class="slide-content"><ul><li>Now supports “Governed Tables” that support</li>
-</ul><p>ACID transactions across multiple tables</p>
-<p>AWS Lake</p>
-<ul><li>New type of S3 table</li>
-<li>Can’t change choice of governed afterwards</li>
-</ul><p>Formation: • Works with streaming data too (Kinesis)</p>
-<ul><li>Can query with Athena</li>
-<li>Storage Optimization with Automatic</li>
-</ul><p>Governed</p>
-<p>Compaction</p>
-<ul><li>Granular Access Control with Row and Cell-</li>
-</ul><p>Tables and</p>
-<p>Level Security</p>
-<ul><li>Both for governed and S3 tables</li>
-</ul><p>Security</p>
-<ul><li>Above features incur additional charges based</li>
-</ul><p>on usage</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-447">
-          <div class="slide-number">Slide 447</div>
-          <div class="slide-content"><p>Data Permissions</p>
-<p>in Lake Formation</p>
-<ul><li>Can tie to IAM users/roles,</li>
-</ul><p>SAML, or external AWS accounts</p>
-<ul><li>Can use policy tags on</li>
-</ul><p>databases, tables, or columns</p>
-<ul><li>Can select specific permissions</li>
-</ul><p>for tables or columns</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-448">
-          <div class="slide-number">Slide 448</div>
-          <div class="slide-content"><p>Data Filters in Lake Formation</p>
-<ul><li>Column, row, or cell-level security</li>
-<li>Apply when granting SELECT</li>
-</ul><p>permission on tables</p>
-<ul><li>“All columns” + row filter = row-</li>
-</ul><p>level security</p>
-<ul><li>“All rows” + specific columns =</li>
-</ul><p>column-level security</p>
-<ul><li>Specific columns + specific rows =</li>
-</ul><p>cell-level security</p>
-<ul><li>Create filters via the console (seen</li>
-</ul><p>here) or via</p>
-<p>CreateDataCellsFilter API.</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-449">
-          <div class="slide-number">Slide 449</div>
-          <div class="slide-content"><p>Security, Identity, and</p>
-<p>Compliance</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-450">
-          <div class="slide-number">Slide 450</div>
-          <div class="slide-content"><p>Principle of Least Privilege</p>
-<p>{</p>
-<ul><li>Grant only the permissions</li>
-</ul><p>&quot;Version&quot;: &quot;2012-10-17&quot;,</p>
-<p>&quot;Statement&quot;: [</p>
-<p>required to perform a task</p>
-<p>{</p>
-<p>&quot;Sid&quot;: &quot;AllowListBucket&quot;,</p>
-<ul><li>Start with broad permissions while &quot;Effect&quot;: &quot;Allow&quot;,</li>
-</ul><p>&quot;Action&quot;: &quot;s3:ListBucket&quot;,</p>
-<p>developing</p>
-<p>&quot;Resource&quot;: &quot;arn:aws:s3:::my-specific-bucket&quot;,</p>
-<p>&quot;Condition&quot;: {</p>
-<ul><li>But lock it down once you have a &quot;StringLike&quot;: {</li>
-</ul><p>&quot;s3:prefix&quot;: &quot;data/reports/*&quot;</p>
-<p>better idea of the exact services</p>
-<p>}</p>
-<p>}</p>
-<p>and operations a workload</p>
-<p>},</p>
-<p>{</p>
-<p>requires</p>
-<p>&quot;Sid&quot;: &quot;AllowReadCSVFiles&quot;,</p>
-<p>&quot;Effect&quot;: &quot;Allow&quot;,</p>
-<ul><li>Can use IAM Access Analyzer to</li>
-</ul><p>&quot;Action&quot;: [</p>
-<p>&quot;s3:GetObject&quot;,</p>
-<p>generate least-privilege policies</p>
-<p>&quot;s3:GetObjectVersion&quot;</p>
-<p>based on access activity ],</p>
-<p>&quot;Resource&quot;: &quot;arn:aws:s3:::my-specific-bucket/data/reports/*.csv&quot;</p>
-<p>}</p>
-<p>]</p>
-<p>}</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-    </div>
-
-    <div class="section-nav">
-      <a href="index.html" class="btn-back">← Back to Overview</a>
-    </div>
-  </main>
-
+      <div class="doc-section" id="slide-399">
+       <h2 id="slide-399">
+        Foundation model
+       </h2>
+       <div class="slide-number">
+        Slide 399
+       </div>
+       <div class="slide-content">
+        <p>
+         evaluation criteria
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-400">
+       <h2 id="slide-400">
+        Human
+       </h2>
+       <div class="slide-number">
+        Slide 400
+       </div>
+       <div class="slide-content">
+        <p>
+         Evaluation
+        </p>
+        <ul>
+         <li>
+          The complex and non-
+         </li>
+        </ul>
+        <p>
+         deterministic nature of
+        </p>
+        <p>
+         generative AI makes it hard to
+        </p>
+        <p>
+         measure.
+        </p>
+        <ul>
+         <li>
+          Humans are often your best
+         </li>
+        </ul>
+        <p>
+         source of feedback
+        </p>
+        <ul>
+         <li>
+          UX: How does it feel to
+         </li>
+        </ul>
+        <p>
+         use this model?
+        </p>
+        <ul>
+         <li>
+          Contextual relevancy /
+         </li>
+        </ul>
+        <p>
+         sensitivity
+        </p>
+        <ul>
+         <li>
+          Creativity &amp; flexibility
+         </li>
+         <li>
+          Handling
+         </li>
+        </ul>
+        <p>
+         unexpected or
+        </p>
+        <p>
+         complex problems
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-401">
+       <h2 id="slide-401">
+        Evaluation against Benchmark Datasets
+       </h2>
+       <div class="slide-number">
+        Slide 401
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Generally a set of sample questions (prompts) and answers generated by
+         </li>
+        </ul>
+        <p>
+         SME’s
+        </p>
+        <ul>
+         <li>
+          Might test performance for a specific application
+         </li>
+         <li>
+          Might test performance for specific kinds of problems (like reasoning ability) Test prompts
+         </li>
+         <li>
+          Can be useful as initial metrics before getting human feedback
+         </li>
+        </ul>
+        <p>
+         Scores
+        </p>
+        <ul>
+         <li>
+          Often used for FM “leaderboards”
+         </li>
+         <li>
+          Things you can measure
+         </li>
+         <li>
+          Accuracy
+         </li>
+         <li>
+          How close was the generated result to the “ideal” one? Evaluator
+         </li>
+         <li>
+          Speed / Efficiency
+         </li>
+         <li>
+          How quickly was the result generated?
+         </li>
+         <li>
+          Scalability
+         </li>
+         <li>
+          How does it hold up to more data? More users? Longer prompts? More context?
+         </li>
+         <li>
+          Context retrieval
+         </li>
+         <li>
+          We’re getting there… but if the system retrieves external data, how relevant is that
+         </li>
+        </ul>
+        <p>
+         data?
+        </p>
+        <ul>
+         <li>
+          Only as good as your test and evaluation data… these metrics can be flawed
+         </li>
+        </ul>
+        <p>
+         and incomplete
+        </p>
+        <p>
+         Evaluation
+        </p>
+        <p>
+         Generated
+        </p>
+        <p>
+         responses
+        </p>
+        <p>
+         responses
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-402">
+       <h2 id="slide-402">
+        Using another model as a “judge”
+       </h2>
+       <div class="slide-number">
+        Slide 402
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          A “trusted” model is used to evaluate responses from your test prompts
+         </li>
+         <li>
+          This assumes you have a “trusted” model (who watches the watchers?)
+         </li>
+         <li>
+          If your model and the judge model share some of the same problems, that could be a problem.
+         </li>
+         <li>
+          Perhaps better for testing “small” language models designed for efficiency
+         </li>
+        </ul>
+        <p>
+         Generated
+        </p>
+        <p>
+         Your model
+        </p>
+        <p>
+         responses
+        </p>
+        <p>
+         Test prompts
+        </p>
+        <p>
+         Scores
+        </p>
+        <p>
+         Judge model
+        </p>
+        <p>
+         (relevancy,
+        </p>
+        <p>
+         Comprehensiveness,
+        </p>
+        <p>
+         Evaluation data Accuracy, etc.)
+        </p>
+        <p>
+         (answers, context)
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-403">
+       <h2 id="slide-403">
+        Hybrid
+       </h2>
+       <div class="slide-number">
+        Slide 403
+       </div>
+       <div class="slide-content">
+        <p>
+         approaches
+        </p>
+        <ul>
+         <li>
+          Why not both?
+         </li>
+         <li>
+          Comparing human
+         </li>
+        </ul>
+        <p>
+         and benchmark-
+        </p>
+        <p>
+         based approaches
+        </p>
+        <p>
+         can reveal the
+        </p>
+        <p>
+         limitations of both
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-404">
+       <h2 id="slide-404">
+        ROUGE
+       </h2>
+       <div class="slide-number">
+        Slide 404
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Set of metrics for:
+         </li>
+         <li>
+          Text summarization
+         </li>
+         <li>
+          Machine translation
+         </li>
+        </ul>
+        <p>
+         Certified AI Practitioner
+        </p>
+        <ul>
+         <li>
+          Counts number of overlapping “units” between
+         </li>
+        </ul>
+        <p>
+         Unigrams: Certified, AI, Practitioner
+        </p>
+        <p>
+         computer-generated output and evaluation ground-
+        </p>
+        <p>
+         Bigrams: Certified AI, AI Practitioner
+        </p>
+        <p>
+         truth output.
+        </p>
+        <ul>
+         <li>
+          Words, n-grams, sentence fragments
+         </li>
+        </ul>
+        <p>
+         Output: Certified ML Practitioner
+        </p>
+        <ul>
+         <li>
+          ROUGE-N
+         </li>
+        </ul>
+        <p>
+         ROUGE-1: 2/3
+        </p>
+        <ul>
+         <li>
+          Overlap on n-grams (how many words at a time are
+         </li>
+        </ul>
+        <p>
+         compared) ROUGE-2: 0
+        </p>
+        <ul>
+         <li>
+          ROUGE-1: unigrams (one word,) ROUGE-2: bigrams
+         </li>
+        </ul>
+        <p>
+         (two words)
+        </p>
+        <ul>
+         <li>
+          ROUGE-L
+         </li>
+         <li>
+          Uses longest common subsequence between generated
+         </li>
+        </ul>
+        <p>
+         and reference text
+        </p>
+        <ul>
+         <li>
+          Good at evaluating coherence and order of narrative
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-405">
+       <h2 id="slide-405">
+        BLEU
+       </h2>
+       <div class="slide-number">
+        Slide 405
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Used for machine translation
+         </li>
+         <li>
+          Compares machine translation to human translation
+         </li>
+         <li>
+          Measure PRECISION of N-grams
+         </li>
+         <li>
+          As opposed to ROUGE, which is recall
+         </li>
+         <li>
+          Precision compares to everything, recall just
+         </li>
+        </ul>
+        <p>
+         to “relevant” results (overlapping results in
+        </p>
+        <p>
+         the case of ROUGE)
+        </p>
+        <ul>
+         <li>
+          Checks how many words / phrases appear in
+         </li>
+        </ul>
+        <p>
+         the reference translation
+        </p>
+        <ul>
+         <li>
+          Works at the sentence level
+         </li>
+         <li>
+          Brevity penalty
+         </li>
+         <li>
+          Overly short translations are penalized
+         </li>
+         <li>
+          Limited use in assessing fluency and grammar
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-406">
+       <h2 id="slide-406">
+        BERTscore
+       </h2>
+       <div class="slide-number">
+        Slide 406
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          LLM’s rely on “embeddings” that store
+         </li>
+        </ul>
+        <p>
+         the meaning of a word as a vector The starship
+        </p>
+        <p>
+         Enterprise
+        </p>
+        <ul>
+         <li>
+          I am oversimplifying, but that’s the idea.
+         </li>
+        </ul>
+        <p>
+         Spaceballs
+        </p>
+        <ul>
+         <li>
+          BERTscore uses these embedding
+         </li>
+        </ul>
+        <p>
+         vectors to compare the semantic The
+        </p>
+        <p>
+         similarity between a model’s output Orville
+        </p>
+        <p>
+         and the ideal output
+        </p>
+        <ul>
+         <li>
+          BERT is a language model that
+         </li>
+        </ul>
+        <p>
+         predated GPT
+        </p>
+        <ul>
+         <li>
+          Less sensitive to synonyms and
+         </li>
+        </ul>
+        <p>
+         paraphrasing that don’t really change
+        </p>
+        <p>
+         the meaning of what’s being
+        </p>
+        <p>
+         potato
+        </p>
+        <p>
+         generated
+        </p>
+        <p>
+         rhubarb
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-407">
+       <h2 id="slide-407">
+        Testing and evaluation: choosing a
+       </h2>
+       <div class="slide-number">
+        Slide 407
+       </div>
+       <div class="slide-content">
+        <p>
+         strategy
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-408">
+       <h2 id="slide-408">
+        Bedrock Model Evaluations
+       </h2>
+       <div class="slide-number">
+        Slide 408
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Automatic model evaluations
+         </li>
+         <li>
+          Tons of built-in task types, datasets, and
+         </li>
+        </ul>
+        <p>
+         metrics (seen here)
+        </p>
+        <ul>
+         <li>
+          Text generation, summarization, Q&amp;A,
+         </li>
+        </ul>
+        <p>
+         classification
+        </p>
+        <ul>
+         <li>
+          Human-based
+         </li>
+         <li>
+          Humans compare two models
+         </li>
+         <li>
+          Given your prompt dataset
+         </li>
+         <li>
+          Set up a work team in Cognito,
+         </li>
+        </ul>
+        <p>
+         SageMaker Ground Truth, or Amazon
+        </p>
+        <p>
+         Augmented AI
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-409">
+       <h2 id="slide-409">
+        Bedrock Model Evaluations
+       </h2>
+       <div class="slide-number">
+        Slide 409
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          LLM as a judge
+         </li>
+        </ul>
+        <p>
+         Prompt
+        </p>
+        <ul>
+         <li>
+          Evaluator model and generator model
+         </li>
+        </ul>
+        <p>
+         Dataset
+        </p>
+        <ul>
+         <li>
+          You provide a prompt dataset
+         </li>
+         <li>
+          Many metrics available – we talked
+         </li>
+        </ul>
+        <p>
+         about this before
+        </p>
+        <p>
+         Prompts defining Reference
+        </p>
+        <ul>
+         <li>
+          RAG evaluation jobs Prompts evaluation Responses &amp;
+         </li>
+         <li>
+          Retrieve only – measures retrieval metrics Contexts
+         </li>
+        </ul>
+        <p>
+         from your RAG source
+        </p>
+        <ul>
+         <li>
+          Relevance and coverage
+         </li>
+        </ul>
+        <p>
+         Evaluator
+        </p>
+        <ul>
+         <li>
+          Retrieve and generate – Measures
+         </li>
+        </ul>
+        <p>
+         RAG System ”judge”
+        </p>
+        <p>
+         the response as well
+        </p>
+        <p>
+         Model
+        </p>
+        <ul>
+         <li>
+          Correctness, completeness,
+         </li>
+        </ul>
+        <p>
+         helpfulness, logical coherence, etc.
+        </p>
+        <ul>
+         <li>
+          Provide a prompt dataset in S3 in
+         </li>
+        </ul>
+        <p>
+         JSON line format Contexts,
+        </p>
+        <p>
+         Scores
+        </p>
+        <ul>
+         <li>
+          You can add your own metrics (based Responses
+         </li>
+        </ul>
+        <p>
+         on prompts for the judge model)
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-410">
+       <h2 id="slide-410">
+        Considerations for Deployment
+       </h2>
+       <div class="slide-number">
+        Slide 410
+       </div>
+       <div class="slide-content">
+        <p>
+         Validation
+        </p>
+        <ul>
+         <li>
+          Synthetic user workflows
+         </li>
+         <li>
+          Unit testing often doesn’t cut it, because GenAI is non-
+         </li>
+        </ul>
+        <p>
+         deterministic
+        </p>
+        <ul>
+         <li>
+          Simulate end to end usage of your application
+         </li>
+         <li>
+          Before and after deployments
+         </li>
+         <li>
+          Some useful tools
+         </li>
+         <li>
+          Cloudwatch synthetic monitoring (canaries,) Step
+         </li>
+        </ul>
+        <p>
+         Functions, EventBridge, Lambda
+        </p>
+        <ul>
+         <li>
+          Store results in S3 / Athena, analyze in QuickSight
+         </li>
+         <li>
+          AI-Specific output validation
+         </li>
+         <li>
+          Measure hallucination rate, semantic drift, faithfulness,
+         </li>
+        </ul>
+        <p>
+         compliance, etc.
+        </p>
+        <ul>
+         <li>
+          Bedrock Model Evaluations does this
+         </li>
+         <li>
+          You could roll your own with Lambda + Step Functions
+         </li>
+         <li>
+          Checking response consistency
+         </li>
+         <li>
+          Best you can do is make sure style is consistent, answers
+         </li>
+        </ul>
+        <p>
+         are similar for a test prompt dataset
+        </p>
+        <ul>
+         <li>
+          Test that variability is within an accepted range
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-411">
+       <h2 id="slide-411">
+        Responsible AI: Core Dimensions
+       </h2>
+       <div class="slide-number">
+        Slide 411
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Fairness
+         </li>
+         <li>
+          Explainability
+         </li>
+         <li>
+          Privacy and Security
+         </li>
+         <li>
+          Safety
+         </li>
+         <li>
+          Controllability
+         </li>
+         <li>
+          Veracity and Robustness
+         </li>
+         <li>
+          Governance
+         </li>
+         <li>
+          Transparency
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-412">
+       <h2 id="slide-412">
+        AWS Tools for Responsible AI
+       </h2>
+       <div class="slide-number">
+        Slide 412
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Amazon Bedrock
+         </li>
+         <li>
+          Model evaluation tools
+         </li>
+         <li>
+          SageMaker Clarify
+         </li>
+         <li>
+          Bias detection
+         </li>
+         <li>
+          Model evaluation
+         </li>
+         <li>
+          Explainability
+         </li>
+         <li>
+          SageMaker Model Monitor
+         </li>
+         <li>
+          Get alerts for inaccurate responses
+         </li>
+         <li>
+          Amazon Augmented AI
+         </li>
+         <li>
+          Insert humans in the loop to help correct results
+         </li>
+         <li>
+          SageMaker ML Governance
+         </li>
+         <li>
+          SageMaker Role Manager
+         </li>
+        </ul>
+        <p>
+         Portion of model card creation UI
+        </p>
+        <ul>
+         <li>
+          Model
+         </li>
+         <li>
+          Model Dashboard
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-413">
+       <h2 id="slide-413">
+        CloudWatch Logs
+       </h2>
+       <div class="slide-number">
+        Slide 413
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Log groups: arbitrary name, usually representing an application
+         </li>
+         <li>
+          Log stream: instances within application / log files / containers
+         </li>
+         <li>
+          Can define log expiration policies (never expire, 1 day to 10 years…)
+         </li>
+         <li>
+          CloudWatch Logs can send logs to:
+         </li>
+         <li>
+          Amazon S3 (exports)
+         </li>
+         <li>
+          Kinesis Data Streams
+         </li>
+         <li>
+          Kinesis Data Firehose
+         </li>
+         <li>
+          AWS Lambda
+         </li>
+         <li>
+          OpenSearch
+         </li>
+         <li>
+          Logs are encrypted by default
+         </li>
+         <li>
+          Can setup KMS-based encryption with your own keys
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-414">
+       <h2 id="slide-414">
+        CloudWatch Logs - Sources
+       </h2>
+       <div class="slide-number">
+        Slide 414
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          SDK, CloudWatch Logs Agent, CloudWatch Unified
+         </li>
+        </ul>
+        <p>
+         Agent
+        </p>
+        <ul>
+         <li>
+          Elastic Beanstalk: collection of logs from application
+         </li>
+         <li>
+          ECS: collection from containers
+         </li>
+         <li>
+          AWS Lambda: collection from function logs
+         </li>
+         <li>
+          VPC Flow Logs: VPC specific logs
+         </li>
+         <li>
+          API Gateway
+         </li>
+         <li>
+          CloudTrail based on filter
+         </li>
+         <li>
+          Route53: Log DNS queries
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-415">
+       <h2 id="slide-415">
+        CloudWatch Logs Insights
+       </h2>
+       <div class="slide-number">
+        Slide 415
+       </div>
+       <div class="slide-content">
+        <p>
+         https://mng.workshop.aws/operations-2022/detect/cwlogs.html
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-416">
+       <h2 id="slide-416">
+        CloudWatch Logs Insights
+       </h2>
+       <div class="slide-number">
+        Slide 416
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Search and analyze log data stored in CloudWatch Logs
+         </li>
+         <li>
+          Example: find a specific IP inside a log, count occurrences
+         </li>
+        </ul>
+        <p>
+         of “ERROR” in your logs…
+        </p>
+        <ul>
+         <li>
+          Provides a purpose-built query language
+         </li>
+         <li>
+          Automatically discovers fields from AWS services and JSON log
+         </li>
+        </ul>
+        <p>
+         events
+        </p>
+        <ul>
+         <li>
+          Fetch desired event fields, filter based on conditions, calculate
+         </li>
+        </ul>
+        <p>
+         aggregate statistics, sort events, limit number of events…
+        </p>
+        <ul>
+         <li>
+          Can save queries and add them to CloudWatch Dashboards
+         </li>
+         <li>
+          Can query multiple Log Groups in different AWS accounts
+         </li>
+         <li>
+          It’s a query engine, not a real-time engine
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-417">
+       <h2 id="slide-417">
+        CloudWatch Logs – S3 Export
+       </h2>
+       <div class="slide-number">
+        Slide 417
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Log data can take up to 12
+         </li>
+        </ul>
+        <p>
+         hours to become available for
+        </p>
+        <p>
+         export
+        </p>
+        <ul>
+         <li>
+          The API call is CreateExportTask
+         </li>
+        </ul>
+        <p>
+         CloudWatch Logs Amazon S3
+        </p>
+        <ul>
+         <li>
+          Not near-real time or real-time…
+         </li>
+        </ul>
+        <p>
+         use Logs Subscriptions instead
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-418">
+       <h2 id="slide-418">
+        CloudWatch Logs Subscriptions
+       </h2>
+       <div class="slide-number">
+        Slide 418
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Get a real-time log events from CloudWatch Logs for processing and
+         </li>
+        </ul>
+        <p>
+         analysis
+        </p>
+        <ul>
+         <li>
+          Send to Kinesis Data Streams, Kinesis Data Firehose, or Lambda
+         </li>
+         <li>
+          Subscription Filter – filter which logs are events delivered to your
+         </li>
+        </ul>
+        <p>
+         destination
+        </p>
+        <p>
+         real-time OpenSearch
+        </p>
+        <p>
+         Service
+        </p>
+        <p>
+         Lambda
+        </p>
+        <p>
+         near
+        </p>
+        <p>
+         logs real-time
+        </p>
+        <p>
+         S3
+        </p>
+        <p>
+         CloudWatch Logs Kinesis Data Firehose
+        </p>
+        <p>
+         Subscription Filter
+        </p>
+        <p>
+         …
+        </p>
+        <p>
+         KDF KDA EC2 Lambda
+        </p>
+        <p>
+         Kinesis Data Streams
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-419">
+       <h2 id="slide-419">
+        CloudWatch Alarms
+       </h2>
+       <div class="slide-number">
+        Slide 419
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Alarms are used to trigger notifications for any metric
+         </li>
+         <li>
+          Various options (sampling, %, max, min, etc…)
+         </li>
+         <li>
+          Alarm States:
+         </li>
+         <li>
+          OK
+         </li>
+         <li>
+          INSUFFICIENT_DATA
+         </li>
+         <li>
+          ALARM
+         </li>
+         <li>
+          Period:
+         </li>
+         <li>
+          Length of time in seconds to evaluate the metric
+         </li>
+         <li>
+          High resolution custom metrics: 10 sec, 30 sec or multiples of 60 sec
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-420">
+       <h2 id="slide-420">
+        CloudWatch Alarm Targets
+       </h2>
+       <div class="slide-number">
+        Slide 420
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Stop, Terminate, Reboot, or Recover an EC2 Instance
+         </li>
+         <li>
+          Trigger Auto Scaling Action
+         </li>
+         <li>
+          Send notification to SNS (from which you can do pretty much
+         </li>
+        </ul>
+        <p>
+         anything)
+        </p>
+        <p>
+         Amazon EC2 EC2 Auto Scaling Amazon SNS
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-421">
+       <h2 id="slide-421">
+        CloudWatch Alarms – Composite Alarms
+       </h2>
+       <div class="slide-number">
+        Slide 421
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          CloudWatch Alarms are on a single metric
+         </li>
+         <li>
+          Composite Alarms are monitoring the states of multiple other alarms
+         </li>
+         <li>
+          AND and OR conditions
+         </li>
+         <li>
+          Helpful to reduce “alarm noise” by creating complex composite alarms
+         </li>
+        </ul>
+        <p>
+         Composite Alarm
+        </p>
+        <p>
+         monitor CPU ALARM
+        </p>
+        <p>
+         CW Alarm - A trigger
+        </p>
+        <p>
+         EC2 Instance
+        </p>
+        <p>
+         monitor IOPS ALARM
+        </p>
+        <p>
+         Amazon SNS
+        </p>
+        <p>
+         CW Alarm - B
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-422">
+       <h2 id="slide-422">
+        EC2 Instance Recovery
+       </h2>
+       <div class="slide-number">
+        Slide 422
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Status Check:
+         </li>
+         <li>
+          Instance status = check the EC2 VM
+         </li>
+         <li>
+          System status = check the underlying hardware
+         </li>
+         <li>
+          Attached EBS status = check attached EBS volumes
+         </li>
+        </ul>
+        <p>
+         monitor alert
+        </p>
+        <p>
+         EC2 Instance CloudWatch Alarm SNS Topic
+        </p>
+        <p>
+         StatusCheckFailed_System
+        </p>
+        <p>
+         EC2 Instance Recovery
+        </p>
+        <ul>
+         <li>
+          Recovery: Same Private, Public, Elastic IP, metadata, placement
+         </li>
+        </ul>
+        <p>
+         group
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-423">
+       <h2 id="slide-423">
+        CloudWatch Alarm: good to know
+       </h2>
+       <div class="slide-number">
+        Slide 423
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Alarms can be created based on CloudWatch Logs Metrics Filters
+         </li>
+        </ul>
+        <p>
+         CloudWatch
+        </p>
+        <p>
+         Metric Filter
+        </p>
+        <p>
+         Alert
+        </p>
+        <p>
+         CW Logs
+        </p>
+        <p>
+         CW Alarm
+        </p>
+        <p>
+         Amazon SNS
+        </p>
+        <ul>
+         <li>
+          To test alarms and notifications, set the alarm state to Alarm using
+         </li>
+        </ul>
+        <p>
+         CLI
+        </p>
+        <p>
+         aws cloudwatch set-alarm-state --alarm-name "myalarm" --state-
+        </p>
+        <p>
+         value ALARM --state-reason "testing purposes"
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-424">
+       <h2 id="slide-424">
+        CloudWatch and GenAI
+       </h2>
+       <div class="slide-number">
+        Slide 424
+       </div>
+       <div class="slide-content">
+        <p>
+         Testing prompt regression
+        </p>
+        <p>
+         Prompt inputs and model responses
+        </p>
+        <p>
+         CloudWatch logs
+        </p>
+        <p>
+         Foundational to monitoring and
+        </p>
+        <p>
+         troubleshooting
+        </p>
+        <p>
+         Prompt effectiveness / response quality
+        </p>
+        <p>
+         Monitor KPI’s
+        </p>
+        <p>
+         Latency
+        </p>
+        <p>
+         Error rates
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-425">
+       <h2 id="slide-425">
+        Other things to monitor
+       </h2>
+       <div class="slide-number">
+        Slide 425
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Foundation model interaction
+         </li>
+        </ul>
+        <p>
+         tracing
+        </p>
+        <ul>
+         <li>
+          Business impact metrics
+         </li>
+         <li>
+          Prompt effectiveness
+         </li>
+         <li>
+          Hallucination rates
+         </li>
+         <li>
+          Anomaly detection
+         </li>
+         <li>
+          Token burst patterns
+         </li>
+         <li>
+          Response drift
+         </li>
+         <li>
+          Bedrock model invocation logs
+         </li>
+         <li>
+          Cost anomaly detection
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-426">
+       <h2 id="slide-426">
+        CloudWatch Real User
+       </h2>
+       <div class="slide-number">
+        Slide 426
+       </div>
+       <div class="slide-content">
+        <p>
+         Monitoring (RUM)
+        </p>
+        <ul>
+         <li>
+          Mostly for testing mobile apps (iOS
+         </li>
+        </ul>
+        <p>
+         or Android)
+        </p>
+        <ul>
+         <li>
+          Measures page load times,
+         </li>
+        </ul>
+        <p>
+         errors, app launch times, etc.
+        </p>
+        <ul>
+         <li>
+          From a real user session
+         </li>
+         <li>
+          Integrates with Application Signals
+         </li>
+         <li>
+          View results in X-Ray traces
+         </li>
+         <li>
+          Relevant for measuring end to end
+         </li>
+        </ul>
+        <p>
+         performance of your mobile GenAI
+        </p>
+        <p>
+         apps
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-427">
+       <h2 id="slide-427">
+        AWS CloudTrail
+       </h2>
+       <div class="slide-number">
+        Slide 427
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Provides governance, compliance and audit for your AWS
+         </li>
+        </ul>
+        <p>
+         Account
+        </p>
+        <ul>
+         <li>
+          CloudTrail is enabled by default!
+         </li>
+         <li>
+          Get an history of events / API calls made within your AWS
+         </li>
+        </ul>
+        <p>
+         Account by:
+        </p>
+        <ul>
+         <li>
+          Console
+         </li>
+         <li>
+          SDK
+         </li>
+         <li>
+          CLI
+         </li>
+         <li>
+          AWS Services
+         </li>
+         <li>
+          Can put logs from CloudTrail into CloudWatch Logs or S3
+         </li>
+         <li>
+          A trail can be applied to All Regions (default) or a single Region.
+         </li>
+         <li>
+          If a resource is deleted in AWS, investigate CloudTrail first!
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-428">
+       <h2 id="slide-428">
+        CloudTrail Diagram
+       </h2>
+       <div class="slide-number">
+        Slide 428
+       </div>
+       <div class="slide-content">
+        <p>
+         SDK
+        </p>
+        <p>
+         CloudWatch Logs
+        </p>
+        <p>
+         CloudTrail Console
+        </p>
+        <p>
+         CLI
+        </p>
+        <p>
+         Console
+        </p>
+        <p>
+         Inspect &amp; Audit
+        </p>
+        <p>
+         S3 Bucket
+        </p>
+        <p>
+         IAM Users &amp;
+        </p>
+        <p>
+         IAM Roles
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-429">
+       <h2 id="slide-429">
+        CloudTrail Events
+       </h2>
+       <div class="slide-number">
+        Slide 429
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Management Events:
+         </li>
+         <li>
+          Operations that are performed on resources in your AWS account
+         </li>
+         <li>
+          Examples:
+         </li>
+         <li>
+          Configuring security (IAM AttachRolePolicy)
+         </li>
+         <li>
+          Configuring rules for routing data (Amazon EC2 CreateSubnet)
+         </li>
+         <li>
+          Setting up logging (AWS CloudTrail CreateTrail)
+         </li>
+         <li>
+          By default, trails are configured to log management events.
+         </li>
+         <li>
+          Can separate Read Events (that don’t modify resources) from Write Events (that may modify
+         </li>
+        </ul>
+        <p>
+         resources)
+        </p>
+        <ul>
+         <li>
+          Data Events:
+         </li>
+         <li>
+          By default, data events are not logged (because high volume operations)
+         </li>
+         <li>
+          Amazon S3 object-level activity (ex: GetObject, DeleteObject, PutObject): can separate Read and Write Events
+         </li>
+         <li>
+          AWS Lambda function execution activity (the Invoke API)
+         </li>
+         <li>
+          CloudTrail Insights Events:
+         </li>
+         <li>
+          See next slide ☺
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-430">
+       <h2 id="slide-430">
+        CloudTrail Insights
+       </h2>
+       <div class="slide-number">
+        Slide 430
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Enable CloudTrail Insights to detect unusual activity in your account:
+         </li>
+         <li>
+          inaccurate resource provisioning
+         </li>
+         <li>
+          hitting service limits
+         </li>
+         <li>
+          Bursts of AWS IAM actions
+         </li>
+         <li>
+          Gaps in periodic maintenance activity
+         </li>
+         <li>
+          CloudTrail Insights analyzes normal management events to create a baseline
+         </li>
+         <li>
+          And then continuously analyzes write events to detect unusual patterns
+         </li>
+         <li>
+          Anomalies appear in the CloudTrail console
+         </li>
+         <li>
+          Event is sent to Amazon S3
+         </li>
+         <li>
+          An EventBridge event is generated (for automation needs)
+         </li>
+        </ul>
+        <p>
+         CloudTrail Console
+        </p>
+        <p>
+         Continous analysis generate
+        </p>
+        <p>
+         Management Events
+        </p>
+        <p>
+         Insights Events
+        </p>
+        <p>
+         S3 Bucket
+        </p>
+        <p>
+         CloudTrail Insights
+        </p>
+        <p>
+         EventBridge event
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-431">
+       <h2 id="slide-431">
+        CloudTrail Events Retention
+       </h2>
+       <div class="slide-number">
+        Slide 431
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Events are stored for 90 days in CloudTrail
+         </li>
+         <li>
+          To keep events beyond this period, log them to S3 and use Athena
+         </li>
+        </ul>
+        <p>
+         CloudTrail
+        </p>
+        <p>
+         Management Events
+        </p>
+        <p>
+         Athena
+        </p>
+        <p>
+         log analyze
+        </p>
+        <p>
+         Data Events
+        </p>
+        <p>
+         S3 Bucket
+        </p>
+        <p>
+         90 days
+        </p>
+        <p>
+         Insights Events
+        </p>
+        <p>
+         Long-term retention
+        </p>
+        <p>
+         retention
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-432">
+       <h2 id="slide-432">
+        CloudTrail and GenAI
+       </h2>
+       <div class="slide-number">
+        Slide 432
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          CloudTrail can track all API calls to Amazon
+         </li>
+        </ul>
+        <p>
+         Bedrock
+        </p>
+        <ul>
+         <li>
+          Audit trails of which prompt resources were used
+         </li>
+         <li>
+          When and by who
+         </li>
+         <li>
+          This is often a compliance requirement
+         </li>
+         <li>
+          Yes, this stuff gets logged
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-433">
+       <h2 id="slide-433">
+        AWS X-Ray
+       </h2>
+       <div class="slide-number">
+        Slide 433
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Debugging in Production, the good old way:
+         </li>
+         <li>
+          Test locally
+         </li>
+         <li>
+          Add log statements everywhere
+         </li>
+         <li>
+          Re-deploy in production
+         </li>
+         <li>
+          Log formats differ across applications using CloudWatch and
+         </li>
+        </ul>
+        <p>
+         analytics is hard.
+        </p>
+        <ul>
+         <li>
+          Debugging: monolith “easy”, distributed services “hard”
+         </li>
+         <li>
+          No common views of your entire architecture!
+         </li>
+         <li>
+          Enter… AWS X-Ray!
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-434">
+       <h2 id="slide-434">
+        AWS X-Ray
+       </h2>
+       <div class="slide-number">
+        Slide 434
+       </div>
+       <div class="slide-content">
+        <p>
+         Visual analysis of our applications
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-435">
+       <h2 id="slide-435">
+        AWS X-Ray advantages
+       </h2>
+       <div class="slide-number">
+        Slide 435
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Troubleshooting performance (bottlenecks)
+         </li>
+         <li>
+          Understand dependencies in a microservice architecture
+         </li>
+         <li>
+          Pinpoint service issues
+         </li>
+         <li>
+          Review request behavior
+         </li>
+         <li>
+          Find errors and exceptions
+         </li>
+         <li>
+          Are we meeting time SLA?
+         </li>
+         <li>
+          Where I am throttled?
+         </li>
+         <li>
+          Identify users that are impacted
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-436">
+       <h2 id="slide-436">
+        X-Ray compatibility
+       </h2>
+       <div class="slide-number">
+        Slide 436
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          AWS Lambda
+         </li>
+         <li>
+          Elastic Beanstalk
+         </li>
+         <li>
+          ECS
+         </li>
+         <li>
+          ELB
+         </li>
+         <li>
+          API Gateway
+         </li>
+         <li>
+          EC2 Instances or any application server (even on premise)
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-437">
+       <h2 id="slide-437">
+        AWS X-Ray Leverages Tracing
+       </h2>
+       <div class="slide-number">
+        Slide 437
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Tracing is an end to end way to following a “request”
+         </li>
+         <li>
+          Each component dealing with the request adds its own “trace”
+         </li>
+         <li>
+          Tracing is made of segments (+ sub segments)
+         </li>
+         <li>
+          Annotations can be added to traces to provide extra-information
+         </li>
+         <li>
+          Ability to trace:
+         </li>
+         <li>
+          Every request
+         </li>
+         <li>
+          Sample request (as a % for example or a rate per minute)
+         </li>
+         <li>
+          X-Ray Security:
+         </li>
+         <li>
+          IAM for authorization
+         </li>
+         <li>
+          KMS for encryption at rest
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-438">
+       <h2 id="slide-438">
+        AWS X-Ray
+       </h2>
+       <div class="slide-number">
+        Slide 438
+       </div>
+       <div class="slide-content">
+        <p>
+         EC2 Instance
+        </p>
+        <p>
+         How to enable it?
+        </p>
+        <p>
+         I) Your code (Java, Python, Go, Node.js, .NET) must import the Application Code
+        </p>
+        <p>
+         AWS X-Ray SDK
+        </p>
+        <p>
+         + AWS X-Ray SDK
+        </p>
+        <ul>
+         <li>
+          Very little code modification needed
+         </li>
+         <li>
+          The application SDK will then capture:
+         </li>
+         <li>
+          Calls to AWS services Send traces
+         </li>
+         <li>
+          HTTP / HTTPS requests
+         </li>
+         <li>
+          Database Calls (MySQL, PostgreSQL, DynamoDB)
+         </li>
+         <li>
+          Queue calls (SQS) X-Ray Daemon
+         </li>
+        </ul>
+        <p>
+         Running on
+        </p>
+        <p>
+         2) Install the X-Ray daemon or enable X-Ray AWS Integration
+        </p>
+        <p>
+         machine
+        </p>
+        <ul>
+         <li>
+          X-Ray daemon works as a low level UDP packet interceptor
+         </li>
+        </ul>
+        <p>
+         (Linux / Windows / Mac…)
+        </p>
+        <p>
+         Send batch
+        </p>
+        <ul>
+         <li>
+          AWS Lambda / other AWS services already run the X-Ray
+         </li>
+        </ul>
+        <p>
+         every 1 second
+        </p>
+        <p>
+         daemon for you
+        </p>
+        <p>
+         to AWS X-Ray
+        </p>
+        <ul>
+         <li>
+          Each application must have the IAM rights to write data to X-Ray
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-439">
+       <h2 id="slide-439">
+        The X-Ray magic
+       </h2>
+       <div class="slide-number">
+        Slide 439
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          X-Ray service collects data from all the different services
+         </li>
+         <li>
+          Service map is computed from all the segments and traces
+         </li>
+         <li>
+          X-Ray is graphical, so even non technical people can help
+         </li>
+        </ul>
+        <p>
+         troubleshoot
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-440">
+       <h2 id="slide-440">
+        AWS X-Ray Troubleshooting
+       </h2>
+       <div class="slide-number">
+        Slide 440
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          If X-Ray is not working on EC2
+         </li>
+         <li>
+          Ensure the EC2 IAM Role has the proper permissions
+         </li>
+         <li>
+          Ensure the EC2 instance is running the X-Ray Daemon
+         </li>
+         <li>
+          To enable on AWS Lambda:
+         </li>
+         <li>
+          Ensure it has an IAM execution role with proper policy
+         </li>
+        </ul>
+        <p>
+         (AWSX-RayWriteOnlyAccess)
+        </p>
+        <ul>
+         <li>
+          Ensure that X-Ray is imported in the code
+         </li>
+         <li>
+          Enable Lambda X-Ray Active Tracing
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-441">
+       <h2 id="slide-441">
+        AWS Lake Formation
+       </h2>
+       <div class="slide-number">
+        Slide 441
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          “Makes it easy to set up a secure data lake
+         </li>
+        </ul>
+        <p>
+         in days”
+        </p>
+        <ul>
+         <li>
+          Loading data &amp; monitoring data flows
+         </li>
+         <li>
+          Setting up partitions
+         </li>
+         <li>
+          Encryption &amp; managing keys
+         </li>
+         <li>
+          Defining transformation jobs &amp; monitoring
+         </li>
+        </ul>
+        <p>
+         them
+        </p>
+        <ul>
+         <li>
+          Access control
+         </li>
+         <li>
+          Auditing
+         </li>
+         <li>
+          Built on top of Glue
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-442">
+       <h2 id="slide-442">
+        AWS Lake Formation
+       </h2>
+       <div class="slide-number">
+        Slide 442
+       </div>
+       <div class="slide-content">
+        <p>
+         S3 RDBMS NoSQL On-premises or AWS
+        </p>
+        <p>
+         Lake Formation
+        </p>
+        <p>
+         Crawlers, ETL, data catalog,
+        </p>
+        <p>
+         security, ACL, cleaning,
+        </p>
+        <p>
+         transformations (including Parquet S3 Data Lake
+        </p>
+        <p>
+         &amp; ORC) – basically anything Glue
+        </p>
+        <p>
+         can do
+        </p>
+        <p>
+         Athena Redshift EMR
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-443">
+       <h2 id="slide-443">
+        AWS Lake Formation: Pricing
+       </h2>
+       <div class="slide-number">
+        Slide 443
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          No cost for Lake Formation itself
+         </li>
+         <li>
+          But underlying services incur
+         </li>
+        </ul>
+        <p>
+         charges
+        </p>
+        <ul>
+         <li>
+          Glue
+         </li>
+         <li>
+          S3
+         </li>
+         <li>
+          EMR
+         </li>
+         <li>
+          Athena
+         </li>
+         <li>
+          Redshift
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-444">
+       <h2 id="slide-444">
+        Create AWS Glue
+       </h2>
+       <div class="slide-number">
+        Slide 444
+       </div>
+       <div class="slide-content">
+        <p>
+         Create an IAM user for Create S3 bucket for the
+        </p>
+        <p>
+         connection to your data
+        </p>
+        <p>
+         Data Analyst lake
+        </p>
+        <p>
+         source(s)
+        </p>
+        <p>
+         AWS Lake
+        </p>
+        <p>
+         Formation:
+        </p>
+        <p>
+         Create database in Lake
+        </p>
+        <p>
+         Register the S3 path in Use a blueprint for a
+        </p>
+        <p>
+         Formation for data
+        </p>
+        <p>
+         Lake Formation, grant workflow (ie, Database
+        </p>
+        <p>
+         catalog, grant
+        </p>
+        <p>
+         Building a
+        </p>
+        <p>
+         permissions snapshot)
+        </p>
+        <p>
+         permissions
+        </p>
+        <p>
+         Data Lake
+        </p>
+        <p>
+         Grant SELECT
+        </p>
+        <p>
+         permissions to whoever
+        </p>
+        <p>
+         Run the workflow
+        </p>
+        <p>
+         needs to read it (Athena,
+        </p>
+        <p>
+         Redshift Spectrum, etc)
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-445">
+       <h2 id="slide-445">
+        administrator
+       </h2>
+       <div class="slide-number">
+        Slide 445
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Cross-account Lake Formation permission
+         </li>
+         <li>
+          Recipient must be set up as a data lake
+         </li>
+        </ul>
+        <p>
+         AWS Lake • Can use AWS Resource Access Manager
+        </p>
+        <p>
+         for accounts external to your organization
+        </p>
+        <ul>
+         <li>
+          IAM permissions for cross-account access
+         </li>
+        </ul>
+        <p>
+         Formation:
+        </p>
+        <ul>
+         <li>
+          Lake Formation does not support manifests in
+         </li>
+        </ul>
+        <p>
+         Athena or Redshift queries
+        </p>
+        <p>
+         The Finer
+        </p>
+        <ul>
+         <li>
+          IAM permissions on the KMS encryption key
+         </li>
+        </ul>
+        <p>
+         are needed for encrypted data catalogs in
+        </p>
+        <p>
+         Points
+        </p>
+        <p>
+         Lake Formation
+        </p>
+        <ul>
+         <li>
+          IAM permissions needed to create blueprints
+         </li>
+        </ul>
+        <p>
+         and workflows
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-446">
+       <h2 id="slide-446">
+        ACID transactions across multiple tables
+       </h2>
+       <div class="slide-number">
+        Slide 446
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Now supports “Governed Tables” that support
+         </li>
+        </ul>
+        <p>
+         AWS Lake
+        </p>
+        <ul>
+         <li>
+          New type of S3 table
+         </li>
+         <li>
+          Can’t change choice of governed afterwards
+         </li>
+        </ul>
+        <p>
+         Formation: • Works with streaming data too (Kinesis)
+        </p>
+        <ul>
+         <li>
+          Can query with Athena
+         </li>
+         <li>
+          Storage Optimization with Automatic
+         </li>
+        </ul>
+        <p>
+         Governed
+        </p>
+        <p>
+         Compaction
+        </p>
+        <ul>
+         <li>
+          Granular Access Control with Row and Cell-
+         </li>
+        </ul>
+        <p>
+         Tables and
+        </p>
+        <p>
+         Level Security
+        </p>
+        <ul>
+         <li>
+          Both for governed and S3 tables
+         </li>
+        </ul>
+        <p>
+         Security
+        </p>
+        <ul>
+         <li>
+          Above features incur additional charges based
+         </li>
+        </ul>
+        <p>
+         on usage
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-447">
+       <h2 id="slide-447">
+        Data Permissions
+       </h2>
+       <div class="slide-number">
+        Slide 447
+       </div>
+       <div class="slide-content">
+        <p>
+         in Lake Formation
+        </p>
+        <ul>
+         <li>
+          Can tie to IAM users/roles,
+         </li>
+        </ul>
+        <p>
+         SAML, or external AWS accounts
+        </p>
+        <ul>
+         <li>
+          Can use policy tags on
+         </li>
+        </ul>
+        <p>
+         databases, tables, or columns
+        </p>
+        <ul>
+         <li>
+          Can select specific permissions
+         </li>
+        </ul>
+        <p>
+         for tables or columns
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-448">
+       <h2 id="slide-448">
+        Data Filters in Lake Formation
+       </h2>
+       <div class="slide-number">
+        Slide 448
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Column, row, or cell-level security
+         </li>
+         <li>
+          Apply when granting SELECT
+         </li>
+        </ul>
+        <p>
+         permission on tables
+        </p>
+        <ul>
+         <li>
+          “All columns” + row filter = row-
+         </li>
+        </ul>
+        <p>
+         level security
+        </p>
+        <ul>
+         <li>
+          “All rows” + specific columns =
+         </li>
+        </ul>
+        <p>
+         column-level security
+        </p>
+        <ul>
+         <li>
+          Specific columns + specific rows =
+         </li>
+        </ul>
+        <p>
+         cell-level security
+        </p>
+        <ul>
+         <li>
+          Create filters via the console (seen
+         </li>
+        </ul>
+        <p>
+         here) or via
+        </p>
+        <p>
+         CreateDataCellsFilter API.
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-449">
+       <h2 id="slide-449">
+        Security, Identity, and
+       </h2>
+       <div class="slide-number">
+        Slide 449
+       </div>
+       <div class="slide-content">
+        <p>
+         Compliance
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-450">
+       <h2 id="slide-450">
+        Principle of Least Privilege
+       </h2>
+       <div class="slide-number">
+        Slide 450
+       </div>
+       <div class="slide-content">
+        <p>
+         {
+        </p>
+        <ul>
+         <li>
+          Grant only the permissions
+         </li>
+        </ul>
+        <p>
+         "Version": "2012-10-17",
+        </p>
+        <p>
+         "Statement": [
+        </p>
+        <p>
+         required to perform a task
+        </p>
+        <p>
+         {
+        </p>
+        <p>
+         "Sid": "AllowListBucket",
+        </p>
+        <ul>
+         <li>
+          Start with broad permissions while "Effect": "Allow",
+         </li>
+        </ul>
+        <p>
+         "Action": "s3:ListBucket",
+        </p>
+        <p>
+         developing
+        </p>
+        <p>
+         "Resource": "arn:aws:s3:::my-specific-bucket",
+        </p>
+        <p>
+         "Condition": {
+        </p>
+        <ul>
+         <li>
+          But lock it down once you have a "StringLike": {
+         </li>
+        </ul>
+        <p>
+         "s3:prefix": "data/reports/*"
+        </p>
+        <p>
+         better idea of the exact services
+        </p>
+        <p>
+         }
+        </p>
+        <p>
+         }
+        </p>
+        <p>
+         and operations a workload
+        </p>
+        <p>
+         },
+        </p>
+        <p>
+         {
+        </p>
+        <p>
+         requires
+        </p>
+        <p>
+         "Sid": "AllowReadCSVFiles",
+        </p>
+        <p>
+         "Effect": "Allow",
+        </p>
+        <ul>
+         <li>
+          Can use IAM Access Analyzer to
+         </li>
+        </ul>
+        <p>
+         "Action": [
+        </p>
+        <p>
+         "s3:GetObject",
+        </p>
+        <p>
+         generate least-privilege policies
+        </p>
+        <p>
+         "s3:GetObjectVersion"
+        </p>
+        <p>
+         based on access activity ],
+        </p>
+        <p>
+         "Resource": "arn:aws:s3:::my-specific-bucket/data/reports/*.csv"
+        </p>
+        <p>
+         }
+        </p>
+        <p>
+         ]
+        </p>
+        <p>
+         }
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="section-nav">
+      <a class="btn-back" href="index.html">
+       ← Back to Overview
+      </a>
+     </div>
+    </main>
+    <aside class="toc-sidebar">
+     <div class="toc-title">
+      On this page
+     </div>
+     <ul class="toc-list" id="toc-list">
+      <li>
+       <a href="#slide-397">
+        Governance and QA
+       </a>
+      </li>
+      <li>
+       <a href="#slide-398">
+        Bedrock Agent Tracing
+       </a>
+      </li>
+      <li>
+       <a href="#slide-399">
+        Foundation model
+       </a>
+      </li>
+      <li>
+       <a href="#slide-400">
+        Human
+       </a>
+      </li>
+      <li>
+       <a href="#slide-401">
+        Evaluation against Benchmark Datasets
+       </a>
+      </li>
+      <li>
+       <a href="#slide-402">
+        Using another model as a “judge”
+       </a>
+      </li>
+      <li>
+       <a href="#slide-403">
+        Hybrid
+       </a>
+      </li>
+      <li>
+       <a href="#slide-404">
+        ROUGE
+       </a>
+      </li>
+      <li>
+       <a href="#slide-405">
+        BLEU
+       </a>
+      </li>
+      <li>
+       <a href="#slide-406">
+        BERTscore
+       </a>
+      </li>
+      <li>
+       <a href="#slide-407">
+        Testing and evaluation: choosing a
+       </a>
+      </li>
+      <li>
+       <a href="#slide-408">
+        Bedrock Model Evaluations
+       </a>
+      </li>
+      <li>
+       <a href="#slide-409">
+        Bedrock Model Evaluations
+       </a>
+      </li>
+      <li>
+       <a href="#slide-410">
+        Considerations for Deployment
+       </a>
+      </li>
+      <li>
+       <a href="#slide-411">
+        Responsible AI: Core Dimensions
+       </a>
+      </li>
+      <li>
+       <a href="#slide-412">
+        AWS Tools for Responsible AI
+       </a>
+      </li>
+      <li>
+       <a href="#slide-413">
+        CloudWatch Logs
+       </a>
+      </li>
+      <li>
+       <a href="#slide-414">
+        CloudWatch Logs - Sources
+       </a>
+      </li>
+      <li>
+       <a href="#slide-415">
+        CloudWatch Logs Insights
+       </a>
+      </li>
+      <li>
+       <a href="#slide-416">
+        CloudWatch Logs Insights
+       </a>
+      </li>
+      <li>
+       <a href="#slide-417">
+        CloudWatch Logs – S3 Export
+       </a>
+      </li>
+      <li>
+       <a href="#slide-418">
+        CloudWatch Logs Subscriptions
+       </a>
+      </li>
+      <li>
+       <a href="#slide-419">
+        CloudWatch Alarms
+       </a>
+      </li>
+      <li>
+       <a href="#slide-420">
+        CloudWatch Alarm Targets
+       </a>
+      </li>
+      <li>
+       <a href="#slide-421">
+        CloudWatch Alarms – Composite Alarms
+       </a>
+      </li>
+      <li>
+       <a href="#slide-422">
+        EC2 Instance Recovery
+       </a>
+      </li>
+      <li>
+       <a href="#slide-423">
+        CloudWatch Alarm: good to know
+       </a>
+      </li>
+      <li>
+       <a href="#slide-424">
+        CloudWatch and GenAI
+       </a>
+      </li>
+      <li>
+       <a href="#slide-425">
+        Other things to monitor
+       </a>
+      </li>
+      <li>
+       <a href="#slide-426">
+        CloudWatch Real User
+       </a>
+      </li>
+      <li>
+       <a href="#slide-427">
+        AWS CloudTrail
+       </a>
+      </li>
+      <li>
+       <a href="#slide-428">
+        CloudTrail Diagram
+       </a>
+      </li>
+      <li>
+       <a href="#slide-429">
+        CloudTrail Events
+       </a>
+      </li>
+      <li>
+       <a href="#slide-430">
+        CloudTrail Insights
+       </a>
+      </li>
+      <li>
+       <a href="#slide-431">
+        CloudTrail Events Retention
+       </a>
+      </li>
+      <li>
+       <a href="#slide-432">
+        CloudTrail and GenAI
+       </a>
+      </li>
+      <li>
+       <a href="#slide-433">
+        AWS X-Ray
+       </a>
+      </li>
+      <li>
+       <a href="#slide-434">
+        AWS X-Ray
+       </a>
+      </li>
+      <li>
+       <a href="#slide-435">
+        AWS X-Ray advantages
+       </a>
+      </li>
+      <li>
+       <a href="#slide-436">
+        X-Ray compatibility
+       </a>
+      </li>
+      <li>
+       <a href="#slide-437">
+        AWS X-Ray Leverages Tracing
+       </a>
+      </li>
+      <li>
+       <a href="#slide-438">
+        AWS X-Ray
+       </a>
+      </li>
+      <li>
+       <a href="#slide-439">
+        The X-Ray magic
+       </a>
+      </li>
+      <li>
+       <a href="#slide-440">
+        AWS X-Ray Troubleshooting
+       </a>
+      </li>
+      <li>
+       <a href="#slide-441">
+        AWS Lake Formation
+       </a>
+      </li>
+      <li>
+       <a href="#slide-442">
+        AWS Lake Formation
+       </a>
+      </li>
+      <li>
+       <a href="#slide-443">
+        AWS Lake Formation: Pricing
+       </a>
+      </li>
+      <li>
+       <a href="#slide-444">
+        Create AWS Glue
+       </a>
+      </li>
+      <li>
+       <a href="#slide-445">
+        administrator
+       </a>
+      </li>
+      <li>
+       <a href="#slide-446">
+        ACID transactions across multiple tables
+       </a>
+      </li>
+      <li>
+       <a href="#slide-447">
+        Data Permissions
+       </a>
+      </li>
+      <li>
+       <a href="#slide-448">
+        Data Filters in Lake Formation
+       </a>
+      </li>
+      <li>
+       <a href="#slide-449">
+        Security, Identity, and
+       </a>
+      </li>
+      <li>
+       <a href="#slide-450">
+        Principle of Least Privilege
+       </a>
+      </li>
+     </ul>
+    </aside>
+   </div>
+  </div>
   <script>
-    function toggleSidebar() {
-      document.getElementById('sidebar').classList.toggle('open');
-      document.getElementById('overlay').classList.toggle('show');
-    }
+   function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('open');
+        }
   </script>
-</body>
+ </body>
 </html>

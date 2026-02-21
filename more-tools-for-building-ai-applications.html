@@ -1,1035 +1,2950 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>More Tools for Building AI Applications – AWS GenAI Developer Pro (AIP-C01)</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-  <nav class="sidebar" id="sidebar">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   More Tools for Building AI Applications – AWS GenAI Developer Pro (AIP-C01)
+  </title>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="mobile-header">
+   <button class="menu-toggle" onclick="toggleSidebar()">
+    ☰
+   </button>
+   <span class="logo">
+    ☁️ AIP-C01
+   </span>
+  </div>
+  <div class="app-container">
+   <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <span class="logo">☁️ AIP-C01</span>
-      <button class="close-btn" onclick="toggleSidebar()">✕</button>
+     <span class="logo">
+      ☁️ AIP-C01
+     </span>
+     <button class="close-btn" onclick="toggleSidebar()">
+      ✕
+     </button>
     </div>
     <ul class="nav-list">
-      <li><a href="index.html">🏠 Home</a></li>
-      <li class="divider">Course Sections</li>
-      <li class=""><a href="generative-ai-fundamentals-and-bedrock.html">Generative AI Fundamentals and Bedrock</a></li>
-<li class=""><a href="managing-data-for-generative-ai.html">Managing Data for Generative AI</a></li>
-<li class=""><a href="agentic-ai.html">Agentic AI</a></li>
-<li class=""><a href="operations-efficiency-and-optimization.html">Operations Efficiency and Optimization</a></li>
-<li class=""><a href="managing-models-with-sagemaker-ai.html">Managing Models with SageMaker AI</a></li>
-<li class="active"><a href="more-tools-for-building-ai-applications.html">More Tools for Building AI Applications</a></li>
-<li class=""><a href="governance-and-qa.html">Governance and QA</a></li>
-<li class=""><a href="security-identity-and-compliance.html">Security, Identity, and Compliance</a></li>
-<li class=""><a href="other-services-analytics.html">Other Services - Analytics</a></li>
-<li class=""><a href="other-services-compute-containers.html">Other Services - Compute & Containers</a></li>
-<li class=""><a href="other-services-database.html">Other Services - Database</a></li>
-<li class=""><a href="other-services-developer-tools.html">Other Services - Developer Tools</a></li>
-<li class=""><a href="other-services-machine-learning.html">Other Services - Machine Learning</a></li>
-<li class=""><a href="other-services-storage-networking.html">Other Services - Storage & Networking</a></li>
-<li class=""><a href="exam-preparation.html">Exam Preparation</a></li>
-
+     <li>
+      <a href="index.html">
+       🏠 Home
+      </a>
+     </li>
+     <li class="divider">
+      Course Sections
+     </li>
+     <li class="">
+      <a href="generative-ai-fundamentals-and-bedrock.html">
+       Generative AI Fundamentals and Bedrock
+      </a>
+     </li>
+     <li class="">
+      <a href="managing-data-for-generative-ai.html">
+       Managing Data for Generative AI
+      </a>
+     </li>
+     <li class="">
+      <a href="agentic-ai.html">
+       Agentic AI
+      </a>
+     </li>
+     <li class="">
+      <a href="operations-efficiency-and-optimization.html">
+       Operations Efficiency and Optimization
+      </a>
+     </li>
+     <li class="">
+      <a href="managing-models-with-sagemaker-ai.html">
+       Managing Models with SageMaker AI
+      </a>
+     </li>
+     <li class="active">
+      <a href="more-tools-for-building-ai-applications.html">
+       More Tools for Building AI Applications
+      </a>
+     </li>
+     <li class="">
+      <a href="governance-and-qa.html">
+       Governance and QA
+      </a>
+     </li>
+     <li class="">
+      <a href="security-identity-and-compliance.html">
+       Security, Identity, and Compliance
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-analytics.html">
+       Other Services - Analytics
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-compute-containers.html">
+       Other Services - Compute &amp; Containers
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-database.html">
+       Other Services - Database
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-developer-tools.html">
+       Other Services - Developer Tools
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-machine-learning.html">
+       Other Services - Machine Learning
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-storage-networking.html">
+       Other Services - Storage &amp; Networking
+      </a>
+     </li>
+     <li class="">
+      <a href="exam-preparation.html">
+       Exam Preparation
+      </a>
+     </li>
     </ul>
-  </nav>
-  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
-
-  <main class="main-content">
-    <header class="top-bar">
-      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
-      <div class="breadcrumb">
-        <a href="index.html">AWS GenAI Pro</a> › <span>More Tools for Building AI Applications</span>
+   </nav>
+   <div class="main-wrapper">
+    <main class="main-content">
+     <div class="section-hero">
+      <h1>
+       More Tools for Building AI Applications
+      </h1>
+      <p class="section-subtitle">
+       AWS Certified Generative AI Developer – Professional (AIP-C01)
+      </p>
+     </div>
+     <div class="doc-container">
+      <div class="doc-section" id="slide-346">
+       <h2 id="slide-346">
+        Step Functions – Examples
+       </h2>
+       <div class="slide-number">
+        Slide 346
+       </div>
+       <div class="slide-content">
+        <p>
+         Train a Machine Learning Model
+        </p>
+       </div>
       </div>
-      <div class="page-meta">51 slides · Pages 346–396</div>
-    </header>
-
-    <div class="section-hero">
-      <h1>More Tools for Building AI Applications</h1>
-      <p class="section-subtitle">AWS Certified Generative AI Developer – Professional (AIP-C01)</p>
-      <div class="section-stats">
-        <span>📄 51 slides</span>
-        <span>📑 Pages 346–396</span>
+      <div class="doc-section" id="slide-347">
+       <h2 id="slide-347">
+        Step Functions – Examples
+       </h2>
+       <div class="slide-number">
+        Slide 347
+       </div>
+       <div class="slide-content">
+        <p>
+         Tune a Machine Learning Model
+        </p>
+       </div>
       </div>
-    </div>
-
-    <div class="slides-container">
-      
-        <div class="slide" id="slide-346">
-          <div class="slide-number">Slide 346</div>
-          <div class="slide-content"><p>Step Functions – Examples</p>
-<p>Train a Machine Learning Model</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-347">
-          <div class="slide-number">Slide 347</div>
-          <div class="slide-content"><p>Step Functions – Examples</p>
-<p>Tune a Machine Learning Model</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-348">
-          <div class="slide-number">Slide 348</div>
-          <div class="slide-content"><p>Step Functions – Examples</p>
-<p>Manage a Batch Job</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-349">
-          <div class="slide-number">Slide 349</div>
-          <div class="slide-content"><p>AWS Step Functions</p>
-<ul><li>Your workflow is called a state machine</li>
-<li>Each step in a workflow is a state</li>
-<li>Types of states</li>
-<li>Task: Does something with Lambda, other</li>
-</ul><p>AWS services, or third party API’s</p>
-<ul><li>Choice: Adds conditional logic via Choice</li>
-</ul><p>Rules (ie, comparisons)</p>
-<ul><li>Wait: Delays state machine for a specified</li>
-</ul><p>map</p>
-<p>time</p>
-<ul><li>Parallel: Add separate branches of</li>
-</ul><p>execution</p>
-<ul><li>Map: Run a set of steps for each item in a</li>
-</ul><p>dataset, in parallel</p>
-<ul><li>This is most relevant to data engineering!</li>
-</ul><p>Works with JSON, S3 objects, CSV files</p>
-<ul><li>Also Pass, Succeed, Fail</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-350">
-          <div class="slide-number">Slide 350</div>
-          <div class="slide-content"><p>Step Functions: Circuit Breakers</p>
-<ul><li>Circuit Breaker is a pattern</li>
-<li>Prevents calling a service that is</li>
-</ul><p>timing out and failing</p>
-<ul><li>Detects when it’s functional again</li>
-<li>Can be implemented with Step</li>
-</ul><p>Functions, Lambda, and DynamoDB</p>
-<ul><li>This can be used to safeguard</li>
-</ul><p>your AI workflows</p>
-<ul><li>Route requests to fallback models if</li>
-</ul><p>your model is down</p>
-<ul><li>Or enter a degraded service mode</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-351">
-          <div class="slide-number">Slide 351</div>
-          <div class="slide-content"><p>More Step Functions + GenAI</p>
-<ul><li>ReAct patterns (Reasoning and Acting)</li>
-<li>Step functions orchestrate steps in a structured workflow</li>
-<li>Chain of thought reasoning</li>
-<li>Dynamic routing to specialized FM’s</li>
-<li>Orchestrate model review and approval process</li>
-</ul><p>Actions</p>
-<p>Reasoning</p>
-<p>FM Environment</p>
-<p>Traces</p>
-<p>Observations</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-352">
-          <div class="slide-number">Slide 352</div>
-          <div class="slide-content"><p>Even More Step Functions Stuff</p>
-<ul><li>There is a 256KB limit between data passed between steps</li>
-<li>You might squirrel data away in DynamoDB or S3 if this is a problem</li>
-<li>Step Functions is integrated with Bedrock</li>
-<li>InvokeModel, CreateModelCustomizationJob both supported</li>
-<li>You can chain multiple FM calls together using Step Functions</li>
-<li>Note that InvokeModel can also include guardrails you specify</li>
-<li>You can chain those too.</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-353">
-          <div class="slide-number">Slide 353</div>
-          <div class="slide-content"><p>AWS CodePipeline</p>
-<ul><li>Visual Workflow to orchestrate your CICD</li>
-<li>Source – CodeCommit, ECR, S3, Bitbucket, GitHub</li>
-<li>Build – CodeBuild, Jenkins, CloudBees, TeamCity</li>
-<li>Test – CodeBuild, AWS Device Farm, 3rd party tools, …</li>
-<li>Deploy – CodeDeploy, Elastic Beanstalk, CloudFormation,</li>
-</ul><p>ECS, S3, …</p>
-<ul><li>Invoke – Lambda, Step Functions</li>
-<li>Consists of stages:</li>
-<li>Each stage can have sequential actions and/or parallel actions</li>
-<li>Example: Build ➔ Test ➔ Deploy ➔ Load Testing ➔ …</li>
-<li>Manual approval can be defined at any stage</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-354">
-          <div class="slide-number">Slide 354</div>
-          <div class="slide-content"><p>Technology Stack for CICD</p>
-<p>AWS CodeCommit AWS CodeBuild AWS Elastic Beanstalk</p>
-<p>Code Build Test Deploy Provision</p>
-<p>EC2 Instances</p>
-<p>GitHub</p>
-<p>Jenkins CI</p>
-<p>On-premises</p>
-<p>Instances</p>
-<p>AWS Lambda</p>
-<p>any 3𝑟𝑑 party any 3𝑟𝑑 party AWS CodeDeploy</p>
-<p>Code Repository CI Servers Amazon ECS</p>
-<p>orchestrate using:</p>
-<p>AWS CodePipeline</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-355">
-          <div class="slide-number">Slide 355</div>
-          <div class="slide-content"><p>CodePipeline – Artifacts</p>
-<ul><li>Each pipeline stage can create artifacts</li>
-<li>Artifacts stored in an S3 bucket and passed on to the next stage</li>
-</ul><p>AWS CodePipeline</p>
-<p>output input output input</p>
-<p>Push code artifacts artifacts artifacts artifacts deploy</p>
-<p>Developer AWS CodeCommit AWS CodeBuild AWS CodeDeploy</p>
-<p>(Source) (Build) (Deploy)</p>
-<p>S3 Bucket</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-356">
-          <div class="slide-number">Slide 356</div>
-          <div class="slide-content"><p>CodePipeline – Troubleshooting</p>
-<ul><li>For CodePipeline Pipeline/Action/Stage Execution State Changes</li>
-<li>Use CloudWatch Events (Amazon EventBridge). Example:</li>
-<li>You can create events for failed pipelines</li>
-<li>You can create events for cancelled stages</li>
-<li>If CodePipeline fails a stage, your pipeline stops, and you can get</li>
-</ul><p>information in the console</p>
-<ul><li>If pipeline can’t perform an action, make sure the “IAM Service Role”</li>
-</ul><p>attached does have enough IAM permissions (IAM Policy)</p>
-<ul><li>AWS CloudTrail can be used to audit AWS API calls</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-357">
-          <div class="slide-number">Slide 357</div>
-          <div class="slide-content"><p>AWS CodeBuild</p>
-<ul><li>A fully managed continuous integration (CI) service</li>
-<li>Continuous scaling (no servers to manage or provision – no build queue)</li>
-<li>Compile source code, run tests, produce software packages, …</li>
-<li>Alternative to other build tools (e.g., Jenkins)</li>
-<li>Charged per minute for compute resources (time it takes to complete the builds)</li>
-<li>Leverages Docker under the hood for reproducible builds</li>
-<li>Use prepackaged Docker images or create your own custom Docker image</li>
-<li>Security:</li>
-<li>Integration with KMS for encryption of build artifacts</li>
-<li>IAM for CodeBuild permissions, and VPC for network security</li>
-<li>AWS CloudTrail for API calls logging</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-358">
-          <div class="slide-number">Slide 358</div>
-          <div class="slide-content"><p>AWS CodeBuild</p>
-<ul><li>Source – CodeCommit, S3, Bitbucket, GitHub</li>
-<li>Build instructions: Code file buildspec.yml or insert manually in</li>
-</ul><p>Console</p>
-<ul><li>Output logs can be stored in Amazon S3 &amp; CloudWatch Logs</li>
-<li>Use CloudWatch Metrics to monitor build statistics</li>
-<li>Use EventBridge to detect failed builds and trigger notifications</li>
-<li>Use CloudWatch Alarms to notify if you need “thresholds” for failures</li>
-<li>Build Projects can be defined within CodePipeline or CodeBuild</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-359">
-          <div class="slide-number">Slide 359</div>
-          <div class="slide-content"><p>CodeBuild – Supported Environments</p>
-<ul><li>Java</li>
-<li>Ruby</li>
-<li>Python</li>
-<li>Go</li>
-<li>Node.js</li>
-<li>Android</li>
-<li>.NET Core</li>
-<li>PHP</li>
-<li>Docker – extend any environment you like</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-360">
-          <div class="slide-number">Slide 360</div>
-          <div class="slide-content"><p>CodeBuild – How it Works</p>
-<p>CodeCommit CodeBuild</p>
-<p>artifacts</p>
-<p>(Source) S3 Bucket</p>
-<p>CodeBuild</p>
-<p>… Container</p>
-<p>Source code + buildspec.yml running instructions from buildspec.yml</p>
-<p>store logs</p>
-<p>store</p>
-<p>retrieve</p>
-<p>reusbale pieces</p>
-<p>Docker Image S3 Bucket (Cache)</p>
-<p>Amazon S3 CloudWatch Logs</p>
-<p>(Prepackaged or Custom) (optional)</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-361">
-          <div class="slide-number">Slide 361</div>
-          <div class="slide-content"><p>CodeBuild – buildspec.yml</p>
-<ul><li>buildspec.yml file must be at the root of your code</li>
-<li>env – define environment variables</li>
-<li>variables – plaintext variables</li>
-<li>parameter-store – variables stored in SSM Parameter Store</li>
-<li>secrets-manager – variables stored in AWS Secrets Manager</li>
-<li>phases – specify commands to run:</li>
-<li>install – install dependencies you may need for your build</li>
-<li>pre_build – final commands to execute before build</li>
-<li>Build – actual build commands</li>
-<li>post_build – finishing touches (e.g., zip output)</li>
-<li>artifacts – what to upload to S3 (encrypted with KMS)</li>
-<li>cache – files to cache (usually dependencies) to S3 for</li>
-</ul><p>future build speedup</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-362">
-          <div class="slide-number">Slide 362</div>
-          <div class="slide-content"><p>AWS CodeDeploy</p>
-<ul><li>Deployment service that automates</li>
-</ul><p>application deployment</p>
-<ul><li>Deploy new applications versions to v1 v2</li>
-</ul><p>EC2 Instances, On-premises servers,</p>
-<p>Lambda functions, ECS Services</p>
-<p>v1 v2</p>
-<ul><li>Automated Rollback capability in case</li>
-</ul><p>of failed deployments, or trigger</p>
-<p>CloudWatch Alarm v1 v2</p>
-<ul><li>Gradual deployment control</li>
-<li>A file named appspec.yml defines v1 v2</li>
-</ul><p>how the deployment happens</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-363">
-          <div class="slide-number">Slide 363</div>
-          <div class="slide-content"><p>CodeDeploy – EC2/On-premises</p>
-<p>Platform</p>
-<ul><li>Can deploy to EC2 Instances &amp; on-premises servers</li>
-<li>Perform in-place deployments or blue/green deployments</li>
-<li>Must run the CodeDeploy Agent on the target instances</li>
-<li>Define deployment speed</li>
-<li>AllAtOnce: most downtime</li>
-<li>HalfAtATime: reduced capacity by 50%</li>
-<li>OneAtATime: slowest, lowest availability impact</li>
-<li>Custom: define your %</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-364">
-          <div class="slide-number">Slide 364</div>
-          <div class="slide-content"><p>CodeDeploy – In-Place Deployment</p>
-<p>Half At A Time</p>
-<p>v1 v2 v2 v2</p>
-<p>f</p>
-<p>l</p>
-<p>a</p>
-<p>H</p>
-<p>v1 v2 v2 v2</p>
-<p>v1 v1 v1 v2</p>
-<p>f</p>
-<p>l</p>
-<p>a</p>
-<p>H</p>
-<p>r</p>
-<p>e</p>
-<p>h</p>
-<p>v1 v1 t v1 v2</p>
-<p>O</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-365">
-          <div class="slide-number">Slide 365</div>
-          <div class="slide-content"><p>CodeDeploy – Blue-Green Deployment</p>
-<p>Auto Scaling Group Auto Scaling Group</p>
-<p>v1 v1</p>
-<p>v1 v1</p>
-<p>Application Application</p>
-<p>v1 v1</p>
-<p>Load Balancer Load Balancer</p>
-<p>Auto Scaling Group Auto Scaling Group</p>
-<p>v2 v2</p>
-<p>v2 v2</p>
-<p>Application</p>
-<p>v2 v2</p>
-<p>Load Balancer</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-366">
-          <div class="slide-number">Slide 366</div>
-          <div class="slide-content"><p>CodeDeploy Agent</p>
-<p>EC2 Instance</p>
-<p>With CodeDeploy Agent</p>
-<ul><li>The CodeDeploy Agent must be</li>
-</ul><p>download application</p>
-<p>running on the EC2 instances as a</p>
-<p>pre-requisites</p>
-<p>S3 Bucket</p>
-<ul><li>It can be installed and updated IAM Permissions</li>
-</ul><p>automatically if you’re using</p>
-<p>Systems Manager</p>
-<ul><li>The EC2 Instances must have</li>
-</ul><p>sufficient permissions to access</p>
-<p>Amazon S3 to get deployment</p>
-<p>bundles</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-367">
-          <div class="slide-number">Slide 367</div>
-          <div class="slide-content"><p>CodeDeploy – Lambda Platform</p>
-<ul><li>CodeDeploy can help you automate</li>
-</ul><p>Make X vary over time until X = 100%</p>
-<p>traffic shift for Lambda aliases</p>
-<ul><li>Feature is integrated within the SAM</li>
-</ul><p>PROD Alias</p>
-<p>framework</p>
-<p>100 – X%</p>
-<ul><li>Linear: grow traffic every N minutes</li>
-</ul><p>V1</p>
-<p>until 100%</p>
-<ul><li>LambdaLinear10PercentEvery3Minutes</li>
-<li>LambdaLinear10PercentEvery10Minute</li>
-</ul><p>s</p>
-<p>X%</p>
-<p>CodeDeploy</p>
-<ul><li>Canary: try X percent then 100%</li>
-</ul><p>V2</p>
-<ul><li>LambdaCanary10Percent5Minutes</li>
-<li>LambdaCanary10Percent30Minutes</li>
-<li>AllAtOnce: immediate</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-368">
-          <div class="slide-number">Slide 368</div>
-          <div class="slide-content"><p>CodeDeploy – ECS Platform</p>
-<p>CodeDeploy</p>
-<ul><li>CodeDeploy can help you</li>
-</ul><p>automate the deployment of a</p>
-<p>new ECS Task Definition</p>
-<ul><li>Only Blue/Green Deployments</li>
-</ul><p>Application Load</p>
-<ul><li>Linear: grow traffic every N</li>
-</ul><p>Balancer</p>
-<p>minutes until 100% (required)</p>
-<ul><li>ECSLinear10PercentEvery3Minutes</li>
-<li>ECSLinear10PercentEvery10Minute 100% - X% ECS Cluster X%</li>
-</ul><p>s</p>
-<ul><li>Canary: try X percent then 100% Target Group (Blue) Target Group (Green)</li>
-<li>ECSCanary10Percent5Minutes</li>
-</ul><p>v1 v1 v1 v1 v2 v2 v2 v2</p>
-<ul><li>ECSCanary10Percent30Minutes</li>
-<li>AllAtOnce: immediate</li>
-</ul><p>Blue-Green Deployment</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-369">
-          <div class="slide-number">Slide 369</div>
-          <div class="slide-content"><p>MLFlow</p>
-<ul><li>Open-source platform for ML / GenAI</li>
-</ul><p>workflows</p>
-<ul><li>Offers observability, evaluations, tracking,</li>
-</ul><p>tracing, AI gateway</p>
-<ul><li>Model management and deployment</li>
-<li>MLFlow is integrated into Amazon SageMaker</li>
-</ul><p>AI</p>
-<ul><li>Managed service</li>
-<li>Integrates with model development,</li>
-</ul><p>management, deployment, and tracking</p>
-<ul><li>Integration points:</li>
-<li>SageMaker Studio</li>
-<li>SageMaker Model Registry</li>
-<li>SageMaker AI Inference</li>
-<li>IAM</li>
-<li>CloudTrail</li>
-<li>EventBridge</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-370">
-          <div class="slide-number">Slide 370</div>
-          <div class="slide-content"><p>AWS AppSync GraphQL and GenAI</p>
-<ul><li>Connects apps and services to data and events</li>
-<li>GraphQL and Pub/Sub API’s</li>
-<li>GraphQL is what it sounds like – Graph query language</li>
-<li>Can retrieve data from different sources and return it as</li>
-</ul><p>a graph</p>
-<ul><li>Developed by Facebook AWS AppSync</li>
-<li>Serverless</li>
-<li>JavaScript / TypeScript support for business logic</li>
-<li>GenAI applications</li>
-<li>Integrate Lambda with AppSync resolvers for real-</li>
-</ul><p>time FM inference</p>
-<ul><li>Transform GraphQL requests to model inputs</li>
-</ul><p>using Apache Velocity Template Language (VTL)</p>
-<p>mapping</p>
-<ul><li>VTL is just what AppSync uses under the hood to</li>
-</ul><p>AWS documentation</p>
-<p>translate GraphQL requests to your data source</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-371">
-          <div class="slide-number">Slide 371</div>
-          <div class="slide-content"><p>AWS Outposts</p>
-<ul><li>Hybrid Cloud: businesses that keep an on-</li>
-</ul><p>premises infrastructure alongside a cloud</p>
-<p>infrastructure</p>
-<ul><li>Therefore, two ways of dealing with IT systems:</li>
-<li>One for the AWS cloud (using the AWS console, CLI, AWS Corporate</li>
-</ul><p>and AWS APIs) Cloud data center</p>
-<ul><li>One for their on-premises infrastructure</li>
-</ul><p>On-prem</p>
-<ul><li>AWS Outposts are “server racks” that offers</li>
-</ul><p>servers</p>
-<p>the same AWS infrastructure, services, APIs &amp;</p>
-<p>tools to build your own applications on-premises</p>
-<p>just as in the cloud</p>
-<p>Extension of Outposts</p>
-<p>AWS services Racks</p>
-<ul><li>AWS will setup and manage “Outposts</li>
-</ul><p>Racks” within your on-premises infrastructure</p>
-<p>and you can start leveraging AWS services on-</p>
-<p>premises</p>
-<ul><li>You are responsible for the Outposts Rack</li>
-</ul><p>physical security</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-372">
-          <div class="slide-number">Slide 372</div>
-          <div class="slide-content"><p>AWS Outposts</p>
-<ul><li>Benefits:</li>
-<li>Low-latency access to on-premises systems</li>
-<li>Local data processing</li>
-<li>Data residency</li>
-<li>Easier migration from on-premises to the cloud</li>
-<li>Fully managed service</li>
-<li>Some services that work on Outposts:</li>
-</ul><p>Amazon EC2 Amazon EBS Amazon S3 Amazon EKS Amazon ECS Amazon RDS Amazon EMR</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-373">
-          <div class="slide-number">Slide 373</div>
-          <div class="slide-content"><p>AWS Outposts and GenAI</p>
-<ul><li>Relevant for data compliance across</li>
-</ul><p>jurisdictions</p>
-<ul><li>Different countries have different</li>
-</ul><p>AI laws</p>
-<ul><li>Data privacy</li>
-<li>On-premise data integration</li>
-<li>Need sufficient compute and storage</li>
-</ul><p>for your FM inference</p>
-<ul><li>Based on your on-prem data</li>
-</ul><p>volume and requirements</p>
-<ul><li>Local caching can minimize data</li>
-</ul><p>movement</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-374">
-          <div class="slide-number">Slide 374</div>
-          <div class="slide-content"><p>AWS WaveLength</p>
-<ul><li>WaveLength Zones are infrastructure deployments</li>
-</ul><p>embedded within the telecommunications providers’</p>
-<p>Region</p>
-<p>datacenters at the edge of the 5G networks</p>
-<ul><li>Brings AWS services to the edge of the 5G networks</li>
-</ul><p>Availability Zone 1 Availability Zone 2</p>
-<ul><li>Example: EC2, EBS, VPC…</li>
-<li>Ultra-low latency applications through 5G networks</li>
-<li>Traffic doesn’t leave the Communication Service</li>
-</ul><p>Provider’s (CSP) network</p>
-<ul><li>High-bandwidth and secure connection to the parent</li>
-</ul><p>AWS Region</p>
-<p>WaveLength Zone</p>
-<ul><li>No additional charges or service agreements</li>
-<li>Use cases: Smart Cities, ML-assisted diagnostics,</li>
-</ul><p>Connected Vehicles, Interactive Live Video Streams,</p>
-<p>AR/VR, Real-time Gaming, …</p>
-<p>Carrier</p>
-<p>Gateway</p>
-<p>Telecom carrier</p>
-<p>5G network</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-375">
-          <div class="slide-number">Slide 375</div>
-          <div class="slide-content"><p>AWS WaveLength and GenAI</p>
-<ul><li>Edge deployments</li>
-<li>Secure routing between cloud</li>
-</ul><p>and on-prem</p>
-<ul><li>Mobile foundation model apps</li>
-<li>Distribute traffic between</li>
-</ul><p>Wavelength Zones and parent</p>
-<p>regions based on workload</p>
-<ul><li>Low-latency, lighter work at the</li>
-</ul><p>edge</p>
-<ul><li>Heavier in the Region</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-376">
-          <div class="slide-number">Slide 376</div>
-          <div class="slide-content"><p>Amazon SQS</p>
-<p>What’s a queue?</p>
-<p>Consumer</p>
-<p>Producer</p>
-<p>Consumer</p>
-<p>Send messages</p>
-<p>Producer Poll messages</p>
-<p>Consumer</p>
-<p>SQS Queue</p>
-<p>Producer</p>
-<p>Consumer</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-377">
-          <div class="slide-number">Slide 377</div>
-          <div class="slide-content"><p>Amazon SQS – Standard Queue</p>
-<ul><li>Oldest offering (over 10 years old)</li>
-<li>Fully managed service, used to decouple applications</li>
-<li>Attributes:</li>
-<li>Unlimited throughput, unlimited number of messages in queue</li>
-<li>Default retention of messages: 4 days, maximum of 14 days</li>
-<li>Low latency (&lt;10 ms on publish and receive)</li>
-<li>Limitation of 1,024 KB per message sent</li>
-<li>Can have duplicate messages (at least once delivery, occasionally)</li>
-<li>Can have out of order messages (best effort ordering)</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-378">
-          <div class="slide-number">Slide 378</div>
-          <div class="slide-content"><p>SQS – Producing Messages</p>
-<ul><li>Produced to SQS using the SDK (SendMessage API)</li>
-<li>The message is persisted in SQS until a consumer deletes it</li>
-<li>Message retention: default 4 days, up to 14 days</li>
-<li>Example: send an order to be processed</li>
-<li>Order id</li>
-</ul><p>Sent to SQS</p>
-<ul><li>Customer id</li>
-<li>Any attributes you want</li>
-</ul><p>Message</p>
-<p>Up to 1024 KB</p>
-<ul><li>SQS standard: unlimited throughput</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-379">
-          <div class="slide-number">Slide 379</div>
-          <div class="slide-content"><p>SQS – Consuming Messages</p>
-<ul><li>Consumers (running on EC2 instances, servers, or AWS Lambda)…</li>
-<li>Poll SQS for messages (receive up to 10 messages at a time)</li>
-<li>Process the messages (example: insert the message into an RDS</li>
-</ul><p>database)</p>
-<ul><li>Delete the messages using the DeleteMessage API</li>
-</ul><p>Poll / Receive</p>
-<p>messages insert</p>
-<p>Consumer</p>
-<p>DeleteMessage</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-380">
-          <div class="slide-number">Slide 380</div>
-          <div class="slide-content"><p>SQS – Multiple EC2 Instances</p>
-<p>Consumers</p>
-<ul><li>Consumers receive and</li>
-</ul><p>process messages in parallel</p>
-<ul><li>At least once delivery</li>
-<li>Best-effort message ordering</li>
-</ul><p>SQS Queue</p>
-<ul><li>Consumers delete messages</li>
-</ul><p>after processing them</p>
-<ul><li>We can scale consumers</li>
-</ul><p>horizontally to improve</p>
-<p>throughput of processing</p>
-<p>poll</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-381">
-          <div class="slide-number">Slide 381</div>
-          <div class="slide-content"><p>SQS with Auto Scaling Group (ASG)</p>
-<p>Poll for messages</p>
-<p>EC2 Instances</p>
-<p>SQS Queue</p>
-<p>Auto Scaling Group</p>
-<p>scale</p>
-<p>Alarm for breach</p>
-<p>CloudWatch Metric – Queue Length CloudWatch Alarm</p>
-<p>ApproximateNumberOfMessages</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-382">
-          <div class="slide-number">Slide 382</div>
-          <div class="slide-content"><p>SQS to decouple between application</p>
-<p>tiers</p>
-<p>Back-end processing</p>
-<p>Front-end web app</p>
-<p>application</p>
-<p>requests SendMessage ReceiveMessages</p>
-<p>SQS Queue</p>
-<p>(infinitely scalable)</p>
-<p>Auto-Scaling</p>
-<p>Auto-Scaling</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-383">
-          <div class="slide-number">Slide 383</div>
-          <div class="slide-content"><p>Amazon SQS - Security</p>
-<ul><li>Encryption:</li>
-<li>In-flight encryption using HTTPS API</li>
-<li>At-rest encryption using KMS keys</li>
-<li>Client-side encryption if the client wants to perform encryption/decryption</li>
-</ul><p>itself</p>
-<ul><li>Access Controls: IAM policies to regulate access to the SQS API</li>
-<li>SQS Access Policies (similar to S3 bucket policies)</li>
-<li>Useful for cross-account access to SQS queues</li>
-<li>Useful for allowing other services (SNS, S3…) to write to an SQS queue</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-384">
-          <div class="slide-number">Slide 384</div>
-          <div class="slide-content"><p>AWS Amplify - web and mobile</p>
-<p>applications</p>
-<ul><li>A set of tools and services that helps you develop and deploy scalable full stack web and</li>
-</ul><p>mobile applications</p>
-<ul><li>Authentication, Storage, API (REST, GraphQL), CI/CD, PubSub, Analytics, AI/ML</li>
-</ul><p>Predictions, Monitoring, …</p>
-<ul><li>Connect your source code from GitHub, AWS CodeCommit, Bitbucket, GitLab, or upload</li>
-</ul><p>directly</p>
-<p>connect frontend to backend configure backend</p>
-<p>using using</p>
-<p>Amplify Frontend Libraries Amplify CLI</p>
-<p>Amazon S3 Amazon Cognito AWS API</p>
-<p>build using Amplify Console …</p>
-<p>AppSync Gateway</p>
-<p>&amp; deploy</p>
-<p>Amazon Amazon Lex Lambda DynamoDB</p>
-<p>… … SageMaker</p>
-<p>Frontend Amplify backend</p>
-<p>Amplify Amazon</p>
-<p>Console CloudFront</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-385">
-          <div class="slide-number">Slide 385</div>
-          <div class="slide-content"><p>Amazon EventBridge</p>
-<p>(formerly CloudWatch Events)</p>
-<ul><li>Schedule: Cron jobs (scheduled scripts)</li>
-<li>Event Pattern: Event rules to react to a service doing something</li>
-</ul><p>IAM Root User Sign in Event SNS Topic with Email Notification</p>
-<ul><li>Trigger Lambda functions, send SQS/SNS messages…</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p>
-<p>E M A I L</p>
-<p>Schedule Every hour Trigger script on Lambda function</p></div>
-        </div>
-        <div class="slide" id="slide-386">
-          <div class="slide-number">Slide 386</div>
-          <div class="slide-content"><p>Amazon EventBridge Rules</p>
-<p>Example Destinations</p>
-<p>Example Source</p>
-<p>e</p>
-<p>JSON t</p>
-<p>u</p>
-<p>p</p>
-<p>m</p>
-<p>o</p>
-<p>{ C</p>
-<p>Lambda AWS Batch ECS Task</p>
-<p>&quot;version&quot;: &quot;0&quot;,</p>
-<p>EC2 Instance CodeBuild &quot;id&quot;: &quot;6a7e8feb-b491&quot;,</p>
-<p>n</p>
-<p>&quot;detail-type&quot;: &quot;EC2 Instance</p>
-<p>(ex: Start Instance) (ex: failed build) o</p>
-<p>State-change Notification&quot;, i t</p>
-<p>a</p>
-<p>Filter events …. r</p>
-<p>g</p>
-<p>(optional) } e</p>
-<p>t</p>
-<p>n</p>
-<p>I SQS SNS Kinesis Data</p>
-<p>Streams</p>
-<p>n</p>
-<p>S3 Event Trusted Advisor o</p>
-<p>i</p>
-<p>t</p>
-<p>(ex: upload object) (ex: new Finding) Amazon a</p>
-<p>r</p>
-<p>t</p>
-<p>s</p>
-<p>EventBridge e</p>
-<p>h</p>
-<p>c</p>
-<p>r O Step CodePipeline CodeBuild</p>
-<p>Functions</p>
-<p>e</p>
-<p>c</p>
-<p>n</p>
-<p>CloudTrail Schedule or Cron</p>
-<p>a</p>
-<p>n</p>
-<p>(any API call) (ex: every 4 hours) e</p>
-<p>t</p>
-<p>n</p>
-<p>i</p>
-<p>a</p>
-<p>M SSM EC2 Actions</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-387">
-          <div class="slide-number">Slide 387</div>
-          <div class="slide-content"><p>Amazon EventBridge</p>
-<p>AWS Services AWS SaaS Custom</p>
-<p>Partner Custom</p>
-<p>Default</p>
-<p>Partners Apps</p>
-<p>Event Bus Event Bus</p>
-<p>Event Bus</p>
-<ul><li>Event buses can be accessed by other AWS accounts using Resource-based</li>
-</ul><p>Policies</p>
-<ul><li>You can archive events (all/filter) sent to an event bus (indefinitely or set period)</li>
-<li>Ability to replay archived events</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-388">
-          <div class="slide-number">Slide 388</div>
-          <div class="slide-content"><p>Amazon EventBridge – Schema Registry</p>
-<ul><li>EventBridge can analyze the events</li>
-</ul><p>in your bus and infer the schema</p>
-<ul><li>The Schema Registry allows you to</li>
-</ul><p>generate code for your application,</p>
-<p>that will know in advance how data is</p>
-<p>structured in the event bus</p>
-<ul><li>Schema can be versioned</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-389">
-          <div class="slide-number">Slide 389</div>
-          <div class="slide-content"><p>Amazon EventBridge – Resource-based</p>
-<p>Policy</p>
-<ul><li>Manage permissions for a specific Event Bus</li>
-<li>Example: allow/deny events from another AWS account or AWS region</li>
-<li>Use case: aggregate all events from your AWS Organization in a single</li>
-</ul><p>AWS account or AWS region</p>
-<p>AWS Account AWS Account</p>
-<p>(123456789012) (111122223333)</p>
-<p>PutEvents</p>
-<p>Lambda function</p>
-<p>EventBridge Bus</p>
-<p>(central-event-bus)</p>
-<p>Allow events from another AWS account</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-390">
-          <div class="slide-number">Slide 390</div>
-          <div class="slide-content"><p>Amazon SNS</p>
-<ul><li>What if you want to send one message to many receivers?</li>
-</ul><p>Direct Pub / Sub</p>
-<p>Email</p>
-<p>Email</p>
-<p>integration</p>
-<p>notification</p>
-<p>notification</p>
-<p>Fraud</p>
-<p>Fraud</p>
-<p>Service</p>
-<p>Service</p>
-<p>Buying Buying</p>
-<p>Service Service</p>
-<p>Shipping</p>
-<p>Shipping</p>
-<p>Service</p>
-<p>SNS Topic Service</p>
-<p>SQS Queue</p>
-<p>SQS Queue</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-391">
-          <div class="slide-number">Slide 391</div>
-          <div class="slide-content"><p>Amazon SNS</p>
-<ul><li>The “event producer” only sends message to one SNS topic</li>
-<li>As many “event receivers” (subscriptions) as we want to listen to the SNS topic</li>
-</ul><p>notifications</p>
-<ul><li>Each subscriber to the topic will get all the messages (note: new feature to filter</li>
-</ul><p>messages)</p>
-<ul><li>Up to 12,500,000 subscriptions per topic</li>
-<li>100,000 topics limit</li>
-</ul><p>Subscribers</p>
-<p>publish SQS Lambda Kinesis Data</p>
-<p>Firehose</p>
-<p>SNS</p>
-<p>Emails SMS &amp; HTTP(S)</p>
-<p>Mobile Notifications Endpoints</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-392">
-          <div class="slide-number">Slide 392</div>
-          <div class="slide-content"><p>SNS integrates with a lot of AWS services</p>
-<ul><li>Many AWS services can send data directly to SNS for notifications</li>
-</ul><p>…</p>
-<p>CloudWatch Alarms AWS Budgets Lambda</p>
-<p>…</p>
-<p>publish</p>
-<p>Auto Scaling Group S3 Bucket DynamoDB</p>
-<p>(Notifications) (Events)</p>
-<p>SNS</p>
-<p>…</p>
-<p>CloudFormation AWS DMS RDS Events</p>
-<p>(State Changes) (New Replic)</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-393">
-          <div class="slide-number">Slide 393</div>
-          <div class="slide-content"><p>Amazon SNS – How to publish</p>
-<ul><li>Topic Publish (using the SDK)</li>
-<li>Create a topic</li>
-<li>Create a subscription (or many)</li>
-<li>Publish to the topic</li>
-<li>Direct Publish (for mobile apps SDK)</li>
-<li>Create a platform application</li>
-<li>Create a platform endpoint</li>
-<li>Publish to the platform endpoint</li>
-<li>Works with Google GCM, Apple APNS, Amazon ADM…</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-394">
-          <div class="slide-number">Slide 394</div>
-          <div class="slide-content"><p>Amazon SNS – Security</p>
-<ul><li>Encryption:</li>
-<li>In-flight encryption using HTTPS API</li>
-<li>At-rest encryption using KMS keys</li>
-<li>Client-side encryption if the client wants to perform encryption/decryption</li>
-</ul><p>itself</p>
-<ul><li>Access Controls: IAM policies to regulate access to the SNS API</li>
-<li>SNS Access Policies (similar to S3 bucket policies)</li>
-<li>Useful for cross-account access to SNS topics</li>
-<li>Useful for allowing other services ( S3…) to write to an SNS topic</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-395">
-          <div class="slide-number">Slide 395</div>
-          <div class="slide-content"><p>Amazon AppFlow</p>
-<ul><li>Fully managed integration service that enables you to securely</li>
-</ul><p>transfer data between Software-as-a-Service (SaaS) applications</p>
-<p>and AWS</p>
-<ul><li>Sources: Salesforce, SAP, Zendesk, Slack, and ServiceNow</li>
-<li>Destinations: AWS services like Amazon S3, Amazon Redshift or</li>
-</ul><p>non-AWS such as SnowFlake and Salesforce</p>
-<ul><li>Frequency: on a schedule, in response to events, or on demand</li>
-<li>Data transformation capabilities like filtering and validation</li>
-<li>Encrypted over the public internet or privately over AWS PrivateLink</li>
-<li>Don’t spend time writing the integrations and leverage APIs</li>
-</ul><p>immediately</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-396">
-          <div class="slide-number">Slide 396</div>
-          <div class="slide-content"><p>Amazon AppFlow</p>
-<p>Sources Destinations</p>
-<p>Amazon</p>
-<p>AppFlow</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-    </div>
-
-    <div class="section-nav">
-      <a href="index.html" class="btn-back">← Back to Overview</a>
-    </div>
-  </main>
-
+      <div class="doc-section" id="slide-348">
+       <h2 id="slide-348">
+        Step Functions – Examples
+       </h2>
+       <div class="slide-number">
+        Slide 348
+       </div>
+       <div class="slide-content">
+        <p>
+         Manage a Batch Job
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-349">
+       <h2 id="slide-349">
+        AWS Step Functions
+       </h2>
+       <div class="slide-number">
+        Slide 349
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Your workflow is called a state machine
+         </li>
+         <li>
+          Each step in a workflow is a state
+         </li>
+         <li>
+          Types of states
+         </li>
+         <li>
+          Task: Does something with Lambda, other
+         </li>
+        </ul>
+        <p>
+         AWS services, or third party API’s
+        </p>
+        <ul>
+         <li>
+          Choice: Adds conditional logic via Choice
+         </li>
+        </ul>
+        <p>
+         Rules (ie, comparisons)
+        </p>
+        <ul>
+         <li>
+          Wait: Delays state machine for a specified
+         </li>
+        </ul>
+        <p>
+         map
+        </p>
+        <p>
+         time
+        </p>
+        <ul>
+         <li>
+          Parallel: Add separate branches of
+         </li>
+        </ul>
+        <p>
+         execution
+        </p>
+        <ul>
+         <li>
+          Map: Run a set of steps for each item in a
+         </li>
+        </ul>
+        <p>
+         dataset, in parallel
+        </p>
+        <ul>
+         <li>
+          This is most relevant to data engineering!
+         </li>
+        </ul>
+        <p>
+         Works with JSON, S3 objects, CSV files
+        </p>
+        <ul>
+         <li>
+          Also Pass, Succeed, Fail
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-350">
+       <h2 id="slide-350">
+        Step Functions: Circuit Breakers
+       </h2>
+       <div class="slide-number">
+        Slide 350
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Circuit Breaker is a pattern
+         </li>
+         <li>
+          Prevents calling a service that is
+         </li>
+        </ul>
+        <p>
+         timing out and failing
+        </p>
+        <ul>
+         <li>
+          Detects when it’s functional again
+         </li>
+         <li>
+          Can be implemented with Step
+         </li>
+        </ul>
+        <p>
+         Functions, Lambda, and DynamoDB
+        </p>
+        <ul>
+         <li>
+          This can be used to safeguard
+         </li>
+        </ul>
+        <p>
+         your AI workflows
+        </p>
+        <ul>
+         <li>
+          Route requests to fallback models if
+         </li>
+        </ul>
+        <p>
+         your model is down
+        </p>
+        <ul>
+         <li>
+          Or enter a degraded service mode
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-351">
+       <h2 id="slide-351">
+        More Step Functions + GenAI
+       </h2>
+       <div class="slide-number">
+        Slide 351
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          ReAct patterns (Reasoning and Acting)
+         </li>
+         <li>
+          Step functions orchestrate steps in a structured workflow
+         </li>
+         <li>
+          Chain of thought reasoning
+         </li>
+         <li>
+          Dynamic routing to specialized FM’s
+         </li>
+         <li>
+          Orchestrate model review and approval process
+         </li>
+        </ul>
+        <p>
+         Actions
+        </p>
+        <p>
+         Reasoning
+        </p>
+        <p>
+         FM Environment
+        </p>
+        <p>
+         Traces
+        </p>
+        <p>
+         Observations
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-352">
+       <h2 id="slide-352">
+        Even More Step Functions Stuff
+       </h2>
+       <div class="slide-number">
+        Slide 352
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          There is a 256KB limit between data passed between steps
+         </li>
+         <li>
+          You might squirrel data away in DynamoDB or S3 if this is a problem
+         </li>
+         <li>
+          Step Functions is integrated with Bedrock
+         </li>
+         <li>
+          InvokeModel, CreateModelCustomizationJob both supported
+         </li>
+         <li>
+          You can chain multiple FM calls together using Step Functions
+         </li>
+         <li>
+          Note that InvokeModel can also include guardrails you specify
+         </li>
+         <li>
+          You can chain those too.
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-353">
+       <h2 id="slide-353">
+        AWS CodePipeline
+       </h2>
+       <div class="slide-number">
+        Slide 353
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Visual Workflow to orchestrate your CICD
+         </li>
+         <li>
+          Source – CodeCommit, ECR, S3, Bitbucket, GitHub
+         </li>
+         <li>
+          Build – CodeBuild, Jenkins, CloudBees, TeamCity
+         </li>
+         <li>
+          Test – CodeBuild, AWS Device Farm, 3rd party tools, …
+         </li>
+         <li>
+          Deploy – CodeDeploy, Elastic Beanstalk, CloudFormation,
+         </li>
+        </ul>
+        <p>
+         ECS, S3, …
+        </p>
+        <ul>
+         <li>
+          Invoke – Lambda, Step Functions
+         </li>
+         <li>
+          Consists of stages:
+         </li>
+         <li>
+          Each stage can have sequential actions and/or parallel actions
+         </li>
+         <li>
+          Example: Build ➔ Test ➔ Deploy ➔ Load Testing ➔ …
+         </li>
+         <li>
+          Manual approval can be defined at any stage
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-354">
+       <h2 id="slide-354">
+        Technology Stack for CICD
+       </h2>
+       <div class="slide-number">
+        Slide 354
+       </div>
+       <div class="slide-content">
+        <p>
+         AWS CodeCommit AWS CodeBuild AWS Elastic Beanstalk
+        </p>
+        <p>
+         Code Build Test Deploy Provision
+        </p>
+        <p>
+         EC2 Instances
+        </p>
+        <p>
+         GitHub
+        </p>
+        <p>
+         Jenkins CI
+        </p>
+        <p>
+         On-premises
+        </p>
+        <p>
+         Instances
+        </p>
+        <p>
+         AWS Lambda
+        </p>
+        <p>
+         any 3𝑟𝑑 party any 3𝑟𝑑 party AWS CodeDeploy
+        </p>
+        <p>
+         Code Repository CI Servers Amazon ECS
+        </p>
+        <p>
+         orchestrate using:
+        </p>
+        <p>
+         AWS CodePipeline
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-355">
+       <h2 id="slide-355">
+        CodePipeline – Artifacts
+       </h2>
+       <div class="slide-number">
+        Slide 355
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Each pipeline stage can create artifacts
+         </li>
+         <li>
+          Artifacts stored in an S3 bucket and passed on to the next stage
+         </li>
+        </ul>
+        <p>
+         AWS CodePipeline
+        </p>
+        <p>
+         output input output input
+        </p>
+        <p>
+         Push code artifacts artifacts artifacts artifacts deploy
+        </p>
+        <p>
+         Developer AWS CodeCommit AWS CodeBuild AWS CodeDeploy
+        </p>
+        <p>
+         (Source) (Build) (Deploy)
+        </p>
+        <p>
+         S3 Bucket
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-356">
+       <h2 id="slide-356">
+        CodePipeline – Troubleshooting
+       </h2>
+       <div class="slide-number">
+        Slide 356
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          For CodePipeline Pipeline/Action/Stage Execution State Changes
+         </li>
+         <li>
+          Use CloudWatch Events (Amazon EventBridge). Example:
+         </li>
+         <li>
+          You can create events for failed pipelines
+         </li>
+         <li>
+          You can create events for cancelled stages
+         </li>
+         <li>
+          If CodePipeline fails a stage, your pipeline stops, and you can get
+         </li>
+        </ul>
+        <p>
+         information in the console
+        </p>
+        <ul>
+         <li>
+          If pipeline can’t perform an action, make sure the “IAM Service Role”
+         </li>
+        </ul>
+        <p>
+         attached does have enough IAM permissions (IAM Policy)
+        </p>
+        <ul>
+         <li>
+          AWS CloudTrail can be used to audit AWS API calls
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-357">
+       <h2 id="slide-357">
+        AWS CodeBuild
+       </h2>
+       <div class="slide-number">
+        Slide 357
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          A fully managed continuous integration (CI) service
+         </li>
+         <li>
+          Continuous scaling (no servers to manage or provision – no build queue)
+         </li>
+         <li>
+          Compile source code, run tests, produce software packages, …
+         </li>
+         <li>
+          Alternative to other build tools (e.g., Jenkins)
+         </li>
+         <li>
+          Charged per minute for compute resources (time it takes to complete the builds)
+         </li>
+         <li>
+          Leverages Docker under the hood for reproducible builds
+         </li>
+         <li>
+          Use prepackaged Docker images or create your own custom Docker image
+         </li>
+         <li>
+          Security:
+         </li>
+         <li>
+          Integration with KMS for encryption of build artifacts
+         </li>
+         <li>
+          IAM for CodeBuild permissions, and VPC for network security
+         </li>
+         <li>
+          AWS CloudTrail for API calls logging
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-358">
+       <h2 id="slide-358">
+        AWS CodeBuild
+       </h2>
+       <div class="slide-number">
+        Slide 358
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Source – CodeCommit, S3, Bitbucket, GitHub
+         </li>
+         <li>
+          Build instructions: Code file buildspec.yml or insert manually in
+         </li>
+        </ul>
+        <p>
+         Console
+        </p>
+        <ul>
+         <li>
+          Output logs can be stored in Amazon S3 &amp; CloudWatch Logs
+         </li>
+         <li>
+          Use CloudWatch Metrics to monitor build statistics
+         </li>
+         <li>
+          Use EventBridge to detect failed builds and trigger notifications
+         </li>
+         <li>
+          Use CloudWatch Alarms to notify if you need “thresholds” for failures
+         </li>
+         <li>
+          Build Projects can be defined within CodePipeline or CodeBuild
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-359">
+       <h2 id="slide-359">
+        CodeBuild – Supported Environments
+       </h2>
+       <div class="slide-number">
+        Slide 359
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Java
+         </li>
+         <li>
+          Ruby
+         </li>
+         <li>
+          Python
+         </li>
+         <li>
+          Go
+         </li>
+         <li>
+          Node.js
+         </li>
+         <li>
+          Android
+         </li>
+         <li>
+          .NET Core
+         </li>
+         <li>
+          PHP
+         </li>
+         <li>
+          Docker – extend any environment you like
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-360">
+       <h2 id="slide-360">
+        CodeBuild – How it Works
+       </h2>
+       <div class="slide-number">
+        Slide 360
+       </div>
+       <div class="slide-content">
+        <p>
+         CodeCommit CodeBuild
+        </p>
+        <p>
+         artifacts
+        </p>
+        <p>
+         (Source) S3 Bucket
+        </p>
+        <p>
+         CodeBuild
+        </p>
+        <p>
+         … Container
+        </p>
+        <p>
+         Source code + buildspec.yml running instructions from buildspec.yml
+        </p>
+        <p>
+         store logs
+        </p>
+        <p>
+         store
+        </p>
+        <p>
+         retrieve
+        </p>
+        <p>
+         reusbale pieces
+        </p>
+        <p>
+         Docker Image S3 Bucket (Cache)
+        </p>
+        <p>
+         Amazon S3 CloudWatch Logs
+        </p>
+        <p>
+         (Prepackaged or Custom) (optional)
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-361">
+       <h2 id="slide-361">
+        CodeBuild – buildspec.yml
+       </h2>
+       <div class="slide-number">
+        Slide 361
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          buildspec.yml file must be at the root of your code
+         </li>
+         <li>
+          env – define environment variables
+         </li>
+         <li>
+          variables – plaintext variables
+         </li>
+         <li>
+          parameter-store – variables stored in SSM Parameter Store
+         </li>
+         <li>
+          secrets-manager – variables stored in AWS Secrets Manager
+         </li>
+         <li>
+          phases – specify commands to run:
+         </li>
+         <li>
+          install – install dependencies you may need for your build
+         </li>
+         <li>
+          pre_build – final commands to execute before build
+         </li>
+         <li>
+          Build – actual build commands
+         </li>
+         <li>
+          post_build – finishing touches (e.g., zip output)
+         </li>
+         <li>
+          artifacts – what to upload to S3 (encrypted with KMS)
+         </li>
+         <li>
+          cache – files to cache (usually dependencies) to S3 for
+         </li>
+        </ul>
+        <p>
+         future build speedup
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-362">
+       <h2 id="slide-362">
+        AWS CodeDeploy
+       </h2>
+       <div class="slide-number">
+        Slide 362
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Deployment service that automates
+         </li>
+        </ul>
+        <p>
+         application deployment
+        </p>
+        <ul>
+         <li>
+          Deploy new applications versions to v1 v2
+         </li>
+        </ul>
+        <p>
+         EC2 Instances, On-premises servers,
+        </p>
+        <p>
+         Lambda functions, ECS Services
+        </p>
+        <p>
+         v1 v2
+        </p>
+        <ul>
+         <li>
+          Automated Rollback capability in case
+         </li>
+        </ul>
+        <p>
+         of failed deployments, or trigger
+        </p>
+        <p>
+         CloudWatch Alarm v1 v2
+        </p>
+        <ul>
+         <li>
+          Gradual deployment control
+         </li>
+         <li>
+          A file named appspec.yml defines v1 v2
+         </li>
+        </ul>
+        <p>
+         how the deployment happens
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-363">
+       <h2 id="slide-363">
+        CodeDeploy – EC2/On-premises
+       </h2>
+       <div class="slide-number">
+        Slide 363
+       </div>
+       <div class="slide-content">
+        <p>
+         Platform
+        </p>
+        <ul>
+         <li>
+          Can deploy to EC2 Instances &amp; on-premises servers
+         </li>
+         <li>
+          Perform in-place deployments or blue/green deployments
+         </li>
+         <li>
+          Must run the CodeDeploy Agent on the target instances
+         </li>
+         <li>
+          Define deployment speed
+         </li>
+         <li>
+          AllAtOnce: most downtime
+         </li>
+         <li>
+          HalfAtATime: reduced capacity by 50%
+         </li>
+         <li>
+          OneAtATime: slowest, lowest availability impact
+         </li>
+         <li>
+          Custom: define your %
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-364">
+       <h2 id="slide-364">
+        CodeDeploy – In-Place Deployment
+       </h2>
+       <div class="slide-number">
+        Slide 364
+       </div>
+       <div class="slide-content">
+        <p>
+         Half At A Time
+        </p>
+        <p>
+         v1 v2 v2 v2
+        </p>
+        <p>
+         f
+        </p>
+        <p>
+         l
+        </p>
+        <p>
+         a
+        </p>
+        <p>
+         H
+        </p>
+        <p>
+         v1 v2 v2 v2
+        </p>
+        <p>
+         v1 v1 v1 v2
+        </p>
+        <p>
+         f
+        </p>
+        <p>
+         l
+        </p>
+        <p>
+         a
+        </p>
+        <p>
+         H
+        </p>
+        <p>
+         r
+        </p>
+        <p>
+         e
+        </p>
+        <p>
+         h
+        </p>
+        <p>
+         v1 v1 t v1 v2
+        </p>
+        <p>
+         O
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-365">
+       <h2 id="slide-365">
+        CodeDeploy – Blue-Green Deployment
+       </h2>
+       <div class="slide-number">
+        Slide 365
+       </div>
+       <div class="slide-content">
+        <p>
+         Auto Scaling Group Auto Scaling Group
+        </p>
+        <p>
+         v1 v1
+        </p>
+        <p>
+         v1 v1
+        </p>
+        <p>
+         Application Application
+        </p>
+        <p>
+         v1 v1
+        </p>
+        <p>
+         Load Balancer Load Balancer
+        </p>
+        <p>
+         Auto Scaling Group Auto Scaling Group
+        </p>
+        <p>
+         v2 v2
+        </p>
+        <p>
+         v2 v2
+        </p>
+        <p>
+         Application
+        </p>
+        <p>
+         v2 v2
+        </p>
+        <p>
+         Load Balancer
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-366">
+       <h2 id="slide-366">
+        CodeDeploy Agent
+       </h2>
+       <div class="slide-number">
+        Slide 366
+       </div>
+       <div class="slide-content">
+        <p>
+         EC2 Instance
+        </p>
+        <p>
+         With CodeDeploy Agent
+        </p>
+        <ul>
+         <li>
+          The CodeDeploy Agent must be
+         </li>
+        </ul>
+        <p>
+         download application
+        </p>
+        <p>
+         running on the EC2 instances as a
+        </p>
+        <p>
+         pre-requisites
+        </p>
+        <p>
+         S3 Bucket
+        </p>
+        <ul>
+         <li>
+          It can be installed and updated IAM Permissions
+         </li>
+        </ul>
+        <p>
+         automatically if you’re using
+        </p>
+        <p>
+         Systems Manager
+        </p>
+        <ul>
+         <li>
+          The EC2 Instances must have
+         </li>
+        </ul>
+        <p>
+         sufficient permissions to access
+        </p>
+        <p>
+         Amazon S3 to get deployment
+        </p>
+        <p>
+         bundles
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-367">
+       <h2 id="slide-367">
+        CodeDeploy – Lambda Platform
+       </h2>
+       <div class="slide-number">
+        Slide 367
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          CodeDeploy can help you automate
+         </li>
+        </ul>
+        <p>
+         Make X vary over time until X = 100%
+        </p>
+        <p>
+         traffic shift for Lambda aliases
+        </p>
+        <ul>
+         <li>
+          Feature is integrated within the SAM
+         </li>
+        </ul>
+        <p>
+         PROD Alias
+        </p>
+        <p>
+         framework
+        </p>
+        <p>
+         100 – X%
+        </p>
+        <ul>
+         <li>
+          Linear: grow traffic every N minutes
+         </li>
+        </ul>
+        <p>
+         V1
+        </p>
+        <p>
+         until 100%
+        </p>
+        <ul>
+         <li>
+          LambdaLinear10PercentEvery3Minutes
+         </li>
+         <li>
+          LambdaLinear10PercentEvery10Minute
+         </li>
+        </ul>
+        <p>
+         s
+        </p>
+        <p>
+         X%
+        </p>
+        <p>
+         CodeDeploy
+        </p>
+        <ul>
+         <li>
+          Canary: try X percent then 100%
+         </li>
+        </ul>
+        <p>
+         V2
+        </p>
+        <ul>
+         <li>
+          LambdaCanary10Percent5Minutes
+         </li>
+         <li>
+          LambdaCanary10Percent30Minutes
+         </li>
+         <li>
+          AllAtOnce: immediate
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-368">
+       <h2 id="slide-368">
+        CodeDeploy – ECS Platform
+       </h2>
+       <div class="slide-number">
+        Slide 368
+       </div>
+       <div class="slide-content">
+        <p>
+         CodeDeploy
+        </p>
+        <ul>
+         <li>
+          CodeDeploy can help you
+         </li>
+        </ul>
+        <p>
+         automate the deployment of a
+        </p>
+        <p>
+         new ECS Task Definition
+        </p>
+        <ul>
+         <li>
+          Only Blue/Green Deployments
+         </li>
+        </ul>
+        <p>
+         Application Load
+        </p>
+        <ul>
+         <li>
+          Linear: grow traffic every N
+         </li>
+        </ul>
+        <p>
+         Balancer
+        </p>
+        <p>
+         minutes until 100% (required)
+        </p>
+        <ul>
+         <li>
+          ECSLinear10PercentEvery3Minutes
+         </li>
+         <li>
+          ECSLinear10PercentEvery10Minute 100% - X% ECS Cluster X%
+         </li>
+        </ul>
+        <p>
+         s
+        </p>
+        <ul>
+         <li>
+          Canary: try X percent then 100% Target Group (Blue) Target Group (Green)
+         </li>
+         <li>
+          ECSCanary10Percent5Minutes
+         </li>
+        </ul>
+        <p>
+         v1 v1 v1 v1 v2 v2 v2 v2
+        </p>
+        <ul>
+         <li>
+          ECSCanary10Percent30Minutes
+         </li>
+         <li>
+          AllAtOnce: immediate
+         </li>
+        </ul>
+        <p>
+         Blue-Green Deployment
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-369">
+       <h2 id="slide-369">
+        MLFlow
+       </h2>
+       <div class="slide-number">
+        Slide 369
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Open-source platform for ML / GenAI
+         </li>
+        </ul>
+        <p>
+         workflows
+        </p>
+        <ul>
+         <li>
+          Offers observability, evaluations, tracking,
+         </li>
+        </ul>
+        <p>
+         tracing, AI gateway
+        </p>
+        <ul>
+         <li>
+          Model management and deployment
+         </li>
+         <li>
+          MLFlow is integrated into Amazon SageMaker
+         </li>
+        </ul>
+        <p>
+         AI
+        </p>
+        <ul>
+         <li>
+          Managed service
+         </li>
+         <li>
+          Integrates with model development,
+         </li>
+        </ul>
+        <p>
+         management, deployment, and tracking
+        </p>
+        <ul>
+         <li>
+          Integration points:
+         </li>
+         <li>
+          SageMaker Studio
+         </li>
+         <li>
+          SageMaker Model Registry
+         </li>
+         <li>
+          SageMaker AI Inference
+         </li>
+         <li>
+          IAM
+         </li>
+         <li>
+          CloudTrail
+         </li>
+         <li>
+          EventBridge
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-370">
+       <h2 id="slide-370">
+        AWS AppSync GraphQL and GenAI
+       </h2>
+       <div class="slide-number">
+        Slide 370
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Connects apps and services to data and events
+         </li>
+         <li>
+          GraphQL and Pub/Sub API’s
+         </li>
+         <li>
+          GraphQL is what it sounds like – Graph query language
+         </li>
+         <li>
+          Can retrieve data from different sources and return it as
+         </li>
+        </ul>
+        <p>
+         a graph
+        </p>
+        <ul>
+         <li>
+          Developed by Facebook AWS AppSync
+         </li>
+         <li>
+          Serverless
+         </li>
+         <li>
+          JavaScript / TypeScript support for business logic
+         </li>
+         <li>
+          GenAI applications
+         </li>
+         <li>
+          Integrate Lambda with AppSync resolvers for real-
+         </li>
+        </ul>
+        <p>
+         time FM inference
+        </p>
+        <ul>
+         <li>
+          Transform GraphQL requests to model inputs
+         </li>
+        </ul>
+        <p>
+         using Apache Velocity Template Language (VTL)
+        </p>
+        <p>
+         mapping
+        </p>
+        <ul>
+         <li>
+          VTL is just what AppSync uses under the hood to
+         </li>
+        </ul>
+        <p>
+         AWS documentation
+        </p>
+        <p>
+         translate GraphQL requests to your data source
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-371">
+       <h2 id="slide-371">
+        AWS Outposts
+       </h2>
+       <div class="slide-number">
+        Slide 371
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Hybrid Cloud: businesses that keep an on-
+         </li>
+        </ul>
+        <p>
+         premises infrastructure alongside a cloud
+        </p>
+        <p>
+         infrastructure
+        </p>
+        <ul>
+         <li>
+          Therefore, two ways of dealing with IT systems:
+         </li>
+         <li>
+          One for the AWS cloud (using the AWS console, CLI, AWS Corporate
+         </li>
+        </ul>
+        <p>
+         and AWS APIs) Cloud data center
+        </p>
+        <ul>
+         <li>
+          One for their on-premises infrastructure
+         </li>
+        </ul>
+        <p>
+         On-prem
+        </p>
+        <ul>
+         <li>
+          AWS Outposts are “server racks” that offers
+         </li>
+        </ul>
+        <p>
+         servers
+        </p>
+        <p>
+         the same AWS infrastructure, services, APIs &amp;
+        </p>
+        <p>
+         tools to build your own applications on-premises
+        </p>
+        <p>
+         just as in the cloud
+        </p>
+        <p>
+         Extension of Outposts
+        </p>
+        <p>
+         AWS services Racks
+        </p>
+        <ul>
+         <li>
+          AWS will setup and manage “Outposts
+         </li>
+        </ul>
+        <p>
+         Racks” within your on-premises infrastructure
+        </p>
+        <p>
+         and you can start leveraging AWS services on-
+        </p>
+        <p>
+         premises
+        </p>
+        <ul>
+         <li>
+          You are responsible for the Outposts Rack
+         </li>
+        </ul>
+        <p>
+         physical security
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-372">
+       <h2 id="slide-372">
+        AWS Outposts
+       </h2>
+       <div class="slide-number">
+        Slide 372
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Benefits:
+         </li>
+         <li>
+          Low-latency access to on-premises systems
+         </li>
+         <li>
+          Local data processing
+         </li>
+         <li>
+          Data residency
+         </li>
+         <li>
+          Easier migration from on-premises to the cloud
+         </li>
+         <li>
+          Fully managed service
+         </li>
+         <li>
+          Some services that work on Outposts:
+         </li>
+        </ul>
+        <p>
+         Amazon EC2 Amazon EBS Amazon S3 Amazon EKS Amazon ECS Amazon RDS Amazon EMR
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-373">
+       <h2 id="slide-373">
+        AWS Outposts and GenAI
+       </h2>
+       <div class="slide-number">
+        Slide 373
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Relevant for data compliance across
+         </li>
+        </ul>
+        <p>
+         jurisdictions
+        </p>
+        <ul>
+         <li>
+          Different countries have different
+         </li>
+        </ul>
+        <p>
+         AI laws
+        </p>
+        <ul>
+         <li>
+          Data privacy
+         </li>
+         <li>
+          On-premise data integration
+         </li>
+         <li>
+          Need sufficient compute and storage
+         </li>
+        </ul>
+        <p>
+         for your FM inference
+        </p>
+        <ul>
+         <li>
+          Based on your on-prem data
+         </li>
+        </ul>
+        <p>
+         volume and requirements
+        </p>
+        <ul>
+         <li>
+          Local caching can minimize data
+         </li>
+        </ul>
+        <p>
+         movement
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-374">
+       <h2 id="slide-374">
+        AWS WaveLength
+       </h2>
+       <div class="slide-number">
+        Slide 374
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          WaveLength Zones are infrastructure deployments
+         </li>
+        </ul>
+        <p>
+         embedded within the telecommunications providers’
+        </p>
+        <p>
+         Region
+        </p>
+        <p>
+         datacenters at the edge of the 5G networks
+        </p>
+        <ul>
+         <li>
+          Brings AWS services to the edge of the 5G networks
+         </li>
+        </ul>
+        <p>
+         Availability Zone 1 Availability Zone 2
+        </p>
+        <ul>
+         <li>
+          Example: EC2, EBS, VPC…
+         </li>
+         <li>
+          Ultra-low latency applications through 5G networks
+         </li>
+         <li>
+          Traffic doesn’t leave the Communication Service
+         </li>
+        </ul>
+        <p>
+         Provider’s (CSP) network
+        </p>
+        <ul>
+         <li>
+          High-bandwidth and secure connection to the parent
+         </li>
+        </ul>
+        <p>
+         AWS Region
+        </p>
+        <p>
+         WaveLength Zone
+        </p>
+        <ul>
+         <li>
+          No additional charges or service agreements
+         </li>
+         <li>
+          Use cases: Smart Cities, ML-assisted diagnostics,
+         </li>
+        </ul>
+        <p>
+         Connected Vehicles, Interactive Live Video Streams,
+        </p>
+        <p>
+         AR/VR, Real-time Gaming, …
+        </p>
+        <p>
+         Carrier
+        </p>
+        <p>
+         Gateway
+        </p>
+        <p>
+         Telecom carrier
+        </p>
+        <p>
+         5G network
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-375">
+       <h2 id="slide-375">
+        AWS WaveLength and GenAI
+       </h2>
+       <div class="slide-number">
+        Slide 375
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Edge deployments
+         </li>
+         <li>
+          Secure routing between cloud
+         </li>
+        </ul>
+        <p>
+         and on-prem
+        </p>
+        <ul>
+         <li>
+          Mobile foundation model apps
+         </li>
+         <li>
+          Distribute traffic between
+         </li>
+        </ul>
+        <p>
+         Wavelength Zones and parent
+        </p>
+        <p>
+         regions based on workload
+        </p>
+        <ul>
+         <li>
+          Low-latency, lighter work at the
+         </li>
+        </ul>
+        <p>
+         edge
+        </p>
+        <ul>
+         <li>
+          Heavier in the Region
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-376">
+       <h2 id="slide-376">
+        Amazon SQS
+       </h2>
+       <div class="slide-number">
+        Slide 376
+       </div>
+       <div class="slide-content">
+        <p>
+         What’s a queue?
+        </p>
+        <p>
+         Consumer
+        </p>
+        <p>
+         Producer
+        </p>
+        <p>
+         Consumer
+        </p>
+        <p>
+         Send messages
+        </p>
+        <p>
+         Producer Poll messages
+        </p>
+        <p>
+         Consumer
+        </p>
+        <p>
+         SQS Queue
+        </p>
+        <p>
+         Producer
+        </p>
+        <p>
+         Consumer
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-377">
+       <h2 id="slide-377">
+        Amazon SQS – Standard Queue
+       </h2>
+       <div class="slide-number">
+        Slide 377
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Oldest offering (over 10 years old)
+         </li>
+         <li>
+          Fully managed service, used to decouple applications
+         </li>
+         <li>
+          Attributes:
+         </li>
+         <li>
+          Unlimited throughput, unlimited number of messages in queue
+         </li>
+         <li>
+          Default retention of messages: 4 days, maximum of 14 days
+         </li>
+         <li>
+          Low latency (&lt;10 ms on publish and receive)
+         </li>
+         <li>
+          Limitation of 1,024 KB per message sent
+         </li>
+         <li>
+          Can have duplicate messages (at least once delivery, occasionally)
+         </li>
+         <li>
+          Can have out of order messages (best effort ordering)
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-378">
+       <h2 id="slide-378">
+        SQS – Producing Messages
+       </h2>
+       <div class="slide-number">
+        Slide 378
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Produced to SQS using the SDK (SendMessage API)
+         </li>
+         <li>
+          The message is persisted in SQS until a consumer deletes it
+         </li>
+         <li>
+          Message retention: default 4 days, up to 14 days
+         </li>
+         <li>
+          Example: send an order to be processed
+         </li>
+         <li>
+          Order id
+         </li>
+        </ul>
+        <p>
+         Sent to SQS
+        </p>
+        <ul>
+         <li>
+          Customer id
+         </li>
+         <li>
+          Any attributes you want
+         </li>
+        </ul>
+        <p>
+         Message
+        </p>
+        <p>
+         Up to 1024 KB
+        </p>
+        <ul>
+         <li>
+          SQS standard: unlimited throughput
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-379">
+       <h2 id="slide-379">
+        SQS – Consuming Messages
+       </h2>
+       <div class="slide-number">
+        Slide 379
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Consumers (running on EC2 instances, servers, or AWS Lambda)…
+         </li>
+         <li>
+          Poll SQS for messages (receive up to 10 messages at a time)
+         </li>
+         <li>
+          Process the messages (example: insert the message into an RDS
+         </li>
+        </ul>
+        <p>
+         database)
+        </p>
+        <ul>
+         <li>
+          Delete the messages using the DeleteMessage API
+         </li>
+        </ul>
+        <p>
+         Poll / Receive
+        </p>
+        <p>
+         messages insert
+        </p>
+        <p>
+         Consumer
+        </p>
+        <p>
+         DeleteMessage
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-380">
+       <h2 id="slide-380">
+        SQS – Multiple EC2 Instances
+       </h2>
+       <div class="slide-number">
+        Slide 380
+       </div>
+       <div class="slide-content">
+        <p>
+         Consumers
+        </p>
+        <ul>
+         <li>
+          Consumers receive and
+         </li>
+        </ul>
+        <p>
+         process messages in parallel
+        </p>
+        <ul>
+         <li>
+          At least once delivery
+         </li>
+         <li>
+          Best-effort message ordering
+         </li>
+        </ul>
+        <p>
+         SQS Queue
+        </p>
+        <ul>
+         <li>
+          Consumers delete messages
+         </li>
+        </ul>
+        <p>
+         after processing them
+        </p>
+        <ul>
+         <li>
+          We can scale consumers
+         </li>
+        </ul>
+        <p>
+         horizontally to improve
+        </p>
+        <p>
+         throughput of processing
+        </p>
+        <p>
+         poll
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-381">
+       <h2 id="slide-381">
+        SQS with Auto Scaling Group (ASG)
+       </h2>
+       <div class="slide-number">
+        Slide 381
+       </div>
+       <div class="slide-content">
+        <p>
+         Poll for messages
+        </p>
+        <p>
+         EC2 Instances
+        </p>
+        <p>
+         SQS Queue
+        </p>
+        <p>
+         Auto Scaling Group
+        </p>
+        <p>
+         scale
+        </p>
+        <p>
+         Alarm for breach
+        </p>
+        <p>
+         CloudWatch Metric – Queue Length CloudWatch Alarm
+        </p>
+        <p>
+         ApproximateNumberOfMessages
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-382">
+       <h2 id="slide-382">
+        SQS to decouple between application
+       </h2>
+       <div class="slide-number">
+        Slide 382
+       </div>
+       <div class="slide-content">
+        <p>
+         tiers
+        </p>
+        <p>
+         Back-end processing
+        </p>
+        <p>
+         Front-end web app
+        </p>
+        <p>
+         application
+        </p>
+        <p>
+         requests SendMessage ReceiveMessages
+        </p>
+        <p>
+         SQS Queue
+        </p>
+        <p>
+         (infinitely scalable)
+        </p>
+        <p>
+         Auto-Scaling
+        </p>
+        <p>
+         Auto-Scaling
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-383">
+       <h2 id="slide-383">
+        Amazon SQS - Security
+       </h2>
+       <div class="slide-number">
+        Slide 383
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Encryption:
+         </li>
+         <li>
+          In-flight encryption using HTTPS API
+         </li>
+         <li>
+          At-rest encryption using KMS keys
+         </li>
+         <li>
+          Client-side encryption if the client wants to perform encryption/decryption
+         </li>
+        </ul>
+        <p>
+         itself
+        </p>
+        <ul>
+         <li>
+          Access Controls: IAM policies to regulate access to the SQS API
+         </li>
+         <li>
+          SQS Access Policies (similar to S3 bucket policies)
+         </li>
+         <li>
+          Useful for cross-account access to SQS queues
+         </li>
+         <li>
+          Useful for allowing other services (SNS, S3…) to write to an SQS queue
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-384">
+       <h2 id="slide-384">
+        AWS Amplify - web and mobile
+       </h2>
+       <div class="slide-number">
+        Slide 384
+       </div>
+       <div class="slide-content">
+        <p>
+         applications
+        </p>
+        <ul>
+         <li>
+          A set of tools and services that helps you develop and deploy scalable full stack web and
+         </li>
+        </ul>
+        <p>
+         mobile applications
+        </p>
+        <ul>
+         <li>
+          Authentication, Storage, API (REST, GraphQL), CI/CD, PubSub, Analytics, AI/ML
+         </li>
+        </ul>
+        <p>
+         Predictions, Monitoring, …
+        </p>
+        <ul>
+         <li>
+          Connect your source code from GitHub, AWS CodeCommit, Bitbucket, GitLab, or upload
+         </li>
+        </ul>
+        <p>
+         directly
+        </p>
+        <p>
+         connect frontend to backend configure backend
+        </p>
+        <p>
+         using using
+        </p>
+        <p>
+         Amplify Frontend Libraries Amplify CLI
+        </p>
+        <p>
+         Amazon S3 Amazon Cognito AWS API
+        </p>
+        <p>
+         build using Amplify Console …
+        </p>
+        <p>
+         AppSync Gateway
+        </p>
+        <p>
+         &amp; deploy
+        </p>
+        <p>
+         Amazon Amazon Lex Lambda DynamoDB
+        </p>
+        <p>
+         … … SageMaker
+        </p>
+        <p>
+         Frontend Amplify backend
+        </p>
+        <p>
+         Amplify Amazon
+        </p>
+        <p>
+         Console CloudFront
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-385">
+       <h2 id="slide-385">
+        Amazon EventBridge
+       </h2>
+       <div class="slide-number">
+        Slide 385
+       </div>
+       <div class="slide-content">
+        <p>
+         (formerly CloudWatch Events)
+        </p>
+        <ul>
+         <li>
+          Schedule: Cron jobs (scheduled scripts)
+         </li>
+         <li>
+          Event Pattern: Event rules to react to a service doing something
+         </li>
+        </ul>
+        <p>
+         IAM Root User Sign in Event SNS Topic with Email Notification
+        </p>
+        <ul>
+         <li>
+          Trigger Lambda functions, send SQS/SNS messages…
+         </li>
+        </ul>
+        <p>
+         E M A I L
+        </p>
+        <p>
+         Schedule Every hour Trigger script on Lambda function
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-386">
+       <h2 id="slide-386">
+        Amazon EventBridge Rules
+       </h2>
+       <div class="slide-number">
+        Slide 386
+       </div>
+       <div class="slide-content">
+        <p>
+         Example Destinations
+        </p>
+        <p>
+         Example Source
+        </p>
+        <p>
+         e
+        </p>
+        <p>
+         JSON t
+        </p>
+        <p>
+         u
+        </p>
+        <p>
+         p
+        </p>
+        <p>
+         m
+        </p>
+        <p>
+         o
+        </p>
+        <p>
+         { C
+        </p>
+        <p>
+         Lambda AWS Batch ECS Task
+        </p>
+        <p>
+         "version": "0",
+        </p>
+        <p>
+         EC2 Instance CodeBuild "id": "6a7e8feb-b491",
+        </p>
+        <p>
+         n
+        </p>
+        <p>
+         "detail-type": "EC2 Instance
+        </p>
+        <p>
+         (ex: Start Instance) (ex: failed build) o
+        </p>
+        <p>
+         State-change Notification", i t
+        </p>
+        <p>
+         a
+        </p>
+        <p>
+         Filter events …. r
+        </p>
+        <p>
+         g
+        </p>
+        <p>
+         (optional) } e
+        </p>
+        <p>
+         t
+        </p>
+        <p>
+         n
+        </p>
+        <p>
+         I SQS SNS Kinesis Data
+        </p>
+        <p>
+         Streams
+        </p>
+        <p>
+         n
+        </p>
+        <p>
+         S3 Event Trusted Advisor o
+        </p>
+        <p>
+         i
+        </p>
+        <p>
+         t
+        </p>
+        <p>
+         (ex: upload object) (ex: new Finding) Amazon a
+        </p>
+        <p>
+         r
+        </p>
+        <p>
+         t
+        </p>
+        <p>
+         s
+        </p>
+        <p>
+         EventBridge e
+        </p>
+        <p>
+         h
+        </p>
+        <p>
+         c
+        </p>
+        <p>
+         r O Step CodePipeline CodeBuild
+        </p>
+        <p>
+         Functions
+        </p>
+        <p>
+         e
+        </p>
+        <p>
+         c
+        </p>
+        <p>
+         n
+        </p>
+        <p>
+         CloudTrail Schedule or Cron
+        </p>
+        <p>
+         a
+        </p>
+        <p>
+         n
+        </p>
+        <p>
+         (any API call) (ex: every 4 hours) e
+        </p>
+        <p>
+         t
+        </p>
+        <p>
+         n
+        </p>
+        <p>
+         i
+        </p>
+        <p>
+         a
+        </p>
+        <p>
+         M SSM EC2 Actions
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-387">
+       <h2 id="slide-387">
+        Amazon EventBridge
+       </h2>
+       <div class="slide-number">
+        Slide 387
+       </div>
+       <div class="slide-content">
+        <p>
+         AWS Services AWS SaaS Custom
+        </p>
+        <p>
+         Partner Custom
+        </p>
+        <p>
+         Default
+        </p>
+        <p>
+         Partners Apps
+        </p>
+        <p>
+         Event Bus Event Bus
+        </p>
+        <p>
+         Event Bus
+        </p>
+        <ul>
+         <li>
+          Event buses can be accessed by other AWS accounts using Resource-based
+         </li>
+        </ul>
+        <p>
+         Policies
+        </p>
+        <ul>
+         <li>
+          You can archive events (all/filter) sent to an event bus (indefinitely or set period)
+         </li>
+         <li>
+          Ability to replay archived events
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-388">
+       <h2 id="slide-388">
+        Amazon EventBridge – Schema Registry
+       </h2>
+       <div class="slide-number">
+        Slide 388
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          EventBridge can analyze the events
+         </li>
+        </ul>
+        <p>
+         in your bus and infer the schema
+        </p>
+        <ul>
+         <li>
+          The Schema Registry allows you to
+         </li>
+        </ul>
+        <p>
+         generate code for your application,
+        </p>
+        <p>
+         that will know in advance how data is
+        </p>
+        <p>
+         structured in the event bus
+        </p>
+        <ul>
+         <li>
+          Schema can be versioned
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-389">
+       <h2 id="slide-389">
+        Amazon EventBridge – Resource-based
+       </h2>
+       <div class="slide-number">
+        Slide 389
+       </div>
+       <div class="slide-content">
+        <p>
+         Policy
+        </p>
+        <ul>
+         <li>
+          Manage permissions for a specific Event Bus
+         </li>
+         <li>
+          Example: allow/deny events from another AWS account or AWS region
+         </li>
+         <li>
+          Use case: aggregate all events from your AWS Organization in a single
+         </li>
+        </ul>
+        <p>
+         AWS account or AWS region
+        </p>
+        <p>
+         AWS Account AWS Account
+        </p>
+        <p>
+         (123456789012) (111122223333)
+        </p>
+        <p>
+         PutEvents
+        </p>
+        <p>
+         Lambda function
+        </p>
+        <p>
+         EventBridge Bus
+        </p>
+        <p>
+         (central-event-bus)
+        </p>
+        <p>
+         Allow events from another AWS account
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-390">
+       <h2 id="slide-390">
+        Amazon SNS
+       </h2>
+       <div class="slide-number">
+        Slide 390
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          What if you want to send one message to many receivers?
+         </li>
+        </ul>
+        <p>
+         Direct Pub / Sub
+        </p>
+        <p>
+         Email
+        </p>
+        <p>
+         Email
+        </p>
+        <p>
+         integration
+        </p>
+        <p>
+         notification
+        </p>
+        <p>
+         notification
+        </p>
+        <p>
+         Fraud
+        </p>
+        <p>
+         Fraud
+        </p>
+        <p>
+         Service
+        </p>
+        <p>
+         Service
+        </p>
+        <p>
+         Buying Buying
+        </p>
+        <p>
+         Service Service
+        </p>
+        <p>
+         Shipping
+        </p>
+        <p>
+         Shipping
+        </p>
+        <p>
+         Service
+        </p>
+        <p>
+         SNS Topic Service
+        </p>
+        <p>
+         SQS Queue
+        </p>
+        <p>
+         SQS Queue
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-391">
+       <h2 id="slide-391">
+        Amazon SNS
+       </h2>
+       <div class="slide-number">
+        Slide 391
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          The “event producer” only sends message to one SNS topic
+         </li>
+         <li>
+          As many “event receivers” (subscriptions) as we want to listen to the SNS topic
+         </li>
+        </ul>
+        <p>
+         notifications
+        </p>
+        <ul>
+         <li>
+          Each subscriber to the topic will get all the messages (note: new feature to filter
+         </li>
+        </ul>
+        <p>
+         messages)
+        </p>
+        <ul>
+         <li>
+          Up to 12,500,000 subscriptions per topic
+         </li>
+         <li>
+          100,000 topics limit
+         </li>
+        </ul>
+        <p>
+         Subscribers
+        </p>
+        <p>
+         publish SQS Lambda Kinesis Data
+        </p>
+        <p>
+         Firehose
+        </p>
+        <p>
+         SNS
+        </p>
+        <p>
+         Emails SMS &amp; HTTP(S)
+        </p>
+        <p>
+         Mobile Notifications Endpoints
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-392">
+       <h2 id="slide-392">
+        SNS integrates with a lot of AWS services
+       </h2>
+       <div class="slide-number">
+        Slide 392
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Many AWS services can send data directly to SNS for notifications
+         </li>
+        </ul>
+        <p>
+         …
+        </p>
+        <p>
+         CloudWatch Alarms AWS Budgets Lambda
+        </p>
+        <p>
+         …
+        </p>
+        <p>
+         publish
+        </p>
+        <p>
+         Auto Scaling Group S3 Bucket DynamoDB
+        </p>
+        <p>
+         (Notifications) (Events)
+        </p>
+        <p>
+         SNS
+        </p>
+        <p>
+         …
+        </p>
+        <p>
+         CloudFormation AWS DMS RDS Events
+        </p>
+        <p>
+         (State Changes) (New Replic)
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-393">
+       <h2 id="slide-393">
+        Amazon SNS – How to publish
+       </h2>
+       <div class="slide-number">
+        Slide 393
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Topic Publish (using the SDK)
+         </li>
+         <li>
+          Create a topic
+         </li>
+         <li>
+          Create a subscription (or many)
+         </li>
+         <li>
+          Publish to the topic
+         </li>
+         <li>
+          Direct Publish (for mobile apps SDK)
+         </li>
+         <li>
+          Create a platform application
+         </li>
+         <li>
+          Create a platform endpoint
+         </li>
+         <li>
+          Publish to the platform endpoint
+         </li>
+         <li>
+          Works with Google GCM, Apple APNS, Amazon ADM…
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-394">
+       <h2 id="slide-394">
+        Amazon SNS – Security
+       </h2>
+       <div class="slide-number">
+        Slide 394
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Encryption:
+         </li>
+         <li>
+          In-flight encryption using HTTPS API
+         </li>
+         <li>
+          At-rest encryption using KMS keys
+         </li>
+         <li>
+          Client-side encryption if the client wants to perform encryption/decryption
+         </li>
+        </ul>
+        <p>
+         itself
+        </p>
+        <ul>
+         <li>
+          Access Controls: IAM policies to regulate access to the SNS API
+         </li>
+         <li>
+          SNS Access Policies (similar to S3 bucket policies)
+         </li>
+         <li>
+          Useful for cross-account access to SNS topics
+         </li>
+         <li>
+          Useful for allowing other services ( S3…) to write to an SNS topic
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-395">
+       <h2 id="slide-395">
+        Amazon AppFlow
+       </h2>
+       <div class="slide-number">
+        Slide 395
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Fully managed integration service that enables you to securely
+         </li>
+        </ul>
+        <p>
+         transfer data between Software-as-a-Service (SaaS) applications
+        </p>
+        <p>
+         and AWS
+        </p>
+        <ul>
+         <li>
+          Sources: Salesforce, SAP, Zendesk, Slack, and ServiceNow
+         </li>
+         <li>
+          Destinations: AWS services like Amazon S3, Amazon Redshift or
+         </li>
+        </ul>
+        <p>
+         non-AWS such as SnowFlake and Salesforce
+        </p>
+        <ul>
+         <li>
+          Frequency: on a schedule, in response to events, or on demand
+         </li>
+         <li>
+          Data transformation capabilities like filtering and validation
+         </li>
+         <li>
+          Encrypted over the public internet or privately over AWS PrivateLink
+         </li>
+         <li>
+          Don’t spend time writing the integrations and leverage APIs
+         </li>
+        </ul>
+        <p>
+         immediately
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-396">
+       <h2 id="slide-396">
+        Amazon AppFlow
+       </h2>
+       <div class="slide-number">
+        Slide 396
+       </div>
+       <div class="slide-content">
+        <p>
+         Sources Destinations
+        </p>
+        <p>
+         Amazon
+        </p>
+        <p>
+         AppFlow
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="section-nav">
+      <a class="btn-back" href="index.html">
+       ← Back to Overview
+      </a>
+     </div>
+    </main>
+    <aside class="toc-sidebar">
+     <div class="toc-title">
+      On this page
+     </div>
+     <ul class="toc-list" id="toc-list">
+      <li>
+       <a href="#slide-346">
+        Step Functions – Examples
+       </a>
+      </li>
+      <li>
+       <a href="#slide-347">
+        Step Functions – Examples
+       </a>
+      </li>
+      <li>
+       <a href="#slide-348">
+        Step Functions – Examples
+       </a>
+      </li>
+      <li>
+       <a href="#slide-349">
+        AWS Step Functions
+       </a>
+      </li>
+      <li>
+       <a href="#slide-350">
+        Step Functions: Circuit Breakers
+       </a>
+      </li>
+      <li>
+       <a href="#slide-351">
+        More Step Functions + GenAI
+       </a>
+      </li>
+      <li>
+       <a href="#slide-352">
+        Even More Step Functions Stuff
+       </a>
+      </li>
+      <li>
+       <a href="#slide-353">
+        AWS CodePipeline
+       </a>
+      </li>
+      <li>
+       <a href="#slide-354">
+        Technology Stack for CICD
+       </a>
+      </li>
+      <li>
+       <a href="#slide-355">
+        CodePipeline – Artifacts
+       </a>
+      </li>
+      <li>
+       <a href="#slide-356">
+        CodePipeline – Troubleshooting
+       </a>
+      </li>
+      <li>
+       <a href="#slide-357">
+        AWS CodeBuild
+       </a>
+      </li>
+      <li>
+       <a href="#slide-358">
+        AWS CodeBuild
+       </a>
+      </li>
+      <li>
+       <a href="#slide-359">
+        CodeBuild – Supported Environments
+       </a>
+      </li>
+      <li>
+       <a href="#slide-360">
+        CodeBuild – How it Works
+       </a>
+      </li>
+      <li>
+       <a href="#slide-361">
+        CodeBuild – buildspec.yml
+       </a>
+      </li>
+      <li>
+       <a href="#slide-362">
+        AWS CodeDeploy
+       </a>
+      </li>
+      <li>
+       <a href="#slide-363">
+        CodeDeploy – EC2/On-premises
+       </a>
+      </li>
+      <li>
+       <a href="#slide-364">
+        CodeDeploy – In-Place Deployment
+       </a>
+      </li>
+      <li>
+       <a href="#slide-365">
+        CodeDeploy – Blue-Green Deployment
+       </a>
+      </li>
+      <li>
+       <a href="#slide-366">
+        CodeDeploy Agent
+       </a>
+      </li>
+      <li>
+       <a href="#slide-367">
+        CodeDeploy – Lambda Platform
+       </a>
+      </li>
+      <li>
+       <a href="#slide-368">
+        CodeDeploy – ECS Platform
+       </a>
+      </li>
+      <li>
+       <a href="#slide-369">
+        MLFlow
+       </a>
+      </li>
+      <li>
+       <a href="#slide-370">
+        AWS AppSync GraphQL and GenAI
+       </a>
+      </li>
+      <li>
+       <a href="#slide-371">
+        AWS Outposts
+       </a>
+      </li>
+      <li>
+       <a href="#slide-372">
+        AWS Outposts
+       </a>
+      </li>
+      <li>
+       <a href="#slide-373">
+        AWS Outposts and GenAI
+       </a>
+      </li>
+      <li>
+       <a href="#slide-374">
+        AWS WaveLength
+       </a>
+      </li>
+      <li>
+       <a href="#slide-375">
+        AWS WaveLength and GenAI
+       </a>
+      </li>
+      <li>
+       <a href="#slide-376">
+        Amazon SQS
+       </a>
+      </li>
+      <li>
+       <a href="#slide-377">
+        Amazon SQS – Standard Queue
+       </a>
+      </li>
+      <li>
+       <a href="#slide-378">
+        SQS – Producing Messages
+       </a>
+      </li>
+      <li>
+       <a href="#slide-379">
+        SQS – Consuming Messages
+       </a>
+      </li>
+      <li>
+       <a href="#slide-380">
+        SQS – Multiple EC2 Instances
+       </a>
+      </li>
+      <li>
+       <a href="#slide-381">
+        SQS with Auto Scaling Group (ASG)
+       </a>
+      </li>
+      <li>
+       <a href="#slide-382">
+        SQS to decouple between application
+       </a>
+      </li>
+      <li>
+       <a href="#slide-383">
+        Amazon SQS - Security
+       </a>
+      </li>
+      <li>
+       <a href="#slide-384">
+        AWS Amplify - web and mobile
+       </a>
+      </li>
+      <li>
+       <a href="#slide-385">
+        Amazon EventBridge
+       </a>
+      </li>
+      <li>
+       <a href="#slide-386">
+        Amazon EventBridge Rules
+       </a>
+      </li>
+      <li>
+       <a href="#slide-387">
+        Amazon EventBridge
+       </a>
+      </li>
+      <li>
+       <a href="#slide-388">
+        Amazon EventBridge – Schema Registry
+       </a>
+      </li>
+      <li>
+       <a href="#slide-389">
+        Amazon EventBridge – Resource-based
+       </a>
+      </li>
+      <li>
+       <a href="#slide-390">
+        Amazon SNS
+       </a>
+      </li>
+      <li>
+       <a href="#slide-391">
+        Amazon SNS
+       </a>
+      </li>
+      <li>
+       <a href="#slide-392">
+        SNS integrates with a lot of AWS service...
+       </a>
+      </li>
+      <li>
+       <a href="#slide-393">
+        Amazon SNS – How to publish
+       </a>
+      </li>
+      <li>
+       <a href="#slide-394">
+        Amazon SNS – Security
+       </a>
+      </li>
+      <li>
+       <a href="#slide-395">
+        Amazon AppFlow
+       </a>
+      </li>
+      <li>
+       <a href="#slide-396">
+        Amazon AppFlow
+       </a>
+      </li>
+     </ul>
+    </aside>
+   </div>
+  </div>
   <script>
-    function toggleSidebar() {
-      document.getElementById('sidebar').classList.toggle('open');
-      document.getElementById('overlay').classList.toggle('show');
-    }
+   function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('open');
+        }
   </script>
-</body>
+ </body>
 </html>

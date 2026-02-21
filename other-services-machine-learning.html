@@ -1,599 +1,1692 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Other Services - Machine Learning – AWS GenAI Developer Pro (AIP-C01)</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-  <nav class="sidebar" id="sidebar">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Other Services - Machine Learning – AWS GenAI Developer Pro (AIP-C01)
+  </title>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="mobile-header">
+   <button class="menu-toggle" onclick="toggleSidebar()">
+    ☰
+   </button>
+   <span class="logo">
+    ☁️ AIP-C01
+   </span>
+  </div>
+  <div class="app-container">
+   <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <span class="logo">☁️ AIP-C01</span>
-      <button class="close-btn" onclick="toggleSidebar()">✕</button>
+     <span class="logo">
+      ☁️ AIP-C01
+     </span>
+     <button class="close-btn" onclick="toggleSidebar()">
+      ✕
+     </button>
     </div>
     <ul class="nav-list">
-      <li><a href="index.html">🏠 Home</a></li>
-      <li class="divider">Course Sections</li>
-      <li class=""><a href="generative-ai-fundamentals-and-bedrock.html">Generative AI Fundamentals and Bedrock</a></li>
-<li class=""><a href="managing-data-for-generative-ai.html">Managing Data for Generative AI</a></li>
-<li class=""><a href="agentic-ai.html">Agentic AI</a></li>
-<li class=""><a href="operations-efficiency-and-optimization.html">Operations Efficiency and Optimization</a></li>
-<li class=""><a href="managing-models-with-sagemaker-ai.html">Managing Models with SageMaker AI</a></li>
-<li class=""><a href="more-tools-for-building-ai-applications.html">More Tools for Building AI Applications</a></li>
-<li class=""><a href="governance-and-qa.html">Governance and QA</a></li>
-<li class=""><a href="security-identity-and-compliance.html">Security, Identity, and Compliance</a></li>
-<li class=""><a href="other-services-analytics.html">Other Services - Analytics</a></li>
-<li class=""><a href="other-services-compute-containers.html">Other Services - Compute & Containers</a></li>
-<li class=""><a href="other-services-database.html">Other Services - Database</a></li>
-<li class=""><a href="other-services-developer-tools.html">Other Services - Developer Tools</a></li>
-<li class="active"><a href="other-services-machine-learning.html">Other Services - Machine Learning</a></li>
-<li class=""><a href="other-services-storage-networking.html">Other Services - Storage & Networking</a></li>
-<li class=""><a href="exam-preparation.html">Exam Preparation</a></li>
-
+     <li>
+      <a href="index.html">
+       🏠 Home
+      </a>
+     </li>
+     <li class="divider">
+      Course Sections
+     </li>
+     <li class="">
+      <a href="generative-ai-fundamentals-and-bedrock.html">
+       Generative AI Fundamentals and Bedrock
+      </a>
+     </li>
+     <li class="">
+      <a href="managing-data-for-generative-ai.html">
+       Managing Data for Generative AI
+      </a>
+     </li>
+     <li class="">
+      <a href="agentic-ai.html">
+       Agentic AI
+      </a>
+     </li>
+     <li class="">
+      <a href="operations-efficiency-and-optimization.html">
+       Operations Efficiency and Optimization
+      </a>
+     </li>
+     <li class="">
+      <a href="managing-models-with-sagemaker-ai.html">
+       Managing Models with SageMaker AI
+      </a>
+     </li>
+     <li class="">
+      <a href="more-tools-for-building-ai-applications.html">
+       More Tools for Building AI Applications
+      </a>
+     </li>
+     <li class="">
+      <a href="governance-and-qa.html">
+       Governance and QA
+      </a>
+     </li>
+     <li class="">
+      <a href="security-identity-and-compliance.html">
+       Security, Identity, and Compliance
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-analytics.html">
+       Other Services - Analytics
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-compute-containers.html">
+       Other Services - Compute &amp; Containers
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-database.html">
+       Other Services - Database
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-developer-tools.html">
+       Other Services - Developer Tools
+      </a>
+     </li>
+     <li class="active">
+      <a href="other-services-machine-learning.html">
+       Other Services - Machine Learning
+      </a>
+     </li>
+     <li class="">
+      <a href="other-services-storage-networking.html">
+       Other Services - Storage &amp; Networking
+      </a>
+     </li>
+     <li class="">
+      <a href="exam-preparation.html">
+       Exam Preparation
+      </a>
+     </li>
     </ul>
-  </nav>
-  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
-
-  <main class="main-content">
-    <header class="top-bar">
-      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
-      <div class="breadcrumb">
-        <a href="index.html">AWS GenAI Pro</a> › <span>Other Services - Machine Learning</span>
+   </nav>
+   <div class="main-wrapper">
+    <main class="main-content">
+     <div class="section-hero">
+      <h1>
+       Other Services - Machine Learning
+      </h1>
+      <p class="section-subtitle">
+       AWS Certified Generative AI Developer – Professional (AIP-C01)
+      </p>
+     </div>
+     <div class="doc-container">
+      <div class="doc-section" id="slide-574">
+       <h2 id="slide-574">
+        Amazon Augmented AI (A2I)
+       </h2>
+       <div class="slide-number">
+        Slide 574
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Human oversight of Machine Learning predictions in production
+         </li>
+         <li>
+          Can be your own employees, over 500,000 contractors from AWS, or AWS Mechanical
+         </li>
+        </ul>
+        <p>
+         Turk
+        </p>
+        <ul>
+         <li>
+          Some vendors are pre-screened for confidentiality requirements
+         </li>
+         <li>
+          The ML model can be built on AWS or elsewhere (SageMaker, Rekognition…)
+         </li>
+        </ul>
+        <p>
+         High-confidence predictions
+        </p>
+        <p>
+         are returned immediately to
+        </p>
+        <p>
+         the client application
+        </p>
+        <p>
+         Input Data An AWS AI service
+        </p>
+        <p>
+         Amazon
+        </p>
+        <p>
+         or custom ML model
+        </p>
+        <p>
+         Client Application
+        </p>
+        <p>
+         Augmented AI
+        </p>
+        <p>
+         makes prediction reviewed data can be added
+        </p>
+        <p>
+         to the training dataset
+        </p>
+        <p>
+         Low-confidence predictions to improve ML models
+        </p>
+        <p>
+         Reviews are consolidated
+        </p>
+        <p>
+         are sent for human review
+        </p>
+        <p>
+         using weighted scores
+        </p>
+        <p>
+         (stored in Amazon S3)
+        </p>
+       </div>
       </div>
-      <div class="page-meta">30 slides · Pages 574–603</div>
-    </header>
-
-    <div class="section-hero">
-      <h1>Other Services - Machine Learning</h1>
-      <p class="section-subtitle">AWS Certified Generative AI Developer – Professional (AIP-C01)</p>
-      <div class="section-stats">
-        <span>📄 30 slides</span>
-        <span>📑 Pages 574–603</span>
+      <div class="doc-section" id="slide-575">
+       <h2 id="slide-575">
+        Amazon Kendra
+       </h2>
+       <div class="slide-number">
+        Slide 575
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Fully managed document search service powered by Machine Learning
+         </li>
+         <li>
+          Extract answers from within a document (text, pdf, HTML, PowerPoint, MS Word,
+         </li>
+        </ul>
+        <p>
+         FAQs…)
+        </p>
+        <ul>
+         <li>
+          Natural language search capabilities
+         </li>
+         <li>
+          Learn from user interactions/feedback to promote preferred results (Incremental
+         </li>
+        </ul>
+        <p>
+         Learning)
+        </p>
+        <ul>
+         <li>
+          Ability to manually fine-tune search results (importance of data, freshness, custom, …)
+         </li>
+        </ul>
+        <p>
+         Data Sources
+        </p>
+        <p>
+         Where is the IT support desk?
+        </p>
+        <p>
+         indexing
+        </p>
+        <p>
+         Amazon S3 Amazon RDS Google Drive MS SharePoint
+        </p>
+        <p>
+         1st floor
+        </p>
+        <p>
+         Knowledge Index
+        </p>
+        <p>
+         User
+        </p>
+        <p>
+         3rd party, (powered by ML)
+        </p>
+        <p>
+         APNs,
+        </p>
+        <p>
+         MS OneDrive Amazon Kendra
+        </p>
+        <p>
+         Custom
+        </p>
+       </div>
       </div>
-    </div>
-
-    <div class="slides-container">
-      
-        <div class="slide" id="slide-574">
-          <div class="slide-number">Slide 574</div>
-          <div class="slide-content"><p>Amazon Augmented AI (A2I)</p>
-<ul><li>Human oversight of Machine Learning predictions in production</li>
-<li>Can be your own employees, over 500,000 contractors from AWS, or AWS Mechanical</li>
-</ul><p>Turk</p>
-<ul><li>Some vendors are pre-screened for confidentiality requirements</li>
-<li>The ML model can be built on AWS or elsewhere (SageMaker, Rekognition…)</li>
-</ul><p>High-confidence predictions</p>
-<p>are returned immediately to</p>
-<p>the client application</p>
-<p>Input Data An AWS AI service</p>
-<p>Amazon</p>
-<p>or custom ML model</p>
-<p>Client Application</p>
-<p>Augmented AI</p>
-<p>makes prediction reviewed data can be added</p>
-<p>to the training dataset</p>
-<p>Low-confidence predictions to improve ML models</p>
-<p>Reviews are consolidated</p>
-<p>are sent for human review</p>
-<p>using weighted scores</p>
-<p>(stored in Amazon S3)</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-575">
-          <div class="slide-number">Slide 575</div>
-          <div class="slide-content"><p>Amazon Kendra</p>
-<ul><li>Fully managed document search service powered by Machine Learning</li>
-<li>Extract answers from within a document (text, pdf, HTML, PowerPoint, MS Word,</li>
-</ul><p>FAQs…)</p>
-<ul><li>Natural language search capabilities</li>
-<li>Learn from user interactions/feedback to promote preferred results (Incremental</li>
-</ul><p>Learning)</p>
-<ul><li>Ability to manually fine-tune search results (importance of data, freshness, custom, …)</li>
-</ul><p>Data Sources</p>
-<p>Where is the IT support desk?</p>
-<p>indexing</p>
-<p>Amazon S3 Amazon RDS Google Drive MS SharePoint</p>
-<p>1st floor</p>
-<p>Knowledge Index</p>
-<p>User</p>
-<p>3rd party, (powered by ML)</p>
-<p>APNs,</p>
-<p>MS OneDrive Amazon Kendra</p>
-<p>Custom</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-576">
-          <div class="slide-number">Slide 576</div>
-          <div class="slide-content"><p>Amazon Lex</p>
-<ul><li>Build chatbots quickly for your</li>
-</ul><p>applications using voice and text</p>
-<ul><li>Example: a chatbot that allows your</li>
-</ul><p>customers to order pizzas or book a</p>
-<p>hotel</p>
-<ul><li>Supports multiple languages</li>
-<li>Integration with AWS Lambda,</li>
-</ul><p>Connect, Comprehend, Kendra</p>
-<ul><li>The bot automatically understands</li>
-</ul><p>the user intent to invoke the correct</p>
-<p>Lambda function to “fulfill the intent”</p>
-<ul><li>The bot will ask for ”Slots” (input</li>
-</ul><p>parameters) if necessary</p>
-<p>Booking System</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-577">
-          <div class="slide-number">Slide 577</div>
-          <div class="slide-content"><p>Amazon Rekognition</p>
-<ul><li>Find objects, people, text, scenes in images and videos using ML</li>
-<li>Facial analysis and facial search to do user verification, people</li>
-</ul><p>counting</p>
-<ul><li>Create a database of “familiar faces” or compare against celebrities</li>
-<li>Use cases:</li>
-<li>Labeling</li>
-<li>Content Moderation</li>
-<li>Text Detection</li>
-<li>Face Detection and Analysis (gender, age range, emotions…)</li>
-<li>Face Search and Verification</li>
-<li>Celebrity Recognition</li>
-<li>Pathing (ex: for sports game analysis)</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-578">
-          <div class="slide-number">Slide 578</div>
-          <div class="slide-content"><p>Amazon Rekognition – Custom Labels</p>
-<ul><li>Examples: find your logo in social media posts, identify your products on stores</li>
-</ul><p>shelves (National Football League – NFL – uses it to find their logo in pictures)</p>
-<ul><li>Label your training images and upload them to Amazon Rekognition</li>
-<li>Only needs a few hundred images or less</li>
-<li>Amazon Rekognition creates a custom model on your images set</li>
-<li>New subsequent images will be categorized the custom way you have defined</li>
-</ul><p>store training</p>
-<p>Custom classification</p>
-<p>Labeled Images Amazon S3 Amazon Rekognition User</p>
-<p>Custom Labels</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-579">
-          <div class="slide-number">Slide 579</div>
-          <div class="slide-content"><p>Amazon Rekognition – Content</p>
-<p>Moderation</p>
-<ul><li>Automatically detect inappropriate,</li>
-</ul><p>Input for moderation</p>
-<p>unwanted, or offensive content</p>
-<ul><li>Example: filter out harmful images in</li>
-</ul><p>social media, broadcast media,</p>
-<p>advertising…</p>
-<ul><li>Bring down human review to 1-5% of total</li>
-</ul><p>Rekognition Custom</p>
-<p>content volume</p>
-<p>Moderation Adaptor</p>
-<p>training</p>
-<ul><li>Integrated with Amazon Augmented AI</li>
-</ul><p>(Amazon A2I) for human review</p>
-<p>Labeled Images</p>
-<p>1-5% optional</p>
-<ul><li>Custom Moderation Adaptors</li>
-</ul><p>Human review</p>
-<ul><li>Extends Rekognition capabilities by</li>
-</ul><p>providing your own labeled set of images</p>
-<ul><li>Enhances the accuracy of Content</li>
-</ul><p>Moderation pass/fail</p>
-<p>Moderation or create a specific use case of</p>
-<p>Moderation</p>
-<p>Amazon</p>
-<p>Augmented AI</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-580">
-          <div class="slide-number">Slide 580</div>
-          <div class="slide-content"><p>Content Moderation API – Diagram</p>
-<p>Image</p>
-<p>review image</p>
-<p>Generate an image for … DetectModerationLabels API</p>
-<p>Image Labels…</p>
-<p>User</p>
-<p>Chatbot Amazon</p>
-<p>(Your Application) Rekognition</p>
-<p>Labels…</p>
-<p>Pass</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-581">
-          <div class="slide-number">Slide 581</div>
-          <div class="slide-content"><p>Amazon Textract</p>
-<ul><li>Automatically extracts text, handwriting, and data from any scanned</li>
-</ul><p>documents using AI and ML</p>
-<p>{</p>
-<p>“Document ID”: “123456789-005”,</p>
-<p>“Name”: “”,</p>
-<p>analyze result</p>
-<p>“SEX”: “F”,</p>
-<p>“DOB”: “23.05.1997”,</p>
-<p>…</p>
-<p>}</p>
-<p>Amazon Textract</p>
-<ul><li>Extract data from forms and tables</li>
-<li>Read and process any type of document (PDFs, images, …)</li>
-<li>Use cases:</li>
-<li>Financial Services (e.g., invoices, financial reports)</li>
-<li>Healthcare (e.g., medical records, insurance claims)</li>
-<li>Public Sector (e.g., tax forms, ID documents, passports)</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-582">
-          <div class="slide-number">Slide 582</div>
-          <div class="slide-content"><p>Amazon Transcribe</p>
-<ul><li>Automatically convert speech to text</li>
-<li>Uses a deep learning process called automatic speech recognition (ASR) to</li>
-</ul><p>convert speech to text quickly and accurately</p>
-<ul><li>Automatically remove Personally Identifiable Information (PII) using</li>
-</ul><p>Redaction</p>
-<ul><li>Supports Automatic Language Identification for multi-lingual audio</li>
-<li>Use cases:</li>
-<li>transcribe customer service calls</li>
-<li>automate closed captioning and subtitling</li>
-<li>generate metadata for media assets to create a fully searchable archive</li>
-</ul><p>”Hello my name is Stéphane.</p>
-<p>I hope you’re enjoying the course!</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-583">
-          <div class="slide-number">Slide 583</div>
-          <div class="slide-content"><p>Amazon Transcribe – Improving Accuracy</p>
-<ul><li>Allows Transcribe to capture domain-specific or non- Speech</li>
-</ul><p>standard terms (e.g., technical words, acronyms, “We can use AWS Microservices …”</p>
-<p>jargon…)</p>
-<ul><li>Custom Vocabularies (for words)</li>
-</ul><p>Custom</p>
-<ul><li>Add specific words, phrases, domain-specific terms</li>
-</ul><p>Vocabularies</p>
-<ul><li>Good for brand names, acronyms…</li>
-<li>Increase recognition of a new word by providing hints (such as</li>
-</ul><p>pronunciation..)</p>
-<p>Custom</p>
-<ul><li>Custom Language Models (for context) Language</li>
-<li>Train Transcribe model on your own domain-specific text data</li>
-</ul><p>Transcribe</p>
-<ul><li>Good for transcribing large volumes of domain-specific speech</li>
-<li>Learn the context associated with a given word</li>
-<li>Note: use both for the highest transcription accuracy before</li>
-</ul><p>“… A USA</p>
-<p>“… AWS</p>
-<p>My crow services …”</p>
-<p>Microservices … ”</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-584">
-          <div class="slide-number">Slide 584</div>
-          <div class="slide-content"><p>Transcribe – Toxicity Detection</p>
-<ul><li>ML-powered, voice-based toxicity detection capability</li>
-<li>Leverages speech cues: tone and pitch, and text-based cues</li>
-<li>Toxicity categories: sexual harassment, hate speech, threat, abuse, profanity, insult, and</li>
-</ul><p>graphic….</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-585">
-          <div class="slide-number">Slide 585</div>
-          <div class="slide-content"><p>Other Services You Should</p>
-<p>Know: Management and</p>
-<p>Governance</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-586">
-          <div class="slide-number">Slide 586</div>
-          <div class="slide-content"><p>AWS Auto Scaling</p>
-<ul><li>Backbone service of auto scaling for scalable resources in AWS:</li>
-<li>Amazon EC2 Auto Scaling groups: Launch or terminate EC2</li>
-</ul><p>instances</p>
-<ul><li>Amazon EC2 Spot Fleet requests: Launch or terminate instances</li>
-</ul><p>from a Spot Fleet request, or automatically replace instances that get</p>
-<p>interrupted for price or capacity reasons.</p>
-<ul><li>Amazon ECS: Adjust the ECS service desired count up or down</li>
-<li>Amazon DynamoDB (table or global secondary index): WCU &amp;</li>
-</ul><p>RCU</p>
-<ul><li>Amazon Aurora: Dynamic Read Replicas Auto Scaling</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-587">
-          <div class="slide-number">Slide 587</div>
-          <div class="slide-content"><p>AWS Auto Scaling – Scaling Plans</p>
-<ul><li>Dynamic scaling: creates a target</li>
-</ul><p>tracking scaling policy</p>
-<ul><li>Optimize for availability =&gt; 40% of resource</li>
-</ul><p>utilization</p>
-<ul><li>Balance availability and cost =&gt; 50% of</li>
-</ul><p>resource utilization</p>
-<ul><li>Optimize for cost =&gt; 70% of resource</li>
-</ul><p>utilization</p>
-<ul><li>Custom =&gt; choose own metric and target</li>
-</ul><p>value</p>
-<ul><li>Options: Disable scale-in, cooldown period,</li>
-</ul><p>warmup time (for ASG)</p>
-<ul><li>Predictive scaling: continuously forecast</li>
-</ul><p>load and schedule scaling ahead</p>
-<p>https://docs.aws.amazon.com/autoscaling/plans/userguide/how-it-works.html</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-588">
-          <div class="slide-number">Slide 588</div>
-          <div class="slide-content"><p>AWS Cost Anomaly Detection</p>
-<ul><li>Continuously monitor your cost and usage using ML to detect unusual</li>
-</ul><p>spends</p>
-<ul><li>It learns your unique, historic spend patterns to detect one-time cost spike and/or</li>
-</ul><p>continuous cost increases (you don’t need to define thresholds)</p>
-<ul><li>Monitor AWS services, member accounts, cost allocation tags, or cost categories</li>
-<li>Sends you the anomaly detection report with root-cause analysis</li>
-<li>Get notified with individual alerts or daily/weekly summary (using SNS)</li>
-</ul><p>AWS Cost Anomaly Create Cost Monitor Get Alerted Analyze Root Cause</p>
-<p>Detection Identify unusual spend at Receive alerts when Analyze the root cause</p>
-<p>reduce cost surprises the granularity level unusual spend is detected behind the anomaly and</p>
-<p>with Machine Learning that you specify the impact on your costs</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-589">
-          <div class="slide-number">Slide 589</div>
-          <div class="slide-content"><p>Cost Explorer</p>
-<ul><li>Visualize, understand, and manage your AWS costs and usage</li>
-</ul><p>over time</p>
-<ul><li>Create custom reports that analyze cost and usage data.</li>
-<li>Analyze your data at a high level: total costs and usage across all</li>
-</ul><p>accounts</p>
-<ul><li>Or Monthly, hourly, resource level granularity</li>
-<li>Choose an optimal Savings Plan (to lower prices on your bill)</li>
-<li>Forecast usage up to 18 months based on previous usage</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-590">
-          <div class="slide-number">Slide 590</div>
-          <div class="slide-content"><p>Cost Explorer – Monthly Cost by AWS</p>
-<p>Service</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-591">
-          <div class="slide-number">Slide 591</div>
-          <div class="slide-content"><p>Cost Explorer– Hourly &amp; Resource Level</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-592">
-          <div class="slide-number">Slide 592</div>
-          <div class="slide-content"><p>Cost Explorer – Savings Plan</p>
-<p>Alternative to Reserved Instances</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-593">
-          <div class="slide-number">Slide 593</div>
-          <div class="slide-content"><p>Cost Explorer – Forecast Usage</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-594">
-          <div class="slide-number">Slide 594</div>
-          <div class="slide-content"><p>Amazon Managed Grafana</p>
-<ul><li>Grafana is a popular open-source</li>
-</ul><p>platform used to monitor, visualize, and</p>
-<p>alert on metrics and logs.</p>
-<ul><li>Integrated with IAM Identity Center</li>
-</ul><p>(formerly AWS SSO) and/or SAML for</p>
-<p>user management and permissions</p>
-<ul><li>Compatible with Grafana plugins and</li>
-</ul><p>alerts</p>
-<ul><li>Fully managed, scales automatically</li>
-<li>Encrypted at rest and in transit, can use</li>
-</ul><p>KMS.</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-595">
-          <div class="slide-number">Slide 595</div>
-          <div class="slide-content"><p>Amazon Managed Grafana</p>
-<ul><li>Integrated with many AWS data sources</li>
-<li>CloudWatch, OpenSearch, Timestream, Athena, Redshift, X-Ray</li>
-<li>Amazon Managed Service for Prometheus (AMP)</li>
-<li>Also with everything else Grafana integrates with</li>
-<li>GitHub, Google, Azure, MySQL, Redis, JSON, OpenTelemetry, much more.</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-596">
-          <div class="slide-number">Slide 596</div>
-          <div class="slide-content"><p>AWS Systems Manager (SSM)</p>
-<ul><li>Helps you manage your EC2 and On-Premises systems at scale</li>
-<li>Another Hybrid AWS service</li>
-<li>Get operational insights about the state of your infrastructure</li>
-<li>Suite of 10+ products</li>
-<li>Most important features are:</li>
-<li>Patching automation for enhanced compliance</li>
-<li>Run commands across an entire fleet of servers</li>
-<li>Store parameter configuration with the SSM Parameter Store</li>
-<li>Works for Linux, Windows, MacOS, and Raspberry Pi OS</li>
-</ul><p>(Raspbian)</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-597">
-          <div class="slide-number">Slide 597</div>
-          <div class="slide-content"><p>How Systems Manager works</p>
-<ul><li>We need to install the SSM</li>
-</ul><p>agent onto the systems we</p>
-<p>SSM</p>
-<p>control</p>
-<ul><li>Installed by default on</li>
-</ul><p>Amazon Linux AMI &amp; some</p>
-<p>Ubuntu AMI</p>
-<ul><li>If an instance can’t be</li>
-</ul><p>controlled with SSM, it’s</p>
-<p>probably an issue with the</p>
-<p>SSM Agent SSM Agent SSM Agent</p>
-<p>SSM agent!</p>
-<ul><li>Thanks to the SSM agent, we</li>
-</ul><p>can run commands, patch</p>
-<p>EC2 Instance EC2 Instance On Premise VM</p>
-<p>&amp; configure our servers</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-598">
-          <div class="slide-number">Slide 598</div>
-          <div class="slide-content"><p>Systems Manager – SSM Session</p>
-<p>Manager</p>
-<ul><li>Allows you to start a secure shell on your EC2</li>
-</ul><p>EC2 Instance</p>
-<p>and on-premises servers</p>
-<p>(SSM Agent)</p>
-<p>Execute</p>
-<ul><li>No SSH access, bastion hosts, or SSH commands</li>
-</ul><p>keys needed</p>
-<p>Session</p>
-<ul><li>No port 22 needed (better security) Manager</li>
-<li>Supports Linux, macOS, and Windows</li>
-</ul><p>IAM</p>
-<p>Permissions</p>
-<ul><li>Send session log data to S3 or CloudWatch</li>
-</ul><p>Logs</p>
-<p>User</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-599">
-          <div class="slide-number">Slide 599</div>
-          <div class="slide-content"><p>Systems Manager</p>
-<p>Parameter Store</p>
-<p>Applications</p>
-<p>plaintext encrypted</p>
-<ul><li>Secure storage for configuration and secrets configuration configuration</li>
-<li>API Keys, passwords, configurations…</li>
-</ul><p>Systems Manager</p>
-<ul><li>Serverless, scalable, durable, easy SDK</li>
-</ul><p>Parameter Store</p>
-<ul><li>Control access permissions using IAM</li>
-</ul><p>Encryption</p>
-<ul><li>Version tracking &amp; encryption (optional)</li>
-</ul><p>(optional)</p>
-<p>AWS KMS</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-600">
-          <div class="slide-number">Slide 600</div>
-          <div class="slide-content"><p>Other Services You Should</p>
-<p>Know: Migration and Data</p>
-<p>Transfer</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-601">
-          <div class="slide-number">Slide 601</div>
-          <div class="slide-content"><p>AWS DataSync</p>
-<ul><li>Move large amount of data to and from</li>
-<li>On-premises / other cloud to AWS (NFS, SMB, HDFS, S3 API…) –</li>
-</ul><p>needs agent</p>
-<ul><li>AWS to AWS (different storage services) – no agent needed</li>
-<li>Can synchronize to:</li>
-<li>Amazon S3 (any storage classes – including Glacier)</li>
-<li>Amazon EFS</li>
-<li>Amazon FSx (Windows, Lustre, NetApp, OpenZFS...)</li>
-<li>Replication tasks can be scheduled hourly, daily, weekly</li>
-<li>File permissions and metadata are preserved (NFS POSIX,</li>
-</ul><p>SMB…)</p>
-<ul><li>One agent task can use 10 Gbps, can setup a bandwidth limit</li>
-</ul><p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-602">
-          <div class="slide-number">Slide 602</div>
-          <div class="slide-content"><p>AWS DataSync</p>
-<p>NFS / SMB to AWS (S3, EFS, FSx…)</p>
-<p>Region</p>
-<p>On-Premises</p>
-<p>AWS Storage Resources</p>
-<p>NFS or SMB TLS S3 Standard S3 Intelligent- S3 Standard-IA</p>
-<p>Tiering</p>
-<p>NFS or SMB AWS DataSync</p>
-<p>AWS</p>
-<p>S3 One S3 Glacier S3 Glacier</p>
-<p>Server Agent Zone-IA Deep Archive</p>
-<p>DataSync</p>
-<p>AWS Snowcone</p>
-<p>(agent pre-installed)</p>
-<p>AWS EFS Amazon FSx</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-        <div class="slide" id="slide-603">
-          <div class="slide-number">Slide 603</div>
-          <div class="slide-content"><p>AWS DataSync</p>
-<p>Transfer between AWS storage services</p>
-<p>Amazon S3 Amazon S3</p>
-<p>Amazon EFS Amazon EFS</p>
-<p>AWS DataSync</p>
-<p>copy data and metadata</p>
-<p>between AWS Storage Services</p>
-<p>Amazon FSx Amazon FSx</p>
-<p>sundog-education.com</p>
-<p>datacumulus.com</p>
-<p>© 2026 All Rights Reserved Worldwide</p></div>
-        </div>
-    </div>
-
-    <div class="section-nav">
-      <a href="index.html" class="btn-back">← Back to Overview</a>
-    </div>
-  </main>
-
+      <div class="doc-section" id="slide-576">
+       <h2 id="slide-576">
+        Amazon Lex
+       </h2>
+       <div class="slide-number">
+        Slide 576
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Build chatbots quickly for your
+         </li>
+        </ul>
+        <p>
+         applications using voice and text
+        </p>
+        <ul>
+         <li>
+          Example: a chatbot that allows your
+         </li>
+        </ul>
+        <p>
+         customers to order pizzas or book a
+        </p>
+        <p>
+         hotel
+        </p>
+        <ul>
+         <li>
+          Supports multiple languages
+         </li>
+         <li>
+          Integration with AWS Lambda,
+         </li>
+        </ul>
+        <p>
+         Connect, Comprehend, Kendra
+        </p>
+        <ul>
+         <li>
+          The bot automatically understands
+         </li>
+        </ul>
+        <p>
+         the user intent to invoke the correct
+        </p>
+        <p>
+         Lambda function to “fulfill the intent”
+        </p>
+        <ul>
+         <li>
+          The bot will ask for ”Slots” (input
+         </li>
+        </ul>
+        <p>
+         parameters) if necessary
+        </p>
+        <p>
+         Booking System
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-577">
+       <h2 id="slide-577">
+        Amazon Rekognition
+       </h2>
+       <div class="slide-number">
+        Slide 577
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Find objects, people, text, scenes in images and videos using ML
+         </li>
+         <li>
+          Facial analysis and facial search to do user verification, people
+         </li>
+        </ul>
+        <p>
+         counting
+        </p>
+        <ul>
+         <li>
+          Create a database of “familiar faces” or compare against celebrities
+         </li>
+         <li>
+          Use cases:
+         </li>
+         <li>
+          Labeling
+         </li>
+         <li>
+          Content Moderation
+         </li>
+         <li>
+          Text Detection
+         </li>
+         <li>
+          Face Detection and Analysis (gender, age range, emotions…)
+         </li>
+         <li>
+          Face Search and Verification
+         </li>
+         <li>
+          Celebrity Recognition
+         </li>
+         <li>
+          Pathing (ex: for sports game analysis)
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-578">
+       <h2 id="slide-578">
+        Amazon Rekognition – Custom Labels
+       </h2>
+       <div class="slide-number">
+        Slide 578
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Examples: find your logo in social media posts, identify your products on stores
+         </li>
+        </ul>
+        <p>
+         shelves (National Football League – NFL – uses it to find their logo in pictures)
+        </p>
+        <ul>
+         <li>
+          Label your training images and upload them to Amazon Rekognition
+         </li>
+         <li>
+          Only needs a few hundred images or less
+         </li>
+         <li>
+          Amazon Rekognition creates a custom model on your images set
+         </li>
+         <li>
+          New subsequent images will be categorized the custom way you have defined
+         </li>
+        </ul>
+        <p>
+         store training
+        </p>
+        <p>
+         Custom classification
+        </p>
+        <p>
+         Labeled Images Amazon S3 Amazon Rekognition User
+        </p>
+        <p>
+         Custom Labels
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-579">
+       <h2 id="slide-579">
+        Amazon Rekognition – Content
+       </h2>
+       <div class="slide-number">
+        Slide 579
+       </div>
+       <div class="slide-content">
+        <p>
+         Moderation
+        </p>
+        <ul>
+         <li>
+          Automatically detect inappropriate,
+         </li>
+        </ul>
+        <p>
+         Input for moderation
+        </p>
+        <p>
+         unwanted, or offensive content
+        </p>
+        <ul>
+         <li>
+          Example: filter out harmful images in
+         </li>
+        </ul>
+        <p>
+         social media, broadcast media,
+        </p>
+        <p>
+         advertising…
+        </p>
+        <ul>
+         <li>
+          Bring down human review to 1-5% of total
+         </li>
+        </ul>
+        <p>
+         Rekognition Custom
+        </p>
+        <p>
+         content volume
+        </p>
+        <p>
+         Moderation Adaptor
+        </p>
+        <p>
+         training
+        </p>
+        <ul>
+         <li>
+          Integrated with Amazon Augmented AI
+         </li>
+        </ul>
+        <p>
+         (Amazon A2I) for human review
+        </p>
+        <p>
+         Labeled Images
+        </p>
+        <p>
+         1-5% optional
+        </p>
+        <ul>
+         <li>
+          Custom Moderation Adaptors
+         </li>
+        </ul>
+        <p>
+         Human review
+        </p>
+        <ul>
+         <li>
+          Extends Rekognition capabilities by
+         </li>
+        </ul>
+        <p>
+         providing your own labeled set of images
+        </p>
+        <ul>
+         <li>
+          Enhances the accuracy of Content
+         </li>
+        </ul>
+        <p>
+         Moderation pass/fail
+        </p>
+        <p>
+         Moderation or create a specific use case of
+        </p>
+        <p>
+         Moderation
+        </p>
+        <p>
+         Amazon
+        </p>
+        <p>
+         Augmented AI
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-580">
+       <h2 id="slide-580">
+        Content Moderation API – Diagram
+       </h2>
+       <div class="slide-number">
+        Slide 580
+       </div>
+       <div class="slide-content">
+        <p>
+         Image
+        </p>
+        <p>
+         review image
+        </p>
+        <p>
+         Generate an image for … DetectModerationLabels API
+        </p>
+        <p>
+         Image Labels…
+        </p>
+        <p>
+         User
+        </p>
+        <p>
+         Chatbot Amazon
+        </p>
+        <p>
+         (Your Application) Rekognition
+        </p>
+        <p>
+         Labels…
+        </p>
+        <p>
+         Pass
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-581">
+       <h2 id="slide-581">
+        Amazon Textract
+       </h2>
+       <div class="slide-number">
+        Slide 581
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Automatically extracts text, handwriting, and data from any scanned
+         </li>
+        </ul>
+        <p>
+         documents using AI and ML
+        </p>
+        <p>
+         {
+        </p>
+        <p>
+         “Document ID”: “123456789-005”,
+        </p>
+        <p>
+         “Name”: “”,
+        </p>
+        <p>
+         analyze result
+        </p>
+        <p>
+         “SEX”: “F”,
+        </p>
+        <p>
+         “DOB”: “23.05.1997”,
+        </p>
+        <p>
+         …
+        </p>
+        <p>
+         }
+        </p>
+        <p>
+         Amazon Textract
+        </p>
+        <ul>
+         <li>
+          Extract data from forms and tables
+         </li>
+         <li>
+          Read and process any type of document (PDFs, images, …)
+         </li>
+         <li>
+          Use cases:
+         </li>
+         <li>
+          Financial Services (e.g., invoices, financial reports)
+         </li>
+         <li>
+          Healthcare (e.g., medical records, insurance claims)
+         </li>
+         <li>
+          Public Sector (e.g., tax forms, ID documents, passports)
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-582">
+       <h2 id="slide-582">
+        Amazon Transcribe
+       </h2>
+       <div class="slide-number">
+        Slide 582
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Automatically convert speech to text
+         </li>
+         <li>
+          Uses a deep learning process called automatic speech recognition (ASR) to
+         </li>
+        </ul>
+        <p>
+         convert speech to text quickly and accurately
+        </p>
+        <ul>
+         <li>
+          Automatically remove Personally Identifiable Information (PII) using
+         </li>
+        </ul>
+        <p>
+         Redaction
+        </p>
+        <ul>
+         <li>
+          Supports Automatic Language Identification for multi-lingual audio
+         </li>
+         <li>
+          Use cases:
+         </li>
+         <li>
+          transcribe customer service calls
+         </li>
+         <li>
+          automate closed captioning and subtitling
+         </li>
+         <li>
+          generate metadata for media assets to create a fully searchable archive
+         </li>
+        </ul>
+        <p>
+         ”Hello my name is Stéphane.
+        </p>
+        <p>
+         I hope you’re enjoying the course!
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-583">
+       <h2 id="slide-583">
+        Amazon Transcribe – Improving Accuracy
+       </h2>
+       <div class="slide-number">
+        Slide 583
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Allows Transcribe to capture domain-specific or non- Speech
+         </li>
+        </ul>
+        <p>
+         standard terms (e.g., technical words, acronyms, “We can use AWS Microservices …”
+        </p>
+        <p>
+         jargon…)
+        </p>
+        <ul>
+         <li>
+          Custom Vocabularies (for words)
+         </li>
+        </ul>
+        <p>
+         Custom
+        </p>
+        <ul>
+         <li>
+          Add specific words, phrases, domain-specific terms
+         </li>
+        </ul>
+        <p>
+         Vocabularies
+        </p>
+        <ul>
+         <li>
+          Good for brand names, acronyms…
+         </li>
+         <li>
+          Increase recognition of a new word by providing hints (such as
+         </li>
+        </ul>
+        <p>
+         pronunciation..)
+        </p>
+        <p>
+         Custom
+        </p>
+        <ul>
+         <li>
+          Custom Language Models (for context) Language
+         </li>
+         <li>
+          Train Transcribe model on your own domain-specific text data
+         </li>
+        </ul>
+        <p>
+         Transcribe
+        </p>
+        <ul>
+         <li>
+          Good for transcribing large volumes of domain-specific speech
+         </li>
+         <li>
+          Learn the context associated with a given word
+         </li>
+         <li>
+          Note: use both for the highest transcription accuracy before
+         </li>
+        </ul>
+        <p>
+         “… A USA
+        </p>
+        <p>
+         “… AWS
+        </p>
+        <p>
+         My crow services …”
+        </p>
+        <p>
+         Microservices … ”
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-584">
+       <h2 id="slide-584">
+        Transcribe – Toxicity Detection
+       </h2>
+       <div class="slide-number">
+        Slide 584
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          ML-powered, voice-based toxicity detection capability
+         </li>
+         <li>
+          Leverages speech cues: tone and pitch, and text-based cues
+         </li>
+         <li>
+          Toxicity categories: sexual harassment, hate speech, threat, abuse, profanity, insult, and
+         </li>
+        </ul>
+        <p>
+         graphic….
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-585">
+       <h2 id="slide-585">
+        Other Services You Should
+       </h2>
+       <div class="slide-number">
+        Slide 585
+       </div>
+       <div class="slide-content">
+        <p>
+         Know: Management and
+        </p>
+        <p>
+         Governance
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-586">
+       <h2 id="slide-586">
+        AWS Auto Scaling
+       </h2>
+       <div class="slide-number">
+        Slide 586
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Backbone service of auto scaling for scalable resources in AWS:
+         </li>
+         <li>
+          Amazon EC2 Auto Scaling groups: Launch or terminate EC2
+         </li>
+        </ul>
+        <p>
+         instances
+        </p>
+        <ul>
+         <li>
+          Amazon EC2 Spot Fleet requests: Launch or terminate instances
+         </li>
+        </ul>
+        <p>
+         from a Spot Fleet request, or automatically replace instances that get
+        </p>
+        <p>
+         interrupted for price or capacity reasons.
+        </p>
+        <ul>
+         <li>
+          Amazon ECS: Adjust the ECS service desired count up or down
+         </li>
+         <li>
+          Amazon DynamoDB (table or global secondary index): WCU &amp;
+         </li>
+        </ul>
+        <p>
+         RCU
+        </p>
+        <ul>
+         <li>
+          Amazon Aurora: Dynamic Read Replicas Auto Scaling
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-587">
+       <h2 id="slide-587">
+        AWS Auto Scaling – Scaling Plans
+       </h2>
+       <div class="slide-number">
+        Slide 587
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Dynamic scaling: creates a target
+         </li>
+        </ul>
+        <p>
+         tracking scaling policy
+        </p>
+        <ul>
+         <li>
+          Optimize for availability =&gt; 40% of resource
+         </li>
+        </ul>
+        <p>
+         utilization
+        </p>
+        <ul>
+         <li>
+          Balance availability and cost =&gt; 50% of
+         </li>
+        </ul>
+        <p>
+         resource utilization
+        </p>
+        <ul>
+         <li>
+          Optimize for cost =&gt; 70% of resource
+         </li>
+        </ul>
+        <p>
+         utilization
+        </p>
+        <ul>
+         <li>
+          Custom =&gt; choose own metric and target
+         </li>
+        </ul>
+        <p>
+         value
+        </p>
+        <ul>
+         <li>
+          Options: Disable scale-in, cooldown period,
+         </li>
+        </ul>
+        <p>
+         warmup time (for ASG)
+        </p>
+        <ul>
+         <li>
+          Predictive scaling: continuously forecast
+         </li>
+        </ul>
+        <p>
+         load and schedule scaling ahead
+        </p>
+        <p>
+         https://docs.aws.amazon.com/autoscaling/plans/userguide/how-it-works.html
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-588">
+       <h2 id="slide-588">
+        AWS Cost Anomaly Detection
+       </h2>
+       <div class="slide-number">
+        Slide 588
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Continuously monitor your cost and usage using ML to detect unusual
+         </li>
+        </ul>
+        <p>
+         spends
+        </p>
+        <ul>
+         <li>
+          It learns your unique, historic spend patterns to detect one-time cost spike and/or
+         </li>
+        </ul>
+        <p>
+         continuous cost increases (you don’t need to define thresholds)
+        </p>
+        <ul>
+         <li>
+          Monitor AWS services, member accounts, cost allocation tags, or cost categories
+         </li>
+         <li>
+          Sends you the anomaly detection report with root-cause analysis
+         </li>
+         <li>
+          Get notified with individual alerts or daily/weekly summary (using SNS)
+         </li>
+        </ul>
+        <p>
+         AWS Cost Anomaly Create Cost Monitor Get Alerted Analyze Root Cause
+        </p>
+        <p>
+         Detection Identify unusual spend at Receive alerts when Analyze the root cause
+        </p>
+        <p>
+         reduce cost surprises the granularity level unusual spend is detected behind the anomaly and
+        </p>
+        <p>
+         with Machine Learning that you specify the impact on your costs
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-589">
+       <h2 id="slide-589">
+        Cost Explorer
+       </h2>
+       <div class="slide-number">
+        Slide 589
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Visualize, understand, and manage your AWS costs and usage
+         </li>
+        </ul>
+        <p>
+         over time
+        </p>
+        <ul>
+         <li>
+          Create custom reports that analyze cost and usage data.
+         </li>
+         <li>
+          Analyze your data at a high level: total costs and usage across all
+         </li>
+        </ul>
+        <p>
+         accounts
+        </p>
+        <ul>
+         <li>
+          Or Monthly, hourly, resource level granularity
+         </li>
+         <li>
+          Choose an optimal Savings Plan (to lower prices on your bill)
+         </li>
+         <li>
+          Forecast usage up to 18 months based on previous usage
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-590">
+       <h2 id="slide-590">
+        Cost Explorer – Monthly Cost by AWS
+       </h2>
+       <div class="slide-number">
+        Slide 590
+       </div>
+       <div class="slide-content">
+        <p>
+         Service
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-591">
+       <h2 id="slide-591">
+        Cost Explorer– Hourly &amp; Resource Level
+       </h2>
+       <div class="slide-number">
+        Slide 591
+       </div>
+       <div class="slide-content">
+       </div>
+      </div>
+      <div class="doc-section" id="slide-592">
+       <h2 id="slide-592">
+        Cost Explorer – Savings Plan
+       </h2>
+       <div class="slide-number">
+        Slide 592
+       </div>
+       <div class="slide-content">
+        <p>
+         Alternative to Reserved Instances
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-593">
+       <h2 id="slide-593">
+        Cost Explorer – Forecast Usage
+       </h2>
+       <div class="slide-number">
+        Slide 593
+       </div>
+       <div class="slide-content">
+       </div>
+      </div>
+      <div class="doc-section" id="slide-594">
+       <h2 id="slide-594">
+        Amazon Managed Grafana
+       </h2>
+       <div class="slide-number">
+        Slide 594
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Grafana is a popular open-source
+         </li>
+        </ul>
+        <p>
+         platform used to monitor, visualize, and
+        </p>
+        <p>
+         alert on metrics and logs.
+        </p>
+        <ul>
+         <li>
+          Integrated with IAM Identity Center
+         </li>
+        </ul>
+        <p>
+         (formerly AWS SSO) and/or SAML for
+        </p>
+        <p>
+         user management and permissions
+        </p>
+        <ul>
+         <li>
+          Compatible with Grafana plugins and
+         </li>
+        </ul>
+        <p>
+         alerts
+        </p>
+        <ul>
+         <li>
+          Fully managed, scales automatically
+         </li>
+         <li>
+          Encrypted at rest and in transit, can use
+         </li>
+        </ul>
+        <p>
+         KMS.
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-595">
+       <h2 id="slide-595">
+        Amazon Managed Grafana
+       </h2>
+       <div class="slide-number">
+        Slide 595
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Integrated with many AWS data sources
+         </li>
+         <li>
+          CloudWatch, OpenSearch, Timestream, Athena, Redshift, X-Ray
+         </li>
+         <li>
+          Amazon Managed Service for Prometheus (AMP)
+         </li>
+         <li>
+          Also with everything else Grafana integrates with
+         </li>
+         <li>
+          GitHub, Google, Azure, MySQL, Redis, JSON, OpenTelemetry, much more.
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-596">
+       <h2 id="slide-596">
+        AWS Systems Manager (SSM)
+       </h2>
+       <div class="slide-number">
+        Slide 596
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Helps you manage your EC2 and On-Premises systems at scale
+         </li>
+         <li>
+          Another Hybrid AWS service
+         </li>
+         <li>
+          Get operational insights about the state of your infrastructure
+         </li>
+         <li>
+          Suite of 10+ products
+         </li>
+         <li>
+          Most important features are:
+         </li>
+         <li>
+          Patching automation for enhanced compliance
+         </li>
+         <li>
+          Run commands across an entire fleet of servers
+         </li>
+         <li>
+          Store parameter configuration with the SSM Parameter Store
+         </li>
+         <li>
+          Works for Linux, Windows, MacOS, and Raspberry Pi OS
+         </li>
+        </ul>
+        <p>
+         (Raspbian)
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-597">
+       <h2 id="slide-597">
+        How Systems Manager works
+       </h2>
+       <div class="slide-number">
+        Slide 597
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          We need to install the SSM
+         </li>
+        </ul>
+        <p>
+         agent onto the systems we
+        </p>
+        <p>
+         SSM
+        </p>
+        <p>
+         control
+        </p>
+        <ul>
+         <li>
+          Installed by default on
+         </li>
+        </ul>
+        <p>
+         Amazon Linux AMI &amp; some
+        </p>
+        <p>
+         Ubuntu AMI
+        </p>
+        <ul>
+         <li>
+          If an instance can’t be
+         </li>
+        </ul>
+        <p>
+         controlled with SSM, it’s
+        </p>
+        <p>
+         probably an issue with the
+        </p>
+        <p>
+         SSM Agent SSM Agent SSM Agent
+        </p>
+        <p>
+         SSM agent!
+        </p>
+        <ul>
+         <li>
+          Thanks to the SSM agent, we
+         </li>
+        </ul>
+        <p>
+         can run commands, patch
+        </p>
+        <p>
+         EC2 Instance EC2 Instance On Premise VM
+        </p>
+        <p>
+         &amp; configure our servers
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-598">
+       <h2 id="slide-598">
+        Systems Manager – SSM Session
+       </h2>
+       <div class="slide-number">
+        Slide 598
+       </div>
+       <div class="slide-content">
+        <p>
+         Manager
+        </p>
+        <ul>
+         <li>
+          Allows you to start a secure shell on your EC2
+         </li>
+        </ul>
+        <p>
+         EC2 Instance
+        </p>
+        <p>
+         and on-premises servers
+        </p>
+        <p>
+         (SSM Agent)
+        </p>
+        <p>
+         Execute
+        </p>
+        <ul>
+         <li>
+          No SSH access, bastion hosts, or SSH commands
+         </li>
+        </ul>
+        <p>
+         keys needed
+        </p>
+        <p>
+         Session
+        </p>
+        <ul>
+         <li>
+          No port 22 needed (better security) Manager
+         </li>
+         <li>
+          Supports Linux, macOS, and Windows
+         </li>
+        </ul>
+        <p>
+         IAM
+        </p>
+        <p>
+         Permissions
+        </p>
+        <ul>
+         <li>
+          Send session log data to S3 or CloudWatch
+         </li>
+        </ul>
+        <p>
+         Logs
+        </p>
+        <p>
+         User
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-599">
+       <h2 id="slide-599">
+        Systems Manager
+       </h2>
+       <div class="slide-number">
+        Slide 599
+       </div>
+       <div class="slide-content">
+        <p>
+         Parameter Store
+        </p>
+        <p>
+         Applications
+        </p>
+        <p>
+         plaintext encrypted
+        </p>
+        <ul>
+         <li>
+          Secure storage for configuration and secrets configuration configuration
+         </li>
+         <li>
+          API Keys, passwords, configurations…
+         </li>
+        </ul>
+        <p>
+         Systems Manager
+        </p>
+        <ul>
+         <li>
+          Serverless, scalable, durable, easy SDK
+         </li>
+        </ul>
+        <p>
+         Parameter Store
+        </p>
+        <ul>
+         <li>
+          Control access permissions using IAM
+         </li>
+        </ul>
+        <p>
+         Encryption
+        </p>
+        <ul>
+         <li>
+          Version tracking &amp; encryption (optional)
+         </li>
+        </ul>
+        <p>
+         (optional)
+        </p>
+        <p>
+         AWS KMS
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-600">
+       <h2 id="slide-600">
+        Other Services You Should
+       </h2>
+       <div class="slide-number">
+        Slide 600
+       </div>
+       <div class="slide-content">
+        <p>
+         Know: Migration and Data
+        </p>
+        <p>
+         Transfer
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-601">
+       <h2 id="slide-601">
+        AWS DataSync
+       </h2>
+       <div class="slide-number">
+        Slide 601
+       </div>
+       <div class="slide-content">
+        <ul>
+         <li>
+          Move large amount of data to and from
+         </li>
+         <li>
+          On-premises / other cloud to AWS (NFS, SMB, HDFS, S3 API…) –
+         </li>
+        </ul>
+        <p>
+         needs agent
+        </p>
+        <ul>
+         <li>
+          AWS to AWS (different storage services) – no agent needed
+         </li>
+         <li>
+          Can synchronize to:
+         </li>
+         <li>
+          Amazon S3 (any storage classes – including Glacier)
+         </li>
+         <li>
+          Amazon EFS
+         </li>
+         <li>
+          Amazon FSx (Windows, Lustre, NetApp, OpenZFS...)
+         </li>
+         <li>
+          Replication tasks can be scheduled hourly, daily, weekly
+         </li>
+         <li>
+          File permissions and metadata are preserved (NFS POSIX,
+         </li>
+        </ul>
+        <p>
+         SMB…)
+        </p>
+        <ul>
+         <li>
+          One agent task can use 10 Gbps, can setup a bandwidth limit
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-602">
+       <h2 id="slide-602">
+        AWS DataSync
+       </h2>
+       <div class="slide-number">
+        Slide 602
+       </div>
+       <div class="slide-content">
+        <p>
+         NFS / SMB to AWS (S3, EFS, FSx…)
+        </p>
+        <p>
+         Region
+        </p>
+        <p>
+         On-Premises
+        </p>
+        <p>
+         AWS Storage Resources
+        </p>
+        <p>
+         NFS or SMB TLS S3 Standard S3 Intelligent- S3 Standard-IA
+        </p>
+        <p>
+         Tiering
+        </p>
+        <p>
+         NFS or SMB AWS DataSync
+        </p>
+        <p>
+         AWS
+        </p>
+        <p>
+         S3 One S3 Glacier S3 Glacier
+        </p>
+        <p>
+         Server Agent Zone-IA Deep Archive
+        </p>
+        <p>
+         DataSync
+        </p>
+        <p>
+         AWS Snowcone
+        </p>
+        <p>
+         (agent pre-installed)
+        </p>
+        <p>
+         AWS EFS Amazon FSx
+        </p>
+       </div>
+      </div>
+      <div class="doc-section" id="slide-603">
+       <h2 id="slide-603">
+        AWS DataSync
+       </h2>
+       <div class="slide-number">
+        Slide 603
+       </div>
+       <div class="slide-content">
+        <p>
+         Transfer between AWS storage services
+        </p>
+        <p>
+         Amazon S3 Amazon S3
+        </p>
+        <p>
+         Amazon EFS Amazon EFS
+        </p>
+        <p>
+         AWS DataSync
+        </p>
+        <p>
+         copy data and metadata
+        </p>
+        <p>
+         between AWS Storage Services
+        </p>
+        <p>
+         Amazon FSx Amazon FSx
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="section-nav">
+      <a class="btn-back" href="index.html">
+       ← Back to Overview
+      </a>
+     </div>
+    </main>
+    <aside class="toc-sidebar">
+     <div class="toc-title">
+      On this page
+     </div>
+     <ul class="toc-list" id="toc-list">
+      <li>
+       <a href="#slide-574">
+        Amazon Augmented AI (A2I)
+       </a>
+      </li>
+      <li>
+       <a href="#slide-575">
+        Amazon Kendra
+       </a>
+      </li>
+      <li>
+       <a href="#slide-576">
+        Amazon Lex
+       </a>
+      </li>
+      <li>
+       <a href="#slide-577">
+        Amazon Rekognition
+       </a>
+      </li>
+      <li>
+       <a href="#slide-578">
+        Amazon Rekognition – Custom Labels
+       </a>
+      </li>
+      <li>
+       <a href="#slide-579">
+        Amazon Rekognition – Content
+       </a>
+      </li>
+      <li>
+       <a href="#slide-580">
+        Content Moderation API – Diagram
+       </a>
+      </li>
+      <li>
+       <a href="#slide-581">
+        Amazon Textract
+       </a>
+      </li>
+      <li>
+       <a href="#slide-582">
+        Amazon Transcribe
+       </a>
+      </li>
+      <li>
+       <a href="#slide-583">
+        Amazon Transcribe – Improving Accuracy
+       </a>
+      </li>
+      <li>
+       <a href="#slide-584">
+        Transcribe – Toxicity Detection
+       </a>
+      </li>
+      <li>
+       <a href="#slide-585">
+        Other Services You Should
+       </a>
+      </li>
+      <li>
+       <a href="#slide-586">
+        AWS Auto Scaling
+       </a>
+      </li>
+      <li>
+       <a href="#slide-587">
+        AWS Auto Scaling – Scaling Plans
+       </a>
+      </li>
+      <li>
+       <a href="#slide-588">
+        AWS Cost Anomaly Detection
+       </a>
+      </li>
+      <li>
+       <a href="#slide-589">
+        Cost Explorer
+       </a>
+      </li>
+      <li>
+       <a href="#slide-590">
+        Cost Explorer – Monthly Cost by AWS
+       </a>
+      </li>
+      <li>
+       <a href="#slide-591">
+        Cost Explorer– Hourly &amp; Resource Level
+       </a>
+      </li>
+      <li>
+       <a href="#slide-592">
+        Cost Explorer – Savings Plan
+       </a>
+      </li>
+      <li>
+       <a href="#slide-593">
+        Cost Explorer – Forecast Usage
+       </a>
+      </li>
+      <li>
+       <a href="#slide-594">
+        Amazon Managed Grafana
+       </a>
+      </li>
+      <li>
+       <a href="#slide-595">
+        Amazon Managed Grafana
+       </a>
+      </li>
+      <li>
+       <a href="#slide-596">
+        AWS Systems Manager (SSM)
+       </a>
+      </li>
+      <li>
+       <a href="#slide-597">
+        How Systems Manager works
+       </a>
+      </li>
+      <li>
+       <a href="#slide-598">
+        Systems Manager – SSM Session
+       </a>
+      </li>
+      <li>
+       <a href="#slide-599">
+        Systems Manager
+       </a>
+      </li>
+      <li>
+       <a href="#slide-600">
+        Other Services You Should
+       </a>
+      </li>
+      <li>
+       <a href="#slide-601">
+        AWS DataSync
+       </a>
+      </li>
+      <li>
+       <a href="#slide-602">
+        AWS DataSync
+       </a>
+      </li>
+      <li>
+       <a href="#slide-603">
+        AWS DataSync
+       </a>
+      </li>
+     </ul>
+    </aside>
+   </div>
+  </div>
   <script>
-    function toggleSidebar() {
-      document.getElementById('sidebar').classList.toggle('open');
-      document.getElementById('overlay').classList.toggle('show');
-    }
+   function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('open');
+        }
   </script>
-</body>
+ </body>
 </html>
