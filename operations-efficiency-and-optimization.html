@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Operations Efficiency and Optimization – AWS GenAI Developer Pro (AIP-C01)</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="logo">☁️ AIP-C01</span>
+      <button class="close-btn" onclick="toggleSidebar()">✕</button>
+    </div>
+    <ul class="nav-list">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li class="divider">Course Sections</li>
+      <li class=""><a href="generative-ai-fundamentals-and-bedrock.html">Generative AI Fundamentals and Bedrock</a></li>
+<li class=""><a href="managing-data-for-generative-ai.html">Managing Data for Generative AI</a></li>
+<li class=""><a href="agentic-ai.html">Agentic AI</a></li>
+<li class="active"><a href="operations-efficiency-and-optimization.html">Operations Efficiency and Optimization</a></li>
+<li class=""><a href="managing-models-with-sagemaker-ai.html">Managing Models with SageMaker AI</a></li>
+<li class=""><a href="more-tools-for-building-ai-applications.html">More Tools for Building AI Applications</a></li>
+<li class=""><a href="governance-and-qa.html">Governance and QA</a></li>
+<li class=""><a href="security-identity-and-compliance.html">Security, Identity, and Compliance</a></li>
+<li class=""><a href="other-services-analytics.html">Other Services - Analytics</a></li>
+<li class=""><a href="other-services-compute-containers.html">Other Services - Compute & Containers</a></li>
+<li class=""><a href="other-services-database.html">Other Services - Database</a></li>
+<li class=""><a href="other-services-developer-tools.html">Other Services - Developer Tools</a></li>
+<li class=""><a href="other-services-machine-learning.html">Other Services - Machine Learning</a></li>
+<li class=""><a href="other-services-storage-networking.html">Other Services - Storage & Networking</a></li>
+<li class=""><a href="exam-preparation.html">Exam Preparation</a></li>
+
+    </ul>
+  </nav>
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+      <div class="breadcrumb">
+        <a href="index.html">AWS GenAI Pro</a> › <span>Operations Efficiency and Optimization</span>
+      </div>
+      <div class="page-meta">62 slides · Pages 219–280</div>
+    </header>
+
+    <div class="section-hero">
+      <h1>Operations Efficiency and Optimization</h1>
+      <p class="section-subtitle">AWS Certified Generative AI Developer – Professional (AIP-C01)</p>
+      <div class="section-stats">
+        <span>📄 62 slides</span>
+        <span>📑 Pages 219–280</span>
+      </div>
+    </div>
+
+    <div class="slides-container">
+      
+        <div class="slide" id="slide-219">
+          <div class="slide-number">Slide 219</div>
+          <div class="slide-content"><p>Agentic AI</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-220">
+          <div class="slide-number">Slide 220</div>
+          <div class="slide-content"><p>LLM Agents</p>
+<ul><li>Giving tools to your LLM!</li>
+</ul><p>Memory</p>
+<ul><li>The LLM is given discretion on which</li>
+</ul><p>tools to use for what purpose</p>
+<ul><li>The agent has a memory, an ability to</li>
+</ul><p>plan how to answer a request, and</p>
+<p>User Agent Planning</p>
+<p>tools it can use in the process.</p>
+<p>Request Core Module</p>
+<ul><li>In practice, the “memory” is just the</li>
+</ul><p>chat history and external data stores,</p>
+<p>and the “planning module” is guidance</p>
+<p>given to the LLM on how to break</p>
+<p>down a question into sub-questions</p>
+<p>Tools</p>
+<p>that the tools might be able to help</p>
+<p>Core</p>
+<p>with.</p>
+<ul><li>Prompts associated with each tool are</li>
+</ul><p>used to guide it on how to use its tools.</p>
+<p>Conceptual diagram of an LLM agent, as described</p>
+<p>by Nvidia</p>
+<p>(https://developer.nvidia.com/blog/introduction-</p>
+<p>to-llm-agents)</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-221">
+          <div class="slide-number">Slide 221</div>
+          <div class="slide-content"><p>LLM Agents: A More Practical</p>
+<p>Approach</p>
+<ul><li>“Tools” are just functions</li>
+</ul><p>provided to a tools API.</p>
+<ul><li>In Bedrock, this can be a</li>
+</ul><p>Lambda function.</p>
+<p>The Outside</p>
+<ul><li>Prompts guide the LLM on how</li>
+</ul><p>World (or</p>
+<p>User</p>
+<p>to use them.</p>
+<p>larger</p>
+<p>Request</p>
+<ul><li>Tools may access outside</li>
+</ul><p>environment,</p>
+<p>information, retrievers, other</p>
+<p>at least.)</p>
+<p>Python modules, services, etc.</p>
+<p>Agent</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-222">
+          <div class="slide-number">Slide 222</div>
+          <div class="slide-content"><p>How do Agents Know Which Tools to</p>
+<p>Use?</p>
+<ul><li>Start with a foundational model to work with</li>
+</ul><p>Agent prompt</p>
+<ul><li>In Bedrock, “Action Groups” define a tool</li>
+<li>A prompt informs the FM when to use it</li>
+<li>“Use this function to determine the current weather in a city”</li>
+<li>You must define the parameters your tool (Lambda function) expects</li>
+</ul><p>Decompose</p>
+<ul><li>Define name, description, type, and if it’s required or not</li>
+<li>The description is actually important and will be used by the LLM to extract the the problem</li>
+</ul><p>required info from the user prompt</p>
+<ul><li>You can also allow the FM to go back and ask the user for missing information it</li>
+</ul><p>needs for a tool</p>
+<ul><li>This can be done using OpenAI-style schemas, or visually with a table in the Bedrock</li>
+</ul><p>Action Knowledge</p>
+<p>UI</p>
+<p>Group(s) Base(s)</p>
+<ul><li>Agents may also have knowledge bases associated with them</li>
+<li>Again, a prompt tells the LLM when it should use it</li>
+<li>“Use this for answering questions about X”</li>
+<li>This is “agentic RAG” – RAG is just another tool</li>
+<li>Optional “Code Interpreter” allows the agent to write its own code to Lambda</li>
+</ul><p>answer questions or produce charts. function(s)</p>
+<p>Augmented</p>
+<p>prompt</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-223">
+          <div class="slide-number">Slide 223</div>
+          <div class="slide-content"><p>Deploying Bedrock Agents</p>
+<ul><li>Create an “alias” for an agent</li>
+<li>This creates a deployed snapshot</li>
+<li>On-Demand throughput (ODT)</li>
+<li>Allows agent to run at quotas set at the account</li>
+</ul><p>level</p>
+<ul><li>Provisioned throughput (PT)</li>
+<li>Allows you to purchase an increased rate and</li>
+</ul><p>number of tokens for your agent</p>
+<ul><li>Your application can use the InvokeAgent</li>
+</ul><p>request using your alias ID and an Agents</p>
+<p>for Amazon Bedrock Runtime Endpoint.</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-224">
+          <div class="slide-number">Slide 224</div>
+          <div class="slide-content"><p>This will make</p>
+<p>more sense with</p>
+<p>an example</p>
+<ul><li>Let’s tie it all together</li>
+<li>An agent that uses a</li>
+</ul><p>knowledge base (my</p>
+<p>book)</p>
+<ul><li>And a tool (action</li>
+</ul><p>group – what’s the</p>
+<p>weather)</p>
+<ul><li>And guardrails</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-225">
+          <div class="slide-number">Slide 225</div>
+          <div class="slide-content"><p>Multi-agent systems: an example</p>
+<ul><li>Similar to just giving tools to a</li>
+</ul><p>single agent</p>
+<ul><li>But many tools may be used at once</li>
+<li>For example, coding agents may need</li>
+</ul><p>Worker</p>
+<p>to operate on multiple files in different</p>
+<p>ways to achieve a larger task</p>
+<ul><li>Workflows that require complex</li>
+</ul><p>decision making can benefit from these</p>
+<p>agents (otherwise, keep it simple with Orchestrator Worker Synthesizer</p>
+<p>deterministic workflows.)</p>
+<ul><li>The Orchestrator breaks down</li>
+</ul><p>tasks and delegates them to worker</p>
+<p>Worker</p>
+<p>LLM’s</p>
+<ul><li>A Synthesizer can then combine</li>
+</ul><p>their results For example, this could be a translation tool being asked to</p>
+<p>translate to multiple languages at once.</p>
+<p>Each LLM here may have its own tools and memory.</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-226">
+          <div class="slide-number">Slide 226</div>
+          <div class="slide-content"><p>Why use multiple agents (or augmented</p>
+<p>LLMs)?</p>
+<p>Too many tools Complex logic</p>
+<p>If one agent has trouble choosing the Prompts get too complicated with conditional</p>
+<p>appropriate tool, multiple specialized agents statements, better to define the flow with</p>
+<p>with specific tools might work better specialized agents</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-227">
+          <div class="slide-number">Slide 227</div>
+          <div class="slide-content"><p>Manager (Orchestrator – workers)</p>
+<ul><li>Similar to just giving tools to a</li>
+</ul><p>single agent</p>
+<ul><li>But many tools may be used at once</li>
+<li>For example, coding agents may</li>
+</ul><p>Worker</p>
+<p>need to operate on multiple files in</p>
+<p>different ways to achieve a larger</p>
+<p>task</p>
+<ul><li>Workflows that require complex</li>
+</ul><p>decision making can benefit from Orchestrator Worker Synthesizer</p>
+<p>these agents (otherwise, keep it</p>
+<p>simple with deterministic workflows.)</p>
+<ul><li>The Orchestrator breaks down</li>
+</ul><p>tasks and delegates them to Worker</p>
+<p>worker LLM’s</p>
+<ul><li>A Synthesizer can then combine</li>
+</ul><p>For example, this could be a translation tool being asked to</p>
+<p>their results</p>
+<p>translate to multiple languages at once.</p>
+<p>Each LLM here may have its own tools and memory.</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-228">
+          <div class="slide-number">Slide 228</div>
+          <div class="slide-content"><p>Routing</p>
+<ul><li>A “router” LLM chooses just</li>
+</ul><p>one of many specialized</p>
+<p>agents to call in turn</p>
+<ul><li>Use for complex tasks where</li>
+</ul><p>LLM</p>
+<p>a single classification is</p>
+<p>needed</p>
+<p>Router LLM Output</p>
+<ul><li>i.e., how large of a model is</li>
+</ul><p>needed for the task</p>
+<ul><li>What kind of customer service</li>
+</ul><p>LLM</p>
+<p>query is being received</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-229">
+          <div class="slide-number">Slide 229</div>
+          <div class="slide-content"><p>Parallelization</p>
+<ul><li>A lot like the orchestrator</li>
+<li>But without complex orchestration</li>
+<li>Sectioning: independent subtasks</li>
+</ul><p>Worker</p>
+<p>run in parallel</p>
+<ul><li>Running multiple guardrails at once</li>
+</ul><p>Input Worker Aggregator</p>
+<ul><li>Running multiple evaluations at once</li>
+<li>Voting</li>
+<li>Do the same thing with different</li>
+</ul><p>Worker</p>
+<p>models or prompts</p>
+<ul><li>Let them vote on the right result</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-230">
+          <div class="slide-number">Slide 230</div>
+          <div class="slide-content"><p>Prompt Chaining</p>
+<ul><li>Use when a task has a discrete sequence of known steps</li>
+<li>Each LLM processes the output of the previous one</li>
+<li>Can add “gates” to keep things on track as you go, or exit early</li>
+<li>Examples</li>
+<li>Write a document, then translate it to different languages</li>
+<li>Write an outline, then make slides</li>
+</ul><p>Input LLM 1 LLM 2 GATE LLM 3</p>
+<p>FAIL</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-231">
+          <div class="slide-number">Slide 231</div>
+          <div class="slide-content"><p>Evaluator - Optimizer</p>
+<ul><li>One LLM generates a</li>
+</ul><p>response</p>
+<ul><li>Another evaluates that</li>
+</ul><p>response</p>
+<ul><li>If it’s not good enough,</li>
+</ul><p>provide feedback and try</p>
+<p>again</p>
+<p>Generator Evaluator</p>
+<ul><li>Examples</li>
+<li>Code reviewing code and</li>
+</ul><p>incorporating those</p>
+<p>recommendations</p>
+<p>Feedback</p>
+<ul><li>Complex search that requires</li>
+</ul><p>multiple rounds</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-232">
+          <div class="slide-number">Slide 232</div>
+          <div class="slide-content"><p>Adding Memory</p>
+<ul><li>Short-term</li>
+<li>Chat history within a session / immediate context</li>
+<li>Enables conversations</li>
+<li>Events within sessions</li>
+<li>This could be in-memory or in a big distributed cache</li>
+<li>Elasticache, MemoryDB, even DynamoDB is OK</li>
+<li>Long-term</li>
+<li>Stores “extracted insights”</li>
+<li>Summaries of past sessions</li>
+<li>Preferences (your coding style and favorite tools, for example)</li>
+<li>Facts you gave it in the past</li>
+<li>“Memory Records” that store structured information derived from agent</li>
+</ul><p>interactions</p>
+<ul><li>“Strategies” for user preferences, semantic facts, session summaries</li>
+<li>This all needs to be stored somewhere!</li>
+<li>Long-term: DynamoDB, SQLLite, RDS, Aurora, etc.</li>
+<li>AgentCore Memory (we’re getting there)</li>
+<li>Mem0 (Strands uses this)</li>
+<li>You could frame Knowledge Bases as a form of long-term memory too.</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-233">
+          <div class="slide-number">Slide 233</div>
+          <div class="slide-content"><p>Strands Agents</p>
+<ul><li>Another Agents Python SDK (like OpenAI Agents</li>
+</ul><p>SDK, CrewAI, LangGraph, Google ADK)</p>
+<ul><li>Released by Amazon as open source</li>
+<li>You can create specialized agents and multi-</li>
+</ul><p>agent systems</p>
+<ul><li>Complex task decomposition</li>
+<li>Collaborative problem solving</li>
+<li>Of course it has tighter AWS integration</li>
+<li>Bedrock models, Lambda, Step Functions, and more</li>
+<li>But it’s not tied to AWS</li>
+<li>You can use it with OpenAI and others if you want to</li>
+<li>Multimodal support (text, speech, images, video)</li>
+<li>MCP (Model Context Protocol) support</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-234">
+          <div class="slide-number">Slide 234</div>
+          <div class="slide-content"><p>Strands Built-in Tools (just a few)</p>
+<p>RAG and memory Mem0 agent</p>
+<p>AWS Services /</p>
+<p>in Bedrock memory and Run Python code</p>
+<p>boto3</p>
+<p>Knowledge Bases personalization</p>
+<p>http (call</p>
+<p>Run shell Coordinate agent</p>
+<p>anything Manipulate files</p>
+<p>commands swarms</p>
+<p>external)</p>
+<p>Speak (with</p>
+<p>Amazon Polly)</p>
+<p>…or your own custom tools,</p>
+<p>from arbitrary Python code</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-235">
+          <div class="slide-number">Slide 235</div>
+          <div class="slide-content"><p>The Strands Agent Loop</p>
+<p>LLM /</p>
+<p>Reasoning</p>
+<p>Input, context Tool selection Response</p>
+<p>Tool execution</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-236">
+          <div class="slide-number">Slide 236</div>
+          <div class="slide-content"><p>Making it real – the Strands</p>
+<p>quickstart</p>
+<p>from strands import Agent, tool</p>
+<p>from strands_tools import calculator, current_time, python_repl</p>
+<p># Define a custom tool as a Python function using the @tool decorator</p>
+<p>@tool</p>
+<p>def letter_counter(word: str, letter: str) -&gt; int:</p>
+<p>if not isinstance(word, str) or not isinstance(letter, str):</p>
+<p>return 0</p>
+<p>This example illustrates a mix</p>
+<p>if len(letter) != 1:</p>
+<p>of custom and built-in tools:</p>
+<p>raise ValueError(&quot;The &#x27;letter&#x27; parameter must be a single character&quot;)</p>
+<p>return word.lower().count(letter.lower())</p>
+<p># Create an agent with tools from the strands-tools example tools package</p>
+<p># as well as our custom letter_counter tool</p>
+<p>agent = Agent(tools=[calculator, current_time, python_repl, letter_counter])</p>
+<p># Ask the agent a question that uses the available tools</p>
+<p>message = &quot;&quot;&quot;</p>
+<p>I have 4 requests:</p>
+<p>1. What is the time right now?</p>
+<p>2. Calculate 3111696 / 74088</p>
+<p>3. Tell me how many letter R&#x27;s are in the word &quot;strawberry&quot;</p>
+<p>4. Output a script that does what we just spoke about!</p>
+<p>Use your python tools to confirm that the script works before outputting it</p>
+<p>&quot;&quot;&quot;</p>
+<p>agent(message)</p>
+<p>Source: https://strandsagents.com/0.1.x/documentation/docs/user-guide/quickstart/</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-237">
+          <div class="slide-number">Slide 237</div>
+          <div class="slide-content"><p>AWS Agent Squad</p>
+<ul><li>Another open-sourced framework for multi-agent</li>
+</ul><p>workflows</p>
+<ul><li>https://github.com/awslabs/agent-squad</li>
+<li>Intelligent intent classification</li>
+<li>Routes queries to the right agent</li>
+<li>Python and TypeScript</li>
+<li>Shares contexts across agents</li>
+<li>Many pre-built agents and classifiers</li>
+<li>Integrates with Bedrock Agents</li>
+<li>Can extend Bedrock Flows Source: awslabs/agent-squad repo</li>
+<li>Conversation memory, orchestration</li>
+<li>Supervisor Agent</li>
+<li>Coordinates multiple specialized agents (like Strands!)</li>
+<li>Agent Squad is focused on routing, Strands on tool</li>
+</ul><p>use in a single agent loop</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-238">
+          <div class="slide-number">Slide 238</div>
+          <div class="slide-content"><p>Amazon Bedrock AgentCore</p>
+<ul><li>Hands deployment and operation of AI agents at</li>
+</ul><p>scale</p>
+<ul><li>No fussing with Docker, ECR, ECS, etc</li>
+<li>Serverless</li>
+<li>And it works with ANY agent framework</li>
+<li>You aren’t tied to Bedrock agents</li>
+<li>You aren’t even tied to AWS’s Strands framework</li>
+<li>OpenAI Agent SDK, LangGraph / LangChain,</li>
+</ul><p>CrewAI, whatever</p>
+<ul><li>(although… Strands does get better support…)</li>
+<li>Includes a “starter toolkit” to make deployment of</li>
+</ul><p>agents to AWS super easy</p>
+<ul><li>Includes several tools and capabilities you can</li>
+</ul><p>include in your agents</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-239">
+          <div class="slide-number">Slide 239</div>
+          <div class="slide-content"><p>AgentCore Capabilities</p>
+<p>Identity</p>
+<p>Tools</p>
+<p>Agent</p>
+<p>Agent</p>
+<p>Runtime</p>
+<p>Memory</p>
+<p>Gateways</p>
+<p>Observability</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-240">
+          <div class="slide-number">Slide 240</div>
+          <div class="slide-content"><p>AgentCore Agent Runtime</p>
+<ul><li>Serverless endpoints</li>
+<li>Deploy your agent to ECR, enhanced</li>
+</ul><p>with AgentCore capabilities</p>
+<ul><li>“Starter toolkit” manages it all for you, using</li>
+</ul><p>CodeBuild</p>
+<ul><li>But you can build your own Docker</li>
+</ul><p>containers if you want</p>
+<ul><li>Can have multiple endpoints</li>
+<li>Observability dashboard lets you track</li>
+</ul><p>usage and performance</p>
+<ul><li>Through “GenAI Observability” feature in</li>
+</ul><p>CloudWatch</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-241">
+          <div class="slide-number">Slide 241</div>
+          <div class="slide-content"><p>Adding AgentCore Memory</p>
+<ul><li>Short-term</li>
+<li>Chat history within a session / immediate context</li>
+<li>Enables conversations</li>
+<li>API centered around Session objects that contain Events</li>
+<li>Long-term</li>
+<li>Stores “extracted insights”</li>
+<li>Summaries of past sessions</li>
+<li>Preferences (your coding style and favorite tools, for example)</li>
+<li>Facts you gave it in the past</li>
+<li>API involves “Memory Records” that store structured information</li>
+</ul><p>derived from agent interactions</p>
+<ul><li>“Strategies” for user preferences, semantic facts, session summaries</li>
+<li>This all needs to be stored somewhere!</li>
+<li>The OpenAI Agents SDK gives you a SQLLite implementation</li>
+<li>But maybe you need something that scales better, and is serverless</li>
+<li>Enter AgentCore Memory</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-242">
+          <div class="slide-number">Slide 242</div>
+          <div class="slide-content"><p>AgentCore Built-In Tools</p>
+<p>Browser Tool Code Interpreter</p>
+<p>Allows control of your browser to interact with Lets you run code (in an isolated container)</p>
+<p>the web</p>
+<p>Python, JavaScript, TypeScript</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-243">
+          <div class="slide-number">Slide 243</div>
+          <div class="slide-content"><p>Importing Bedrock Agents</p>
+<ul><li>Bedrock has its own system for endpoints…</li>
+<li>But maybe you want to build on that or something.</li>
+<li>Building agents in Bedrock is super easy</li>
+<li>Importing is just a matter of running agentcore import-</li>
+</ul><p>agent</p>
+<ul><li>This generates Strands code (or LangChain / LangGraph) in an output</li>
+</ul><p>directory</p>
+<ul><li>From there you can test or deploy it like any other AgentCore agent</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-244">
+          <div class="slide-number">Slide 244</div>
+          <div class="slide-content"><p>AgentCore Gateway</p>
+<ul><li>Addresses the problem of using</li>
+</ul><p>external tools at scale</p>
+<p>Agent</p>
+<ul><li>Convert APIs, Lambda functions,</li>
+</ul><p>or other services into MCP tools</p>
+<ul><li>Targets can be OpenAPI (REST),</li>
+</ul><p>Gateway</p>
+<p>Smithy models (that’s an AWS thing),</p>
+<p>endpoints</p>
+<p>or Lambda</p>
+<ul><li>Agents can then access them</li>
+</ul><p>through Gateway endpoints</p>
+<p>Send</p>
+<p>Other</p>
+<ul><li>Manages OAuth security / credentials</li>
+</ul><p>message</p>
+<p>DB</p>
+<p>services</p>
+<ul><li>Semantic tool selection</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-245">
+          <div class="slide-number">Slide 245</div>
+          <div class="slide-content"><p>AgentCore Identity</p>
+<ul><li>This is different from OAuth identity for users and connecting to services we</li>
+</ul><p>talked about earlier</p>
+<ul><li>This is about your agent’s identity / identities</li>
+<li>Secure access to external tools and AWS services</li>
+<li>Central repository for all of your agent identities</li>
+<li>Similar to a Cognito user pool</li>
+<li>Secure credential storage</li>
+<li>OAuth 2.0 support</li>
+<li>Built-in support for Google, GitHub, Slack, Salesforce, Atlassian</li>
+<li>There is a lot of depth to this, but you probably don’t need it right away</li>
+<li>Refer to https://docs.aws.amazon.com/bedrock-</li>
+</ul><p>agentcore/latest/devguide/identity.html</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-246">
+          <div class="slide-number">Slide 246</div>
+          <div class="slide-content"><p>Lab: Strands Agents, AgentCore,</p>
+<p>Agent Squad</p>
+<ul><li>If you want to follow along</li>
+<li>You’ll need a Python environment</li>
+<li>AWS CLI installed and configured</li>
+<li>Preferably with administrator permissions</li>
+<li>A Bedrock API Key</li>
+<li>Set in AWS_BEARER_TOKEN_BEDROCK env variable</li>
+<li>Warning: Agent Squad is a bit fragile ATM</li>
+<li>And this is all changing quickly. You might want to just watch; the concepts</li>
+</ul><p>are what’s important.</p>
+<ul><li>Remember to clean up when you’re done</li>
+<li>Agentcore destroy</li>
+<li>Double check the Bedrock Agentcore console</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-247">
+          <div class="slide-number">Slide 247</div>
+          <div class="slide-content"><p>Lab: Strands Agents, AgentCore,</p>
+<p>Agent Squad</p>
+<ul><li>What we’ll build:</li>
+<li>Strands agent with tools</li>
+<li>Calculator, clock, and custom “count keywords” tool</li>
+<li>Strands agent deployed through AgentCore</li>
+<li>Strands agent orchestrated with Agent Squad</li>
+<li>Routes appropriate queries to Strands, everything else to a generic LLM</li>
+</ul><p>Agent Squad</p>
+<p>AgentCore</p>
+<p>Strands Agent Bedrock LLM</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-248">
+          <div class="slide-number">Slide 248</div>
+          <div class="slide-content"><p>Model Context Protocol (MCP)</p>
+<ul><li>Standardized interface for agent-tool</li>
+</ul><p>interactions</p>
+<ul><li>“Like a USB-C port for AI Applications” – Anthropic</li>
+</ul><p>AI Applications</p>
+<ul><li>Technically the data layer is JSON-RPC 2.0</li>
+<li>Transport is stdio or HTTP streaming</li>
+<li>Access external tools with consistent</li>
+</ul><p>interaction patterns</p>
+<ul><li>Standardizes how apps provide context to LLM’s</li>
+<li>Pretty much any agent SDK can call external MCP</li>
+</ul><p>MCP servers (including Strands)</p>
+<ul><li>Servers may expose tools, resources, and</li>
+</ul><p>prompts</p>
+<p>Data and</p>
+<p>Dev Productivity</p>
+<ul><li>Some popular MCP servers: file</li>
+</ul><p>tools tools</p>
+<p>…</p>
+<ul><li>GitHub, Atlassian, PostgreSQL, Slack, Google systems</li>
+</ul><p>Maps… even Udemy!</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-249">
+          <div class="slide-number">Slide 249</div>
+          <div class="slide-content"><p>Deploying your Own MCP Server</p>
+<ul><li>For stateless, lightweight access:</li>
+<li>AWS Lambda</li>
+<li>For complex tools:</li>
+<li>Amazon ECS</li>
+<li>Or Fargate</li>
+<li>API Gateway</li>
+<li>Can also expose MCP endpoints</li>
+<li>Use MCP client libraries</li>
+<li>Abstract away the complexities of the</li>
+</ul><p>protocol, don’t re-invent the wheel!</p>
+<ul><li>AWS’s official MCP architecture</li>
+</ul><p>guidance is on the right here</p>
+<ul><li>But it’s different from what the exam guide</li>
+</ul><p>and SkillBuilder talk about :/</p>
+<ul><li>You can also deploy MCP servers with</li>
+</ul><p>AgentCore</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-250">
+          <div class="slide-number">Slide 250</div>
+          <div class="slide-content"><p>OpenAPI and GenAI</p>
+<p>openapi: 3.1.0</p>
+<p>info:</p>
+<p>title: Calculator Tool</p>
+<p>version: 1.0.0</p>
+<ul><li>Originally Swagger – a spec for</li>
+</ul><p>defining interfaces for web services</p>
+<p>paths:</p>
+<p>/add:</p>
+<ul><li>Can also be used to define get:</li>
+</ul><p>interfaces between FM’s and tools operationId: add</p>
+<p>summary: Add two numbers</p>
+<ul><li>Helps with reliable tool operations parameters:</li>
+</ul><p>- name: a</p>
+<ul><li>Standardize function definitions in: query</li>
+</ul><p>required: true</p>
+<ul><li>Define input parameters, expected</li>
+</ul><p>schema: { type: number }</p>
+<p>outputs, error conditions per tool</p>
+<p>- name: b</p>
+<p>in: query</p>
+<ul><li>May be used with Bedrock action</li>
+</ul><p>required: true</p>
+<p>groups schema: { type: number }</p>
+<p>responses:</p>
+<ul><li>Upload OpenAPI schema to S3</li>
+</ul><p>&quot;200&quot;:</p>
+<p>description: Sum</p>
+<ul><li>Or edit it in the console</li>
+</ul><p>content:</p>
+<ul><li>The action group can then refer to it to</li>
+</ul><p>application/json:</p>
+<p>guide its tool use</p>
+<p>schema:</p>
+<p>type: object</p>
+<p>properties:</p>
+<p>result:</p>
+<p>type: number</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-251">
+          <div class="slide-number">Slide 251</div>
+          <div class="slide-content"><p>Humans in the Loop</p>
+<ul><li>Can be low-tech</li>
+</ul><p>AI Application: “rate my</p>
+<p>response!”</p>
+<ul><li>“Human augmentation pattern” – AI prepares</li>
+</ul><p>drafts, humans refine</p>
+<ul><li>AI systems can implement escalation criteria</li>
+<li>Route complex or uncertain cases to human</li>
+</ul><p>Amazon API Gateway</p>
+<p>experts</p>
+<ul><li>Based on confidence scores or risk assessments</li>
+<li>Human feedback enables continuous</li>
+</ul><p>improvement</p>
+<ul><li>Front feedback collection with API Gateway to just AWS Lambda</li>
+</ul><p>ask humans if they like the output</p>
+<ul><li>Store that feedback in DynamoDB</li>
+<li>With indexing to allow later analysis</li>
+<li>Use to measure which model / variant is preferred</li>
+</ul><p>Amazon DynamoDB</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-252">
+          <div class="slide-number">Slide 252</div>
+          <div class="slide-content"><p>Amazon Q Business</p>
+<ul><li>Fully managed Gen-AI assistant for your employees</li>
+<li>Based on your company’s knowledge and data</li>
+<li>Answer questions, provide summaries, generate content, automate tasks</li>
+<li>Perform routine actions (e.g., submit time-off requests, send meeting invites)</li>
+<li>Built on Amazon Bedrock (but you can’t choose the underlying FM)</li>
+</ul><p>What you can ask Amazon Q Business?</p>
+<p>Company’s</p>
+<p>Internal Data</p>
+<p>- Write a job posting for a Senior Product Marketing Manage role…</p>
+<p>- Create a social media post under 50 words to advertise the new role…</p>
+<p>Employee Amazon Q</p>
+<p>- What was discussed during the team meetings in the week of 4/12?</p>
+<p>Business</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-253">
+          <div class="slide-number">Slide 253</div>
+          <div class="slide-content"><p>Amazon Q Business Example</p>
+<p>Company Document</p>
+<p>https://aws.amazon.com/blogs/machine-learning/improve-productivity-</p>
+<p>when-processing-scanned-pdfs-using-amazon-q-business/</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-254">
+          <div class="slide-number">Slide 254</div>
+          <div class="slide-content"><p>Amazon Q Business</p>
+<p>Data Sources</p>
+<p>…</p>
+<ul><li>Data Connectors (fully managed</li>
+</ul><p>S3 RDS WorkDocs Aurora</p>
+<p>RAG) – connects to 40+ popular</p>
+<p>enterprise data sources</p>
+<p>MS 365 SharePoint Slack</p>
+<ul><li>Amazon S3, RDS, Aurora, WorkDocs…</li>
+</ul><p>crawl using</p>
+<ul><li>Microsoft 365, Salesforce, GDrive, Gmail,</li>
+</ul><p>Data Connectors</p>
+<p>Slack, Sharepoint…</p>
+<p>Amazon Q</p>
+<ul><li>Plugins – allows you to interact with 3rd</li>
+</ul><p>Business</p>
+<p>party services</p>
+<ul><li>Jira, ServiceNow, Zendesk, Salesforce… connect using Example:</li>
+</ul><p>Plugins send issues to Jira</p>
+<ul><li>Custom Plugins – connects to any 3rd party</li>
+</ul><p>application using APIs</p>
+<p>3rd Party Services</p>
+<p>…</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-255">
+          <div class="slide-number">Slide 255</div>
+          <div class="slide-content"><p>Amazon Q Business + IAM Identity</p>
+<p>Center</p>
+<ul><li>Users can be authenticated through IAM Identity Center</li>
+<li>Users receive responses generated only from the documents they have</li>
+</ul><p>access to</p>
+<ul><li>IAM Identity Center can be configured with external Identity Providers</li>
+<li>IdP: Google Login, Microsoft Active Directory…</li>
+</ul><p>Authentication integration</p>
+<p>Users IAM Identity Center</p>
+<p>ask questions</p>
+<p>Authenticated</p>
+<p>Amazon Q Business</p>
+<p>User</p>
+<p>(Web Application)</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-256">
+          <div class="slide-number">Slide 256</div>
+          <div class="slide-content"><p>Amazon Q Business – Admin Controls</p>
+<ul><li>Controls and customize responses to your organizational needs</li>
+<li>Admin controls == Guardrails</li>
+<li>Block specific words or topics</li>
+<li>Respond only with internal information (vs using external knowledge)</li>
+<li>Global controls &amp; topic-level controls (more granular rules)</li>
+</ul><p>How can I configure a brand new Nintendo Switch?</p>
+<p>Blocked Topics</p>
+<p>Sorry, but this a restricted topic.</p>
+<p>Gaming Consoles</p>
+<p>Employee Amazon Q</p>
+<p>Business</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-257">
+          <div class="slide-number">Slide 257</div>
+          <div class="slide-content"><p>Amazon Q Apps (Q Business)</p>
+<ul><li>Create Gen AI-powered apps without coding by using natural language</li>
+<li>Leverages your company’s internal data</li>
+<li>Possibility to leverage plugins (Jira, etc…)</li>
+</ul><p>https://aws.amazon.com/blogs/aws/amazon-q-business-now-generally</p>
+<p>sundog-education.com -available-helps-boost-workforce-productivity-with-generative-ai/</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-258">
+          <div class="slide-number">Slide 258</div>
+          <div class="slide-content"><p>Amazon Q Developer</p>
+<ul><li>Answer questions about the AWS Developer</li>
+</ul><p>documentation and AWS service selection</p>
+<ul><li>Answer questions about resources in your</li>
+</ul><p>AWS account</p>
+<ul><li>Suggest CLI (Command Line Interface) to</li>
+</ul><p>You have 5 AWS Lambda</p>
+<p>resources in us-east-1.</p>
+<p>run to make changes to your account</p>
+<p>List all of my</p>
+<p>Lambda functions</p>
+<p>- test-function-1</p>
+<ul><li>Helps you do bill analysis, resolve errors,</li>
+</ul><p>- …</p>
+<p>troubleshooting…</p>
+<p>AWS Account</p>
+<p>Amazon Q</p>
+<p>Developer</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-259">
+          <div class="slide-number">Slide 259</div>
+          <div class="slide-content"><p>Amazon Q Developer</p>
+<p>Understand and manage</p>
+<p>your cloud infrastructure</p>
+<p>Understand your AWS costs</p>
+<p>https://aws.amazon.com/blogs/aws/amazon-q-developer-now-generally-available-</p>
+<p>sundog-education.com</p>
+<p>includes-new-capabilities-to-reimagine-developer-experience/</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-260">
+          <div class="slide-number">Slide 260</div>
+          <div class="slide-content"><p>Amazon Q Developer</p>
+<ul><li>AI code companion to help you</li>
+</ul><p>code new applications (similar to</p>
+<p>GitHub Copilot)</p>
+<ul><li>Supports many languages: Java,</li>
+</ul><p>JavaScript, Python, TypeScript,</p>
+<p>C#...</p>
+<ul><li>Real-time code suggestions and</li>
+</ul><p>security scans</p>
+<ul><li>Software agent to implement</li>
+</ul><p>features, generate documentation,</p>
+<p>bootstrapping new projects</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-261">
+          <div class="slide-number">Slide 261</div>
+          <div class="slide-content"><p>Amazon Q Developer – IDE Extensions</p>
+<ul><li>Integrates with IDE (Integrated Development Environment) to</li>
+</ul><p>help with your software development needs</p>
+<ul><li>Answer questions about AWS developmet</li>
+<li>Code completions and code generation</li>
+<li>Scan your code for security vulnerabilities</li>
+<li>Debugging, optimizations, improvements</li>
+</ul><p>Visual Studio Code Visual Studio</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-262">
+          <div class="slide-number">Slide 262</div>
+          <div class="slide-content"><p>Amazon Q Developer - Rules</p>
+<ul><li>Allows you to enforce coding standards, workflow preferences</li>
+<li>Ensures consistency in AI’s guidance</li>
+<li>The are written in Markdown format (.md)</li>
+<li>Must be placed within your project’s .amazon/rules directory</li>
+<li>They are just textual instructions</li>
+<li>Very much like the claude.md file in Claude Code</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-263">
+          <div class="slide-number">Slide 263</div>
+          <div class="slide-content"><p>Operational Efficiency and</p>
+<p>Optimization</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-264">
+          <div class="slide-number">Slide 264</div>
+          <div class="slide-content"><p>Token Efficiency</p>
+<ul><li>Token Estimation and Tracking</li>
+<li>Bedrock has a CountTokens API</li>
+<li>Returns token count for a given</li>
+</ul><p>request without actually running it</p>
+<ul><li>Different models behave differently</li>
+<li>Costs nothing</li>
+<li>Estimate costs prior to inference</li>
+<li>Optimize prompts to fit within token limits</li>
+<li>CloudWatch tracks this too – also on the</li>
+</ul><p>output side</p>
+<ul><li>InputTokenCount</li>
+<li>outputTokenCount</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-265">
+          <div class="slide-number">Slide 265</div>
+          <div class="slide-content"><p>Other Stuff CloudWatch Monitors</p>
+<ul><li>You can use these for additional</li>
+</ul><p>optimization opportunities</p>
+<ul><li>Count, time for requests</li>
+</ul><p>Amazon Bedrock</p>
+<ul><li>TTFT Time to First Token (in streaming)</li>
+<li>Throttles / server errors / client errors on</li>
+</ul><p>invocation</p>
+<p>Amazon CloudWatch</p>
+<ul><li>Model latency, invocation count, throttles</li>
+<li>And again – input / output token counts</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-266">
+          <div class="slide-number">Slide 266</div>
+          <div class="slide-content"><p>More Token Efficiency Techniques</p>
+<ul><li>Context Window Optimization / Context Pruning</li>
+<li>Chunking RAG data, limiting # of chunks retrieved</li>
+<li>Filtering chunks by metadata to toss irrelevant stuff</li>
+<li>Summarize (or even toss) older parts of conversation</li>
+</ul><p>history</p>
+<ul><li>Response Size Controls / Response Limiting</li>
+<li>Use maxTokens</li>
+<li>Bake desired length in the prompt (“respond in 50 words</li>
+</ul><p>or less”)</p>
+<ul><li>Use few-shot examples to illustrate the desired verbosity</li>
+<li>Use JSON output to force a given format / length</li>
+<li>Prompt Compression</li>
+<li>Use a small model to summarize large chats, documents</li>
+</ul><p>before sending to larger model</p>
+<ul><li>Use Knowledge Bases instead of complete documents in</li>
+</ul><p>the prompt</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-267">
+          <div class="slide-number">Slide 267</div>
+          <div class="slide-content"><p>Cost-Effective Model Selection</p>
+<ul><li>Cost / Capability Tradeoff</li>
+<li>Do you really need the largest, most expensive model?</li>
+<li>If the “smarts” are in RAG and tool usage, maybe a smaller Prompt</li>
+</ul><p>model will do just fine</p>
+<ul><li>Smaller models may also play a role in pre-processing</li>
+<li>Summarization, compression, classification, chunking – doesn’t need</li>
+</ul><p>PhD-level smarts</p>
+<ul><li>Tiered usage based on query complexity – Dynamic</li>
+</ul><p>Routing Router Agent</p>
+<ul><li>AKA Intelligent Prompt Routing</li>
+<li>(This is now a feature in Bedrock as well)</li>
+<li>Route to different models based on the complexity of the query</li>
+<li>(This is how ChatGPT works under the hood…)</li>
+<li>Many ways to route</li>
+</ul><p>Small Medium Large</p>
+<ul><li>A conditional Flow; Lambda; Agent Squad; Strands</li>
+</ul><p>model model model</p>
+<ul><li>This is a great application of agents – with a tool to score “complexity”</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-268">
+          <div class="slide-number">Slide 268</div>
+          <div class="slide-content"><p>Measuring Price : Performance</p>
+<p>Ratio</p>
+<ul><li>You can use tools like Amazon</li>
+</ul><p>Bedrock Evaluations to measure</p>
+<p>Foundation Model performance against</p>
+<p>your prompt dataset</p>
+<ul><li>This can use human or LLM judges, or just</li>
+</ul><p>predefined metrics</p>
+<ul><li>The compare feature in Evaluations lets</li>
+</ul><p>you visualize the performance of different</p>
+<p>models with your prompts</p>
+<ul><li>Pair that with token counting to</li>
+</ul><p>estimate costs (or track actual costs)</p>
+<ul><li>Now you can make informed</li>
+</ul><p>tradeoffs…</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-269">
+          <div class="slide-number">Slide 269</div>
+          <div class="slide-content"><p>Maximizing Resource Utilization</p>
+<ul><li>Batching strategies</li>
+<li>Batch embeddings up for vector stores</li>
+<li>Bedrock Batch Inference</li>
+<li>Submit many prompts together in S3, get responses in S3</li>
+<li>Capacity planning with Bedrock</li>
+<li>Work from desired tokens per minute (TPM),</li>
+</ul><p>requests per minute (RPM)</p>
+<ul><li>AWS Service Quotas has a Bedrock tool (seen</li>
+</ul><p>here)</p>
+<ul><li>Request a quota increase if necessary, or</li>
+</ul><p>provisioned throughput</p>
+<ul><li>AWS CloudFormation templates can help with</li>
+</ul><p>capacity planning</p>
+<ul><li>Tensor parallelism</li>
+<li>Shards LLM weights across GPU’s</li>
+<li>Better memory utilization per container</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-270">
+          <div class="slide-number">Slide 270</div>
+          <div class="slide-content"><p>Maximizing Resource Utilization</p>
+<ul><li>Provisioned throughput</li>
+<li>Bedrock allows you to provision by Tokens or</li>
+</ul><p>by Model Units (MU’s) which corresponds to</p>
+<p>token throughput</p>
+<ul><li>You must provision for customized models</li>
+<li>Useful for consistent performance with high</li>
+</ul><p>volume</p>
+<ul><li>You provision for a given model, and must</li>
+</ul><p>provide the provisioned model ARN as the</p>
+<p>modelID when running inference on it</p>
+<ul><li>Utilization monitoring</li>
+<li>CloudWatch is your friend, with dashboards</li>
+<li>AWS Cost Explorer to attribute model costs to</li>
+</ul><p>business functions</p>
+<ul><li>Auto-scaling</li>
+<li>Serverless solutions like Lambda, Bedrock,</li>
+</ul><p>OpenSearch serverless, AgentCore</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-271">
+          <div class="slide-number">Slide 271</div>
+          <div class="slide-content"><p>Intelligent Caching Systems:</p>
+<p>Semantic Caching</p>
+<ul><li>Cache embeddings of prompts &amp;</li>
+</ul><p>responses instead of the prompt text</p>
+<ul><li>Store in an in-memory vector store</li>
+</ul><p>(ElastiCache for Valkey, MemoryDB)</p>
+<ul><li>You *could* use OpenSearch too</li>
+<li>For new prompts, create an embedding, find</li>
+</ul><p>nearest neighbors in cache, if similarity score</p>
+<p>&gt; threshold, return cached response</p>
+<ul><li>Tune the similarity threshold carefully</li>
+<li>Balance cache hits with relevant responses</li>
+<li>Make sure the overhead does not</li>
+</ul><p>outweigh the benefits</p>
+<p>AWS reference architecture</p>
+<ul><li>Can dramatically improve latency for</li>
+</ul><p>some applications.</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-272">
+          <div class="slide-number">Slide 272</div>
+          <div class="slide-content"><p>Intelligent Caching Systems:</p>
+<p>Prompt Caching</p>
+<ul><li>Improves latency for supported models</li>
+<li>Built into Bedrock</li>
+<li>You cache a prompt prefix</li>
+</ul><p>instructions = ( &quot;I will provide you with a</p>
+<ul><li>Static content, like instructions, and few-shot examples document, followed by a question about its</li>
+<li>Like a system prompt content. &quot; &quot;Your task is to analyze the</li>
+</ul><p>document, extract relevant information, and</p>
+<ul><li>Place dynamic content at the end</li>
+</ul><p>provide &quot; &quot;a comprehensive answer to the</p>
+<ul><li>A cache checkpoint separates the two</li>
+</ul><p>question. Please follow these detailed</p>
+<ul><li>No need to tokenize the prefix again</li>
+</ul><p>instructions:&quot; &quot;\n\n1. Identifying Relevant</p>
+<p>Quotes:&quot; &quot;\n - Carefully read through the</p>
+<ul><li>You might also cache an uploaded document that is</li>
+</ul><p>entire document.&quot; &quot;\n - Identify sections of</p>
+<p>queried repeatedly</p>
+<p>the text that are directly relevant to</p>
+<ul><li>Cached content is discounted per token answering the question.&quot; &quot;\n - Select quotes</li>
+</ul><p>that provide key information, context, or</p>
+<ul><li>But writes may be more expensive</li>
+</ul><p>support for the answer.&quot; &quot;\n - Quotes should</p>
+<ul><li>Cache reads &amp; writes are monitored in CloudWatch</li>
+</ul><p>be concise and to the point, typically no more</p>
+<p>than 2-3 sentences each.&quot; &quot;\n - Choose a</p>
+<ul><li>Prompt caching is an option in Bedrock Prompt</li>
+</ul><p>diverse range of quotes if multiple aspects of</p>
+<p>Management as well</p>
+<p>the question need to be addressed.&quot; &quot;\n - …</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-273">
+          <div class="slide-number">Slide 273</div>
+          <div class="slide-content"><p>Intelligent Caching Systems:</p>
+<p>Edge Caching</p>
+<ul><li>Use CloudFront when you can</li>
+</ul><p>GET /ask?fingerprint=&lt;hash-of-request&gt;</p>
+<ul><li>Reduces latency and backend requests</li>
+<li>But wait, isn’t GenAI dynamic? What can</li>
+</ul><p>you cache?</p>
+<ul><li>Well, some prompts / responses are</li>
+</ul><p>common and can be cached Amazon CloudFront</p>
+<ul><li>If you have a deterministic request hash,</li>
+</ul><p>you can bake that fingerprint into a GET</p>
+<p>request, which CloudFront could cache</p>
+<ul><li>The results can also be fingerprinted to</li>
+</ul><p>identify when it’s appropriate (based on</p>
+<p>model configuration values)</p>
+<p>Amazon API Gateway</p>
+<ul><li>Might want an aggressive TTL if things</li>
+</ul><p>change often</p>
+<ul><li>There’s more to an app than the LLM</li>
+</ul><p>piece</p>
+<ul><li>Cache that too</li>
+</ul><p>AWS Lambda Amazon Bedrock</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-274">
+          <div class="slide-number">Slide 274</div>
+          <div class="slide-content"><p>Building Responsive AI Systems</p>
+<ul><li>Use parallel requests for complex</li>
+</ul><p>workflows</p>
+<ul><li>Multi-agent workflows in parallel</li>
+<li>Step Functions can also do this</li>
+</ul><p>Worker</p>
+<ul><li>Cache / pre-compute predictable</li>
+</ul><p>queries</p>
+<ul><li>Response streaming</li>
+<li>Latency-optimized inference for FM’s Orchestrator Worker Synthesizer</li>
+<li>A feature of Bedrock</li>
+<li>Specify</li>
+</ul><p>performanceConfig={&#x27;latency&#x27;:</p>
+<p>&#x27;optimized’} in your API calls</p>
+<p>Worker</p>
+<ul><li>Optimizes</li>
+<li>Time to First Token (TTFT)</li>
+<li>Output Tokens per Second (OTPS)</li>
+<li>End to End Latency (E2E)</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-275">
+          <div class="slide-number">Slide 275</div>
+          <div class="slide-content"><p>Building Responsive AI Systems</p>
+<ul><li>Use Amazon Bedrock Intelligent Prompt Routing</li>
+<li>Direct requests to different models based on complexity</li>
+<li>Keep your prompts concise</li>
+<li>Put the important stuff first in case it gets truncated</li>
+<li>Context pruning</li>
+<li>Ditch RAG results that aren’t valuable or are redundant</li>
+<li>Limit response sizes</li>
+<li>Break up complex tasks</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-276">
+          <div class="slide-number">Slide 276</div>
+          <div class="slide-content"><p>Optimizing Retrieval Performance</p>
+<ul><li>We covered a lot of these details when talking</li>
+</ul><p>about OpenSearch vector stores</p>
+<ul><li>Optimize your indices</li>
+<li>Hybrid search improves relevancy</li>
+<li>You can also have your own custom</li>
+</ul><p>hybrid scoring functions</p>
+<ul><li>Query pre-processing</li>
+<li>Normalize query to the corpus in terms of</li>
+</ul><p>style</p>
+<ul><li>Break up multi-part questions – don’t try to</li>
+</ul><p>look up two different things at once</p>
+<ul><li>Filter out irrelevant stuff</li>
+<li>Reduce ambiguity</li>
+<li>Keyword extraction for hybrid search</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-277">
+          <div class="slide-number">Slide 277</div>
+          <div class="slide-content"><p>Optimizing for Specific Use Cases</p>
+<ul><li>Different models have different parameters</li>
+</ul><p>you can tune</p>
+<ul><li>Use A/B testing to evaluate changes</li>
+<li>Bedrock Evaluations</li>
+<li>CloudWatch Evidently</li>
+<li>Some common parameters</li>
+<li>Temperature – Amount of randomness in the Evidently</li>
+</ul><p>response (0=not random, 1 = “creative”)</p>
+<ul><li>Top_p – “Nucleus sampling” – Probability threshold</li>
+</ul><p>for token candidates (specify this OR temperature)</p>
+<ul><li>Top_k – How many token options to sample from</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-278">
+          <div class="slide-number">Slide 278</div>
+          <div class="slide-content"><p>Optimizing Foundation Model</p>
+<p>System Performance</p>
+<ul><li>API call profiling</li>
+<li>Find patterns in your requests</li>
+<li>This might identify opportunities for</li>
+</ul><p>caching, batching, RAG improvements</p>
+<ul><li>Use structured input and output when possible</li>
+<li>JSON, XML templates</li>
+<li>Improves efficiency and accuracy</li>
+<li>Chain of Thought instruction patterns</li>
+<li>“Reasoning” – forcing the FM to show the</li>
+</ul><p>process step by step produces more</p>
+<p>accurate conclusions for complex</p>
+<p>reasoning tasks</p>
+<ul><li>Feedback loops capturing user</li>
+</ul><p>satisfaction &amp; behavior</p>
+<ul><li>Use this to identify effective prompts</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-279">
+          <div class="slide-number">Slide 279</div>
+          <div class="slide-content"><p>Optimizing Foundation Model System</p>
+<p>Performance: SageMaker stuff</p>
+<ul><li>SageMaker AI can deploy models up to</li>
+</ul><p>500GB</p>
+<ul><li>Adjust container health check and download</li>
+</ul><p>timeout quotas to allow enough time to</p>
+<p>download them and their resources!</p>
+<ul><li>3rd party model parallelization supported</li>
+<li>Triton, FasterTransformer, DeepSpeed</li>
+<li>Instance type guidance</li>
+<li>Large models: ml.p4d.24xlarge (GPU) Amazon SageMaker AI</li>
+<li>Small models (ie, named entity recognition):</li>
+</ul><p>ml.c5.9xlarge (CPU)</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-280">
+          <div class="slide-number">Slide 280</div>
+          <div class="slide-content"><p>Optimizing Foundation Model</p>
+<p>System Performance</p>
+<ul><li>UltraServers (Trn2, P6e-GB200)</li>
+<li>Connects EC2 instances hosting</li>
+</ul><p>your AI/ML workloads</p>
+<ul><li>Low latency, high bandwidth</li>
+</ul><p>accelerator interconnects</p>
+<ul><li>Use Lambda endpoint lifecycle</li>
+</ul><p>management</p>
+<ul><li>Can automatically initialize</li>
+</ul><p>endpoints</p>
+<ul><li>Download model artifacts from S3</li>
+<li>…on demand, when processing is</li>
+</ul><p>triggered</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+    </div>
+
+    <div class="section-nav">
+      <a href="index.html" class="btn-back">← Back to Overview</a>
+    </div>
+  </main>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

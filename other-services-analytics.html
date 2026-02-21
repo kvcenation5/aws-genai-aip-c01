@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Other Services - Analytics – AWS GenAI Developer Pro (AIP-C01)</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="logo">☁️ AIP-C01</span>
+      <button class="close-btn" onclick="toggleSidebar()">✕</button>
+    </div>
+    <ul class="nav-list">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li class="divider">Course Sections</li>
+      <li class=""><a href="generative-ai-fundamentals-and-bedrock.html">Generative AI Fundamentals and Bedrock</a></li>
+<li class=""><a href="managing-data-for-generative-ai.html">Managing Data for Generative AI</a></li>
+<li class=""><a href="agentic-ai.html">Agentic AI</a></li>
+<li class=""><a href="operations-efficiency-and-optimization.html">Operations Efficiency and Optimization</a></li>
+<li class=""><a href="managing-models-with-sagemaker-ai.html">Managing Models with SageMaker AI</a></li>
+<li class=""><a href="more-tools-for-building-ai-applications.html">More Tools for Building AI Applications</a></li>
+<li class=""><a href="governance-and-qa.html">Governance and QA</a></li>
+<li class=""><a href="security-identity-and-compliance.html">Security, Identity, and Compliance</a></li>
+<li class="active"><a href="other-services-analytics.html">Other Services - Analytics</a></li>
+<li class=""><a href="other-services-compute-containers.html">Other Services - Compute & Containers</a></li>
+<li class=""><a href="other-services-database.html">Other Services - Database</a></li>
+<li class=""><a href="other-services-developer-tools.html">Other Services - Developer Tools</a></li>
+<li class=""><a href="other-services-machine-learning.html">Other Services - Machine Learning</a></li>
+<li class=""><a href="other-services-storage-networking.html">Other Services - Storage & Networking</a></li>
+<li class=""><a href="exam-preparation.html">Exam Preparation</a></li>
+
+    </ul>
+  </nav>
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+      <div class="breadcrumb">
+        <a href="index.html">AWS GenAI Pro</a> › <span>Other Services - Analytics</span>
+      </div>
+      <div class="page-meta">26 slides · Pages 502–527</div>
+    </header>
+
+    <div class="section-hero">
+      <h1>Other Services - Analytics</h1>
+      <p class="section-subtitle">AWS Certified Generative AI Developer – Professional (AIP-C01)</p>
+      <div class="section-stats">
+        <span>📄 26 slides</span>
+        <span>📑 Pages 502–527</span>
+      </div>
+    </div>
+
+    <div class="slides-container">
+      
+        <div class="slide" id="slide-502">
+          <div class="slide-number">Slide 502</div>
+          <div class="slide-content"><p>Other Services You</p>
+<p>Should Know: Analytics</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-503">
+          <div class="slide-number">Slide 503</div>
+          <div class="slide-content"><p>What is Athena?</p>
+<ul><li>Interactive query service for S3 (SQL)</li>
+<li>No need to load data, it stays in S3</li>
+<li>Presto under the hood</li>
+<li>Serverless!</li>
+<li>Supports many data formats</li>
+<li>CSV, TSV (human readable)</li>
+<li>JSON (human readable)</li>
+<li>ORC (columnar, splittable)</li>
+<li>Parquet (columnar, splittable)</li>
+<li>Avro (splittable)</li>
+<li>Snappy, Zlib, LZO, Gzip compression</li>
+<li>Unstructured, semi-structured, or structured</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-504">
+          <div class="slide-number">Slide 504</div>
+          <div class="slide-content"><p>Some examples</p>
+<ul><li>Ad-hoc queries of web logs</li>
+<li>Querying staging data before</li>
+</ul><p>loading to Redshift</p>
+<ul><li>Analyze CloudTrail / CloudFront /</li>
+</ul><p>VPC / ELB etc logs in S3</p>
+<ul><li>Integration with Jupyter, Zeppelin,</li>
+</ul><p>RStudio notebooks</p>
+<ul><li>Integration with QuickSight</li>
+<li>Integration via ODBC / JDBC with</li>
+</ul><p>other visualization tools</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-505">
+          <div class="slide-number">Slide 505</div>
+          <div class="slide-content"><p>What is EMR?</p>
+<ul><li>Elastic MapReduce</li>
+<li>Managed Hadoop framework on EC2</li>
+</ul><p>instances</p>
+<ul><li>Includes Spark, HBase, Presto, Flink,</li>
+</ul><p>Hive &amp; more</p>
+<ul><li>EMR Notebooks</li>
+<li>Several integration points with AWS</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-506">
+          <div class="slide-number">Slide 506</div>
+          <div class="slide-content"><p>An EMR Cluster</p>
+<ul><li>Master node: manages the cluster</li>
+</ul><p>Core • Tracks status of tasks, monitors cluster</p>
+<p>node health</p>
+<ul><li>Single EC2 instance (it can be a single</li>
+</ul><p>node cluster even)</p>
+<ul><li>AKA “leader node”</li>
+</ul><p>Master Task • Core node: Hosts HDFS data and runs tasks</p>
+<p>node node • Can be scaled up &amp; down, but with</p>
+<p>some risk</p>
+<ul><li>Multi-node clusters have at least one</li>
+<li>Task node: Runs tasks, does not host data</li>
+</ul><p>Core • Optional</p>
+<p>node • No risk of data loss when removing</p>
+<ul><li>Good use of spot instances</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-507">
+          <div class="slide-number">Slide 507</div>
+          <div class="slide-content"><p>EMR Usage</p>
+<ul><li>Transient vs Long-Running Clusters</li>
+<li>Transient clusters terminate once all steps are complete</li>
+<li>Loading data, processing, storing – then shut down</li>
+<li>Saves money</li>
+<li>Long-running clusters must be manually terminated</li>
+<li>Basically a data warehouse with periodic processing on large datasets</li>
+<li>Can spin up task nodes using Spot instances for temporary capacity</li>
+<li>Can use reserved instances on long-running clusters to save $</li>
+<li>Termination protection on by default, auto-termination off</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-508">
+          <div class="slide-number">Slide 508</div>
+          <div class="slide-content"><p>EMR Usage</p>
+<ul><li>Frameworks and applications are specified at cluster launch</li>
+<li>Connect directly to master to run jobs directly</li>
+<li>Or, submit ordered steps via the console</li>
+<li>Process data in S3 or HDFS</li>
+<li>Output data to S3 or somewhere</li>
+<li>Once defined, steps can be invoked via the console</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-509">
+          <div class="slide-number">Slide 509</div>
+          <div class="slide-content"><p>What is QuickSight?</p>
+<ul><li>Fast, easy, cloud-powered business</li>
+</ul><p>analytics service</p>
+<ul><li>Allows all employees in an organization</li>
+</ul><p>to:</p>
+<ul><li>Build visualizations</li>
+<li>Build paginated reports</li>
+<li>Perform ad-hoc analysis</li>
+<li>Get alerts on detected anomalies</li>
+<li>Quickly get business insights from data</li>
+<li>Anytime, on any device (browsers, mobile)</li>
+<li>Serverless</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-510">
+          <div class="slide-number">Slide 510</div>
+          <div class="slide-content"><p>QuickSight Data Sources</p>
+<ul><li>Redshift</li>
+<li>Aurora / RDS</li>
+<li>Athena</li>
+<li>OpenSearch</li>
+<li>IoT Analytics</li>
+<li>EC2-hosted databases</li>
+<li>Files (S3 or on-premises)</li>
+<li>Excel</li>
+<li>CSV, TSV</li>
+<li>Common or extended log format</li>
+<li>Data preparation allows limited ETL</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-511">
+          <div class="slide-number">Slide 511</div>
+          <div class="slide-content"><p>SPICE</p>
+<ul><li>Data sets are imported into SPICE</li>
+<li>Super-fast, Parallel, In-memory Calculation Engine</li>
+<li>Uses columnar storage, in-memory, machine code</li>
+</ul><p>generation</p>
+<ul><li>Accelerates interactive queries on large datasets</li>
+<li>Each user gets 10GB of SPICE</li>
+<li>Highly available / durable</li>
+<li>Scales to hundreds of thousands of users</li>
+<li>Can accelerate large queries that would time</li>
+</ul><p>out in direct query mode (hitting Athena</p>
+<p>directly)</p>
+<ul><li>But if it takes more than 30 minutes to import your</li>
+</ul><p>data into SPICE it will still time out</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-512">
+          <div class="slide-number">Slide 512</div>
+          <div class="slide-content"><p>QuickSight Use Cases</p>
+<ul><li>Interactive ad-hoc exploration / visualization of data</li>
+<li>Dashboards and KPI’s</li>
+<li>Analyze / visualize data from:</li>
+<li>Logs in S3</li>
+<li>On-premise databases</li>
+<li>AWS (RDS, Redshift, Athena, S3)</li>
+<li>SaaS applications, such as Salesforce</li>
+<li>Any JDBC/ODBC data source</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-513">
+          <div class="slide-number">Slide 513</div>
+          <div class="slide-content"><p>QuickSight Anti-Patterns</p>
+<ul><li>ETL</li>
+<li>Use Glue instead, although</li>
+</ul><p>QuickSight can do some</p>
+<p>transformations</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-514">
+          <div class="slide-number">Slide 514</div>
+          <div class="slide-content"><p>QuickSight Security</p>
+<ul><li>Multi-factor authentication on your</li>
+</ul><p>account</p>
+<ul><li>VPC connectivity</li>
+<li>Add QuickSight’s IP address range to</li>
+</ul><p>your database security groups</p>
+<ul><li>Row-level security</li>
+<li>New for 2021: Column-level security</li>
+</ul><p>too (CLS) – Enterprise edition only</p>
+<ul><li>Private VPC access</li>
+<li>Elastic Network Interface, AWS Direct</li>
+</ul><p>Connect</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-515">
+          <div class="slide-number">Slide 515</div>
+          <div class="slide-content"><p>QuickSight Security</p>
+<ul><li>Resource access</li>
+<li>Must ensure QuickSight is authorized</li>
+</ul><p>to use Athena / S3 / your S3 buckets</p>
+<ul><li>This can be managed within the</li>
+</ul><p>QuickSight console (Manage</p>
+<p>Quicksight / Security &amp; Permissions)\</p>
+<ul><li>Data access</li>
+<li>Can create IAM policies to restrict</li>
+</ul><p>what data in S3 given QuickSight</p>
+<p>users can access</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-516">
+          <div class="slide-number">Slide 516</div>
+          <div class="slide-content"><p>Quicksight + Redshift: Security</p>
+<ul><li>By default Quicksight can only access data stored IN THE</li>
+</ul><p>SAME REGION as the one Quicksight is running within</p>
+<ul><li>So if Quicksight is running in one region, and Redshift in</li>
+</ul><p>another, that’s a problem</p>
+<ul><li>A VPC configured to work across AWS regions won’t work!</li>
+<li>Solution: create a new security group with an inbound rule</li>
+</ul><p>authorizing access from the IP range of QuickSight servers</p>
+<p>in that region</p>
+<ul><li>Those ranges are documented at</li>
+</ul><p>https://docs.aws.amazon.com/quicksight/latest/user/regions.html</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-517">
+          <div class="slide-number">Slide 517</div>
+          <div class="slide-content"><p>Quicksight / Redshift / RDS cross-region</p>
+<ul><li>Other ways to do it (if you have</li>
+</ul><p>Enterprise Edition)</p>
+<ul><li>Create a private subnet in a</li>
+</ul><p>VPC</p>
+<ul><li>Use Elastic Network Interface</li>
+</ul><p>to put Quicksight in the subnet</p>
+<ul><li>This is the part that requires</li>
+</ul><p>Enterprise Edition</p>
+<ul><li>This can also enable cross-</li>
+</ul><p>account access</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-518">
+          <div class="slide-number">Slide 518</div>
+          <div class="slide-content"><p>Quicksight / Redshift / RDS cross-region</p>
+<ul><li>Now you can create a</li>
+</ul><p>peering connection</p>
+<p>between your private</p>
+<p>subnet and another</p>
+<p>private subnet</p>
+<p>containing your data</p>
+<ul><li>This also works for</li>
+</ul><p>cross-account access</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-519">
+          <div class="slide-number">Slide 519</div>
+          <div class="slide-content"><p>Quicksight / Redshift / RDS cross-</p>
+<p>account</p>
+<ul><li>Can use an AWS Transit Gateway to</li>
+</ul><p>connect your subnets</p>
+<ul><li>But this must be in the same org &amp;</li>
+</ul><p>region</p>
+<ul><li>Or you can peer Transit Gateways in</li>
+</ul><p>different regions</p>
+<ul><li>OR use AWS PrivateLink to connect them</li>
+<li>OR use VPC sharing to connect them</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-520">
+          <div class="slide-number">Slide 520</div>
+          <div class="slide-content"><p>QuickSight User Management</p>
+<ul><li>Users defined via IAM, or email signup</li>
+<li>Active Directory connector with QuickSight Enterprise Edition</li>
+<li>All keys are managed by AWS; you CANNOT use customer-provided</li>
+</ul><p>keys</p>
+<ul><li>Enterprise edition only!</li>
+<li>Can tweak security access using IAM if needed</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-521">
+          <div class="slide-number">Slide 521</div>
+          <div class="slide-content"><p>Amazon Kinesis Data Streams</p>
+<ul><li>Collect and store streaming data in real-time</li>
+</ul><p>Real-time data</p>
+<p>Consumers</p>
+<p>Application</p>
+<p>Amazon Kinesis</p>
+<p>Click Streams</p>
+<p>Producers Data Streams</p>
+<p>Lambda</p>
+<p>Applications</p>
+<p>Amazon</p>
+<p>IoT devices</p>
+<p>Data Firehose</p>
+<p>Kinesis Agent</p>
+<p>Managed</p>
+<p>Metrics &amp; Logs Service for</p>
+<p>Apache Flink</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-522">
+          <div class="slide-number">Slide 522</div>
+          <div class="slide-content"><p>Kinesis Data Streams</p>
+<ul><li>Retention between up to 365 days</li>
+<li>Ability to reprocess (replay) data by consumers</li>
+<li>Data can’t be deleted from Kinesis (until it expires)</li>
+<li>Data up to 1MB (typical use case is lot of “small” real-time data)</li>
+<li>Data ordering guarantee for data with the same “Partition ID”</li>
+<li>At-rest KMS encryption, in-flight HTTPS encryption</li>
+<li>Kinesis Producer Library (KPL) to write an optimized producer</li>
+</ul><p>application</p>
+<ul><li>Kinesis Client Library (KCL) to write an optimized consumer application</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-523">
+          <div class="slide-number">Slide 523</div>
+          <div class="slide-content"><p>Kinesis Data Streams – Capacity Modes</p>
+<ul><li>Provisioned mode:</li>
+<li>Choose number of shards</li>
+<li>Each shard gets 1MB/s in (or 1000 records per second)</li>
+<li>Each shard gets 2MB/s out</li>
+<li>Scale manually to increase or decrease the number of shards</li>
+<li>You pay per shard provisioned per hour</li>
+<li>On-demand mode:</li>
+<li>No need to provision or manage the capacity</li>
+<li>Default capacity provisioned (4 MB/s in or 4000 records per second)</li>
+<li>Scales automatically based on observed throughput peak during the last 30</li>
+</ul><p>days</p>
+<ul><li>Pay per stream per hour &amp; data in/out per GB</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-524">
+          <div class="slide-number">Slide 524</div>
+          <div class="slide-content"><p>Amazon Managed Streaming for</p>
+<p>Apache Kafka (Amazon MSK)</p>
+<ul><li>Alternative to Amazon Kinesis</li>
+<li>Fully managed Apache Kafka on AWS</li>
+<li>Allow you to create, update, delete clusters</li>
+<li>MSK creates &amp; manages Kafka brokers nodes &amp; Zookeeper nodes for</li>
+</ul><p>you</p>
+<ul><li>Deploy the MSK cluster in your VPC, multi-AZ (up to 3 for HA)</li>
+<li>Automatic recovery from common Apache Kafka failures</li>
+<li>Data is stored on EBS volumes for as long as you want</li>
+<li>MSK Serverless</li>
+<li>Run Apache Kafka on MSK without managing the capacity</li>
+<li>MSK automatically provisions resources and scales compute &amp; storage</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-525">
+          <div class="slide-number">Slide 525</div>
+          <div class="slide-content"><p>Apache Kafka at a high level</p>
+<p>EMR</p>
+<p>MSK Cluster</p>
+<p>Kinesis</p>
+<p>S3</p>
+<p>Broker 2</p>
+<p>IoT</p>
+<p>SageMaker</p>
+<p>Producers Write to topic Poll from topic Consumers</p>
+<p>(your code) (your code)</p>
+<p>Broker 1</p>
+<p>RDS Kinesis</p>
+<p>Etc…</p>
+<p>RDS</p>
+<p>Broker 3</p>
+<p>Etc…</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-526">
+          <div class="slide-number">Slide 526</div>
+          <div class="slide-content"><p>Kinesis Data Streams vs. Amazon MSK</p>
+<p>Kinesis Data Streams Amazon MSK</p>
+<ul><li>1 MB message size limit • 1MB default, configure for higher (ex:</li>
+</ul><p>10MB)</p>
+<ul><li>Data Streams with Shards</li>
+<li>Kafka Topics with Partitions</li>
+<li>Shard Splitting &amp; Merging</li>
+<li>Can only add partitions to a topic</li>
+<li>TLS In-flight encryption</li>
+<li>PLAINTEXT or TLS In-flight Encryption</li>
+<li>KMS at-rest encryption</li>
+<li>KMS at-rest encryption</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-527">
+          <div class="slide-number">Slide 527</div>
+          <div class="slide-content"><p>Amazon MSK Consumers</p>
+<p>Kinesis Data Analytics</p>
+<p>for Apache Flink</p>
+<p>AWS Glue</p>
+<p>Streaming ETL Jobs</p>
+<p>Powered by Apache Spark Streaming</p>
+<p>Lambda</p>
+<p>Amazon MSK</p>
+<p>Applications Running on</p>
+<p>Amazon EC2 ECS EKS</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+    </div>
+
+    <div class="section-nav">
+      <a href="index.html" class="btn-back">← Back to Overview</a>
+    </div>
+  </main>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

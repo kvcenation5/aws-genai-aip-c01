@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Managing Models with SageMaker AI – AWS GenAI Developer Pro (AIP-C01)</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="logo">☁️ AIP-C01</span>
+      <button class="close-btn" onclick="toggleSidebar()">✕</button>
+    </div>
+    <ul class="nav-list">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li class="divider">Course Sections</li>
+      <li class=""><a href="generative-ai-fundamentals-and-bedrock.html">Generative AI Fundamentals and Bedrock</a></li>
+<li class=""><a href="managing-data-for-generative-ai.html">Managing Data for Generative AI</a></li>
+<li class=""><a href="agentic-ai.html">Agentic AI</a></li>
+<li class=""><a href="operations-efficiency-and-optimization.html">Operations Efficiency and Optimization</a></li>
+<li class="active"><a href="managing-models-with-sagemaker-ai.html">Managing Models with SageMaker AI</a></li>
+<li class=""><a href="more-tools-for-building-ai-applications.html">More Tools for Building AI Applications</a></li>
+<li class=""><a href="governance-and-qa.html">Governance and QA</a></li>
+<li class=""><a href="security-identity-and-compliance.html">Security, Identity, and Compliance</a></li>
+<li class=""><a href="other-services-analytics.html">Other Services - Analytics</a></li>
+<li class=""><a href="other-services-compute-containers.html">Other Services - Compute & Containers</a></li>
+<li class=""><a href="other-services-database.html">Other Services - Database</a></li>
+<li class=""><a href="other-services-developer-tools.html">Other Services - Developer Tools</a></li>
+<li class=""><a href="other-services-machine-learning.html">Other Services - Machine Learning</a></li>
+<li class=""><a href="other-services-storage-networking.html">Other Services - Storage & Networking</a></li>
+<li class=""><a href="exam-preparation.html">Exam Preparation</a></li>
+
+    </ul>
+  </nav>
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+      <div class="breadcrumb">
+        <a href="index.html">AWS GenAI Pro</a> › <span>Managing Models with SageMaker AI</span>
+      </div>
+      <div class="page-meta">65 slides · Pages 281–345</div>
+    </header>
+
+    <div class="section-hero">
+      <h1>Managing Models with SageMaker AI</h1>
+      <p class="section-subtitle">AWS Certified Generative AI Developer – Professional (AIP-C01)</p>
+      <div class="section-stats">
+        <span>📄 65 slides</span>
+        <span>📑 Pages 281–345</span>
+      </div>
+    </div>
+
+    <div class="slides-container">
+      
+        <div class="slide" id="slide-281">
+          <div class="slide-number">Slide 281</div>
+          <div class="slide-content"><p>Exponential Backoff</p>
+<ul><li>How to retry failed API calls in a</li>
+</ul><p>controlled manner</p>
+<ul><li>Don’t flood the poor broken service</li>
+<li>Custom retry policies in AWS SDK</li>
+</ul><p>clients</p>
+<ul><li>Start at 100ms</li>
+<li>Backoff factor 2</li>
+<li>Max retry count of 3-5 attempts</li>
+<li>Jitter +- 100ms to prevent</li>
+</ul><p>synchronized retries across clients</p>
+<ul><li>Oddly specific guidance in</li>
+</ul><p>SkillBuilder…</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-282">
+          <div class="slide-number">Slide 282</div>
+          <div class="slide-content"><p>Connection Pooling</p>
+<ul><li>For HTTP clients</li>
+<li>Instead of establishing a new</li>
+</ul><p>connection for every request, maintain</p>
+<p>a pool of open connections that are</p>
+<p>used all the time.</p>
+<ul><li>10-20 connections per instance</li>
+<li>Connection TTL 60-300 seconds</li>
+<li>Balances resource utilization with</li>
+</ul><p>connection re-use efficiency</p>
+<ul><li>More oddly specific guidance in</li>
+</ul><p>SkillBuilder…</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-283">
+          <div class="slide-number">Slide 283</div>
+          <div class="slide-content"><p>Bedrock Cross-Region Inference</p>
+<ul><li>This comes up a lot… many features require</li>
+</ul><p>it, many recommend it strongly</p>
+<ul><li>Distributes workloads across AWS regions</li>
+</ul><p>during service interruptions</p>
+<ul><li>…or restrictions from quotas or peak usage in</li>
+</ul><p>specific regions</p>
+<ul><li>Things like Amazon Organizations SCP’s</li>
+</ul><p>(service control policies) can block regions on</p>
+<p>you and prevent it from working :/</p>
+<ul><li>Make sure SCP allows all regions you are</li>
+</ul><p>enabling, or leave the region unspecified</p>
+<ul><li>Inference profiles</li>
+<li>Specific geography: selects optimal region within</li>
+</ul><p>your geography</p>
+<ul><li>Global: selects optimal commercial AWS region</li>
+<li>Doesn’t work with provisioned throughput</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-284">
+          <div class="slide-number">Slide 284</div>
+          <div class="slide-content"><p>Bedrock Cross-Region Inference</p>
+<ul><li>Geographic cross-region inference</li>
+<li>Useful if you have data residency</li>
+</ul><p>requirements</p>
+<ul><li>Standard pricing</li>
+<li>Global cross-region inference</li>
+<li>Maximized throughput</li>
+<li>10% cost savings</li>
+<li>Pricing based on where you called it</li>
+</ul><p>from</p>
+<ul><li>You don’t have to enable these</li>
+</ul><p>regions in your account</p>
+<ul><li>Data is encrypted in transit, and</li>
+</ul><p>logged in CloudTrail</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-285">
+          <div class="slide-number">Slide 285</div>
+          <div class="slide-content"><p>Managing Models with</p>
+<p>SageMaker AI</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-286">
+          <div class="slide-number">Slide 286</div>
+          <div class="slide-content"><p>SageMaker is built to handle the</p>
+<p>entire machine learning workflow.</p>
+<p>Deploy model,</p>
+<p>Fetch, clean, and</p>
+<p>evaluate results</p>
+<p>prepare data</p>
+<p>in production</p>
+<p>Train and</p>
+<p>evaluate a model</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-287">
+          <div class="slide-number">Slide 287</div>
+          <div class="slide-content"><p>SageMaker Training &amp; Deployment</p>
+<p>Client app</p>
+<p>SageMaker ECR</p>
+<p>Endpoint</p>
+<p>Inference</p>
+<p>S3 model</p>
+<p>Model deployment / hosting code image</p>
+<p>artifacts</p>
+<p>Training</p>
+<p>S3 training</p>
+<p>Model training code image</p>
+<p>data</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-288">
+          <div class="slide-number">Slide 288</div>
+          <div class="slide-content"><p>SageMaker Notebooks can direct</p>
+<p>the process</p>
+<ul><li>Notebook Instances on EC2</li>
+</ul><p>are spun up from the console</p>
+<ul><li>S3 data access</li>
+<li>Scikit_learn, Spark, Tensorflow</li>
+<li>Wide variety of built-in models</li>
+<li>Ability to spin up training</li>
+</ul><p>instances</p>
+<ul><li>Abilty to deploy trained models</li>
+</ul><p>for making predictions at scale</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-289">
+          <div class="slide-number">Slide 289</div>
+          <div class="slide-content"><p>So can the SageMaker console</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-290">
+          <div class="slide-number">Slide 290</div>
+          <div class="slide-content"><p>Data prep on SageMaker</p>
+<ul><li>Data usually comes from S3</li>
+<li>Ideal format varies with algorithm –</li>
+</ul><p>often it is RecordIO / Protobuf</p>
+<ul><li>Can also ingest from Athena, EMR,</li>
+</ul><p>Redshift, and Amazon Keyspaces</p>
+<p>DB</p>
+<ul><li>Apache Spark integrates with</li>
+</ul><p>SageMaker</p>
+<ul><li>Scikit_learn, numpy, pandas all at</li>
+</ul><p>your disposal within a notebook</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-291">
+          <div class="slide-number">Slide 291</div>
+          <div class="slide-content"><p>SageMaker Processing</p>
+<ul><li>Processing jobs</li>
+<li>Copy data from S3</li>
+<li>Spin up a processing</li>
+</ul><p>container</p>
+<ul><li>SageMaker built-in or user</li>
+</ul><p>provided</p>
+<ul><li>Output processed data to</li>
+</ul><p>S3</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-292">
+          <div class="slide-number">Slide 292</div>
+          <div class="slide-content"><p>Deploying Trained Models</p>
+<ul><li>Save your trained model to S3</li>
+<li>Can deploy two ways:</li>
+<li>Persistent endpoint for making individual</li>
+</ul><p>predictions on demand</p>
+<ul><li>SageMaker Batch Transform to get predictions for</li>
+</ul><p>an entire dataset</p>
+<ul><li>Lots of cool options</li>
+<li>Inference Pipelines for more complex processing</li>
+<li>SageMaker Neo for deploying to edge devices</li>
+<li>Elastic Inference for accelerating deep learning</li>
+</ul><p>models</p>
+<ul><li>Automatic scaling (increase # of endpoints as</li>
+</ul><p>needed)</p>
+<ul><li>Shadow Testing evaluates new models against</li>
+</ul><p>currently deployed model to catch errors</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-293">
+          <div class="slide-number">Slide 293</div>
+          <div class="slide-content"><p>Deployment Safeguards</p>
+<ul><li>Deployment Guardrails</li>
+<li>For asynchronous or real-time inference</li>
+</ul><p>endpoints</p>
+<ul><li>Controls shifting traffic to new models</li>
+<li>“Blue/Green Deployments”</li>
+<li>All at once: shift everything, monitor, terminate</li>
+</ul><p>blue fleet</p>
+<ul><li>Canary: shift a small portion of traffic and</li>
+</ul><p>monitor</p>
+<ul><li>Linear: Shift traffic in linearly spaced steps</li>
+<li>Auto-rollbacks</li>
+<li>Shadow Tests</li>
+<li>Compare performance of shadow variant to</li>
+</ul><p>production</p>
+<ul><li>You monitor in SageMaker console and</li>
+</ul><p>decide when to promote it</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-294">
+          <div class="slide-number">Slide 294</div>
+          <div class="slide-content"><p>Putting them together</p>
+<p>SageMaker Studio</p>
+<p>SageMaker Autopilot SageMaker Model Monitor</p>
+<p>SageMaker SageMaker</p>
+<p>Notebooks Experiments</p>
+<p>SageMaker</p>
+<p>Debugger</p>
+<p>Automatic Model</p>
+<p>Tuning</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-295">
+          <div class="slide-number">Slide 295</div>
+          <div class="slide-content"><p>SageMaker: More Features</p>
+<ul><li>SageMaker JumpStart</li>
+<li>One-click models and algorithms from model zoos</li>
+<li>Over 150 open source models in NLP, object detections, image classification, etc.</li>
+<li>SageMaker Data Wrangler</li>
+<li>Import / transform / analyze / export data within SageMaker Studio</li>
+<li>SageMaker Feature Store</li>
+<li>Find, discover, and share features in Studio</li>
+<li>Online (low latency) or offline (for training or batch inference) modes</li>
+<li>Features organized into Feature Groups</li>
+<li>SageMaker Edge Manager</li>
+<li>Software agent for edge devices</li>
+<li>Model optimized with SageMaker Neo</li>
+<li>Collects and samples data for monitoring, labeling, retraining</li>
+<li>Asynchronous Inference endpoints</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-296">
+          <div class="slide-number">Slide 296</div>
+          <div class="slide-content"><p>Optimizing FM Deployments</p>
+<ul><li>SageMaker AI offers single and multi-model</li>
+</ul><p>endpoints</p>
+<ul><li>More generally, multi-container endpoints</li>
+</ul><p>Model A Model B</p>
+<ul><li>Each endpoint supports deployment guardrails,</li>
+</ul><p>VPC, network isolation</p>
+<ul><li>You can train/tune a model in SageMaker AI,</li>
+</ul><p>Model C</p>
+<p>and deploy through Bedrock</p>
+<ul><li>You use Bedrock Custom Model Import for this</li>
+<li>Now your inference is serverless ☺ SageMaker multi-model endpoint</li>
+<li>SageMaker AI Inference Components</li>
+<li>Each model gets its own scaling policy</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-297">
+          <div class="slide-number">Slide 297</div>
+          <div class="slide-content"><p>Optimizing FM Deployments</p>
+<ul><li>Cross-region inference profiles</li>
+<li>For endpoints on Bedrock</li>
+<li>EC2 Auto Scaling Groups</li>
+<li>Load balancing in front of SageMaker AI endpoints</li>
+<li>Available model servers with SageMaker AI</li>
+<li>TorchServe</li>
+<li>DJL Serving (Deep Java Library)</li>
+<li>Deep Learning Containers</li>
+<li>DJL was created by Amazon, so more likely to show up on exam</li>
+<li>Triton Inference Server</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-298">
+          <div class="slide-number">Slide 298</div>
+          <div class="slide-content"><p>Optimizing FM Deployments</p>
+<ul><li>Use asynchronous inference if latency isn’t</li>
+</ul><p>important</p>
+<ul><li>SageMaker AI async endpoints</li>
+<li>Your own queue with SNS / SQS</li>
+<li>Model compression</li>
+<li>Quantization (of model weights)</li>
+<li>Pruning</li>
+<li>Knowledge distillation</li>
+<li>A smaller model is trained from a</li>
+</ul><p>larger model</p>
+<ul><li>Avoid premature optimization</li>
+<li>Measure your performance, costs,</li>
+</ul><p>resource utilization</p>
+<ul><li>Don’t solve problems that don’t exist!</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-299">
+          <div class="slide-number">Slide 299</div>
+          <div class="slide-content"><p>SageMaker Ground Truth</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-300">
+          <div class="slide-number">Slide 300</div>
+          <div class="slide-content"><p>What is Ground Truth?</p>
+<ul><li>Sometimes you don’t have training</li>
+</ul><p>data at all, and it needs to be</p>
+<p>generated by humans first.</p>
+<ul><li>Example: training an image</li>
+</ul><p>classification model. Somebody needs</p>
+<p>to tag a bunch of images with what</p>
+<p>they are images of before training a</p>
+<p>neural network</p>
+<ul><li>Ground Truth manages humans who</li>
+</ul><p>will label your data for training</p>
+<p>purposes</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-301">
+          <div class="slide-number">Slide 301</div>
+          <div class="slide-content"><p>But it’s more than that</p>
+<ul><li>Ground Truth creates its own model as images are labeled by</li>
+</ul><p>people</p>
+<ul><li>As this model learns, only images the model isn’t sure about are</li>
+</ul><p>sent to human labelers</p>
+<ul><li>This can reduce the cost of labeling jobs by 70%</li>
+</ul><p>Ambiguous</p>
+<p>Raw Learning data Human</p>
+<p>data model labelers</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-302">
+          <div class="slide-number">Slide 302</div>
+          <div class="slide-content"><p>Who are these human labelers?</p>
+<ul><li>Mechanical Turk</li>
+<li>Your own internal team</li>
+<li>Professional labeling</li>
+</ul><p>companies</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-303">
+          <div class="slide-number">Slide 303</div>
+          <div class="slide-content"><p>Ground Truth Plus</p>
+<ul><li>Turnkey solution</li>
+<li>“Our team of AWS Experts”</li>
+</ul><p>manages the workflow and team</p>
+<p>of labelers</p>
+<ul><li>You fill out an intake form</li>
+<li>They contact you and discuss</li>
+</ul><p>pricing</p>
+<ul><li>You track progress via the</li>
+</ul><p>Ground Truth Plus Project Portal</p>
+<ul><li>Get labeled data from S3 when</li>
+</ul><p>done</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-304">
+          <div class="slide-number">Slide 304</div>
+          <div class="slide-content"><p>Other ways to generate training labels</p>
+<ul><li>Rekognition</li>
+<li>AWS service for image recognition</li>
+<li>Automatically classify images</li>
+<li>Comprehend</li>
+<li>AWS service for text analysis and topic modeling</li>
+<li>Automatically classify text by topics, sentiment</li>
+<li>Any pre-trained model or unsupervised technique that may be</li>
+</ul><p>helpful</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-305">
+          <div class="slide-number">Slide 305</div>
+          <div class="slide-content"><p>SageMaker Model Monitor</p>
+<ul><li>Get alerts on quality</li>
+</ul><p>deviations on your deployed</p>
+<p>models (via CloudWatch)</p>
+<ul><li>Visualize data drift</li>
+<li>Example: loan model starts</li>
+</ul><p>giving people more credit due</p>
+<p>to drifting or missing input</p>
+<p>features</p>
+<ul><li>Detect anomalies &amp; outliers</li>
+<li>Detect new features</li>
+<li>No code needed</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-306">
+          <div class="slide-number">Slide 306</div>
+          <div class="slide-content"><p>SageMaker Model Monitor + Clarify</p>
+<ul><li>Integrates with SageMaker Clarify</li>
+<li>SageMaker Clarify detects potential bias</li>
+<li>i.e., imbalances across different groups /</li>
+</ul><p>ages / income brackets</p>
+<ul><li>With ModelMonitor, you can monitor for</li>
+</ul><p>bias and be alerted to new potential bias</p>
+<p>via CloudWatch</p>
+<ul><li>SageMaker Clarify also helps explain</li>
+</ul><p>model behavior</p>
+<ul><li>Understand which features contribute the</li>
+</ul><p>most to your predictions</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-307">
+          <div class="slide-number">Slide 307</div>
+          <div class="slide-content"><p>Pre-training Bias Metrics in Clarify</p>
+<ul><li>Class Imbalance (CI)</li>
+<li>One facet (demographic group) has fewer training values than another</li>
+<li>Difference in Proportions of Labels (DPL)</li>
+<li>Imbalance of positive outcomes between facet values</li>
+<li>Kullback-Leibler Divergence (KL), Jensen-Shannon</li>
+</ul><p>Divergence(JS)</p>
+<ul><li>How much outcome distributions of facets diverge</li>
+<li>Lp-norm (LP)</li>
+<li>P-norm difference between distributions of outcomes from facets</li>
+<li>Total Variation Distance (TVD)</li>
+<li>L1-norm difference between distributions of outcomes from facets</li>
+<li>Kolmogorov-Smirnov (KS)</li>
+<li>Maximum divergence between outcomes in distributions from facets</li>
+<li>Conditional Demographic Disparity (CDD)</li>
+<li>Disparity of outcomes between facets as a whole, and by subgroups</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-308">
+          <div class="slide-number">Slide 308</div>
+          <div class="slide-content"><p>SageMaker Model Monitor</p>
+<ul><li>Data is stored in S3 and secured</li>
+<li>Monitoring jobs are scheduled via a</li>
+</ul><p>Monitoring Schedule</p>
+<ul><li>Metrics are emitted to CloudWatch</li>
+<li>CloudWatch notifications can be used to trigger</li>
+</ul><p>alarms</p>
+<ul><li>You’d then take corrective action (retrain the</li>
+</ul><p>model, audit the data)</p>
+<ul><li>Integrates with Tensorboard, QuickSight,</li>
+</ul><p>Tableau</p>
+<ul><li>Or just visualize within SageMaker Studio</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-309">
+          <div class="slide-number">Slide 309</div>
+          <div class="slide-content"><p>SageMaker Model Monitor</p>
+<ul><li>Monitoring Types:</li>
+<li>Drift in data quality</li>
+<li>Relative to a baseline you create</li>
+<li>“Quality” is just statistical properties of the features</li>
+<li>Drift in model quality (accuracy, etc)</li>
+<li>Works the same way with a model quality baseline</li>
+<li>Can integrate with Ground Truth labels</li>
+<li>Bias drift</li>
+<li>Feature attribution drift</li>
+<li>Based on Normalized Discounted Cumulative Gain (NDCG) score</li>
+<li>This compares feature ranking of training vs. live data</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-310">
+          <div class="slide-number">Slide 310</div>
+          <div class="slide-content"><p>SageMaker Model Registry</p>
+<ul><li>Catalog your models, manage model</li>
+</ul><p>versions Create Model Group</p>
+<ul><li>Associate metadata with models</li>
+<li>Manage approval status of a model</li>
+</ul><p>Create SageMaker</p>
+<p>Pipeline</p>
+<ul><li>Deploy models to production</li>
+<li>Automate deployment with CI/CD</li>
+</ul><p>Register model</p>
+<p>versions from each</p>
+<ul><li>Share models</li>
+</ul><p>run in model group</p>
+<ul><li>Integrate with SageMaker Model</li>
+</ul><p>Add model group to</p>
+<p>Model Registry</p>
+<p>Collections</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-311">
+          <div class="slide-number">Slide 311</div>
+          <div class="slide-content"><p>Example workflow for approving and</p>
+<p>promoting models with Model Registry</p>
+<p>https://aws.amazon.com/blogs/machine-learning/build-an-amazon-sagemaker-model-registry-approval-and-promotion-workflow-with-</p>
+<p>human-intervention/</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-312">
+          <div class="slide-number">Slide 312</div>
+          <div class="slide-content"><p>SageMaker ML Lineage Tracking</p>
+<ul><li>Creates &amp; stores your ML</li>
+</ul><p>workflow (MLOps)</p>
+<ul><li>Keep a running history of your</li>
+</ul><p>models</p>
+<ul><li>Tracking for auditing and</li>
+</ul><p>compliance</p>
+<ul><li>Automatically or manually-created</li>
+</ul><p>tracking entities</p>
+<ul><li>Integrates with AWS Resource</li>
+</ul><p>Access Manager for cross-</p>
+<p>account lineage</p>
+<ul><li>Sample SageMaker-created</li>
+</ul><p>lineage graph:</p>
+<p>AWS</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-313">
+          <div class="slide-number">Slide 313</div>
+          <div class="slide-content"><p>Lineage Tracking Entities</p>
+<ul><li>Trial component (processing jobs, training jobs, transform jobs)</li>
+<li>Trial (a model composed of trial components)</li>
+<li>Experiment (a group of Trials for a given use case)</li>
+<li>Context (logical grouping of entities)</li>
+<li>Action (workflow step, model deployment)</li>
+<li>Artifact (Object or data, such as an S3 bucket or an image in ECR)</li>
+<li>Association (connects entities together) – has optional AssociationType:</li>
+<li>ContributedTo</li>
+<li>AssociatedWith</li>
+<li>DerivedFrom</li>
+<li>Produced</li>
+<li>SameAs</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-314">
+          <div class="slide-number">Slide 314</div>
+          <div class="slide-content"><p>Querying Lineage Entities</p>
+<ul><li>Use the LineageQuery API from Python</li>
+<li>Part of the Amazon SageMaker SDK for Python</li>
+<li>Do things like find all models / endpoints / etc. that use a given</li>
+</ul><p>artifact</p>
+<ul><li>Produce a visualization</li>
+<li>Requires external Visualizer helper class</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-315">
+          <div class="slide-number">Slide 315</div>
+          <div class="slide-content"><p>Cross-Account Lineage Tracking</p>
+<ul><li>Can trace across</li>
+</ul><p>organizational boundaries</p>
+<ul><li>Use SageMaker</li>
+</ul><p>AddAssociation API</p>
+<ul><li>Plus required IAM roles &amp;</li>
+</ul><p>permissions</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-316">
+          <div class="slide-number">Slide 316</div>
+          <div class="slide-content"><p>SageMaker Neo</p>
+<ul><li>Train once, run anywhere</li>
+<li>Edge devices</li>
+<li>ARM, Intel, Nvidia processors</li>
+<li>Embedded in whatever – your car?</li>
+<li>Optimizes code for specific</li>
+</ul><p>devices</p>
+<ul><li>Tensorflow, MXNet, PyTorch,</li>
+</ul><p>ONNX, XGBoost, DarkNet, Keras</p>
+<ul><li>Consists of a compiler and a</li>
+</ul><p>runtime</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-317">
+          <div class="slide-number">Slide 317</div>
+          <div class="slide-content"><p>Neo + AWS IoT Greengrass</p>
+<ul><li>Neo-compiled models can be deployed</li>
+</ul><p>to an HTTPS endpoint</p>
+<ul><li>Hosted on C5, M5, M4, P3, or P2 instances</li>
+<li>Must be same instance type used for</li>
+</ul><p>compilation</p>
+<ul><li>OR! You can deploy to IoT Greengrass</li>
+<li>This is how you get the model to an actual</li>
+</ul><p>edge device</p>
+<ul><li>Inference at the edge with local data, using</li>
+</ul><p>model trained in the cloud</p>
+<ul><li>Uses Lambda inference applications</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-318">
+          <div class="slide-number">Slide 318</div>
+          <div class="slide-content"><p>SageMaker Unified Studio</p>
+<ul><li>Single interface for data, analytics, AI, and ML services</li>
+<li>This includes Bedrock, Q, and Quicksight</li>
+<li>Also notebooks, and all the stuff that was in the old SageMaker Studio</li>
+<li>Single interface for build / deploy / execute / monitor</li>
+<li>Built for teams</li>
+<li>Administrators manage users/groups and what they access</li>
+<li>A domain connects assets, users, and projects</li>
+<li>Can connect from Visual Studio Code</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-319">
+          <div class="slide-number">Slide 319</div>
+          <div class="slide-content"><p>SageMaker Unified Studio</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-320">
+          <div class="slide-number">Slide 320</div>
+          <div class="slide-content"><p>SageMaker</p>
+<p>Pipelines</p>
+<p>Directed Acyclic Graph (DAG) for ML</p>
+<p>Workflows</p>
+<p>Can define visually in pipeline designer,</p>
+<p>or via JSON</p>
+<p>Integrated with SageMaker Unified Studio</p>
+<p>and SageMaker AI</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-321">
+          <div class="slide-number">Slide 321</div>
+          <div class="slide-content"><p>More Tools for Building AI</p>
+<p>Applications</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-322">
+          <div class="slide-number">Slide 322</div>
+          <div class="slide-content"><p>AWS Lambda</p>
+<p>Serverless data processing</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-323">
+          <div class="slide-number">Slide 323</div>
+          <div class="slide-content"><p>What is Lambda?</p>
+<ul><li>A way to run code snippets “in the</li>
+</ul><p>cloud”</p>
+<ul><li>Serverless</li>
+<li>Continuous scaling</li>
+<li>Often used to process data as it’s</li>
+</ul><p>moved around</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-324">
+          <div class="slide-number">Slide 324</div>
+          <div class="slide-content"><p>Example: Serverless Website</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-325">
+          <div class="slide-number">Slide 325</div>
+          <div class="slide-content"><p>Example:</p>
+<p>Order history app</p>
+<p>Logs</p>
+<p>Amazon Kinesis AWS Lambda Amazon DynamoDB Mobile client</p>
+<p>Data Streams</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-326">
+          <div class="slide-number">Slide 326</div>
+          <div class="slide-content"><p>Example:</p>
+<p>Transaction rate alarm</p>
+<p>Logs</p>
+<p>Amazon Kinesis Amazon Kinesis Amazon Kinesis AWS Lambda Amazon Simple Notification</p>
+<p>Data Streams Data Analytics Data Streams Service (Amazon SNS)</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-327">
+          <div class="slide-number">Slide 327</div>
+          <div class="slide-content"><p>Why not just run a server?</p>
+<ul><li>Server management (patches, monitoring, hardware failures,</li>
+</ul><p>etc.)</p>
+<ul><li>Servers can be cheap, but scaling gets expensive really fast</li>
+<li>You don’t pay for processing time you don’t use</li>
+<li>Easier to split up development between front-end and back-end</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-328">
+          <div class="slide-number">Slide 328</div>
+          <div class="slide-content"><p>Main uses of Lambda</p>
+<ul><li>Real-time file processing</li>
+<li>Real-time stream processing</li>
+<li>ETL</li>
+<li>Cron replacement</li>
+<li>Process AWS events</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-329">
+          <div class="slide-number">Slide 329</div>
+          <div class="slide-content"><p>Supported languages</p>
+<ul><li>Node.js</li>
+<li>Python</li>
+<li>Java</li>
+<li>C#</li>
+<li>Go</li>
+<li>Powershell</li>
+<li>Ruby</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-330">
+          <div class="slide-number">Slide 330</div>
+          <div class="slide-content"><p>Lambda triggers</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-331">
+          <div class="slide-number">Slide 331</div>
+          <div class="slide-content"><p>Lambda and Amazon Opensearch</p>
+<p>Service</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-332">
+          <div class="slide-number">Slide 332</div>
+          <div class="slide-content"><p>Lambda and Data Pipeline</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-333">
+          <div class="slide-number">Slide 333</div>
+          <div class="slide-content"><p>Lambda and Redshift</p>
+<p>Best practice for loading data into Redshift is</p>
+<p>the COPY command</p>
+<p>But, you can use Lambda if you need to</p>
+<p>respond to new data that shows up at any</p>
+<p>time</p>
+<p>Can use DynamoDB to keep track of what’s</p>
+<p>been loaded</p>
+<p>Lambda can batch up new data and load them</p>
+<p>with COPY</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-334">
+          <div class="slide-number">Slide 334</div>
+          <div class="slide-content"><p>Lambda + Kinesis</p>
+<ul><li>Your Lambda code receives an event with a</li>
+</ul><p>batch of stream records</p>
+<ul><li>You specify a batch size when setting up the trigger</li>
+</ul><p>(up to 10,000 records)</p>
+<ul><li>Too large a batch size can cause timeouts!</li>
+<li>Batches may also be split beyond Lambda’s</li>
+</ul><p>payload limit (6 MB)</p>
+<ul><li>Lambda will retry the batch until it succeeds or</li>
+</ul><p>the data expires</p>
+<ul><li>This can stall the shard if you don’t handle errors</li>
+</ul><p>properly</p>
+<ul><li>Use more shards to ensure processing isn’t totally</li>
+</ul><p>held up by errors</p>
+<ul><li>Lambda processes shard data synchronously</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-335">
+          <div class="slide-number">Slide 335</div>
+          <div class="slide-content"><p>Using Lambda with Bedrock / GenAI</p>
+<ul><li>Connecting agents with tools</li>
+<li>Parameter validation, error handling</li>
+</ul><p>Amazon Bedrock</p>
+<ul><li>On-demand FM invocation</li>
+<li>Without provisioning capacity</li>
+<li>Receiving webhooks for integrations</li>
+</ul><p>AWS Lambda</p>
+<ul><li>Handle JSON events from API Gateway</li>
+<li>Custom aggregation logic</li>
+<li>From multiple models (weighted averaging?),</li>
+</ul><p>or models that vote</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-336">
+          <div class="slide-number">Slide 336</div>
+          <div class="slide-content"><p>Example: Building a Serverless API</p>
+<p>REST API PROXY REQUESTS CRUD</p>
+<p>Client API Gateway Lambda DynamoDB</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-337">
+          <div class="slide-number">Slide 337</div>
+          <div class="slide-content"><p>AWS API Gateway</p>
+<ul><li>AWS Lambda + API Gateway: No infrastructure to manage</li>
+<li>Support for the WebSocket Protocol</li>
+<li>Handle API versioning (v1, v2…)</li>
+<li>Handle different environments (dev, test, prod…)</li>
+<li>Handle security (Authentication and Authorization)</li>
+<li>Create API keys, handle request throttling</li>
+<li>Swagger / Open API import to quickly define APIs</li>
+<li>Transform and validate requests and responses</li>
+<li>Generate SDK and API specifications</li>
+<li>Cache API responses</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-338">
+          <div class="slide-number">Slide 338</div>
+          <div class="slide-content"><p>API Gateway – Integrations High Level</p>
+<ul><li>Lambda Function</li>
+<li>Invoke Lambda function</li>
+<li>Easy way to expose REST API backed by AWS Lambda</li>
+<li>HTTP</li>
+<li>Expose HTTP endpoints in the backend</li>
+<li>Example: internal HTTP API on premise, Application Load Balancer…</li>
+<li>Why? Add rate limiting, caching, user authentications, API keys, etc…</li>
+<li>AWS Service</li>
+<li>Expose any AWS API through the API Gateway</li>
+<li>Example: start an AWS Step Function workflow, post a message to SQS</li>
+<li>Why? Add authentication, deploy publicly, rate control…</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-339">
+          <div class="slide-number">Slide 339</div>
+          <div class="slide-content"><p>API Gateway – AWS Service Integration</p>
+<p>Kinesis Data Streams example</p>
+<p>store .json</p>
+<p>requests send records files</p>
+<p>API Gateway Kinesis Data Kinesis Data Amazon S3</p>
+<p>Client</p>
+<p>Streams Firehose</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-340">
+          <div class="slide-number">Slide 340</div>
+          <div class="slide-content"><p>API Gateway - Endpoint Types</p>
+<ul><li>Edge-Optimized (default): For global clients</li>
+<li>Requests are routed through the CloudFront Edge locations (improves latency)</li>
+<li>The API Gateway still lives in only one region</li>
+<li>Regional:</li>
+<li>For clients within the same region</li>
+<li>Could manually combine with CloudFront (more control over the caching</li>
+</ul><p>strategies and the distribution)</p>
+<ul><li>Private:</li>
+<li>Can only be accessed from your VPC using an interface VPC endpoint (ENI)</li>
+<li>Use a resource policy to define access</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-341">
+          <div class="slide-number">Slide 341</div>
+          <div class="slide-content"><p>API Gateway – Security</p>
+<ul><li>User Authentication through</li>
+<li>IAM Roles (useful for internal applications)</li>
+<li>Cognito (identity for external users – example mobile users)</li>
+<li>Custom Authorizer (your own logic)</li>
+<li>Custom Domain Name HTTPS security through integration</li>
+</ul><p>with AWS Certificate Manager (ACM)</p>
+<ul><li>If using Edge-Optimized endpoint, then the certificate must be in us-</li>
+</ul><p>east-1</p>
+<ul><li>If using Regional endpoint, the certificate must be in the API Gateway</li>
+</ul><p>region</p>
+<ul><li>Must setup CNAME or A-alias record in Route 53</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-342">
+          <div class="slide-number">Slide 342</div>
+          <div class="slide-content"><p>API Gateway and GenAI</p>
+<ul><li>Use as a front for feedback collection</li>
+<li>Use as a front for your models</li>
+<li>API Gateway usage plans</li>
+<li>Base on your model capacity and client requirements</li>
+<li>Throttling (~10-50 requests per second)</li>
+</ul><p>+</p>
+<ul><li>Burst capacity (~2-3X)</li>
+<li>Response filtering</li>
+<li>Retry strategies when models time out</li>
+<li>Use for token limit management</li>
+<li>Request validator + JSON schema definition can enforce</li>
+</ul><p>constraints</p>
+<ul><li>Implement routing logic with request transformations</li>
+<li>Validate required fields</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-343">
+          <div class="slide-number">Slide 343</div>
+          <div class="slide-content"><p>AWS AppConfig</p>
+<ul><li>Configure, validate, and deploy dynamic configurations</li>
+</ul><p>AppConfig</p>
+<ul><li>Deploy dynamic configuration changes to your</li>
+</ul><p>Config. Sources</p>
+<p>applications independently of any code deployments</p>
+<p>…</p>
+<ul><li>You don’t need to restart the application</li>
+<li>Feature flags, application tuning, allow/block listing… Parameter SSM</li>
+</ul><p>S3 Bucket</p>
+<p>Store Documents</p>
+<ul><li>Use with apps on EC2 instances, Lambda, ECS, EKS…</li>
+</ul><p>Validation</p>
+<ul><li>Gradually deploy the configuration changes and rollback</li>
+</ul><p>if issues occur</p>
+<p>OR</p>
+<ul><li>Validate configuration changes before deployment using:</li>
+</ul><p>JSON Schema Lambda function</p>
+<ul><li>JSON Schema (syntactic check) or</li>
+<li>Lambda Function – run code to perform validation</li>
+</ul><p>(semantic check)</p>
+<p>rollback poll for</p>
+<p>config. changes</p>
+<p>trigger</p>
+<p>CloudWatch EC2 Instances</p>
+<p>sundog-education.com</p>
+<p>Alarm</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-344">
+          <div class="slide-number">Slide 344</div>
+          <div class="slide-content"><p>AppConfig and GenAI</p>
+<ul><li>This is a possible solution for dynamic FM</li>
+</ul><p>selection</p>
+<ul><li>No code changes required to switch</li>
+</ul><p>models</p>
+<ul><li>Use feature flags and configuration profiles +</li>
+<li>Configuration may be stored in S3</li>
+<li>AppConfig is integrated with S3</li>
+<li>Can be used as a tool for rolling out new</li>
+</ul><p>models, A/B testing, rollbacks</p>
+<ul><li>Of course SageMaker does all this too.</li>
+<li>Bedrock Evaluations and CloudWatch Evidently</li>
+</ul><p>can also manage A/B tests</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-345">
+          <div class="slide-number">Slide 345</div>
+          <div class="slide-content"><p>AWS Step Functions</p>
+<ul><li>Use to design workflows</li>
+<li>Easy visualizations</li>
+<li>Advanced Error Handling and Retry</li>
+</ul><p>mechanism outside the code</p>
+<ul><li>Audit of the history of workflows</li>
+<li>Ability to “Wait” for an arbitrary amount of</li>
+</ul><p>time</p>
+<ul><li>Max execution time of a State Machine is 1</li>
+</ul><p>year</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+    </div>
+
+    <div class="section-nav">
+      <a href="index.html" class="btn-back">← Back to Overview</a>
+    </div>
+  </main>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

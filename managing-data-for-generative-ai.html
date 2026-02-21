@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Managing Data for Generative AI – AWS GenAI Developer Pro (AIP-C01)</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="logo">☁️ AIP-C01</span>
+      <button class="close-btn" onclick="toggleSidebar()">✕</button>
+    </div>
+    <ul class="nav-list">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li class="divider">Course Sections</li>
+      <li class=""><a href="generative-ai-fundamentals-and-bedrock.html">Generative AI Fundamentals and Bedrock</a></li>
+<li class="active"><a href="managing-data-for-generative-ai.html">Managing Data for Generative AI</a></li>
+<li class=""><a href="agentic-ai.html">Agentic AI</a></li>
+<li class=""><a href="operations-efficiency-and-optimization.html">Operations Efficiency and Optimization</a></li>
+<li class=""><a href="managing-models-with-sagemaker-ai.html">Managing Models with SageMaker AI</a></li>
+<li class=""><a href="more-tools-for-building-ai-applications.html">More Tools for Building AI Applications</a></li>
+<li class=""><a href="governance-and-qa.html">Governance and QA</a></li>
+<li class=""><a href="security-identity-and-compliance.html">Security, Identity, and Compliance</a></li>
+<li class=""><a href="other-services-analytics.html">Other Services - Analytics</a></li>
+<li class=""><a href="other-services-compute-containers.html">Other Services - Compute & Containers</a></li>
+<li class=""><a href="other-services-database.html">Other Services - Database</a></li>
+<li class=""><a href="other-services-developer-tools.html">Other Services - Developer Tools</a></li>
+<li class=""><a href="other-services-machine-learning.html">Other Services - Machine Learning</a></li>
+<li class=""><a href="other-services-storage-networking.html">Other Services - Storage & Networking</a></li>
+<li class=""><a href="exam-preparation.html">Exam Preparation</a></li>
+
+    </ul>
+  </nav>
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+      <div class="breadcrumb">
+        <a href="index.html">AWS GenAI Pro</a> › <span>Managing Data for Generative AI</span>
+      </div>
+      <div class="page-meta">34 slides · Pages 75–108</div>
+    </header>
+
+    <div class="section-hero">
+      <h1>Managing Data for Generative AI</h1>
+      <p class="section-subtitle">AWS Certified Generative AI Developer – Professional (AIP-C01)</p>
+      <div class="section-stats">
+        <span>📄 34 slides</span>
+        <span>📑 Pages 75–108</span>
+      </div>
+    </div>
+
+    <div class="slides-container">
+      
+        <div class="slide" id="slide-75">
+          <div class="slide-number">Slide 75</div>
+          <div class="slide-content"><p>Managing Data for</p>
+<p>Generative AI</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-76">
+          <div class="slide-number">Slide 76</div>
+          <div class="slide-content"><p>Dealing with Structured Data</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-77">
+          <div class="slide-number">Slide 77</div>
+          <div class="slide-content"><p>Structured Data: Bedrock API</p>
+<p>Requests</p>
+<ul><li>Bedrock generally expects</li>
+</ul><p>request payloads in JSON</p>
+<p>format</p>
+<ul><li>Typically, this is the</li>
+</ul><p>underlying native structure</p>
+<p>for the models you’re</p>
+<p>working with</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-78">
+          <div class="slide-number">Slide 78</div>
+          <div class="slide-content"><p>Structured Data for SageMaker AI</p>
+<p>Endpoints</p>
+<ul><li>Models deployed via SageMaker will</li>
+</ul><p>body=json.dumps( {</p>
+<p>&quot;max_tokens&quot;: max_tokens,</p>
+<p>expect a certain input and output</p>
+<p>&quot;system&quot;: system_prompt,</p>
+<p>format &quot;messages&quot;: messages } )</p>
+<p>response =</p>
+<ul><li>Typically this is JSON for LLM’s</li>
+</ul><p>bedrock_runtime.invoke_model(</p>
+<p>body=body,</p>
+<ul><li>But for classical ML, it might be csv or</li>
+</ul><p>modelId=anthropic.claude-3-</p>
+<p>something else haiku-20240307-v1:0&quot;)</p>
+<p>response_body =</p>
+<ul><li>SageMaker will not format your input</li>
+</ul><p>json.loads(response.get(&#x27;body&#x27;).re</p>
+<p>for you ad())</p>
+<ul><li>Your app and endpoint is</li>
+</ul><p>responsible for this.</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-79">
+          <div class="slide-number">Slide 79</div>
+          <div class="slide-content"><p>Dealing with Unstructured Text</p>
+<p>Chapter 3 Chicken Clucking Patterns</p>
+<ul><li>Raw text can lose its structure. GenAI likes structure.</li>
+</ul><p>This chapter presents results</p>
+<ul><li>Headings, sections, metadata, tables get lost in the sea of</li>
+</ul><p>Table of results 1 2 3</p>
+<p>text</p>
+<p>Conclusion</p>
+<ul><li>One technique is to convert your unstructured text to</li>
+</ul><p>HTML (or something) that can preserve that structure</p>
+<ul><li>Then your models can understand the structure and</li>
+</ul><p>organization of the data better.</p>
+<p>&lt;h1&gt;Chapter 3: Chicken Clucking Patterns &lt;/h1&gt;</p>
+<p>&lt;p&gt;This chapter presents results.&lt;/p&gt;</p>
+<ul><li>Useful for OCR or PDF text, for example.</li>
+<li>Tools like pandoc, Amazon Textract and Amazon &lt;h2&gt;Table of Results&lt;/h2&gt;</li>
+</ul><p>Comprehend can help extract structure from raw text or &lt;table&gt;</p>
+<p>images. &lt;tr&gt;&lt;th&gt;Item&lt;/th&gt;&lt;th&gt;Value&lt;/th&gt;&lt;/tr&gt;</p>
+<p>&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Result A&lt;/td&gt;&lt;/tr&gt;</p>
+<ul><li>An ingestion pipeline performing this conversion might run</li>
+</ul><p>&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Result B&lt;/td&gt;&lt;/tr&gt;</p>
+<p>on top of AWS Glue</p>
+<p>&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Result C&lt;/td&gt;&lt;/tr&gt;</p>
+<p>&lt;/table&gt;</p>
+<ul><li>Or, the newer way to do this is with Bedrock Data</li>
+</ul><p>Automation (BDA) (more on this soon.)</p>
+<p>&lt;h1&gt;Conclusion&lt;/h1&gt;</p>
+<p>&lt;p&gt;...&lt;/p&gt;</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-80">
+          <div class="slide-number">Slide 80</div>
+          <div class="slide-content"><p>Divider Strings for Segmenting Data</p>
+<ul><li>When chunking data into a vector</li>
+</ul><p>&lt;h1&gt;Executive Summary&lt;/h1&gt;</p>
+<p>store, divider strings can be used</p>
+<p>Company revenue increased...</p>
+<p>for better chunking.</p>
+<p>&lt;h2&gt;Key Risks&lt;/h2&gt;</p>
+<ul><li>Some ideas on how to do this</li>
+</ul><p>Supply-chain instability...</p>
+<ul><li>A Lambda Preprocessor in your</li>
+</ul><p>Knowledge Base can convert HTML</p>
+<p>tags to divider strings on the fly</p>
+<ul><li>AWS Glue ETL could do it as part of a</li>
+</ul><p>pipeline too</p>
+<p>&lt;SECTION_BREAK:Executive Summary&gt;</p>
+<p>Company revenue increased...</p>
+<p>def handler(event, context):</p>
+<p>html = event[&quot;text&quot;]</p>
+<p>&lt;SECTION_BREAK:Key Risks&gt;</p>
+<p>html = html.replace(&quot;&lt;h1&quot;, &quot;&lt;SECTION_BREAK&gt;&lt;h1&quot;)</p>
+<p>html = html.replace(&quot;&lt;h2&quot;, &quot;&lt;SUBSECTION_BREAK&gt;&lt;h2&quot;) Supply-chain instability...</p>
+<p>return {&quot;text&quot;: html}</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-81">
+          <div class="slide-number">Slide 81</div>
+          <div class="slide-content"><p>Formatting Data for Conversations</p>
+<ul><li>Bedrock’s Converse API</li>
+</ul><p>{</p>
+<p>requires JSON output that &quot;messages&quot;: [</p>
+<p>{</p>
+<p>includes: &quot;role&quot;: &quot;user&quot;,</p>
+<p>&quot;content&quot;: [{ &quot;text&quot;: &quot;You&#x27;re a chicken expert.</p>
+<ul><li>Role Ready?&quot; }]</li>
+</ul><p>},</p>
+<ul><li>Content</li>
+</ul><p>{</p>
+<p>&quot;role&quot;: &quot;assistant&quot;,</p>
+<ul><li>The “role” is who is “talking.” &quot;content&quot;: [{ &quot;text&quot;: &quot;Absolutely—let’s talk</li>
+</ul><p>chickens!&quot; }]</p>
+<p>},</p>
+<ul><li>Here’s an example of a</li>
+</ul><p>{</p>
+<p>conversation history. &quot;role&quot;: &quot;user&quot;,</p>
+<p>&quot;content&quot;: [{ &quot;text&quot;: &quot;How fast can a chicken</p>
+<p>run?&quot; }]</p>
+<p>}</p>
+<p>]</p>
+<p>}</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-82">
+          <div class="slide-number">Slide 82</div>
+          <div class="slide-content"><p>Amazon Bedrock Data</p>
+<p>Automation</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-83">
+          <div class="slide-number">Slide 83</div>
+          <div class="slide-content"><p>What is Bedrock Data Automation</p>
+<p>(BDA)?</p>
+<ul><li>Extracts structured data</li>
+</ul><p>from pretty much anything</p>
+<ul><li>Multi-modal</li>
+<li>Documents, images, videos,</li>
+</ul><p>audio</p>
+<ul><li>Useful for:</li>
+<li>Preparing data for vector</li>
+</ul><p>stores / KB’s # NEW JERSEY</p>
+<ul><li>Intelligent Document Motor Vehicle</li>
+</ul><p>Commission</p>
+<p>Processing (IDP)</p>
+<ul><li>Analyzing video # AUTO DRIVER LICENSE</li>
+<li>Scene summaries | | | |</li>
+</ul><p>|----|---------------------------------------------------------|-------------|</p>
+<ul><li>ID explicit content</li>
+</ul><p>| | DL M6454 64774 51685 | CLASS D |</p>
+<p>| | DOB 01-01-1968 | |</p>
+<ul><li>Extract text in video</li>
+</ul><p>| | ISS 03-19-2019 EXP | 01-01-2023 |</p>
+<ul><li>Find ads | | MONTOYA RENEE MARIA 321 GOTHAM AVENUE TRENTON, NJ 08666 | |</li>
+</ul><p>| | ENC NONE | |</p>
+<p>| | RESTR NONE | |</p>
+<p>| | SEX F HGT 5&#x27;-08&quot; EYES HZL | ORGAN DONOR |</p>
+<p>| | CM ST201907800000019 CHG | 11.00 |</p>
+<p>[SIGNATURE]</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-84">
+          <div class="slide-number">Slide 84</div>
+          <div class="slide-content"><p>BDA Concepts</p>
+<p>Standard Output</p>
+<ul><li>If you just throw a file at it, it will guess at what format you want the output</li>
+<li>For documents this is probably JSON. For audio it’s a transcript. Etc.</li>
+</ul><p>Custom Output</p>
+<ul><li>For documents, audio, or images, you can customize the output</li>
+<li>Specify exactly what you want to extract</li>
+<li>A Blueprint specified the fields you want</li>
+<li>There are standard blueprints (like US Driver License) or you can define your own.</li>
+</ul><p>You can store your output configurations in a Project.</p>
+<ul><li>Kicking off BDA through the API requires calling InvokeDataAutomationAsync with your project.</li>
+<li>A project may include many Blueprints for different document types.</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-85">
+          <div class="slide-number">Slide 85</div>
+          <div class="slide-content"><p>Quick Demo Walkthrough</p>
+<p>Bedrock Data Automation</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-86">
+          <div class="slide-number">Slide 86</div>
+          <div class="slide-content"><p>BDA Document Processing</p>
+<ul><li>Accepts PDF, TIFF, JPEG, PNG, DOCX</li>
+<li>Outputs JSON or JSON+files</li>
+<li>Files might include CSV for tables, overall text</li>
+</ul><p>extraction, markdown</p>
+<ul><li>HTML and CSV structured output is also</li>
+</ul><p>possible</p>
+<ul><li>Remember this came up earlier in the context of</li>
+</ul><p>structuring unstructured data for better chunking</p>
+<p>– this is an easier way to do this</p>
+<ul><li>You can select the granularity of</li>
+</ul><p>responses</p>
+<ul><li>Page-level, element-level (default), word-level</li>
+<li>Bounding boxes and generative summaries</li>
+</ul><p>can be enabled per level</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-87">
+          <div class="slide-number">Slide 87</div>
+          <div class="slide-content"><p>BDA Image Processing</p>
+<ul><li>Accepts JPEG, PNG</li>
+<li>Generates:</li>
+<li>Image summary / caption</li>
+<li>IAB Taxonomy (Interactive Advertising</li>
+</ul><p>Bureau)</p>
+<ul><li>Logos found</li>
+<li>Text in images</li>
+<li>Content moderation</li>
+<li>…all in JSON</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-88">
+          <div class="slide-number">Slide 88</div>
+          <div class="slide-content"><p>BDA Video Processing</p>
+<ul><li>Accepts MP4, MOV, AVI, MKV, WEBM</li>
+<li>Extracts:</li>
+<li>Full video summary</li>
+<li>Chapter summaries</li>
+<li>This implies it can break the video down too!</li>
+<li>IAB Taxonomy</li>
+<li>Transcript</li>
+<li>Text in video</li>
+<li>Logos found</li>
+<li>Content Moderation</li>
+<li>…all in JSON</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-89">
+          <div class="slide-number">Slide 89</div>
+          <div class="slide-content"><p>BDA Audio Processing</p>
+<ul><li>Accepts AMR, FLAC, M4A, MP3,</li>
+</ul><p>Ogg, WAV</p>
+<ul><li>…and a variety of languages</li>
+<li>Extracts:</li>
+<li>Summary of the file</li>
+<li>Full transcript</li>
+<li>Speaker and Channel labeling in</li>
+</ul><p>transcript</p>
+<ul><li>Breaking up into Topics</li>
+<li>Content moderation</li>
+<li>…all in JSON</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-90">
+          <div class="slide-number">Slide 90</div>
+          <div class="slide-content"><p>BDA Blueprints for Custom Output</p>
+<ul><li>Basic fields</li>
+<li>Explicit or implicit (transformed)</li>
+<li>Table fields</li>
+<li>Groups (for organizing fields)</li>
+<li>Custom types</li>
+<li>Example: “address” consisting of city,</li>
+</ul><p>street, zip, etc.</p>
+<ul><li>You can create Blueprints just from</li>
+</ul><p>a prompt as well!</p>
+<ul><li>Again there are many pre-existing</li>
+</ul><p>blueprints you can use for common</p>
+<p>document types.</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-91">
+          <div class="slide-number">Slide 91</div>
+          <div class="slide-content"><p>Uses of BDA Blueprints</p>
+<ul><li>Classification</li>
+<li>The document class and description can be used to</li>
+</ul><p>automatically classify documents that match this</p>
+<p>blueprint</p>
+<ul><li>Extraction</li>
+<li>Allows you extract specific fields, even if it’s from</li>
+</ul><p>tabular data</p>
+<ul><li>Normalization</li>
+<li>Key Normalization can deal with different names for</li>
+</ul><p>the same data</p>
+<ul><li>Value Normalization can ensure data is extracted in</li>
+</ul><p>a consistent format and in consistent data types</p>
+<ul><li>Transformation</li>
+<li>You can split and restructure data fields</li>
+<li>Validation</li>
+<li>Ensure the accuracy of data. Is it within specified</li>
+</ul><p>ranges? Have the expected size? Etc.</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-92">
+          <div class="slide-number">Slide 92</div>
+          <div class="slide-content"><p>SageMaker Data Wrangler</p>
+<ul><li>Visual interface (in SageMaker</li>
+</ul><p>Studio) to prepare data for machine</p>
+<p>learning</p>
+<ul><li>Import data</li>
+<li>Visualize data</li>
+<li>Transform data (300+</li>
+</ul><p>transformations to choose from)</p>
+<ul><li>Or integrate your own custom xforms</li>
+</ul><p>with pandas, PySpark, PySpark SQL</p>
+<ul><li>“Quick Model” to train your model</li>
+</ul><p>with your data and measure its</p>
+<p>results</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-93">
+          <div class="slide-number">Slide 93</div>
+          <div class="slide-content"><p>Data Wrangler: Notable Capabilities</p>
+<ul><li>Transforming image data</li>
+<li>Resize, enhance, corrupt images &amp; more</li>
+<li>Balance data</li>
+<li>Random oversampling, undersampling,</li>
+</ul><p>SMOTE</p>
+<ul><li>Impute missing data</li>
+<li>Handle outliers</li>
+<li>Dimensionality reduction (PCA)</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-94">
+          <div class="slide-number">Slide 94</div>
+          <div class="slide-content"><p>Data Wrangler sources</p>
+<p>Amazon SageMaker</p>
+<p>Processing</p>
+<p>Amazon Simple Storage AWS Lake Formation</p>
+<p>Service (Amazon S3)</p>
+<p>notebook</p>
+<p>Amazon SageMaker Amazon SageMaker</p>
+<p>Amazon Athena Amazon SageMaker Data Wrangler Pipelines</p>
+<p>Feature Store</p>
+<p>JDBC</p>
+<p>(Databricks, SaaS)</p>
+<p>Amazon Redshift Amazon SageMaker</p>
+<p>Feature Store</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-95">
+          <div class="slide-number">Slide 95</div>
+          <div class="slide-content"><p>Data Wrangler: Import Data</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-96">
+          <div class="slide-number">Slide 96</div>
+          <div class="slide-content"><p>Data Wrangler: Preview Data</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-97">
+          <div class="slide-number">Slide 97</div>
+          <div class="slide-content"><p>Data Wrangler: Visualize Data</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-98">
+          <div class="slide-number">Slide 98</div>
+          <div class="slide-content"><p>Data Wrangler: Transform Data</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-99">
+          <div class="slide-number">Slide 99</div>
+          <div class="slide-content"><p>Data Wrangler: Quick Model</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-100">
+          <div class="slide-number">Slide 100</div>
+          <div class="slide-content"><p>Data Wrangler: Export Data Flow</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-101">
+          <div class="slide-number">Slide 101</div>
+          <div class="slide-content"><p>Data Wrangler Troubleshooting</p>
+<ul><li>Make sure your Studio user has appropriate IAM roles</li>
+<li>Make sure permissions on your data sources allow Data</li>
+</ul><p>Wrangler access</p>
+<ul><li>Add AmazonSageMakerFullAccess policy</li>
+<li>EC2 instance limit</li>
+<li>If you get “The following instance type is not available…” errors</li>
+<li>May need to request a quota increase</li>
+<li>Service Quotas / Amazon SageMaker / Studio KernelGateway Apps</li>
+</ul><p>running on ml.m5.4xlarge instance</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-102">
+          <div class="slide-number">Slide 102</div>
+          <div class="slide-content"><p>AWS Glue</p>
+<p>Table definitions and ETL</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-103">
+          <div class="slide-number">Slide 103</div>
+          <div class="slide-content"><p>What is Glue?</p>
+<ul><li>Serverless discovery and definition</li>
+</ul><p>of table definitions and schema</p>
+<ul><li>S3 “data lakes”</li>
+<li>RDS</li>
+<li>Redshift</li>
+<li>DynamoDB</li>
+<li>Most other SQL databases</li>
+<li>Custom ETL jobs</li>
+<li>Trigger-driven, on a schedule, or on</li>
+</ul><p>demand</p>
+<ul><li>Fully managed</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-104">
+          <div class="slide-number">Slide 104</div>
+          <div class="slide-content"><p>Glue Crawler / Data Catalog</p>
+<ul><li>Glue crawler scans data in S3, creates</li>
+</ul><p>schema</p>
+<ul><li>Can run periodically</li>
+<li>Populates the Glue Data Catalog</li>
+<li>Stores only table definition</li>
+<li>Original data stays in S3</li>
+<li>Once cataloged, you can treat your</li>
+</ul><p>unstructured data like it’s structured</p>
+<ul><li>Redshift Spectrum</li>
+<li>Athena</li>
+<li>EMR</li>
+<li>Quicksight</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-105">
+          <div class="slide-number">Slide 105</div>
+          <div class="slide-content"><p>Glue and S3 Partitions</p>
+<ul><li>Glue crawler will extract partitions based on how your S3 data is organized</li>
+<li>Think up front about how you will be querying your data lake in S3</li>
+<li>Example: devices send sensor data every hour</li>
+<li>Do you query primarily by time ranges?</li>
+<li>If so, organize your buckets as yyyy/mm/dd/device</li>
+<li>Do you query primarily by device?</li>
+<li>If so, organize your buckets as device/yyyy/mm/dd</li>
+</ul><p>Device 1 Device 2</p>
+<p>2018 2019 2018 2019</p>
+<p>01 02 … 01 02 … 01 02 … 01 02 …</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-106">
+          <div class="slide-number">Slide 106</div>
+          <div class="slide-content"><p>AWS Glue Studio</p>
+<ul><li>Visual interface for ETL</li>
+</ul><p>workflows</p>
+<ul><li>Visual job editor</li>
+<li>Create DAG’s for complex</li>
+</ul><p>workflows</p>
+<ul><li>Sources include S3, Kinesis,</li>
+</ul><p>Kafka, JDBC</p>
+<ul><li>Transform / sample / join data</li>
+<li>Target to S3 or Glue Data</li>
+</ul><p>Catalog</p>
+<ul><li>Support partitioning</li>
+<li>Visual job dashboard</li>
+<li>Overviews, status, run times</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-107">
+          <div class="slide-number">Slide 107</div>
+          <div class="slide-content"><p>AWS Glue Data Quality</p>
+<ul><li>Data quality rules may be created</li>
+</ul><p>manually or recommended</p>
+<p>automatically</p>
+<ul><li>Integrates into Glue jobs</li>
+<li>Uses Data Quality Definition</li>
+</ul><p>Language (DQDL)</p>
+<ul><li>Results can be used to fail the job,</li>
+</ul><p>or just be reported to CloudWatch</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-108">
+          <div class="slide-number">Slide 108</div>
+          <div class="slide-content"><p>AWS Glue Data Quality</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+    </div>
+
+    <div class="section-nav">
+      <a href="index.html" class="btn-back">← Back to Overview</a>
+    </div>
+  </main>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

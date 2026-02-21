@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Other Services - Database – AWS GenAI Developer Pro (AIP-C01)</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="logo">☁️ AIP-C01</span>
+      <button class="close-btn" onclick="toggleSidebar()">✕</button>
+    </div>
+    <ul class="nav-list">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li class="divider">Course Sections</li>
+      <li class=""><a href="generative-ai-fundamentals-and-bedrock.html">Generative AI Fundamentals and Bedrock</a></li>
+<li class=""><a href="managing-data-for-generative-ai.html">Managing Data for Generative AI</a></li>
+<li class=""><a href="agentic-ai.html">Agentic AI</a></li>
+<li class=""><a href="operations-efficiency-and-optimization.html">Operations Efficiency and Optimization</a></li>
+<li class=""><a href="managing-models-with-sagemaker-ai.html">Managing Models with SageMaker AI</a></li>
+<li class=""><a href="more-tools-for-building-ai-applications.html">More Tools for Building AI Applications</a></li>
+<li class=""><a href="governance-and-qa.html">Governance and QA</a></li>
+<li class=""><a href="security-identity-and-compliance.html">Security, Identity, and Compliance</a></li>
+<li class=""><a href="other-services-analytics.html">Other Services - Analytics</a></li>
+<li class=""><a href="other-services-compute-containers.html">Other Services - Compute & Containers</a></li>
+<li class="active"><a href="other-services-database.html">Other Services - Database</a></li>
+<li class=""><a href="other-services-developer-tools.html">Other Services - Developer Tools</a></li>
+<li class=""><a href="other-services-machine-learning.html">Other Services - Machine Learning</a></li>
+<li class=""><a href="other-services-storage-networking.html">Other Services - Storage & Networking</a></li>
+<li class=""><a href="exam-preparation.html">Exam Preparation</a></li>
+
+    </ul>
+  </nav>
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+      <div class="breadcrumb">
+        <a href="index.html">AWS GenAI Pro</a> › <span>Other Services - Database</span>
+      </div>
+      <div class="page-meta">10 slides · Pages 546–555</div>
+    </header>
+
+    <div class="section-hero">
+      <h1>Other Services - Database</h1>
+      <p class="section-subtitle">AWS Certified Generative AI Developer – Professional (AIP-C01)</p>
+      <div class="section-stats">
+        <span>📄 10 slides</span>
+        <span>📑 Pages 546–555</span>
+      </div>
+    </div>
+
+    <div class="slides-container">
+      
+        <div class="slide" id="slide-546">
+          <div class="slide-number">Slide 546</div>
+          <div class="slide-content"><p>DocumentDB</p>
+<ul><li>Aurora is an “AWS-implementation” of PostgreSQL / MySQL …</li>
+<li>DocumentDB is the same for MongoDB (which is a NoSQL</li>
+</ul><p>database)</p>
+<ul><li>MongoDB is used to store, query, and index JSON data</li>
+<li>Similar “deployment concepts” as Aurora</li>
+<li>Fully Managed, highly available with replication across 3 AZ</li>
+<li>DocumentDB storage automatically grows in increments of 10GB</li>
+<li>Automatically scales to workloads with millions of requests per</li>
+</ul><p>seconds</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-547">
+          <div class="slide-number">Slide 547</div>
+          <div class="slide-content"><p>Amazon ElastiCache Overview</p>
+<ul><li>The same way RDS is to get managed Relational Databases…</li>
+<li>ElastiCache is to get managed Redis or Memcached</li>
+<li>Caches are in-memory databases with really high performance,</li>
+</ul><p>low latency</p>
+<ul><li>Helps reduce load off of databases for read intensive workloads</li>
+<li>Helps make your application stateless</li>
+<li>AWS takes care of OS maintenance / patching, optimizations,</li>
+</ul><p>setup, configuration, monitoring, failure recovery and backups</p>
+<ul><li>Using ElastiCache involves heavy application code</li>
+</ul><p>changes</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-548">
+          <div class="slide-number">Slide 548</div>
+          <div class="slide-content"><p>ElastiCache</p>
+<p>Solution Architecture - DB Cache</p>
+<ul><li>Applications queries</li>
+</ul><p>Amazon</p>
+<p>ElastiCache, if not</p>
+<p>ElastiCache</p>
+<p>available, get from RDS</p>
+<p>and store in</p>
+<p>Cache hit</p>
+<p>ElastiCache.</p>
+<ul><li>Helps relieve load in</li>
+</ul><p>RDS Cache miss</p>
+<p>application</p>
+<ul><li>Cache must have an</li>
+</ul><p>Read from DB</p>
+<p>invalidation strategy to</p>
+<p>make sure only the most</p>
+<p>current data is used in</p>
+<p>Write to cache Amazon</p>
+<p>there.</p>
+<p>RDS</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-549">
+          <div class="slide-number">Slide 549</div>
+          <div class="slide-content"><p>ElastiCache</p>
+<p>Solution Architecture – User Session Store</p>
+<ul><li>User logs into any of</li>
+</ul><p>Write session</p>
+<p>the application</p>
+<p>application</p>
+<ul><li>The application writes</li>
+</ul><p>Amazon</p>
+<p>the session data into</p>
+<p>ElastiCache</p>
+<p>ElastiCache</p>
+<p>Retrieve session</p>
+<p>r</p>
+<ul><li>The user hits another e</li>
+</ul><p>application</p>
+<p>s</p>
+<p>instance of our</p>
+<p>U</p>
+<p>application</p>
+<ul><li>The instance retrieves</li>
+</ul><p>the data and the user</p>
+<p>application</p>
+<p>is already logged in</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-550">
+          <div class="slide-number">Slide 550</div>
+          <div class="slide-content"><p>ElastiCache – Redis vs Memcached</p>
+<p>REDIS MEMCACHED</p>
+<ul><li>Multi-node for partitioning of</li>
+<li>Multi AZ with Auto-Failover</li>
+</ul><p>data (sharding)</p>
+<ul><li>Read Replicas to scale reads</li>
+<li>No high availability</li>
+</ul><p>and have high availability</p>
+<p>(replication)</p>
+<ul><li>Data Durability using AOF</li>
+<li>Non persistent</li>
+</ul><p>persistence</p>
+<ul><li>Backup and restore</li>
+<li>Backup and restore features</li>
+</ul><p>(Serverless)</p>
+<ul><li>Supports Sets and Sorted Sets</li>
+<li>Multi-threaded architecture</li>
+</ul><p>+</p>
+<p>Replication</p>
+<p>sharding</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-551">
+          <div class="slide-number">Slide 551</div>
+          <div class="slide-content"><p>ElastiCache for Valkey</p>
+<ul><li>Full compatibility with Valkey (open source)</li>
+<li>Basically an alternative to Redis OSS</li>
+<li>It’s actually a fork of Redis</li>
+<li>ElastiCache for Valkey supports vector</li>
+</ul><p>search!</p>
+<ul><li>Obviously important for GenAI / RAG / semantic</li>
+</ul><p>caching</p>
+<ul><li>Supports billions of high-dimensional embedding</li>
+</ul><p>vectors</p>
+<ul><li>Microsecond latency</li>
+<li>Recall &gt; 99%</li>
+<li>Appropriate for high performance &amp; scalability</li>
+</ul><p>requirements</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-552">
+          <div class="slide-number">Slide 552</div>
+          <div class="slide-content"><p>Amazon MemoryDB</p>
+<ul><li>Also supports Valkey and Redis OSS vector search</li>
+<li>All in memory (super fast latency and throughput)</li>
+<li>Multi-AZ</li>
+<li>Vector index algorithms</li>
+<li>Flat: brute force linear processing</li>
+<li>: just like Opensearch, gives an approximation for faster</li>
+</ul><p>execution</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-553">
+          <div class="slide-number">Slide 553</div>
+          <div class="slide-content"><p>Amazon Neptune</p>
+<ul><li>Fully managed graph database</li>
+<li>A popular graph dataset would be a social network</li>
+<li>Users have friends</li>
+<li>Posts have comments</li>
+<li>Comments have likes from users</li>
+<li>Users share and like posts…</li>
+<li>Highly available across 3 AZ, with up to 15 read replicas</li>
+<li>Build and run applications working with highly connected</li>
+</ul><p>datasets – optimized for these complex and hard queries</p>
+<ul><li>Can store up to billions of relations and query the graph with</li>
+</ul><p>milliseconds latency</p>
+<ul><li>Highly available with replications across multiple AZs</li>
+<li>Great for knowledge graphs (Wikipedia), fraud detection,</li>
+</ul><p>recommendation engines, social networking</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-554">
+          <div class="slide-number">Slide 554</div>
+          <div class="slide-content"><p>Neptune and GenAI</p>
+<ul><li>Neptune Analytics</li>
+<li>Analytics engine built on top of Neptune</li>
+</ul><p>database</p>
+<ul><li>vectors.topKByEmbedding</li>
+<li>Query vector databases with explicit vector values</li>
+<li>Can filter by vertex attributes</li>
+<li>Returns top nodes and their scores</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-555">
+          <div class="slide-number">Slide 555</div>
+          <div class="slide-content"><p>Other Services You Should</p>
+<p>Know: Developer Tools</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+    </div>
+
+    <div class="section-nav">
+      <a href="index.html" class="btn-back">← Back to Overview</a>
+    </div>
+  </main>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

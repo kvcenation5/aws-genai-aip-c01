@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Security, Identity, and Compliance – AWS GenAI Developer Pro (AIP-C01)</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="logo">☁️ AIP-C01</span>
+      <button class="close-btn" onclick="toggleSidebar()">✕</button>
+    </div>
+    <ul class="nav-list">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li class="divider">Course Sections</li>
+      <li class=""><a href="generative-ai-fundamentals-and-bedrock.html">Generative AI Fundamentals and Bedrock</a></li>
+<li class=""><a href="managing-data-for-generative-ai.html">Managing Data for Generative AI</a></li>
+<li class=""><a href="agentic-ai.html">Agentic AI</a></li>
+<li class=""><a href="operations-efficiency-and-optimization.html">Operations Efficiency and Optimization</a></li>
+<li class=""><a href="managing-models-with-sagemaker-ai.html">Managing Models with SageMaker AI</a></li>
+<li class=""><a href="more-tools-for-building-ai-applications.html">More Tools for Building AI Applications</a></li>
+<li class=""><a href="governance-and-qa.html">Governance and QA</a></li>
+<li class="active"><a href="security-identity-and-compliance.html">Security, Identity, and Compliance</a></li>
+<li class=""><a href="other-services-analytics.html">Other Services - Analytics</a></li>
+<li class=""><a href="other-services-compute-containers.html">Other Services - Compute & Containers</a></li>
+<li class=""><a href="other-services-database.html">Other Services - Database</a></li>
+<li class=""><a href="other-services-developer-tools.html">Other Services - Developer Tools</a></li>
+<li class=""><a href="other-services-machine-learning.html">Other Services - Machine Learning</a></li>
+<li class=""><a href="other-services-storage-networking.html">Other Services - Storage & Networking</a></li>
+<li class=""><a href="exam-preparation.html">Exam Preparation</a></li>
+
+    </ul>
+  </nav>
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+      <div class="breadcrumb">
+        <a href="index.html">AWS GenAI Pro</a> › <span>Security, Identity, and Compliance</span>
+      </div>
+      <div class="page-meta">51 slides · Pages 451–501</div>
+    </header>
+
+    <div class="section-hero">
+      <h1>Security, Identity, and Compliance</h1>
+      <p class="section-subtitle">AWS Certified Generative AI Developer – Professional (AIP-C01)</p>
+      <div class="section-stats">
+        <span>📄 51 slides</span>
+        <span>📑 Pages 451–501</span>
+      </div>
+    </div>
+
+    <div class="slides-container">
+      
+        <div class="slide" id="slide-451">
+          <div class="slide-number">Slide 451</div>
+          <div class="slide-content"><p>Data Masking and Anonymization</p>
+<ul><li>Dealing with PII or other sensitive</li>
+</ul><p>data</p>
+<ul><li>Masking obfuscates data</li>
+<li>For example, masking all but the last 4</li>
+</ul><p>digits of a credit card or social security</p>
+<p>number</p>
+<ul><li>Masking passwords</li>
+<li>Supported in Glue DataBrew and</li>
+</ul><p>Redshift</p>
+<p>--create a masking policy that fully masks the credit card number</p>
+<p>CREATE MASKING POLICY mask_credit_card_full WITH (credit_card</p>
+<p>VARCHAR(256)) USING (&#x27;000000XXXX0000&#x27;::TEXT);</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-452">
+          <div class="slide-number">Slide 452</div>
+          <div class="slide-content"><p>Data Masking and Anonymization</p>
+<ul><li>Anonymization techniques</li>
+<li>Replace with random</li>
+<li>Shuffle</li>
+<li>Encrypt (deterministic or</li>
+</ul><p>probabilistic)</p>
+<ul><li>Hashing</li>
+<li>Or just delete it or don’t</li>
+</ul><p>import it in the first place.</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-453">
+          <div class="slide-number">Slide 453</div>
+          <div class="slide-content"><p>Key Salting</p>
+<ul><li>Salting involves appending or prepending a random</li>
+</ul><p>value, known as a &quot;salt,&quot; to a piece of data (often a</p>
+<p>password) before hashing it.</p>
+<ul><li>Prevents pre-computed &quot;rainbow table&quot; attacks</li>
+</ul><p>where adversaries use pre-generated hashes of</p>
+<p>commonly used passwords to find matches.</p>
+<ul><li>Ensures that the same piece of data (like two</li>
+</ul><p>identical passwords) doesn&#x27;t produce the same hash</p>
+<p>across different instances due to the unique salt.</p>
+<ul><li>Use strong, cryptographically secure random values</li>
+</ul><p>for salts</p>
+<ul><li>Rotate salts periodically</li>
+<li>Each user should have a unique salt</li>
+<li>Salt and hash passwords before storing</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-454">
+          <div class="slide-number">Slide 454</div>
+          <div class="slide-content"><p>Key Salting: Example</p>
+<p>Hashed value</p>
+<p>Username Salt value String to be hashed = SHA256 (Password +</p>
+<p>Salt value)</p>
+<p>9C9B913EB1B6254F4737</p>
+<p>password123D;%yL9TS:5 CE947EFD16F16E916F9D6</p>
+<p>user1 D;%yL9TS:5PalS/d</p>
+<p>PalS/d EE5C1102A2002E48D4C8</p>
+<p>8BD</p>
+<p>6058B4EB46BD6487298B</p>
+<p>password123)&lt;,- 59440EC8E70EAE482239F</p>
+<p>user2 )&lt;,-&lt;U(jLezy4j&gt;*</p>
+<p>&lt;U(jLezy4j&gt;* F2B4E7CA69950DFBD553</p>
+<p>2F2</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-455">
+          <div class="slide-number">Slide 455</div>
+          <div class="slide-content"><p>IAM: Users &amp; Groups</p>
+<ul><li>IAM = Identity and Access Management, Global service</li>
+<li>Root account created by default, shouldn’t be used or shared</li>
+<li>Users are people within your organization, and can be grouped</li>
+<li>Groups only contain users, not other groups</li>
+<li>Users don’t have to belong to a group, and user can belong to multiple</li>
+</ul><p>groups</p>
+<p>Group: Developers Group: Operations</p>
+<p>Group</p>
+<p>Audit Team</p>
+<p>Alice Bob Charles David Edward Fred</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-456">
+          <div class="slide-number">Slide 456</div>
+          <div class="slide-content"><p>IAM: Permissions</p>
+<p>{</p>
+<p>&quot;Version&quot;: &quot;2012-10-17&quot;,</p>
+<ul><li>Users or Groups can be &quot;Statement&quot;: [</li>
+</ul><p>{</p>
+<p>assigned JSON &quot;Effect&quot;: &quot;Allow&quot;,</p>
+<p>&quot;Action&quot;: &quot;ec2:Describe*&quot;,</p>
+<p>documents called policies</p>
+<p>&quot;Resource&quot;: &quot;*&quot;</p>
+<p>},</p>
+<ul><li>These policies define the {</li>
+</ul><p>&quot;Effect&quot;: &quot;Allow&quot;,</p>
+<p>permissions of the users</p>
+<p>&quot;Action&quot;: &quot;elasticloadbalancing:Describe*&quot;,</p>
+<p>&quot;Resource&quot;: &quot;*&quot;</p>
+<p>},</p>
+<ul><li>In AWS you apply the least</li>
+</ul><p>{</p>
+<p>privilege principle: don’t &quot;Effect&quot;: &quot;Allow&quot;,</p>
+<p>&quot;Action&quot;: [</p>
+<p>give more permissions</p>
+<p>&quot;cloudwatch:ListMetrics&quot;,</p>
+<p>&quot;cloudwatch:GetMetricStatistics&quot;,</p>
+<p>than a user needs</p>
+<p>&quot;cloudwatch:Describe*&quot;</p>
+<p>],</p>
+<p>&quot;Resource&quot;: &quot;*&quot;</p>
+<p>}</p>
+<p>]</p>
+<p>}</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-457">
+          <div class="slide-number">Slide 457</div>
+          <div class="slide-content"><p>IAM Policies inheritance</p>
+<p>Audit Team</p>
+<p>Developers Operations</p>
+<p>inline</p>
+<p>Alice Bob Charles David Edward Fred</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-458">
+          <div class="slide-number">Slide 458</div>
+          <div class="slide-content"><p>IAM Policies Structure</p>
+<ul><li>Consists of</li>
+<li>Version: policy language version, always include</li>
+</ul><p>“2012-10-17”</p>
+<ul><li>Id: an identifier for the policy (optional)</li>
+<li>Statement: one or more individual statements</li>
+</ul><p>(required)</p>
+<ul><li>Statements consists of</li>
+<li>Sid: an identifier for the statement (optional)</li>
+<li>Effect: whether the statement allows or denies</li>
+</ul><p>access (Allow, Deny)</p>
+<ul><li>Principal: account/user/role to which this policy</li>
+</ul><p>applied to</p>
+<ul><li>Action: list of actions this policy allows or denies</li>
+<li>Resource: list of resources to which the actions</li>
+</ul><p>applied to</p>
+<ul><li>Condition: conditions for when this policy is in effect</li>
+</ul><p>sundog-educatio(no.cpomtional)</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-459">
+          <div class="slide-number">Slide 459</div>
+          <div class="slide-content"><p>IAM – Password Policy</p>
+<ul><li>Strong passwords = higher security for your account</li>
+<li>In AWS, you can setup a password policy:</li>
+<li>Set a minimum password length</li>
+<li>Require specific character types:</li>
+<li>including uppercase letters</li>
+<li>lowercase letters</li>
+<li>numbers</li>
+<li>non-alphanumeric characters</li>
+<li>Allow all IAM users to change their own passwords</li>
+<li>Require users to change their password after some time (password</li>
+</ul><p>expiration)</p>
+<ul><li>Prevent password re-use</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-460">
+          <div class="slide-number">Slide 460</div>
+          <div class="slide-content"><p>Multi Factor Authentication - MFA</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p>
+<p>M F A</p>
+<ul><li>Users have access to your account and can possibly change</li>
+</ul><p>configurations or delete resources in your AWS account</p>
+<ul><li>You want to protect your Root Accounts and IAM users</li>
+<li>MFA = password you know + security device you own</li>
+</ul><p>+</p>
+<p>Password</p>
+<p>Alice</p>
+<ul><li>Main benefit of MFA:</li>
+</ul><p>if a password is stolen or hacked, the account is not</p>
+<p>compromised</p>
+<p>M F A</p>
+<p>=&gt;</p>
+<p>Successful login</p></div>
+        </div>
+        <div class="slide" id="slide-461">
+          <div class="slide-number">Slide 461</div>
+          <div class="slide-content"><p>MFA devices options in AWS</p>
+<p>Virtual MFA device Universal 2nd Factor (U2F) Security Key</p>
+<p>YubiKey by Yubico (3rd party)</p>
+<p>Google Authenticator Authy</p>
+<p>(phone only) (phone only)</p>
+<p>Support for multiple root and IAM users</p>
+<p>Support for multiple tokens on a single device.</p>
+<p>using a single security key</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-462">
+          <div class="slide-number">Slide 462</div>
+          <div class="slide-content"><p>MFA devices options in AWS</p>
+<p>Hardware Key Fob MFA Device for</p>
+<p>Hardware Key Fob MFA Device</p>
+<p>AWS GovCloud (US)</p>
+<p>Provided by Gemalto (3rd party) Provided by SurePassID (3rd party)</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-463">
+          <div class="slide-number">Slide 463</div>
+          <div class="slide-content"><p>IAM Roles for</p>
+<p>Services</p>
+<p>IAM Role</p>
+<ul><li>Some AWS service will need</li>
+</ul><p>to perform actions on your</p>
+<p>behalf</p>
+<p>EC2 Instance</p>
+<ul><li>To do so, we will assign (virtual server)</li>
+</ul><p>permissions to AWS</p>
+<p>services with IAM Roles</p>
+<ul><li>Common roles:</li>
+</ul><p>Access AWS</p>
+<ul><li>EC2 Instance Roles</li>
+<li>Lambda Function Roles</li>
+<li>Roles for CloudFormation</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-464">
+          <div class="slide-number">Slide 464</div>
+          <div class="slide-content"><p>AWS IAM Identity Center</p>
+<p>(successor to AWS Single Sign-On)</p>
+<ul><li>One login (single sign-on) for all your</li>
+<li>AWS accounts in AWS Organizations</li>
+<li>Business cloud applications (e.g., Salesforce, Box,</li>
+</ul><p>Microsoft 365, …)</p>
+<ul><li>SAML2.0-enabled applications</li>
+<li>EC2 Windows Instances</li>
+<li>Identity providers</li>
+<li>Built-in identity store in IAM Identity Center</li>
+<li>3rd party: Active Directory (AD), OneLogin, Okta…</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-465">
+          <div class="slide-number">Slide 465</div>
+          <div class="slide-content"><p>AWS IAM Identity Center – Login</p>
+<p>Flow</p>
+<p>AWS IAM Identity Center</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-466">
+          <div class="slide-number">Slide 466</div>
+          <div class="slide-content"><p>AWS IAM Identity Center</p>
+<p>AWS Cloud</p>
+<p>AWS IAM Identity Center</p>
+<p>AWS</p>
+<p>Windows</p>
+<p>SSO</p>
+<p>login Organization</p>
+<p>EC2</p>
+<p>Permission Sets Business Cloud Apps</p>
+<p>Browser Interface</p>
+<p>Store / retrieve</p>
+<p>User identities</p>
+<p>Active Directory</p>
+<p>IAM Identity Center</p>
+<p>Custom SAML2.0-enabled Apps</p>
+<p>Users &amp; groups</p>
+<p>Built-in Identity Store</p>
+<p>(On-premises, cloud)</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-467">
+          <div class="slide-number">Slide 467</div>
+          <div class="slide-content"><p>IAM Identity Center</p>
+<p>AWS Organization</p>
+<p>IAM Identity Center</p>
+<p>(in Management account)</p>
+<p>Management Account</p>
+<p>Group (Developers)</p>
+<p>OU (Development) OU (Production)</p>
+<p>Bob Alice</p>
+<p>Dev Account A Prod Account A</p>
+<p>assign assign</p>
+<p>Dev Account B Prod Account B</p>
+<p>Permission Set</p>
+<p>ReadOnlyAccess</p>
+<p>Permission Set</p>
+<p>FullAccess</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-468">
+          <div class="slide-number">Slide 468</div>
+          <div class="slide-content"><p>AWS IAM Identity Center</p>
+<p>Fine-grained Permissions and Assignments</p>
+<ul><li>Multi-Account Permissions</li>
+<li>Manage access across AWS accounts in your AWS</li>
+</ul><p>Organization AWS Organization</p>
+<ul><li>Permission Sets – a collection of one or more IAM Policies</li>
+</ul><p>assigned to users and groups to define AWS access</p>
+<p>Dev Prod</p>
+<p>Account Account</p>
+<ul><li>Application Assignments</li>
+<li>SSO access to many SAML 2.0 business applications</li>
+</ul><p>RDS Aurora RDS Aurora</p>
+<p>(Salesforce, Box, Microsoft 365, …)</p>
+<ul><li>Provide required URLs, certificates, and metadata IAM Role IAM Role</li>
+<li>Attribute-Based Access Control (ABAC)</li>
+</ul><p>assume</p>
+<p>Permission Sets</p>
+<ul><li>Fine-grained permissions based on users’ attributes stored</li>
+</ul><p>(DB Admins)</p>
+<p>in IAM Identity Center Identity Store</p>
+<ul><li>Example: cost center, title, locale, …</li>
+</ul><p>Permission Sets</p>
+<ul><li>Use case: Define permissions once, then modify AWS</li>
+</ul><p>(DB Admins)</p>
+<p>access by changing the attributes</p>
+<p>Database</p>
+<p>IAM Identity Center</p>
+<p>Admins</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-469">
+          <div class="slide-number">Slide 469</div>
+          <div class="slide-content"><p>AWS Control Tower</p>
+<ul><li>Easy way to set up and govern a secure and compliant</li>
+</ul><p>multi-account AWS environment based on best practices</p>
+<ul><li>AWS Control Tower uses AWS Organizations to create</li>
+</ul><p>accounts</p>
+<ul><li>Benefits:</li>
+<li>Automate the set up of your environment in a few clicks</li>
+<li>Automate ongoing policy management using guardrails</li>
+<li>Detect policy violations and remediate them</li>
+<li>Monitor compliance through an interactive dashboard</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-470">
+          <div class="slide-number">Slide 470</div>
+          <div class="slide-content"><p>AWS Control Tower – Guardrails</p>
+<ul><li>Provides ongoing governance for your Control Tower environment (AWS</li>
+</ul><p>Accounts)</p>
+<ul><li>Preventive Guardrail – using SCPs (e.g., Restrict Regions across all your</li>
+</ul><p>accounts)</p>
+<ul><li>Detective Guardrail – using AWS Config (e.g., identify untagged resources)</li>
+</ul><p>AWS Control Tower</p>
+<p>notify</p>
+<p>Guardrail trigger</p>
+<p>(Detective) (NON_COMPLIANT)</p>
+<p>AWS Config</p>
+<p>Admin</p>
+<p>SNS</p>
+<p>monitor un-tagged</p>
+<p>resources invoke</p>
+<p>Member remediate</p>
+<p>Accounts (add tags)</p>
+<p>Lambda</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-471">
+          <div class="slide-number">Slide 471</div>
+          <div class="slide-content"><p>Why encryption?</p>
+<p>Encryption in flight (TLS / SSL)</p>
+<ul><li>Data is encrypted before sending and decrypted after receiving</li>
+<li>TLS certificates help with encryption (HTTPS)</li>
+<li>Encryption in flight ensures no MITM (man in the middle attack)</li>
+</ul><p>can happen</p>
+<p>Username: admin aGVsbG8gd29 Username: admin</p>
+<p>Password: supersecret ybGQgZWh… Password: supersecret</p>
+<p>TLS Encryption TLS Decryption</p>
+<p>Client</p>
+<p>HTTPS Website</p>
+<p>Client Server</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-472">
+          <div class="slide-number">Slide 472</div>
+          <div class="slide-content"><p>Why encryption?</p>
+<p>Server-side encryption at rest</p>
+<ul><li>Data is encrypted after being received by the server</li>
+<li>Data is decrypted before being sent</li>
+<li>It is stored in an encrypted form thanks to a key (usually a data key)</li>
+<li>The encryption / decryption keys must be managed somewhere, and</li>
+</ul><p>the server must have access to it</p>
+<p>Encryption Decryption</p>
+<p>+ +</p>
+<p>HTTP(S) HTTP(S)</p>
+<p>Object Object</p>
+<p>Data key Data key</p>
+<p>AWS Service (e.g., S3)</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-473">
+          <div class="slide-number">Slide 473</div>
+          <div class="slide-content"><p>Why encryption?</p>
+<p>Client-side encryption</p>
+<ul><li>Data is encrypted by the client and never decrypted by the server</li>
+<li>Data will be decrypted by a receiving client</li>
+<li>The server should not be able to decrypt the data</li>
+<li>Could leverage Envelope Encryption</li>
+</ul><p>store</p>
+<p>Encryption</p>
+<p>+</p>
+<p>Data key</p>
+<p>Object</p>
+<p>(client-side)</p>
+<p>retrieve</p>
+<p>+ Encrypted object</p>
+<p>Decryption</p>
+<p>Data key</p>
+<p>Object</p>
+<p>(client-side)</p>
+<p>Any storage service</p>
+<p>(FTP, S3, …)</p>
+<p>Client</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-474">
+          <div class="slide-number">Slide 474</div>
+          <div class="slide-content"><p>AWS KMS (Key Management</p>
+<p>Service)</p>
+<ul><li>Anytime you hear “encryption” for an AWS service, it’s most likely</li>
+</ul><p>KMS</p>
+<ul><li>AWS manages encryption keys for us</li>
+<li>Fully integrated with IAM for authorization</li>
+<li>Easy way to control access to your data</li>
+<li>Able to audit KMS Key usage using CloudTrail</li>
+<li>Seamlessly integrated into most AWS services (EBS, S3, RDS,</li>
+</ul><p>SSM…)</p>
+<ul><li>Never ever store your secrets in plaintext, especially in your</li>
+</ul><p>code!</p>
+<ul><li>KMS Key Encryption also available through API calls (SDK, CLI)</li>
+<li>Encrypted secrets can be stored in the code / environment variables</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-475">
+          <div class="slide-number">Slide 475</div>
+          <div class="slide-content"><p>KMS Keys Types</p>
+<ul><li>KMS Keys is the new name of KMS Customer Master Key</li>
+<li>Symmetric (AES-256 keys)</li>
+<li>Single encryption key that is used to Encrypt and Decrypt</li>
+<li>AWS services that are integrated with KMS use Symmetric CMKs</li>
+<li>You never get access to the KMS Key unencrypted (must call KMS API to use)</li>
+<li>Asymmetric (RSA &amp; ECC key pairs)</li>
+<li>Public (Encrypt) and Private Key (Decrypt) pair</li>
+<li>Used for Encrypt/Decrypt, or Sign/Verify operations</li>
+<li>The public key is downloadable, but you can’t access the Private Key</li>
+</ul><p>unencrypted</p>
+<ul><li>Use case: encryption outside of AWS by users who can’t call the KMS API</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-476">
+          <div class="slide-number">Slide 476</div>
+          <div class="slide-content"><p>AWS KMS (Key Management Service)</p>
+<ul><li>Types of KMS Keys:</li>
+<li>AWS Owned Keys (free): SSE-S3, SSE-SQS, SSE-DDB (default key)</li>
+<li>AWS Managed Key: free (aws/service-name, example: aws/rds or aws/ebs)</li>
+<li>Customer managed keys created in KMS: $1 / month</li>
+<li>Customer managed keys imported: $1 / month</li>
+<li>+ pay for API call to KMS ($0.03 / 10000 calls)</li>
+<li>Automatic Key rotation:</li>
+<li>AWS-managed KMS Key: automatic every 1 year</li>
+<li>Customer-managed KMS Key: (must be enabled) automatic &amp; on-demand</li>
+<li>Imported KMS Key: only manual rotation possible using alias</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-477">
+          <div class="slide-number">Slide 477</div>
+          <div class="slide-content"><p>Copying Snapshots across regions</p>
+<p>Region eu-west-2 Region ap-southeast-2</p>
+<p>EBS Volume EBS Volume</p>
+<p>Encrypted Encrypted</p>
+<p>With KMS KMS Key A With KMS KMS Key B</p>
+<p>EBS Snapshot EBS Snapshot</p>
+<p>Encrypted Encrypted</p>
+<p>With KMS With KMS</p>
+<p>KMS Key A KMS Key B</p>
+<p>KMS ReEncrypt with KMS Key B</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-478">
+          <div class="slide-number">Slide 478</div>
+          <div class="slide-content"><p>AWS Macie</p>
+<ul><li>Amazon Macie is a fully managed data security and data privacy</li>
+</ul><p>service that uses machine learning and pattern matching to</p>
+<p>discover and protect your sensitive data in AWS.</p>
+<ul><li>Macie helps identify and alert you to sensitive data, such as</li>
+</ul><p>personally identifiable information (PII)</p>
+<p>analyze notify integrations</p>
+<p>S3 Buckets Macie Amazon</p>
+<p>Discover Sensitive Data (PII) EventBridge</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-479">
+          <div class="slide-number">Slide 479</div>
+          <div class="slide-content"><p>AWS Secrets Manager</p>
+<ul><li>Newer service, meant for storing secrets</li>
+<li>Capability to force rotation of secrets every X days</li>
+<li>Automate generation of secrets on rotation (uses Lambda)</li>
+<li>Integration with Amazon RDS (MySQL, PostgreSQL, Aurora)</li>
+<li>Secrets are encrypted using KMS</li>
+<li>Mostly meant for RDS integration</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-480">
+          <div class="slide-number">Slide 480</div>
+          <div class="slide-content"><p>AWS Secrets Manager – Multi-Region</p>
+<p>Secrets</p>
+<ul><li>Replicate Secrets across multiple AWS Regions</li>
+<li>Secrets Manager keeps read replicas in sync with the primary Secret</li>
+<li>Ability to promote a read replica Secret to a standalone Secret</li>
+<li>Use cases: multi-region apps, disaster recovery strategies, multi-</li>
+</ul><p>region DB…</p>
+<p>us-east-1 (Primary) us-west-2 (Secondary)</p>
+<p>Secrets replicate Secrets</p>
+<p>Manager Manager</p>
+<p>MySecret-A MySecret-A</p>
+<p>(primary) (replica)</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-481">
+          <div class="slide-number">Slide 481</div>
+          <div class="slide-content"><p>Amazon Cognito</p>
+<ul><li>Give users an identity to interact with our web or mobile application</li>
+<li>Cognito User Pools:</li>
+<li>Sign in functionality for app users</li>
+<li>Integrate with API Gateway &amp; Application Load Balancer</li>
+<li>Cognito Identity Pools (Federated Identity):</li>
+<li>Provide AWS credentials to users so they can access AWS resources directly</li>
+<li>Integrate with Cognito User Pools as an identity provider</li>
+<li>Cognito vs IAM: “hundreds of users”, ”mobile users”, “authenticate</li>
+</ul><p>with SAML”</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-482">
+          <div class="slide-number">Slide 482</div>
+          <div class="slide-content"><p>Cognito User Pools (CUP) – User</p>
+<p>Features</p>
+<ul><li>Create a serverless database of user for your web &amp; mobile</li>
+</ul><p>apps</p>
+<ul><li>Simple login: Username (or email) / password combination</li>
+<li>Password reset</li>
+<li>Email &amp; Phone Number Verification</li>
+<li>Multi-factor authentication (MFA)</li>
+<li>Federated Identities: users from Facebook, Google, SAML…</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-483">
+          <div class="slide-number">Slide 483</div>
+          <div class="slide-content"><p>Cognito User Pools (CUP) - Integrations</p>
+<ul><li>CUP integrates with API Gateway and Application Load Balancer</li>
+</ul><p>Cognito User Pools</p>
+<p>Authenticate Authenticate</p>
+<p>Cognito User Pools</p>
+<p>Retrieve token</p>
+<p>Evaluate Cognito Token</p>
+<p>REST API +</p>
+<p>Pass Token Application Load Balancer</p>
+<p>+ Listeners &amp; Rules</p>
+<p>backend Target Group</p>
+<p>API Gateway</p>
+<p>Backend</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-484">
+          <div class="slide-number">Slide 484</div>
+          <div class="slide-content"><p>Cognito Identity Pools (Federated</p>
+<p>Identities)</p>
+<ul><li>Get identities for “users” so they obtain temporary AWS</li>
+</ul><p>credentials</p>
+<ul><li>Users source can be Cognito User Pools, 3rd party logins, etc…</li>
+<li>Users can then access AWS services directly or through API</li>
+</ul><p>Gateway</p>
+<ul><li>The IAM policies applied to the credentials are defined in Cognito</li>
+<li>They can be customized based on the user_id for fine grained</li>
+</ul><p>control</p>
+<ul><li>Default IAM roles for authenticated and guest users</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-485">
+          <div class="slide-number">Slide 485</div>
+          <div class="slide-content"><p>Cognito Identity Pools – Diagram</p>
+<p>Login and Get Token</p>
+<p>Social Identity Provider</p>
+<p>Web &amp; Mobile Exchange token Cognito Identity Pools</p>
+<p>for temporary</p>
+<p>Applications</p>
+<p>AWS credentials validate</p>
+<p>Direct access to AWS</p>
+<p>Cognito</p>
+<p>User Pools</p>
+<p>Private S3 Bucket DynamoDB Table</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-486">
+          <div class="slide-number">Slide 486</div>
+          <div class="slide-content"><p>Cognito Identity Pools</p>
+<p>Row Level Security in DynamoDB</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-487">
+          <div class="slide-number">Slide 487</div>
+          <div class="slide-content"><p>AWS WAF – Web Application Firewall</p>
+<ul><li>Protects your web applications from common web exploits</li>
+</ul><p>(Layer 7)</p>
+<ul><li>Layer 7 is HTTP (vs Layer 4 is TCP/UDP)</li>
+<li>Deploy on</li>
+<li>Application Load Balancer</li>
+<li>API Gateway</li>
+<li>CloudFront</li>
+<li>AppSync GraphQL API</li>
+<li>Cognito User Pool</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-488">
+          <div class="slide-number">Slide 488</div>
+          <div class="slide-content"><p>AWS WAF – Web Application Firewall</p>
+<ul><li>Define Web ACL (Web Access Control List) Rules:</li>
+<li>IP Set: up to 10,000 IP addresses – use multiple Rules for more IPs</li>
+<li>HTTP headers, HTTP body, or URI strings Protects from common</li>
+</ul><p>attack - SQL injection and Cross-Site Scripting (XSS)</p>
+<ul><li>Size constraints, geo-match (block countries)</li>
+<li>Rate-based rules (to count occurrences of events) – for DDoS</li>
+</ul><p>protection</p>
+<ul><li>Web ACL are Regional except for CloudFront</li>
+<li>A rule group is a reusable set of rules that you can add to a</li>
+</ul><p>web ACL</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-489">
+          <div class="slide-number">Slide 489</div>
+          <div class="slide-content"><p>VPC – Crash Course</p>
+<ul><li>VPC is something you should know in depth for the AWS Certified</li>
+</ul><p>Solutions Architect Associate &amp; AWS Certified SysOps Administrator</p>
+<ul><li>At the AWS Certified Developer Level, you should know about:</li>
+<li>VPC, Subnets, Internet Gateways &amp; NAT Gateways</li>
+<li>Security Groups, Network ACL (NACL), VPC Flow Logs</li>
+<li>VPC Peering, VPC Endpoints</li>
+<li>Site to Site VPN &amp; Direct Connect</li>
+<li>I will just give you an overview, less than1 or 2 questions at your</li>
+</ul><p>exam.</p>
+<ul><li>Later in the course, I will be highlighting when VPC concepts are</li>
+</ul><p>helpful</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-490">
+          <div class="slide-number">Slide 490</div>
+          <div class="slide-content"><p>VPC &amp; Subnets</p>
+<p>Primer www</p>
+<ul><li>VPC: private network to deploy your</li>
+</ul><p>resources (regional resource)</p>
+<ul><li>Subnets allow you to partition your</li>
+</ul><p>network inside your VPC</p>
+<p>(Availability Zone resource)</p>
+<ul><li>A public subnet is a subnet that is</li>
+</ul><p>Public Subnet</p>
+<p>accessible from the internet</p>
+<ul><li>A private subnet is a subnet that is</li>
+</ul><p>not accessible from the internet</p>
+<ul><li>To define access to the internet and</li>
+</ul><p>between subnets, we use Route</p>
+<p>Private Subnet</p>
+<p>Tables.</p>
+<p>AZ A</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-491">
+          <div class="slide-number">Slide 491</div>
+          <div class="slide-content"><p>VPC Diagram</p>
+<p>AWS Cloud</p>
+<p>Region</p>
+<p>Availability Zone 1 Availability Zone 2</p>
+<p>VPC</p>
+<p>VPC CIDR Range:</p>
+<p>10.0.0.0/16</p>
+<p>Public subnet Public subnet</p>
+<p>Private subnet Private subnet</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-492">
+          <div class="slide-number">Slide 492</div>
+          <div class="slide-content"><p>Internet Gateway &amp; NAT</p>
+<p>Gateways www</p>
+<ul><li>Internet Gateways helps our VPC</li>
+</ul><p>IGW</p>
+<p>instances connect with the internet</p>
+<ul><li>Public Subnets have a route to the</li>
+</ul><p>internet gateway. NAT</p>
+<p>Public Subnet</p>
+<ul><li>NAT Gateways (AWS-managed)</li>
+</ul><p>&amp; NAT Instances (self-managed)</p>
+<p>allow your instances in your</p>
+<p>Private Subnet</p>
+<p>Private Subnets to access the</p>
+<p>internet while remaining private AZ A</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-493">
+          <div class="slide-number">Slide 493</div>
+          <div class="slide-content"><p>Network ACL &amp; Security Groups</p>
+<ul><li>NACL (Network ACL)</li>
+</ul><p>VPC</p>
+<ul><li>A firewall which controls traffic from and Public subnet</li>
+</ul><p>to subnet</p>
+<ul><li>Can have ALLOW and DENY rules</li>
+<li>Are attached at the Subnet level</li>
+</ul><p>NACL</p>
+<ul><li>Rules only include IP addresses</li>
+<li>Security Groups</li>
+<li>A firewall that controls traffic to and from</li>
+</ul><p>an ENI / an EC2 Instance</p>
+<ul><li>Can have only ALLOW rules</li>
+<li>Rules include IP addresses and other</li>
+</ul><p>security groups</p>
+<p>Security group</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-494">
+          <div class="slide-number">Slide 494</div>
+          <div class="slide-content"><p>Network ACLs vs Security Groups</p>
+<p>https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Secur</p>
+<p>ity.html#VPC_Security_Comparison</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-495">
+          <div class="slide-number">Slide 495</div>
+          <div class="slide-content"><p>VPC Flow Logs</p>
+<ul><li>Capture information about IP traffic going into your interfaces:</li>
+<li>VPC Flow Logs</li>
+<li>Subnet Flow Logs</li>
+<li>Elastic Network Interface Flow Logs</li>
+<li>Helps to monitor &amp; troubleshoot connectivity issues. Example:</li>
+<li>Subnets to internet</li>
+<li>Subnets to subnets</li>
+<li>Internet to subnets</li>
+<li>Captures network information from AWS managed interfaces too:</li>
+</ul><p>Elastic Load Balancers, ElastiCache, RDS, Aurora, etc…</p>
+<ul><li>VPC Flow logs data can go to S3, CloudWatch Logs, and Kinesis</li>
+</ul><p>Data Firehose</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-496">
+          <div class="slide-number">Slide 496</div>
+          <div class="slide-content"><p>VPC Peering</p>
+<ul><li>Connect two VPC, privately</li>
+</ul><p>VPC peering</p>
+<p>using AWS’ network</p>
+<p>A →B</p>
+<p>VPC A</p>
+<p>VPC B</p>
+<ul><li>Make them behave as if they</li>
+</ul><p>were in the same network</p>
+<ul><li>Must not have overlapping</li>
+</ul><p>CIDR (IP address range)</p>
+<p>VPC C</p>
+<ul><li>VPC Peering connection is not</li>
+</ul><p>VPC peering VPC peering</p>
+<p>transitive (must be established</p>
+<p>A →C B →C</p>
+<p>for each VPC that need to</p>
+<p>communicate with one another)</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-497">
+          <div class="slide-number">Slide 497</div>
+          <div class="slide-content"><p>VPC Endpoints</p>
+<ul><li>Endpoints allow you to connect to AWS</li>
+</ul><p>VPC</p>
+<p>Services using a private network</p>
+<p>Private subnet</p>
+<p>instead of the public www network</p>
+<ul><li>This gives you enhanced security and</li>
+</ul><p>lower latency to access AWS services</p>
+<p>VPC Endpoint</p>
+<p>Interface (ENI)</p>
+<ul><li>VPC Endpoint Gateway: S3 &amp;</li>
+</ul><p>DynamoDB</p>
+<p>VPC Endpoint</p>
+<ul><li>VPC Endpoint Interface: most services</li>
+</ul><p>Gateway</p>
+<p>(including S3 &amp; DynamoDB)</p>
+<ul><li>Only used within your VPC</li>
+</ul><p>S3 DynamoDB CloudWatch</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-498">
+          <div class="slide-number">Slide 498</div>
+          <div class="slide-content"><p>Site to Site VPN &amp; Direct Connect</p>
+<ul><li>Site to Site VPN</li>
+<li>Connect an on-premises VPN to AWS</li>
+<li>The connection is automatically encrypted Public www Public www</li>
+<li>Goes over the public internet</li>
+<li>Direct Connect (DX)</li>
+<li>Establish a physical connection between on- Site-to-Site VPN</li>
+</ul><p>premises and AWS</p>
+<p>(encrypted)</p>
+<ul><li>The connection is private, secure and fast</li>
+<li>Goes over a private network</li>
+<li>Takes at least a month to establish</li>
+</ul><p>On-premises DC VPC</p>
+<p>Private Private</p>
+<p>Direct Connect</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-499">
+          <div class="slide-number">Slide 499</div>
+          <div class="slide-content"><p>VPC Closing Comments</p>
+<ul><li>VPC: Virtual Private Cloud</li>
+<li>Subnets: Tied to an AZ, network partition of the VPC</li>
+<li>Internet Gateway: at the VPC level, provide Internet Access</li>
+<li>NAT Gateway / Instances: give internet access to private subnets</li>
+<li>NACL: Stateless, subnet rules for inbound and outbound</li>
+<li>Security Groups: Stateful, operate at the EC2 instance level or ENI</li>
+<li>VPC Peering: Connect two VPC with non overlapping IP ranges, non transitive</li>
+<li>VPC Endpoints: Provide private access to AWS Services within VPC</li>
+<li>VPC Flow Logs: network traffic logs</li>
+<li>Site to Site VPN: VPN over public internet between on-premises DC and AWS</li>
+<li>Direct Connect: direct private connection to a AWS</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-500">
+          <div class="slide-number">Slide 500</div>
+          <div class="slide-content"><p>VPC note – AWS Certified Developer</p>
+<ul><li>Don’t stress if you didn’t understand everything in that section</li>
+<li>I will be highlighting in the course the specific VPC features we</li>
+</ul><p>need</p>
+<ul><li>Feel free to revisit that section after you’re done in the course !</li>
+<li>Moving on ☺</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-501">
+          <div class="slide-number">Slide 501</div>
+          <div class="slide-content"><p>AWS PrivateLink (VPC Endpoint</p>
+<p>Services)</p>
+<ul><li>Most secure &amp; scalable way to expose a service to 1000s of VPCs</li>
+<li>Does not require VPC peering, internet gateway, NAT, route tables…</li>
+<li>Requires a network load balancer (Service VPC) and ENI (Customer</li>
+</ul><p>VPC)</p>
+<p>3rd party VPC</p>
+<p>Your VPC</p>
+<p>AWS Private Link</p>
+<p>AWS</p>
+<p>private</p>
+<p>Application Network Elastic Network Consumer</p>
+<p>service Load Balancer Interface (ENI) Application</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+    </div>
+
+    <div class="section-nav">
+      <a href="index.html" class="btn-back">← Back to Overview</a>
+    </div>
+  </main>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

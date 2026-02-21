@@ -1,0 +1,2174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agentic AI – AWS GenAI Developer Pro (AIP-C01)</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="logo">☁️ AIP-C01</span>
+      <button class="close-btn" onclick="toggleSidebar()">✕</button>
+    </div>
+    <ul class="nav-list">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li class="divider">Course Sections</li>
+      <li class=""><a href="generative-ai-fundamentals-and-bedrock.html">Generative AI Fundamentals and Bedrock</a></li>
+<li class=""><a href="managing-data-for-generative-ai.html">Managing Data for Generative AI</a></li>
+<li class="active"><a href="agentic-ai.html">Agentic AI</a></li>
+<li class=""><a href="operations-efficiency-and-optimization.html">Operations Efficiency and Optimization</a></li>
+<li class=""><a href="managing-models-with-sagemaker-ai.html">Managing Models with SageMaker AI</a></li>
+<li class=""><a href="more-tools-for-building-ai-applications.html">More Tools for Building AI Applications</a></li>
+<li class=""><a href="governance-and-qa.html">Governance and QA</a></li>
+<li class=""><a href="security-identity-and-compliance.html">Security, Identity, and Compliance</a></li>
+<li class=""><a href="other-services-analytics.html">Other Services - Analytics</a></li>
+<li class=""><a href="other-services-compute-containers.html">Other Services - Compute & Containers</a></li>
+<li class=""><a href="other-services-database.html">Other Services - Database</a></li>
+<li class=""><a href="other-services-developer-tools.html">Other Services - Developer Tools</a></li>
+<li class=""><a href="other-services-machine-learning.html">Other Services - Machine Learning</a></li>
+<li class=""><a href="other-services-storage-networking.html">Other Services - Storage & Networking</a></li>
+<li class=""><a href="exam-preparation.html">Exam Preparation</a></li>
+
+    </ul>
+  </nav>
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+      <div class="breadcrumb">
+        <a href="index.html">AWS GenAI Pro</a> › <span>Agentic AI</span>
+      </div>
+      <div class="page-meta">110 slides · Pages 109–218</div>
+    </header>
+
+    <div class="section-hero">
+      <h1>Agentic AI</h1>
+      <p class="section-subtitle">AWS Certified Generative AI Developer – Professional (AIP-C01)</p>
+      <div class="section-stats">
+        <span>📄 110 slides</span>
+        <span>📑 Pages 109–218</span>
+      </div>
+    </div>
+
+    <div class="slides-container">
+      
+        <div class="slide" id="slide-109">
+          <div class="slide-number">Slide 109</div>
+          <div class="slide-content"><p>Amazon CloudWatch Metrics</p>
+<ul><li>CloudWatch provides metrics for every services in AWS</li>
+<li>Metric is a variable to monitor (CPUUtilization, NetworkIn…)</li>
+<li>Metrics belong to namespaces</li>
+<li>Dimension is an attribute of a metric (instance id, environment,</li>
+</ul><p>etc…).</p>
+<ul><li>Up to 30 dimensions per metric</li>
+<li>Metrics have timestamps</li>
+<li>Can create CloudWatch dashboards of metrics</li>
+<li>Can create CloudWatch Custom Metrics (for the RAM for example)</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-110">
+          <div class="slide-number">Slide 110</div>
+          <div class="slide-content"><p>CloudWatch Metric Streams</p>
+<p>CloudWatch Metrics</p>
+<ul><li>Continually stream CloudWatch</li>
+</ul><p>metrics to a destination of your</p>
+<p>choice, with near-real-time Stream near-real-time</p>
+<p>delivery and low latency.</p>
+<ul><li>Amazon Kinesis Data Firehose (and</li>
+</ul><p>Kinesis Data Firehose</p>
+<p>then its destinations)</p>
+<ul><li>3rd party service provider: Datadog,</li>
+</ul><p>Dynatrace, New Relic, Splunk, Sumo</p>
+<p>Logic…</p>
+<ul><li>Option to filter metrics to only</li>
+</ul><p>Amazon S3 Amazon Amazon</p>
+<p>stream a subset of them</p>
+<p>Redshift OpenSearch</p>
+<p>Athena</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-111">
+          <div class="slide-number">Slide 111</div>
+          <div class="slide-content"><p>Amazon Transcribe</p>
+<ul><li>Automatically convert speech to text</li>
+<li>Uses a deep learning process called automatic speech recognition (ASR) to</li>
+</ul><p>convert speech to text quickly and accurately</p>
+<ul><li>Automatically remove Personally Identifiable Information (PII) using</li>
+</ul><p>Redaction</p>
+<ul><li>Supports Automatic Language Identification for multi-lingual audio</li>
+<li>Use cases:</li>
+<li>transcribe customer service calls</li>
+<li>automate closed captioning and subtitling</li>
+<li>generate metadata for media assets to create a fully searchable archive</li>
+</ul><p>”Hello my name is Stéphane.</p>
+<p>I hope you’re enjoying the course!</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-112">
+          <div class="slide-number">Slide 112</div>
+          <div class="slide-content"><p>Amazon Transcribe – Improving Accuracy</p>
+<ul><li>Allows Transcribe to capture domain-specific or non- Speech</li>
+</ul><p>standard terms (e.g., technical words, acronyms, “We can use AWS Microservices …”</p>
+<p>jargon…)</p>
+<ul><li>Custom Vocabularies (for words)</li>
+</ul><p>Custom</p>
+<ul><li>Add specific words, phrases, domain-specific terms</li>
+</ul><p>Vocabularies</p>
+<ul><li>Good for brand names, acronyms…</li>
+<li>Increase recognition of a new word by providing hints (such as</li>
+</ul><p>pronunciation..)</p>
+<p>Custom</p>
+<ul><li>Custom Language Models (for context) Language</li>
+<li>Train Transcribe model on your own domain-specific text data</li>
+</ul><p>Transcribe</p>
+<ul><li>Good for transcribing large volumes of domain-specific speech</li>
+<li>Learn the context associated with a given word</li>
+<li>Note: use both for the highest transcription accuracy before</li>
+</ul><p>“… A USA</p>
+<p>“… AWS</p>
+<p>My crow services …”</p>
+<p>Microservices … ”</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-113">
+          <div class="slide-number">Slide 113</div>
+          <div class="slide-content"><p>Transcribe – Toxicity Detection</p>
+<ul><li>ML-powered, voice-based toxicity detection capability</li>
+<li>Leverages speech cues: tone and pitch, and text-based cues</li>
+<li>Toxicity categories: sexual harassment, hate speech, threat, abuse, profanity, insult, and</li>
+</ul><p>graphic….</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-114">
+          <div class="slide-number">Slide 114</div>
+          <div class="slide-content"><p>Amazon Comprehend</p>
+<ul><li>For Natural Language Processing – NLP</li>
+<li>Fully managed and serverless service</li>
+<li>Uses machine learning to find insights and relationships in text</li>
+<li>Language of the text</li>
+<li>Extracts key phrases, places, people, brands, or events</li>
+<li>Understands how positive or negative the text is</li>
+<li>Analyzes text using tokenization and parts of speech</li>
+<li>Automatically organizes a collection of text files by topic</li>
+<li>Sample use cases:</li>
+<li>analyze customer interactions (emails) to find what leads to a positive or negative</li>
+</ul><p>experience</p>
+<ul><li>Create and groups articles by topics that Comprehend will uncover</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-115">
+          <div class="slide-number">Slide 115</div>
+          <div class="slide-content"><p>Comprehend – Custom Classification</p>
+<ul><li>Organize documents into categories (classes) that you define</li>
+<li>Example: categorize customer emails so that you can provide</li>
+</ul><p>guidance based on the type of the customer request</p>
+<ul><li>Supports different document types (text, PDF, Word, images...)</li>
+<li>Real-time Analysis – single document, synchronous</li>
+<li>Async Analysis – multiple documents (batch), Asynchronous</li>
+</ul><p>Document</p>
+<p>Custom</p>
+<p>Classifier</p>
+<p>Custom</p>
+<p>Classifier</p>
+<p>Training</p>
+<p>Data</p>
+<p>Training Data Amazon S3 Comprehend</p>
+<p>Complaint</p>
+<p>Document</p>
+<p>(tagged)</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-116">
+          <div class="slide-number">Slide 116</div>
+          <div class="slide-content"><p>Named Entity Recognition (NER)</p>
+<ul><li>NER – Extracts predefined, general-purpose entities like people,</li>
+</ul><p>places, organizations, dates, and other standard categories, from</p>
+<p>text</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-117">
+          <div class="slide-number">Slide 117</div>
+          <div class="slide-content"><p>Comprehend – Custom Entity</p>
+<p>Recognition</p>
+<ul><li>Analyze text for specific terms and noun-based phrases</li>
+<li>Extract terms like policy numbers, or phrases that imply a</li>
+</ul><p>customer escalation, anything specific to your business</p>
+<ul><li>Train the model with custom data such as a list of the entities</li>
+</ul><p>and documents that contain them</p>
+<ul><li>Real-time or Async analysis</li>
+</ul><p>Document</p>
+<p>Custom</p>
+<p>Entity</p>
+<p>Recognizer</p>
+<p>Custom</p>
+<p>Entity</p>
+<p>Recognizer</p>
+<p>Training</p>
+<p>Data</p>
+<p>Training Data Amazon S3 Comprehend</p>
+<p>Policy number</p>
+<p>Document</p>
+<p>(tagged)</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-118">
+          <div class="slide-number">Slide 118</div>
+          <div class="slide-content"><p>Using Comprehend and</p>
+<p>Lambda for Data Quality</p>
+<ul><li>A Lambda function can call Amazon</li>
+</ul><p>Comprehend before data hits</p>
+<p>Bedrock to…</p>
+<ul><li>Redact PII</li>
+<li>Extract entities</li>
+<li>Detect language Amazon Bedrock Data AWS Lambda Amazon Bedrock</li>
+</ul><p>Automation</p>
+<ul><li>Classify the data</li>
+<li>Example applications</li>
+<li>Clean up transcripts before going into a</li>
+</ul><p>Amazon Simple Storage Amazon Comprehend</p>
+<p>Knowledge Base Service (Amazon S3)</p>
+<ul><li>Pre-screen user-generated content</li>
+</ul><p>before feeding it to an agent</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-119">
+          <div class="slide-number">Slide 119</div>
+          <div class="slide-content"><p>Amazon Comprehend Medical</p>
+<ul><li>A HIPAA-certified version of Comprehend</li>
+</ul><p>for medical use</p>
+<ul><li>Pre-trained for extracting health data</li>
+</ul><p>(prescriptions, procedures, diagnoses,</p>
+<p>protected health information (PHI)) as</p>
+<p>entities</p>
+<ul><li>Separate API for PHI (DetectPHI instead</li>
+</ul><p>of DetectEntities)</p>
+<ul><li>Can search for specific medical ontologies</li>
+<li>Individual documents or batch in S3</li>
+<li>Integrates with VPC Endpoints /</li>
+</ul><p>PrivateLink for security</p>
+<ul><li>Could potentially be used in a post-</li>
+</ul><p>processing scenario to detect PHI</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-120">
+          <div class="slide-number">Slide 120</div>
+          <div class="slide-content"><p>Amazon Opensearch</p>
+<p>Service</p>
+<p>Petabyte-scale analysis and reporting</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-121">
+          <div class="slide-number">Slide 121</div>
+          <div class="slide-content"><p>What is Opensearch?</p>
+<ul><li>A fork of Elasticsearch and</li>
+</ul><p>Kibana</p>
+<ul><li>A search engine</li>
+<li>An analysis tool</li>
+<li>A visualization tool (Dashboards</li>
+</ul><p>= Kibana)</p>
+<ul><li>A data pipeline</li>
+<li>Kinesis replaces Beats &amp;</li>
+</ul><p>LogStash</p>
+<ul><li>Horizontally scalable</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-122">
+          <div class="slide-number">Slide 122</div>
+          <div class="slide-content"><p>What are Dashboards?</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-123">
+          <div class="slide-number">Slide 123</div>
+          <div class="slide-content"><p>Opensearch applications</p>
+<ul><li>Full-text search</li>
+<li>Log analytics</li>
+<li>Application monitoring</li>
+<li>Security analytics</li>
+<li>Clickstream analytics</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-124">
+          <div class="slide-number">Slide 124</div>
+          <div class="slide-content"><p>Opensearch concepts</p>
+<p>documents types indices</p>
+<p>Documents are the things you’re A type defines the schema and An index powers search into all</p>
+<p>searching for. They can be more mapping shared by documents documents within a collection of</p>
+<p>than text – any structured JSON that represent the same sort of types. They contain inverted</p>
+<p>data works. Every document has a thing. (A log entry, an indices that let you search across</p>
+<p>unique ID, and a type. encyclopedia article, etc.) everything within them at once.</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-125">
+          <div class="slide-number">Slide 125</div>
+          <div class="slide-content"><p>An index is split into shards</p>
+<p>Documents are hashed to a particular shard.</p>
+<p>1 2 3 …</p>
+<p>Shakespeare</p>
+<p>Each shard may be on a different node in a cluster.</p>
+<p>Every shard is a self-contained Lucene index of its own.</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-126">
+          <div class="slide-number">Slide 126</div>
+          <div class="slide-content"><p>Redundancy</p>
+<p>This index has two primary shards and two replicas.</p>
+<p>Your application should round-robin requests amongst nodes.</p>
+<p>Node 1 Node 2 Node 3</p>
+<p>Primary Primary</p>
+<p>Replica 0 Replica 0 Replica 1 Replica 1</p>
+<p>1 0</p>
+<p>Write requests are routed to the primary shard, then replicated</p>
+<p>Read requests are routed to the primary or any replica</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-127">
+          <div class="slide-number">Slide 127</div>
+          <div class="slide-content"><p>Amazon OpenSearch Service (Managed)</p>
+<ul><li>Fully-managed (but not serverless)</li>
+<li>There is a separate serverless option now</li>
+<li>Scale up or down without downtime</li>
+<li>But this isn’t automatic</li>
+<li>Pay for what you use</li>
+<li>Instance-hours, storage, data transfer</li>
+<li>Network isolation</li>
+<li>AWS integration</li>
+<li>S3 buckets (via Lambda to Kinesis)</li>
+<li>Kinesis Data Streams</li>
+<li>DynamoDB Streams</li>
+<li>CloudWatch / CloudTrail</li>
+<li>Zone awareness</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-128">
+          <div class="slide-number">Slide 128</div>
+          <div class="slide-content"><p>Amazon Opensearch options</p>
+<ul><li>Dedicated master node(s)</li>
+<li>Choice of count and instance types</li>
+<li>“Domains”</li>
+<li>Snapshots to S3</li>
+<li>Zone Awareness</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-129">
+          <div class="slide-number">Slide 129</div>
+          <div class="slide-content"><p>Cold / warm / ultrawarm / hot storage</p>
+<ul><li>Standard data nodes use “hot” storage</li>
+<li>Instance stores or EBS volumes / fastest performance</li>
+<li>UltraWarm (warm) storage uses S3 + caching</li>
+<li>Best for indices with few writes (like log data / immutable data)</li>
+<li>Slower performance but much lower cost</li>
+<li>Must have a dedicated master node</li>
+<li>Cold storage</li>
+<li>Also uses S3</li>
+<li>Even cheaper</li>
+<li>For “periodic research or forensic analysis on older data”</li>
+<li>Must have dedicated master and have UltraWarm enabled too.</li>
+<li>Not compatible with T2 or T3 instance types on data nodes</li>
+<li>If using fine-grained access control, must map users to</li>
+</ul><p>cold_manager role in OpenSearch Dashboards</p>
+<ul><li>Data may be migrated between different storage types</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-130">
+          <div class="slide-number">Slide 130</div>
+          <div class="slide-content"><p>Index State Management</p>
+<ul><li>Automates index management policies</li>
+<li>Examples</li>
+<li>Delete old indices after a period of time</li>
+<li>Move indices into read only state after a period of</li>
+</ul><p>time</p>
+<ul><li>Move indices from hot -&gt; UltraWarm -&gt; cold</li>
+</ul><p>storage over time</p>
+<ul><li>Reduce replica count over time</li>
+<li>Automate index snapshots</li>
+<li>ISM policies are run every 30-48 minutes</li>
+<li>Random jitter to ensure they don’t all run at once</li>
+<li>Can even send notifications when done</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-131">
+          <div class="slide-number">Slide 131</div>
+          <div class="slide-content"><p>More Index Management</p>
+<ul><li>Index rollups</li>
+<li>Periodically roll up old data into</li>
+</ul><p>summarized indices</p>
+<ul><li>Saves storage costs</li>
+<li>New index may have fewer fields, coarser</li>
+</ul><p>time buckets</p>
+<ul><li>Index transforms</li>
+<li>Like rollups, but purpose is to create a</li>
+</ul><p>different view to analyze data differently.</p>
+<ul><li>Groupings and aggregations</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-132">
+          <div class="slide-number">Slide 132</div>
+          <div class="slide-content"><p>Cross-cluster replication</p>
+<ul><li>Replicate indices / mappings /</li>
+</ul><p>metadata across domains</p>
+<ul><li>Ensures high availability in an</li>
+</ul><p>outage</p>
+<ul><li>Replicate data geographically for</li>
+</ul><p>better latency</p>
+<ul><li>“Follower” index pulls data from</li>
+</ul><p>“leader” index</p>
+<ul><li>Requires fine-grained access control</li>
+</ul><p>and node-to-node encryption</p>
+<ul><li>“Remote Reindex” allows copying</li>
+</ul><p>indices from one cluster to another</p>
+<p>on demand</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-133">
+          <div class="slide-number">Slide 133</div>
+          <div class="slide-content"><p>Opensearch Stability</p>
+<ul><li>3 dedicated master nodes is best</li>
+<li>Avoids “split brain”</li>
+<li>Don’t run out of disk space</li>
+<li>Minimum storage requirement is roughly:</li>
+</ul><p>Source Data * (1 + Number of Replicas) * 1.45</p>
+<ul><li>Choosing the number of shards</li>
+<li>(source data + room to grow) * (1 + indexing</li>
+</ul><p>overhead) / desired shard size</p>
+<ul><li>In rare cases you may need to limit the number of</li>
+</ul><p>shards per node</p>
+<ul><li>You usually run out of disk space first.</li>
+<li>Choosing instance types</li>
+<li>At least 3 nodes</li>
+<li>Mostly about storage requirements</li>
+<li>i.e., m6g.large.search, i3.4xlarge.search,</li>
+</ul><p>i3.16xlarge.search</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-134">
+          <div class="slide-number">Slide 134</div>
+          <div class="slide-content"><p>Amazon Opensearch Security</p>
+<ul><li>Resource-based policies</li>
+<li>Identity-based policies</li>
+<li>IP-based policies</li>
+<li>Request signing</li>
+<li>VPC</li>
+<li>Cognito</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-135">
+          <div class="slide-number">Slide 135</div>
+          <div class="slide-content"><p>Securing Dashboards</p>
+<ul><li>Cognito</li>
+</ul><p>AWS Cloud</p>
+<ul><li>Getting inside a VPC from</li>
+</ul><p>VPC</p>
+<p>outside is hard…</p>
+<p>Subnet</p>
+<ul><li>Nginx reverse proxy on EC2</li>
+</ul><p>forwarding to ES domain</p>
+<p>Reverse</p>
+<p>proxy</p>
+<ul><li>SSH tunnel for port 5601</li>
+<li>VPC Direct Connect</li>
+<li>VPN On-Premise</li>
+</ul><p>Active</p>
+<p>Client</p>
+<p>Directory</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-136">
+          <div class="slide-number">Slide 136</div>
+          <div class="slide-content"><p>Amazon Opensearch anti-patterns</p>
+<ul><li>OLTP</li>
+<li>No transactions</li>
+<li>RDS or DynamoDB is better</li>
+<li>Ad-hoc data querying</li>
+<li>Athena is better</li>
+<li>Remember Opensearch is primarily</li>
+</ul><p>for search &amp; analytics</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-137">
+          <div class="slide-number">Slide 137</div>
+          <div class="slide-content"><p>Amazon Opensearch performance</p>
+<ul><li>Memory pressure in the JVM can result if:</li>
+<li>You have unbalanced shard allocations across nodes</li>
+<li>You have too many shards in a cluster</li>
+<li>Fewer shards can yield better performance if JVMMemoryPressure errors</li>
+</ul><p>are encountered</p>
+<ul><li>Delete old or unused indices</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-138">
+          <div class="slide-number">Slide 138</div>
+          <div class="slide-content"><p>Amazon OpenSearch Serverless</p>
+<ul><li>On-demand autoscaling!</li>
+<li>Works against “collections” instead of</li>
+</ul><p>provisioned domains</p>
+<ul><li>May be “search” or “time series” type</li>
+<li>Always encrypted with your KMS key</li>
+<li>Data access policies</li>
+<li>Encryption at rest is required</li>
+<li>May configure security policies across many</li>
+</ul><p>collections</p>
+<ul><li>Capacity measured in Opensearch Compute</li>
+</ul><p>Units (OCUs)</p>
+<ul><li>Can set an upper limit, lower limit is always 2 for</li>
+</ul><p>indexing, 2 for search</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-139">
+          <div class="slide-number">Slide 139</div>
+          <div class="slide-content"><p>OpenSearch as a Vector Store</p>
+<ul><li>Serverless vector stores</li>
+<li>Note “serverless” does not mean “scales to zero”</li>
+<li>Remember to shut down your serverless OpenSearch instances if you’re</li>
+</ul><p>not using them – or you’ll keep getting billed</p>
+<ul><li>The exam treats OpenSearch as the primary implementation for</li>
+</ul><p>backing Bedrock Knowledge Bases</p>
+<ul><li>But I think this might get subsumed by the newer S3 vectors feature</li>
+<li>Not limited to Bedrock Knowledge Bases</li>
+</ul><p>Amazon Bedrock</p>
+<ul><li>Can also integrate with SageMaker AI and HuggingFace or</li>
+</ul><p>custom models for RAG</p>
+<ul><li>SEMANTIC vs. HYBRID search</li>
+<li>Semantic refers to vector search</li>
+<li>As we’ve seen relevancy can be elusive and dependent on your chunking</li>
+</ul><p>strategy</p>
+<p>Amazon OpenSearch Service</p>
+<ul><li>Hybrid combines vector and keyword search</li>
+<li>Requires indexing filterable keyword fields for metadata</li>
+<li>This is important</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-140">
+          <div class="slide-number">Slide 140</div>
+          <div class="slide-content"><p>OpenSearch Vector Engines</p>
+<ul><li>Top-level engines are Facebook AI Similarity (FAISS,) Non-Metric Space Library</li>
+</ul><p>(NMSLib) and Apache Lucene.</p>
+<ul><li>Exact Nearest Neighbor search</li>
+<li>This is slow</li>
+<li>Approximate Nearest Neighbor (ANN) search</li>
+<li>Heirarchical Navigable Small World ()</li>
+<li>Fast, high-quality, simple – but uses lots of RAM</li>
+<li>Inverted File (IVF)</li>
+<li>Better for really huge datasets, can trade recall for speed &amp; memory</li>
+<li>Tuning</li>
+<li>M = How many edges per node</li>
+<li>Higher M -&gt; denser graph, higher recall, but more memory</li>
+<li>ef_construction = Size of dynamic list used for KNN graph</li>
+<li>Higher -&gt; more accurate graph, slower indexing speed</li>
+<li>ef_search = How thoroughly the graph is explored</li>
+<li>Higher -&gt; higher recall, but slower search performance</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-141">
+          <div class="slide-number">Slide 141</div>
+          <div class="slide-content"><p>OpenSearch as a Vector Store: Finer</p>
+<p>Points</p>
+<ul><li>Vector compression</li>
+<li>Different ANN methods have their own</li>
+</ul><p>techniques (, IVF)</p>
+<ul><li>Dense embeddings add up fast</li>
+<li>Binary vectors</li>
+<li>Bit sequences (stored as bytes)</li>
+<li>Not embeddings, but used for fast</li>
+</ul><p>distance search</p>
+<ul><li>32x compression compared to float32</li>
+<li>FP16</li>
+<li>A form of scalar quantization</li>
+<li>Store embedding dimensions as 16-bit</li>
+</ul><p>values instead of 32-bit</p>
+<ul><li>What does</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-142">
+          <div class="slide-number">Slide 142</div>
+          <div class="slide-content"><p>OpenSearch as a Vector Store:</p>
+<p>Finer Points</p>
+<ul><li>Sharding strategies</li>
+<li>Balance shard size and CPU ratio</li>
+<li>Larger shards for semantic search (30-50 GB)</li>
+<li>Vector search benefits from fewer, larger shards</li>
+</ul><p>because there is less cross-shard coordination.</p>
+<ul><li>Smaller for hybrid (10-30 GB)</li>
+<li>On OpenSearch Serverless, this is automatic</li>
+<li>Multi-index approaches</li>
+<li>Different document types belong in their own</li>
+</ul><p>index</p>
+<ul><li>This way you can tune performance for each</li>
+</ul><p>corpus</p>
+<ul><li>You might want different embedding models for</li>
+</ul><p>different types of data</p>
+<ul><li>You’ll need some sort of query routing to pull this</li>
+</ul><p>off.</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-143">
+          <div class="slide-number">Slide 143</div>
+          <div class="slide-content"><p>OpenSearch Hierarchical Indices</p>
+<ul><li>A top level index can serve as a</li>
+</ul><p>general / summary layer</p>
+<p>Top-Level Index</p>
+<ul><li>This index is small and fast</li>
+</ul><p>ID, title, summary, topic,</p>
+<ul><li>It routes you to an index with more</li>
+</ul><p>detail index</p>
+<p>detailed data per domain</p>
+<ul><li>It’s a way to implement multiple</li>
+</ul><p>indices that are specialized for Detail-Level Index Detail-Level Index</p>
+<p>different domains or data types</p>
+<p>ID, content, more ID, content, more</p>
+<ul><li>With their own embedding models, shard</li>
+</ul><p>data… data…</p>
+<p>sizes, tuning</p>
+<ul><li>You could also use a FM to route to</li>
+</ul><p>the right index.</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-144">
+          <div class="slide-number">Slide 144</div>
+          <div class="slide-content"><p>OpenSearch as a Vector Store:</p>
+<p>Neural Plugin</p>
+<ul><li>Allows you to integrate your embedding model into an OpenSearch ingest</li>
+</ul><p>pipeline</p>
+<ul><li>“Neural queries” just allow OpenSearch to accept text queries and</li>
+</ul><p>generate embeddings under the hood for vector queries.</p>
+<ul><li>This is an alternative to using the built-in Bedrock Knowledge Base</li>
+</ul><p>integration with OpenSearch Serverless</p>
+<ul><li>The Neural plugin allows OpenSearch to call your Bedrock model for</li>
+</ul><p>embeddings as part of search or ingestion.</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-145">
+          <div class="slide-number">Slide 145</div>
+          <div class="slide-content"><p>Amazon S3 Vectors</p>
+<ul><li>Up to 90% cheaper (and a lot simpler)</li>
+<li>Create a S3 vector bucket</li>
+<li>Then create a vector index</li>
+<li>Specify dimensions and distance metric</li>
+<li>Now you can store your vector embeddings with put_vectors</li>
+<li>Include whatever metadata you want</li>
+<li>Query them with query_vectors</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-146">
+          <div class="slide-number">Slide 146</div>
+          <div class="slide-content"><p>What a S3 Vectors Put Request Looks</p>
+<p>Like</p>
+<p>s3vectors.put_vectors(</p>
+<p>vectorBucketName=&quot;media-embeddings&quot;,</p>
+<p>indexName=&quot;movies&quot;,</p>
+<p>vectors=[</p>
+<p>{</p>
+<p>&quot;key&quot;: &quot;Star Wars&quot;,</p>
+<p>&quot;data&quot;: {&quot;float32&quot;: embeddings[0]},</p>
+<p>&quot;metadata&quot;: {&quot;source_text&quot;: texts[0], &quot;genre&quot;:&quot;scifi&quot;}</p>
+<p>},</p>
+<p>{</p>
+<p>&quot;key&quot;: &quot;Jurassic Park&quot;,</p>
+<p>&quot;data&quot;: {&quot;float32&quot;: embeddings[1]},</p>
+<p>&quot;metadata&quot;: {&quot;source_text&quot;: texts[1], &quot;genre&quot;:&quot;scifi&quot;}</p>
+<p>},</p>
+<p>{</p>
+<p>&quot;key&quot;: &quot;Finding Nemo&quot;,</p>
+<p>&quot;data&quot;: {&quot;float32&quot;: embeddings[2]},</p>
+<p>&quot;metadata&quot;: {&quot;source_text&quot;: texts[2], &quot;genre&quot;:&quot;family&quot;}</p>
+<p>}</p>
+<p>]</p>
+<p>)</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-147">
+          <div class="slide-number">Slide 147</div>
+          <div class="slide-content"><p>Alternative API: s3vectors-embed-cli</p>
+<ul><li>You can use boto3 or the AWS CLI</li>
+<li>But there’s also a dedicated S3</li>
+</ul><p>vectors CLI</p>
+<ul><li>Available in GitHub as open source</li>
+<li>s3vectors-embed put</li>
+<li>Converts text or images to embeddings</li>
+</ul><p>using Bedrock, stores them.</p>
+<ul><li>s3vectors-embed query</li>
+<li>Generates an embedding for your query,</li>
+</ul><p>queries your vector index.</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-148">
+          <div class="slide-number">Slide 148</div>
+          <div class="slide-content"><p>Amazon S3 Vectors</p>
+<ul><li>You can generate your own</li>
+</ul><p>vectors with an embedding</p>
+<p>model and store them</p>
+<ul><li>Or it’s fully integrated with</li>
+</ul><p>Bedrock Knowledge Bases</p>
+<ul><li>It manages it all for you</li>
+<li>Also integrates with</li>
+</ul><p>Bedrock within</p>
+<p>SageMaker Unified Studio</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-149">
+          <div class="slide-number">Slide 149</div>
+          <div class="slide-content"><p>S3 Vectors: More specifics?</p>
+<ul><li>They are strongly consistent</li>
+<li>Newly added data is immediately available</li>
+<li>The vector data is automatically optimized over time for price performance</li>
+<li>But actual performance is only advertised as 100ms-1s</li>
+<li>AWS recommends a hybrid approach with OpenSearch for performance-critical</li>
+</ul><p>queries</p>
+<ul><li>They call this a “tiered search strategy” – use S3 for infrequently queried vectors only</li>
+<li>S3 Vectors has connectivity with OpenSearch for this purpose</li>
+<li>This COPIES (exports) data from S3 into OpenSearch – you end up paying for both if you’re not</li>
+</ul><p>careful!</p>
+<ul><li>You can also use OpenSearch with S3 Vectors engine</li>
+<li>Only works with OpenSearch managed clusters</li>
+<li>Give you OpenSearch functionality with S3 Vectors as the backend</li>
+<li>Max indices per bucket: 10,000 (2B vectors per index)</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-150">
+          <div class="slide-number">Slide 150</div>
+          <div class="slide-content"><p>S3 Vectors: Best Practices</p>
+<ul><li>Insert or delete vectors in large batches</li>
+</ul><p>(500 per API call)</p>
+<ul><li>Use concurrent requests for smaller</li>
+</ul><p>batches</p>
+<ul><li>Can get up to 2500 vectors per second</li>
+<li>Have a retry mechanism for queries</li>
+<li>Only hundreds per second supported per</li>
+</ul><p>index before you get an 429 error</p>
+<ul><li>Use multiple indexes when possible</li>
+<li>Improves per-index performance</li>
+<li>Also useful for data isolation, multi-tenancy</li>
+<li>If a metadata field doesn’t need to be</li>
+</ul><p>filtered, mark it as non-filterable</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-151">
+          <div class="slide-number">Slide 151</div>
+          <div class="slide-content"><p>Amazon RDS Overview</p>
+<ul><li>RDS stands for Relational Database Service</li>
+<li>It’s a managed DB service for DB use SQL as a query language.</li>
+<li>It allows you to create databases in the cloud that are managed by</li>
+</ul><p>AWS</p>
+<ul><li>Postgres</li>
+<li>MySQL</li>
+<li>MariaDB</li>
+<li>Oracle</li>
+<li>Microsoft SQL Server</li>
+<li>IBM DB2</li>
+<li>Aurora (AWS Proprietary database)</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-152">
+          <div class="slide-number">Slide 152</div>
+          <div class="slide-content"><p>Advantage over using RDS versus</p>
+<p>deploying DB on EC2</p>
+<ul><li>RDS is a managed service:</li>
+<li>Automated provisioning, OS patching</li>
+<li>Continuous backups and restore to specific timestamp (Point in Time</li>
+</ul><p>Restore)!</p>
+<ul><li>Monitoring dashboards</li>
+<li>Read replicas for improved read performance</li>
+<li>Multi AZ setup for DR (Disaster Recovery)</li>
+<li>Maintenance windows for upgrades</li>
+<li>Scaling capability (vertical and horizontal)</li>
+<li>Storage backed by EBS</li>
+<li>BUT you can’t SSH into your instances</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-153">
+          <div class="slide-number">Slide 153</div>
+          <div class="slide-content"><p>RDS – Storage Auto Scaling</p>
+<ul><li>Helps you increase storage on your RDS DB instance</li>
+</ul><p>dynamically</p>
+<ul><li>When RDS detects you are running out of free</li>
+</ul><p>database storage, it scales automatically</p>
+<ul><li>Avoid manually scaling your database storage</li>
+</ul><p>Application</p>
+<ul><li>You have to set Maximum Storage Threshold</li>
+</ul><p>(maximum limit for DB storage)</p>
+<ul><li>Automatically modify storage if:</li>
+</ul><p>Read/Write</p>
+<ul><li>Free storage is less than 10% of allocated storage</li>
+<li>Low-storage lasts at least 5 minutes</li>
+<li>6 hours have passed since last modification</li>
+<li>Useful for applications with unpredictable workloads</li>
+<li>Supports all RDS database engines</li>
+</ul><p>Storage</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-154">
+          <div class="slide-number">Slide 154</div>
+          <div class="slide-content"><p>Using RDS with S3 Document</p>
+<p>Repositories</p>
+<ul><li>RDS can also serve as your vector store</li>
+<li>RDS SQL Server Vector Store is a thing</li>
+<li>A common pattern is to use RDS for</li>
+</ul><p>Amazon SageMaker</p>
+<p>querying structured data, which then</p>
+<p>points to something like S3 for large</p>
+<p>unstructured data it refers to.</p>
+<ul><li>So you could do something like this…</li>
+</ul><p>Amazon Relational Database</p>
+<p>Service (Amazon RDS)</p>
+<ul><li>Your vector store for RAG is backed by RDS</li>
+<li>The data returned just points you to content</li>
+</ul><p>in S3</p>
+<p>Amazon Simple Storage</p>
+<p>Service (Amazon S3)</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-155">
+          <div class="slide-number">Slide 155</div>
+          <div class="slide-content"><p>Amazon Aurora</p>
+<ul><li>Aurora is a proprietary technology from AWS (not open sourced)</li>
+<li>Postgres and MySQL are both supported as Aurora DB (that means your</li>
+</ul><p>drivers will work as if Aurora was a Postgres or MySQL database)</p>
+<ul><li>Aurora is “AWS cloud optimized” and claims 5x performance improvement</li>
+</ul><p>over MySQL on RDS, over 3x the performance of Postgres on RDS</p>
+<ul><li>Aurora storage automatically grows in increments of 10GB, up to 256 TB.</li>
+<li>Aurora can have up to 15 replicas and the replication process is faster</li>
+</ul><p>than MySQL (sub 10 ms replica lag)</p>
+<ul><li>Failover in Aurora is instantaneous. It’s HA (High Availability) native.</li>
+<li>Aurora costs more than RDS (20% more) – but is more efficient</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-156">
+          <div class="slide-number">Slide 156</div>
+          <div class="slide-content"><p>Aurora High Availability and Read Scaling</p>
+<ul><li>6 copies of your data across 3 AZ:</li>
+</ul><p>AZ 1 AZ 2 AZ 3</p>
+<ul><li>4 copies out of 6 needed for writes</li>
+<li>3 copies out of 6 need for reads</li>
+<li>Self healing with peer-to-peer replication</li>
+<li>Storage is striped across 100s of volumes</li>
+</ul><p>W</p>
+<ul><li>One Aurora Instance takes writes R R R R R</li>
+</ul><p>(master)</p>
+<p>Shared storage Volume</p>
+<ul><li>Automated failover for master in less</li>
+</ul><p>Replication + Self Healing + Auto Expanding</p>
+<p>than 30 seconds</p>
+<ul><li>Master + up to 15 Aurora Read Replicas</li>
+</ul><p>serve reads</p>
+<ul><li>Support for Cross Region Replication</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-157">
+          <div class="slide-number">Slide 157</div>
+          <div class="slide-content"><p>Aurora DB Cluster</p>
+<p>client</p>
+<p>Writer Endpoint Reader Endpoint</p>
+<p>Pointing to the master Connection Load Balancing</p>
+<p>Auto Scaling</p>
+<p>W R R R R R</p>
+<p>Shared storage Volume</p>
+<p>Auto Expanding from 10G to 256 TB</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-158">
+          <div class="slide-number">Slide 158</div>
+          <div class="slide-content"><p>Features of Aurora</p>
+<ul><li>Automatic fail-over</li>
+<li>Backup and Recovery</li>
+<li>Isolation and security</li>
+<li>Industry compliance</li>
+<li>Push-button scaling</li>
+<li>Automated Patching with Zero Downtime</li>
+<li>Advanced Monitoring</li>
+<li>Routine Maintenance</li>
+<li>Backtrack: restore data at any point of time without using backups</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-159">
+          <div class="slide-number">Slide 159</div>
+          <div class="slide-content"><p>Amazon Aurora as a Vector Store</p>
+<ul><li>pgvector extension</li>
+<li>Creates a new “vector” column type</li>
+<li>Can compute cosine, L2, or inner product</li>
+</ul><p>distances</p>
+<ul><li>Can do similarity search with IVF or</li>
+<li>Also adds vector operators for SQL</li>
+</ul><p>Amazon Aurora</p>
+<ul><li>This gives it an advantage over OpenSearch if</li>
+</ul><p>you need complex filtering logic and stuff.</p>
+<ul><li>Allows you to store structured and vector</li>
+</ul><p>data in the same place</p>
+<p>Trusted Language</p>
+<p>Extensions for</p>
+<ul><li>Can be appropriate for small / medium</li>
+</ul><p>PostgreSQL</p>
+<p>RAG systems with mostly structured data</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-160">
+          <div class="slide-number">Slide 160</div>
+          <div class="slide-content"><p>Traditional Architecture</p>
+<p>Application Layer Database Layer</p>
+<p>Auto Scaling group</p>
+<p>Amazon RDS</p>
+<p>Clients</p>
+<p>Elastic Load Balancer EC2 Instance EC2 Instance</p>
+<p>(MySQL, PostgreSQL, …)</p>
+<ul><li>Traditional applications leverage RDBMS databases</li>
+<li>These databases have the SQL query language</li>
+<li>Strong requirements about how the data should be modeled</li>
+<li>Ability to do query joins, aggregations, complex computations</li>
+<li>Vertical scaling (getting a more powerful CPU / RAM / IO)</li>
+<li>Horizontal scaling (increasing reading capability by adding EC2 / RDS</li>
+</ul><p>Read Replicas)</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-161">
+          <div class="slide-number">Slide 161</div>
+          <div class="slide-content"><p>NoSQL databases</p>
+<ul><li>NoSQL databases are non-relational databases and are distributed</li>
+<li>NoSQL databases include MongoDB, DynamoDB, …</li>
+<li>NoSQL databases do not support query joins (or just limited support)</li>
+<li>All the data that is needed for a query is present in one row</li>
+<li>NoSQL databases don’t perform aggregations such as “SUM”,</li>
+</ul><p>“AVG”, …</p>
+<ul><li>NoSQL databases scale horizontally</li>
+<li>There’s no “right or wrong” for NoSQL vs SQL, they just require to</li>
+</ul><p>model the data differently and think about user queries differently</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-162">
+          <div class="slide-number">Slide 162</div>
+          <div class="slide-content"><p>Amazon DynamoDB</p>
+<ul><li>Fully managed, highly available with replication across multiple AZs</li>
+<li>NoSQL database - not a relational database</li>
+<li>Scales to massive workloads, distributed database</li>
+<li>Millions of requests per seconds, trillions of row, 100s of TB of</li>
+</ul><p>storage</p>
+<ul><li>Fast and consistent in performance (low latency on retrieval)</li>
+<li>Integrated with IAM for security, authorization and administration</li>
+<li>Enables event driven programming with DynamoDB Streams</li>
+<li>Low cost and auto-scaling capabilities</li>
+<li>Standard &amp; Infrequent Access (IA) Table Class</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-163">
+          <div class="slide-number">Slide 163</div>
+          <div class="slide-content"><p>DynamoDB - Basics</p>
+<ul><li>DynamoDB is made of Tables</li>
+<li>Each table has a Primary Key (must be decided at creation time)</li>
+<li>Each table can have an infinite number of items (= rows)</li>
+<li>Each item has attributes (can be added over time – can be null)</li>
+<li>Maximum size of an item is 400KB</li>
+<li>Data types supported are:</li>
+<li>Scalar Types – String, Number, Binary, Boolean, Null</li>
+<li>Document Types – List, Map</li>
+<li>Set Types – String Set, Number Set, Binary Set</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-164">
+          <div class="slide-number">Slide 164</div>
+          <div class="slide-content"><p>DynamoDB – Primary Keys</p>
+<ul><li>Option 1: Partition Key (HASH)</li>
+<li>Partition key must be unique for each item</li>
+<li>Partition key must be “diverse” so that the data is distributed</li>
+<li>Example: “User_ID” for a users table</li>
+</ul><p>Primary Key Attributes</p>
+<p>Partition Key</p>
+<p>User_ID First_Name Last_Name Age</p>
+<p>7791a3d6-… John William 46</p>
+<p>873e0634-… Oliver 24</p>
+<p>a80f73a1-… Katie Lucas 31</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-165">
+          <div class="slide-number">Slide 165</div>
+          <div class="slide-content"><p>DynamoDB – Primary Keys</p>
+<ul><li>Option 2: Partition Key + Sort Key (HASH + RANGE)</li>
+<li>The combination must be unique for each item</li>
+<li>Data is grouped by partition key</li>
+<li>Example: users-games table, “User_ID” for Partition Key and “Game_ID” for</li>
+</ul><p>Sort Key</p>
+<p>Primary Key Attributes</p>
+<p>Partition Key Sort Key</p>
+<p>User_ID Game_ID Score Result</p>
+<p>7791a3d6-… 4421 92 Win</p>
+<p>873e0634-… 1894 14 Lose</p>
+<p>Same partition key</p>
+<p>Different sort key</p>
+<p>873e0634-… 4521 77 Win</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-166">
+          <div class="slide-number">Slide 166</div>
+          <div class="slide-content"><p>DynamoDB – Partition Keys (Exercise)</p>
+<ul><li>We’re building a movie database</li>
+<li>What is the best Partition Key to maximize data distribution?</li>
+<li>movie_id</li>
+<li>producer_name</li>
+<li>leader_actor_name</li>
+<li>movie_language</li>
+<li>“movie_id” has the highest cardinality so it’s a good candidate</li>
+<li>“movie_language” doesn’t take many values and may be</li>
+</ul><p>skewed towards English so it’s not a great choice for the</p>
+<p>Partition Key</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-167">
+          <div class="slide-number">Slide 167</div>
+          <div class="slide-content"><p>DynamoDB – Read/Write Capacity</p>
+<p>Modes</p>
+<ul><li>Control how you manage your table’s capacity (read/write throughput)</li>
+<li>Provisioned Mode</li>
+<li>You specify the number of reads/writes per second</li>
+<li>You need to plan capacity beforehand</li>
+<li>Pay for provisioned read &amp; write capacity units</li>
+<li>On-Demand Mode (default)</li>
+<li>Read/writes automatically scale up/down with your workloads</li>
+<li>No capacity planning needed</li>
+<li>Pay for what you use, more expensive ($$$)</li>
+<li>You can switch between different modes once every 24 hours</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-168">
+          <div class="slide-number">Slide 168</div>
+          <div class="slide-content"><p>R/W Capacity Modes – Provisioned</p>
+<ul><li>Table must have provisioned read and write capacity units</li>
+<li>Read Capacity Units (RCU) – throughput for reads</li>
+<li>Write Capacity Units (WCU) – throughput for writes</li>
+<li>Option to setup auto-scaling of throughput to meet demand</li>
+<li>Throughput can be exceeded temporarily using “Burst</li>
+</ul><p>Capacity”</p>
+<ul><li>If Burst Capacity has been consumed, you’ll get a</li>
+</ul><p>“ProvisionedThroughputExceededException”</p>
+<ul><li>It’s then advised to do an exponential backoff retry</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-169">
+          <div class="slide-number">Slide 169</div>
+          <div class="slide-content"><p>DynamoDB – Write Capacity Units</p>
+<p>(WCU)</p>
+<ul><li>One Write Capacity Unit (WCU) represents one write per</li>
+</ul><p>second for an item up to 1 KB in size</p>
+<ul><li>If the items are larger than 1 KB, more WCUs are consumed</li>
+<li>Example 1: we write 10 items per second, with item size 2 KB</li>
+</ul><p>2 𝐾𝐵</p>
+<ul><li>We need 10 ∗ ( ) = 20 𝑊𝐶𝑈𝑠</li>
+</ul><p>1 𝐾𝐵</p>
+<ul><li>Example 2: we write 6 items per second, with item size 4.5 KB</li>
+</ul><p>5 𝐾𝐵</p>
+<ul><li>We need 6 ∗ ( ) = 30 𝑊𝐶𝑈𝑠 (4.5 gets rounded to the upper KB)</li>
+</ul><p>1 𝐾𝐵</p>
+<ul><li>Example 3: we write 120 items per minute, with item size 2 KB</li>
+</ul><p>120 2 𝐾𝐵</p>
+<ul><li>We need ∗ ( ) = 4 𝑊𝐶𝑈𝑠</li>
+</ul><p>60 1 𝐾𝐵</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-170">
+          <div class="slide-number">Slide 170</div>
+          <div class="slide-content"><p>Strongly Consistent Read</p>
+<p>vs. Eventually Consistent Read</p>
+<p>Application</p>
+<ul><li>Eventually Consistent Read (default)</li>
+<li>If we read just after a write, it’s possible we’ll</li>
+</ul><p>get some stale data because of replication read write</p>
+<p>Amazon DynamoDB</p>
+<ul><li>Strongly Consistent Read</li>
+<li>If we read just after a write, we will get the</li>
+</ul><p>correct data</p>
+<p>Server 1</p>
+<ul><li>Set “ConsistentRead” parameter to True in</li>
+</ul><p>API calls (GetItem, BatchGetItem, Query,</p>
+<p>replication</p>
+<p>Scan)</p>
+<ul><li>Consumes twice the RCU</li>
+</ul><p>Server 2 Server 3</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-171">
+          <div class="slide-number">Slide 171</div>
+          <div class="slide-content"><p>DynamoDB – Read Capacity Units (RCU)</p>
+<ul><li>One Read Capacity Unit (RCU) represents one Strongly Consistent</li>
+</ul><p>Read per second, or two Eventually Consistent Reads per second, for</p>
+<p>an item up to 4 KB in size</p>
+<ul><li>If the items are larger than 4 KB, more RCUs are consumed</li>
+<li>Example 1: 10 Strongly Consistent Reads per second, with item size 4 KB</li>
+</ul><p>4 𝐾𝐵</p>
+<ul><li>We need 10 ∗ = 10 𝑅𝐶𝑈𝑠</li>
+</ul><p>4 𝐾𝐵</p>
+<ul><li>Example 2: 16 Eventually Consistent Reads per second, with item size 12</li>
+</ul><p>KB</p>
+<p>16 12 𝐾𝐵</p>
+<ul><li>We need ∗ = 24 𝑅𝐶𝑈𝑠</li>
+</ul><p>2 4 𝐾𝐵</p>
+<ul><li>Example 3: 10 Strongly Consistent Reads per second, with item size 6 KB</li>
+</ul><p>8 𝐾𝐵</p>
+<ul><li>We need 10 ∗ = 20 𝑅𝐶𝑈𝑠 (we must round up 6 KB to 8 KB)</li>
+</ul><p>4 𝐾𝐵</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-172">
+          <div class="slide-number">Slide 172</div>
+          <div class="slide-content"><p>DynamoDB – Partitions Internal</p>
+<p>Application</p>
+<ul><li>Data is stored in partitions</li>
+<li>Partition Keys go through a hashing algorithm to</li>
+</ul><p>know to which partition they go to</p>
+<p>…</p>
+<p>ID_13 John</p>
+<p>write</p>
+<p>…</p>
+<p>ID_45 Oliver</p>
+<ul><li>To compute the number of partitions:</li>
+</ul><p>Amazon DynamoDB</p>
+<p>𝑅𝐶𝑈𝑠 𝑊𝐶𝑈𝑠</p>
+<ul><li># 𝑜𝑓 𝑝𝑎𝑟𝑡𝑖𝑡𝑖𝑜𝑛𝑠 = 𝑇𝑜𝑡𝑎𝑙 + ( 𝑇𝑜𝑡𝑎𝑙)</li>
+</ul><p>𝑏𝑦 𝑐𝑎𝑝𝑎𝑐𝑖𝑡𝑦</p>
+<p>3000 1000</p>
+<p>ID_13</p>
+<p>𝑇𝑜𝑡𝑎𝑙 𝑆𝑖𝑧𝑒</p>
+<ul><li># 𝑜𝑓 𝑝𝑎𝑟𝑡𝑖𝑡𝑖𝑜𝑛𝑠 =</li>
+</ul><p>𝑏𝑦 𝑠𝑖𝑧𝑒 ID_45</p>
+<p>10 𝐺𝐵</p>
+<ul><li># 𝑜𝑓 𝑝𝑎𝑟𝑡𝑖𝑡𝑖𝑜𝑛𝑠 =</li>
+</ul><p>Hash function</p>
+<p>ceil(max # 𝑜𝑓 𝑝𝑎𝑟𝑡𝑖𝑡𝑖𝑜𝑛𝑠 ,# 𝑜𝑓 𝑝𝑎𝑟𝑡𝑖𝑡𝑖𝑜𝑛𝑠 )</p>
+<p>𝑏𝑦 𝑐𝑎𝑝𝑎𝑐𝑖𝑡𝑦 𝑏𝑦 𝑠𝑖𝑧𝑒</p>
+<ul><li>WCUs and RCUs are spread evenly across</li>
+</ul><p>Table</p>
+<p>partitions</p>
+<p>ID_13 ID_45</p>
+<p>…</p>
+<p>Partition 1 Partition 2</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-173">
+          <div class="slide-number">Slide 173</div>
+          <div class="slide-content"><p>DynamoDB – Throttling</p>
+<ul><li>If we exceed provisioned RCUs or WCUs, we get</li>
+</ul><p>“ProvisionedThroughputExceededException”</p>
+<ul><li>Reasons:</li>
+<li>Hot Keys – one partition key is being read too many times (e.g.,</li>
+</ul><p>popular item)</p>
+<ul><li>Hot Partitions</li>
+<li>Very large items, remember RCU and WCU depends on size of items</li>
+<li>Solutions:</li>
+<li>Exponential backoff when exception is encountered (already in SDK)</li>
+<li>Distribute partition keys as much as possible</li>
+<li>If RCU issue, we can use DynamoDB Accelerator (DAX)</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-174">
+          <div class="slide-number">Slide 174</div>
+          <div class="slide-content"><p>R/W Capacity Modes – On-Demand</p>
+<ul><li>Read/writes automatically scale up/down with your workloads</li>
+<li>No capacity planning needed (WCU / RCU)</li>
+<li>Unlimited WCU &amp; RCU, no throttle, more expensive</li>
+<li>You’re charged for reads/writes that you use in terms of RRU and</li>
+</ul><p>WRU</p>
+<ul><li>Read Request Units (RRU) – throughput for reads (same as RCU)</li>
+<li>Write Request Units (WRU) – throughput for writes (same as WCU)</li>
+<li>2.5x more expensive than provisioned capacity (use with care)</li>
+<li>Use cases: unknown workloads, unpredictable application traffic, …</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-175">
+          <div class="slide-number">Slide 175</div>
+          <div class="slide-content"><p>DynamoDB – Writing Data</p>
+<ul><li>PutItem</li>
+<li>Creates a new item or fully replace an old item (same Primary Key)</li>
+<li>Consumes WCUs</li>
+<li>UpdateItem</li>
+<li>Edits an existing item’s attributes or adds a new item if it doesn’t exist</li>
+<li>Can be used to implement Atomic Counters – a numeric attribute that’s</li>
+</ul><p>unconditionally incremented</p>
+<ul><li>Conditional Writes</li>
+<li>Accept a write/update/delete only if conditions are met, otherwise returns an error</li>
+<li>Helps with concurrent access to items</li>
+<li>No performance impact</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-176">
+          <div class="slide-number">Slide 176</div>
+          <div class="slide-content"><p>DynamoDB – Reading Data</p>
+<ul><li>GetItem</li>
+<li>Read based on Primary key</li>
+<li>Primary Key can be HASH or HASH+RANGE</li>
+<li>Eventually Consistent Read (default)</li>
+<li>Option to use Strongly Consistent Reads (more RCU - might take</li>
+</ul><p>longer)</p>
+<ul><li>ProjectionExpression can be specified to retrieve only certain</li>
+</ul><p>attributes</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-177">
+          <div class="slide-number">Slide 177</div>
+          <div class="slide-content"><p>DynamoDB – Reading Data (Query)</p>
+<ul><li>Query returns items based on:</li>
+<li>KeyConditionExpression</li>
+<li>Partition Key value (must be = operator) – required</li>
+<li>Sort Key value (=, &lt;, &lt;=, &gt;, &gt;=, Between, Begins with) – optional</li>
+<li>FilterExpression</li>
+<li>Additional filtering after the Query operation (before data returned to you)</li>
+<li>Use only with non-key attributes (does not allow HASH or RANGE attributes)</li>
+<li>Returns:</li>
+<li>The number of items specified in Limit</li>
+<li>Or up to 1 MB of data</li>
+<li>Ability to do pagination on the results</li>
+<li>Can query table, a Local Secondary Index, or a Global Secondary</li>
+</ul><p>Index</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-178">
+          <div class="slide-number">Slide 178</div>
+          <div class="slide-content"><p>DynamoDB – Reading Data (Scan)</p>
+<ul><li>Scan the entire table and then filter out data (inefficient)</li>
+<li>Returns up to 1 MB of data – use pagination to keep on reading</li>
+<li>Consumes a lot of RCU</li>
+<li>Limit impact using Limit or reduce the size of the result and pause</li>
+<li>For faster performance, use Parallel Scan</li>
+<li>Multiple workers scan multiple data segments at the same time</li>
+<li>Increases the throughput and RCU consumed</li>
+<li>Limit the impact of parallel scans just like you would for Scans</li>
+<li>Can use ProjectionExpression &amp; FilterExpression (no changes to</li>
+</ul><p>RCU)</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-179">
+          <div class="slide-number">Slide 179</div>
+          <div class="slide-content"><p>DynamoDB – Deleting Data</p>
+<ul><li>DeleteItem</li>
+<li>Delete an individual item</li>
+<li>Ability to perform a conditional delete</li>
+<li>DeleteTable</li>
+<li>Delete a whole table and all its items</li>
+<li>Much quicker deletion than calling DeleteItem on all items</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-180">
+          <div class="slide-number">Slide 180</div>
+          <div class="slide-content"><p>DynamoDB – Batch Operations</p>
+<ul><li>Allows you to save in latency by reducing the number of API calls</li>
+<li>Operations are done in parallel for better efficiency</li>
+<li>Part of a batch can fail; in which case we need to try again for the failed items</li>
+<li>BatchWriteItem</li>
+<li>Up to 25 PutItem and/or DeleteItem in one call</li>
+<li>Up to 16 MB of data written, up to 400 KB of data per item</li>
+<li>Can’t update items (use UpdateItem)</li>
+<li>UnprocessedItems for failed write operations (exponential backoff or add WCU)</li>
+<li>BatchGetItem</li>
+<li>Return items from one or more tables</li>
+<li>Up to 100 items, up to 16 MB of data</li>
+<li>Items are retrieved in parallel to minimize latency</li>
+<li>UnprocessedKeys for failed read operations (exponential backoff or add RCU)</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-181">
+          <div class="slide-number">Slide 181</div>
+          <div class="slide-content"><p>DynamoDB – PartiQL</p>
+<ul><li>SQL-compatible query language for</li>
+</ul><p>DynamoDB</p>
+<ul><li>Allows you to select, insert, update, and</li>
+</ul><p>delete data in DynamoDB using SQL</p>
+<ul><li>Run queries across multiple DynamoDB</li>
+</ul><p>tables</p>
+<ul><li>Run PartiQL queries from:</li>
+<li>AWS Management Console</li>
+<li>NoSQL Workbench for DynamoDB</li>
+<li>DynamoDB APIs</li>
+<li>AWS CLI</li>
+<li>AWS SDK</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-182">
+          <div class="slide-number">Slide 182</div>
+          <div class="slide-content"><p>DynamoDB Accelerator (DAX)</p>
+<ul><li>Fully-managed, highly available, seamless in-</li>
+</ul><p>Application</p>
+<p>memory cache for DynamoDB</p>
+<ul><li>Microseconds latency for cached reads &amp; queries</li>
+<li>Doesn’t require application logic modification</li>
+</ul><p>(compatible with existing DynamoDB APIs)</p>
+<p>DAX Cluster</p>
+<ul><li>Solves the “Hot Key” problem (too many reads)</li>
+</ul><p>…</p>
+<ul><li>5 minutes TTL for cache (default)</li>
+</ul><p>Nodes</p>
+<ul><li>Up to 10 nodes in the cluster</li>
+<li>Multi-AZ (3 nodes minimum recommended for</li>
+</ul><p>production)</p>
+<p>Amazon DynamoDB</p>
+<ul><li>Secure (Encryption at rest with KMS, VPC, IAM,</li>
+</ul><p>CloudTrail, …)</p>
+<p>…</p>
+<p>Tables</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-183">
+          <div class="slide-number">Slide 183</div>
+          <div class="slide-content"><p>DynamoDB Accelerator (DAX) vs.</p>
+<p>ElastiCache</p>
+<p>Amazon</p>
+<p>ElastiCache</p>
+<p>Store Aggregation Result</p>
+<p>- Individual objects cache</p>
+<p>Application</p>
+<p>- Query &amp; Scan cache</p>
+<p>Amazon</p>
+<p>DynamoDB</p>
+<p>DynamoDB Accelerator (DAX)</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-184">
+          <div class="slide-number">Slide 184</div>
+          <div class="slide-content"><p>DynamoDB – Time To Live (TTL)</p>
+<p>Current Time</p>
+<p>Friday, September 10, 2021, 11:56:11 AM</p>
+<ul><li>Automatically delete items after an expiry</li>
+</ul><p>(Epoch timestamp: 1631274971)</p>
+<p>timestamp</p>
+<p>Expiration Process</p>
+<ul><li>Doesn’t consume any WCUs (i.e., no extra cost)</li>
+<li>The TTL attribute must be a “Number” data type</li>
+</ul><p>scan &amp;</p>
+<p>with “Unix Epoch timestamp” value</p>
+<p>expire items</p>
+<ul><li>Expired items deleted within few days of expiration</li>
+</ul><p>SessionData (Table)</p>
+<ul><li>Expired items, that haven’t been deleted, appears</li>
+</ul><p>in reads/queries/scans (if you don’t want them, filter</p>
+<p>User_ID Session_ID ExpTime (TTL)</p>
+<p>them out)</p>
+<p>7791a3d6-… 74686572652 1631188571</p>
+<ul><li>Expired items are deleted from both LSIs and GSIs</li>
+</ul><p>873e0634-… 6e6f7468696 1631274971</p>
+<ul><li>A delete operation for each expired item enters the</li>
+</ul><p>DynamoDB Streams (can help recover expired</p>
+<p>a80f73a1-… 746f2073656 1631102171</p>
+<p>items)</p>
+<ul><li>Use cases: reduce stored data by keeping only</li>
+</ul><p>scan &amp;</p>
+<p>current items, adhere to regulatory obligations, … delete items</p>
+<p>Deletion Process</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-185">
+          <div class="slide-number">Slide 185</div>
+          <div class="slide-content"><p>DynamoDB with GenAI</p>
+<ul><li>It’s not a vector store</li>
+<li>I mean, you can store vectors, but you</li>
+</ul><p>can’t search them</p>
+<ul><li>But it can serve your model with</li>
+</ul><p>near real-time data</p>
+<ul><li>It can also serve as a fast way to</li>
+</ul><p>store and retrieve chat histories</p>
+<ul><li>“Long term memory” for your AI</li>
+</ul><p>agents</p>
+<ul><li>This is important for context</li>
+</ul><p>awareness in a chatbot</p>
+<p>https://aws.amazon.com/blogs/database/build-a-scalable-context-aware-chatbot-with-amazon-dynamodb-amazon-bedrock-and-langchain/</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-186">
+          <div class="slide-number">Slide 186</div>
+          <div class="slide-content"><p>DynamoDB and OpenSearch</p>
+<ul><li>Zero-ETL integration with OpenSearch</li>
+<li>You can create a pipeline from DynamoDB to OpenSearch</li>
+<li>And then use OpenSearch as your vector store for Bedrock</li>
+<li>This is a way to incorporate DynamoDB data into your knowledge</li>
+</ul><p>bases</p>
+<p>Amazon DynamoDB Amazon OpenSearch Service Amazon Bedrock</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-187">
+          <div class="slide-number">Slide 187</div>
+          <div class="slide-content"><p>Keeping your Vector Store Up to</p>
+<p>Date</p>
+<ul><li>We need some way to keep your</li>
+</ul><p>vector store in sync with new and</p>
+<p>changed data</p>
+<ul><li>Incremental updates</li>
+<li>Real-time change detection</li>
+<li>Automated synchronization</li>
+<li>Scheduled refresh pipelines</li>
+<li>EventBridge is your friend Amazon EventBridge</li>
+<li>More on EventBridge later.</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-188">
+          <div class="slide-number">Slide 188</div>
+          <div class="slide-content"><p>Keeping your Vector Store Up to</p>
+<p>Date</p>
+<p>Events,</p>
+<p>webhooks,</p>
+<p>Amazon Simple Storage or polling Amazon EventBridge</p>
+<p>Service (Amazon S3)</p>
+<p>AWS Lambda Amazon Bedrock</p>
+<p>(connector)</p>
+<p>…</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-189">
+          <div class="slide-number">Slide 189</div>
+          <div class="slide-content"><p>Vector Index Maintenance</p>
+<ul><li>Drift and fragmentation can become</li>
+</ul><p>issues over time</p>
+<ul><li>You could use EventBridge to</li>
+</ul><p>Amazon EventBridge</p>
+<p>schedule a periodic trigger to rebuild</p>
+<p>your indices</p>
+<ul><li>That could in turn use AWS Batch to</li>
+</ul><p>queue up a job that</p>
+<ul><li>Creates new embeddings AWS Batch</li>
+<li>Creates a new vector DB</li>
+<li>Validates it</li>
+<li>Swaps from the old to the new</li>
+</ul><p>Amazon OpenSearch Service</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-190">
+          <div class="slide-number">Slide 190</div>
+          <div class="slide-content"><p>Re-ranker Models in Amazon</p>
+<p>Bedrock</p>
+<ul><li>Attempts to improve relevance of</li>
+</ul><p>retrieved results for RAG from your KB</p>
+<ul><li>Calculates relevance of chunks to the</li>
+</ul><p>query, orders results accordingly</p>
+<ul><li>There is a Rerank operation in the API</li>
+</ul><p>you can use to rank whatever</p>
+<p>documents you want relative to a query</p>
+<ul><li>Or you can specify a reranker model</li>
+</ul><p>when hitting your Knowledge Base</p>
+<ul><li>Currently you can choose from Amazon</li>
+</ul><p>or Cohere models</p>
+<ul><li>In limited regions</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-191">
+          <div class="slide-number">Slide 191</div>
+          <div class="slide-content"><p>S3 Storage Classes</p>
+<ul><li>Amazon S3 Standard - General Purpose</li>
+<li>Amazon S3 Standard-Infrequent Access (IA)</li>
+<li>Amazon S3 One Zone-Infrequent Access</li>
+<li>Amazon S3 Glacier Instant Retrieval</li>
+<li>Amazon S3 Glacier Flexible Retrieval</li>
+<li>Amazon S3 Glacier Deep Archive</li>
+<li>Amazon S3 Intelligent Tiering</li>
+<li>Can move between classes manually or using S3 Lifecycle</li>
+</ul><p>configurations</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-192">
+          <div class="slide-number">Slide 192</div>
+          <div class="slide-content"><p>S3 Durability and Availability</p>
+<ul><li>Durability:</li>
+<li>High durability (99.999999999%, 11 9’s) of objects across multiple AZ</li>
+<li>If you store 10,000,000 objects with Amazon S3, you can on average</li>
+</ul><p>expect to incur a loss of a single object once every 10,000 years</p>
+<ul><li>Same for all storage classes</li>
+<li>Availability:</li>
+<li>Measures how readily available a service is</li>
+<li>Varies depending on storage class</li>
+<li>Example: S3 standard has 99.99% availability = not available 53</li>
+</ul><p>minutes a year</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-193">
+          <div class="slide-number">Slide 193</div>
+          <div class="slide-content"><p>S3 Standard – General Purpose</p>
+<ul><li>99.99% Availability</li>
+<li>Used for frequently accessed data</li>
+<li>Low latency and high throughput</li>
+<li>Sustain 2 concurrent facility failures</li>
+<li>Use Cases: Big Data analytics, mobile &amp; gaming applications,</li>
+</ul><p>content distribution…</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-194">
+          <div class="slide-number">Slide 194</div>
+          <div class="slide-content"><p>S3 Storage Classes – Infrequent Access</p>
+<ul><li>For data that is less frequently accessed, but requires rapid access</li>
+</ul><p>when needed</p>
+<ul><li>Lower cost than S3 Standard</li>
+<li>Amazon S3 Standard-Infrequent Access (S3 Standard-IA)</li>
+<li>99.9% Availability</li>
+<li>Use cases: Disaster Recovery, backups</li>
+<li>Amazon S3 One Zone-Infrequent Access (S3 One Zone-IA)</li>
+<li>High durability (99.999999999%) in a single AZ; data lost when AZ is destroyed</li>
+<li>99.5% Availability</li>
+<li>Use Cases: Storing secondary backup copies of on-premises data, or data you</li>
+</ul><p>can recreate</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-195">
+          <div class="slide-number">Slide 195</div>
+          <div class="slide-content"><p>Amazon S3 Glacier Storage Classes</p>
+<ul><li>Low-cost object storage meant for archiving / backup</li>
+<li>Pricing: price for storage + object retrieval cost</li>
+<li>Amazon S3 Glacier Instant Retrieval</li>
+<li>Millisecond retrieval, great for data accessed once a quarter</li>
+<li>Minimum storage duration of 90 days</li>
+<li>Amazon S3 Glacier Flexible Retrieval (formerly Amazon S3</li>
+</ul><p>Glacier):</p>
+<ul><li>Expedited (1 to 5 minutes), Standard (3 to 5 hours), Bulk (5 to 12 hours) – free</li>
+<li>Minimum storage duration of 90 days</li>
+<li>Amazon S3 Glacier Deep Archive – for long term storage:</li>
+<li>Standard (12 hours), Bulk (48 hours)</li>
+<li>Minimum storage duration of 180 days</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-196">
+          <div class="slide-number">Slide 196</div>
+          <div class="slide-content"><p>S3 Intelligent-Tiering</p>
+<ul><li>Small monthly monitoring and auto-tiering fee</li>
+<li>Moves objects automatically between Access Tiers based on usage</li>
+<li>There are no retrieval charges in S3 Intelligent-Tiering</li>
+<li>Frequent Access tier (automatic): default tier</li>
+<li>Infrequent Access tier (automatic): objects not accessed for 30 days</li>
+<li>Archive Instant Access tier (automatic): objects not accessed for 90 days</li>
+<li>Archive Access tier (optional): configurable from 90 days to 700+ days</li>
+<li>Deep Archive Access tier (optional): config. from 180 days to 700+ days</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-197">
+          <div class="slide-number">Slide 197</div>
+          <div class="slide-content"><p>S3 Storage Classes Comparison</p>
+<p>Intelligent- Glacier Instant Glacier Flexible Glacier Deep</p>
+<p>Standard Standard-IA One Zone-IA</p>
+<p>Tiering Retrieval Retrieval Archive</p>
+<p>Durability 99.999999999% == (11 9’s)</p>
+<p>Availability 99.99% 99.9% 99.9% 99.5% 99.9% 99.99% 99.99%</p>
+<p>Availability SLA 99.9% 99% 99% 99% 99% 99.9% 99.9%</p>
+<p>Availability</p>
+<p>&gt;= 3 &gt;= 3 &gt;= 3 1 &gt;= 3 &gt;= 3 &gt;= 3</p>
+<p>Zones</p>
+<p>Min. Storage</p>
+<p>None None 30 Days 30 Days 90 Days 90 Days 180 Days</p>
+<p>Duration Charge</p>
+<p>Min. Billable</p>
+<p>None None 128 KB 128 KB 128 KB 40 KB 40 KB</p>
+<p>Object Size</p>
+<p>Retrieval Fee None None Per GB retrieved Per GB retrieved Per GB retrieved Per GB retrieved Per GB retrieved</p>
+<p>https://aws.amazon.com/s3/storage-classes/</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-198">
+          <div class="slide-number">Slide 198</div>
+          <div class="slide-content"><p>S3 Storage Classes – Price Comparison</p>
+<p>Example: us-east-1</p>
+<p>Glacier Instant Glacier Flexible Glacier Deep</p>
+<p>Standard Intelligent-Tiering Standard-IA One Zone-IA</p>
+<p>Retrieval Retrieval Archive</p>
+<p>Storage Cost</p>
+<p>$0.023 $0.0025 - $0.023 $0.0125 $0.01 $0.004 $0.0036 $0.00099</p>
+<p>(per GB per month)</p>
+<p>GET: $0.0004</p>
+<p>GET: $0.0004</p>
+<p>POST: $0.03</p>
+<p>POST: $0.05</p>
+<p>Retrieval Cost GET: $0.0004 GET: $0.0004 GET: $0.001 GET: $0.001 GET: $0.01</p>
+<p>(per 1000 request) POST: $0.005 POST: $0.005 POST: $0.01 POST: $0.01 POST: $0.02 Expedited: $10</p>
+<p>Standard: $0.10</p>
+<p>Standard: $0.05</p>
+<p>Bulk: $0.025</p>
+<p>Bulk: free</p>
+<p>Expedited (1 – 5 mins)</p>
+<p>Standard (12 hours)</p>
+<p>Retrieval Time Instantaneous Standard (3 – 5 hours)</p>
+<p>Bulk (48 hours)</p>
+<p>Bulk (5 – 12 hours)</p>
+<p>Monitoring Cost</p>
+<p>$0.0025</p>
+<p>(per 1000 objects)</p>
+<p>https://aws.amazon.com/s3/pricing/</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-199">
+          <div class="slide-number">Slide 199</div>
+          <div class="slide-content"><p>Amazon S3 – Moving between Storage</p>
+<p>Classes</p>
+<ul><li>You can transition objects</li>
+</ul><p>between storage classes</p>
+<p>Standard</p>
+<ul><li>For infrequently accessed object, Standard IA</li>
+</ul><p>move them to Standard IA</p>
+<p>Intelligent Tiering</p>
+<ul><li>For archive objects that you don’t</li>
+</ul><p>need fast access to, move them</p>
+<p>One-Zone IA</p>
+<p>to Glacier or Glacier Deep</p>
+<p>Archive</p>
+<p>Glacier Instant Retrieval</p>
+<ul><li>Moving objects can be automated Glacier Flexible Retrieval</li>
+</ul><p>using a Lifecycle Rules</p>
+<p>Glacier Deep Archive</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-200">
+          <div class="slide-number">Slide 200</div>
+          <div class="slide-content"><p>Amazon S3 – Lifecycle Rules</p>
+<ul><li>Transition Actions – configure objects to transition to another storage</li>
+</ul><p>class</p>
+<ul><li>Move objects to Standard IA class 60 days after creation</li>
+<li>Move to Glacier for archiving after 6 months</li>
+<li>Expiration actions – configure objects to expire (delete) after some time</li>
+<li>Access log files can be set to delete after a 365 days</li>
+<li>Can be used to delete old versions of files (if versioning is enabled)</li>
+<li>Can be used to delete incomplete Multi-Part uploads</li>
+<li>Rules can be created for a certain prefix (example: s3://mybucket/mp3/*)</li>
+<li>Rules can be created for certain objects Tags (example: Department:</li>
+</ul><p>Finance)</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-201">
+          <div class="slide-number">Slide 201</div>
+          <div class="slide-content"><p>Amazon S3 – Lifecycle Rules (Scenario</p>
+<p>1)</p>
+<ul><li>Your application on EC2 creates images thumbnails after profile</li>
+</ul><p>photos are uploaded to Amazon S3. These thumbnails can be</p>
+<p>easily recreated, and only need to be kept for 60 days. The</p>
+<p>source images should be able to be immediately retrieved for</p>
+<p>these 60 days, and afterwards, the user can wait up to 6 hours.</p>
+<p>How would you design this?</p>
+<ul><li>S3 source images can be on Standard, with a lifecycle configuration</li>
+</ul><p>to transition them to Glacier after 60 days</p>
+<ul><li>S3 thumbnails can be on One-Zone IA, with a lifecycle configuration</li>
+</ul><p>to expire them (delete them) after 60 days</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-202">
+          <div class="slide-number">Slide 202</div>
+          <div class="slide-content"><p>Amazon S3 – Lifecycle Rules (Scenario</p>
+<p>2)</p>
+<ul><li>A rule in your company states that you should be able to recover</li>
+</ul><p>your deleted S3 objects immediately for 30 days, although this</p>
+<p>may happen rarely. After this time, and for up to 365 days,</p>
+<p>deleted objects should be recoverable within 48 hours.</p>
+<ul><li>Enable S3 Versioning in order to have object versions, so that</li>
+</ul><p>“deleted objects” are in fact hidden by a “delete marker” and can be</p>
+<p>recovered</p>
+<ul><li>Transition the “noncurrent versions” of the object to Standard IA</li>
+<li>Transition afterwards the “noncurrent versions” to Glacier Deep</li>
+</ul><p>Archive</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-203">
+          <div class="slide-number">Slide 203</div>
+          <div class="slide-content"><p>Amazon S3 Analytics – Storage Class</p>
+<p>Analysis</p>
+<ul><li>Help you decide when to transition objects</li>
+</ul><p>S3 Bucket</p>
+<p>to the right storage class</p>
+<ul><li>Recommendations for Standard and</li>
+</ul><p>Standard IA</p>
+<ul><li>Does NOT work for One-Zone IA or Glacier</li>
+</ul><p>S3 Analytics</p>
+<ul><li>Report is updated daily</li>
+<li>24 to 48 hours to start seeing data analysis</li>
+</ul><p>.csv report</p>
+<ul><li>Good first step to put together Lifecycle</li>
+</ul><p>Date StorageClass ObjectAge</p>
+<p>Rules (or improve them)!</p>
+<p>8/22/2022 STANDARD 000-014</p>
+<p>8/25/2022 STANDARD 030-044</p>
+<p>9/6/2022 STANDARD 120-149</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-204">
+          <div class="slide-number">Slide 204</div>
+          <div class="slide-content"><p>Amazon S3 – Replication (CRR &amp; SRR)</p>
+<ul><li>Must enable Versioning in source and destination</li>
+</ul><p>buckets</p>
+<ul><li>Cross-Region Replication (CRR)</li>
+</ul><p>S3 Bucket</p>
+<ul><li>Same-Region Replication (SRR)</li>
+</ul><p>(eu-west-1)</p>
+<ul><li>Buckets can be in different AWS accounts</li>
+<li>Copying is asynchronous</li>
+</ul><p>asynchronous</p>
+<ul><li>Must give proper IAM permissions to S3</li>
+</ul><p>replication</p>
+<ul><li>Use cases:</li>
+</ul><p>S3 Bucket</p>
+<ul><li>CRR – compliance, lower latency access, replication across</li>
+</ul><p>(us-east-2)</p>
+<p>accounts</p>
+<ul><li>SRR – log aggregation, live replication between production</li>
+</ul><p>and test accounts</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-205">
+          <div class="slide-number">Slide 205</div>
+          <div class="slide-content"><p>Amazon S3 – Replication (Notes)</p>
+<ul><li>After you enable Replication, only new objects are replicated</li>
+<li>Optionally, you can replicate existing objects using S3 Batch</li>
+</ul><p>Replication</p>
+<ul><li>Replicates existing objects and objects that failed replication</li>
+<li>For DELETE operations</li>
+<li>Can replicate delete markers from source to target (optional setting)</li>
+<li>Deletions with a version ID are not replicated (to avoid malicious deletes)</li>
+<li>There is no “chaining” of replication</li>
+<li>If bucket 1 has replication into bucket 2, which has replication into bucket 3</li>
+<li>Then objects created in bucket 1 are not replicated to bucket 3</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-206">
+          <div class="slide-number">Slide 206</div>
+          <div class="slide-content"><p>Amazon S3 – Object Encryption</p>
+<ul><li>You can encrypt objects in S3 buckets using one of 4 methods</li>
+<li>Server-Side Encryption (SSE)</li>
+<li>Server-Side Encryption with Amazon S3-Managed Keys (SSE-S3) – Enabled by</li>
+</ul><p>Default</p>
+<ul><li>Encrypts S3 objects using keys handled, managed, and owned by AWS</li>
+<li>Server-Side Encryption with KMS Keys stored in AWS KMS (SSE-KMS)</li>
+<li>Leverage AWS Key Management Service (AWS KMS) to manage encryption keys</li>
+<li>Server-Side Encryption with Customer-Provided Keys (SSE-C)</li>
+<li>When you want to manage your own encryption keys</li>
+<li>Client-Side Encryption</li>
+<li>It’s important to understand which ones are for which situation for the</li>
+</ul><p>exam</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-207">
+          <div class="slide-number">Slide 207</div>
+          <div class="slide-content"><p>Amazon S3 Encryption – SSE-S3</p>
+<ul><li>Encryption using keys handled, managed, and owned by AWS</li>
+<li>Object is encrypted server-side</li>
+<li>Encryption type is AES-256</li>
+<li>Must set header &quot;x-amz-server-side-encryption&quot;: &quot;AES256&quot;</li>
+<li>Enabled by default for new buckets &amp; new objects</li>
+</ul><p>Amazon S3</p>
+<p>Object</p>
+<p>upload</p>
+<p>+</p>
+<p>HTTP(S) + Header Encryption</p>
+<p>User</p>
+<p>S3 Bucket</p>
+<p>S3 Owned Key</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-208">
+          <div class="slide-number">Slide 208</div>
+          <div class="slide-content"><p>Amazon S3 Encryption – SSE-KMS</p>
+<ul><li>Encryption using keys handled and managed by AWS KMS (Key</li>
+</ul><p>Management Service)</p>
+<ul><li>KMS advantages: user control + audit key usage using CloudTrail</li>
+<li>Object is encrypted server side</li>
+<li>Must set header &quot;x-amz-server-side-encryption&quot;: &quot;aws:kms&quot;</li>
+</ul><p>Amazon S3</p>
+<p>Object</p>
+<p>upload</p>
+<p>+</p>
+<p>Encryption</p>
+<p>HTTP(S) + Header</p>
+<p>User</p>
+<p>S3 Bucket</p>
+<p>KMS Key</p>
+<p>AWS KMS</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-209">
+          <div class="slide-number">Slide 209</div>
+          <div class="slide-content"><p>SSE-KMS Limitation</p>
+<ul><li>If you use SSE-KMS, you may be</li>
+</ul><p>S3 Bucket KMS Key</p>
+<p>impacted by the KMS limits</p>
+<p>API call</p>
+<ul><li>When you upload, it calls the</li>
+</ul><p>GenerateDataKey KMS API</p>
+<ul><li>When you download, it calls the</li>
+</ul><p>Upload / download</p>
+<p>Decrypt KMS API SSE-KMS</p>
+<ul><li>Count towards the KMS quota per</li>
+</ul><p>second (5500, 10000, 30000 req/s</p>
+<p>based on region)</p>
+<ul><li>You can request a quota increase Users</li>
+</ul><p>using the Service Quotas Console</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-210">
+          <div class="slide-number">Slide 210</div>
+          <div class="slide-content"><p>Amazon S3 Encryption – SSE-C</p>
+<ul><li>Server-Side Encryption using keys fully managed by the customer outside of AWS</li>
+<li>Amazon S3 does NOT store the encryption key you provide</li>
+<li>HTTPS must be used</li>
+<li>Encryption key must provided in HTTP headers, for every HTTP request made</li>
+</ul><p>Amazon S3</p>
+<p>Object</p>
+<p>+</p>
+<p>upload</p>
+<p>+</p>
+<p>Encryption</p>
+<p>HTTPS ONLY</p>
+<p>User</p>
+<p>+ Key in Header</p>
+<p>S3 Bucket</p>
+<p>Client-Provided Key</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-211">
+          <div class="slide-number">Slide 211</div>
+          <div class="slide-content"><p>Amazon S3 Encryption – Client-Side</p>
+<p>Encryption</p>
+<ul><li>Use client libraries such as Amazon S3 Client-Side Encryption Library</li>
+<li>Clients must encrypt data themselves before sending to Amazon S3</li>
+<li>Clients must decrypt data themselves when retrieving from Amazon S3</li>
+<li>Customer fully manages the keys and encryption cycle</li>
+</ul><p>Amazon S3</p>
+<p>File</p>
+<p>+ upload</p>
+<p>Encryption</p>
+<p>HTTP(S)</p>
+<p>File</p>
+<p>S3 Bucket</p>
+<p>(encrypted)</p>
+<p>Client Key</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-212">
+          <div class="slide-number">Slide 212</div>
+          <div class="slide-content"><p>Amazon S3 – Encryption in transit</p>
+<p>(SSL/TLS)</p>
+<ul><li>Encryption in flight is also called SSL/TLS</li>
+<li>Amazon S3 exposes two endpoints:</li>
+<li>HTTP Endpoint – non encrypted</li>
+<li>HTTPS Endpoint – encryption in flight</li>
+<li>HTTPS is recommended</li>
+<li>HTTPS is mandatory for SSE-C</li>
+<li>Most clients would use the HTTPS endpoint by default</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-213">
+          <div class="slide-number">Slide 213</div>
+          <div class="slide-content"><p>Amazon S3 – Force Encryption in Transit</p>
+<p>aws:SecureTransport</p>
+<p>Account B</p>
+<p>User</p>
+<p>S3 Bucket</p>
+<p>(my-bucket)</p>
+<p>Bucket Policy</p>
+<p>User</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-214">
+          <div class="slide-number">Slide 214</div>
+          <div class="slide-content"><p>Amazon S3 – Default Encryption vs. Bucket</p>
+<p>Policies</p>
+<ul><li>SSE-S3 encryption is automatically applied to new objects stored in S3 bucket</li>
+<li>Optionally, you can “force encryption” using a bucket policy and refuse any API call to</li>
+</ul><p>PUT an S3 object without encryption headers (SSE-KMS or SSE-C)</p>
+<ul><li>Note: Bucket Policies are evaluated before “Default Encryption”</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-215">
+          <div class="slide-number">Slide 215</div>
+          <div class="slide-content"><p>S3 Access Logs</p>
+<ul><li>For audit purpose, you may want to log all access to S3</li>
+</ul><p>buckets</p>
+<p>requests</p>
+<ul><li>Any request made to S3, from any account, authorized or</li>
+</ul><p>denied, will be logged into another S3 bucket</p>
+<ul><li>That data can be analyzed using data analysis tools…</li>
+<li>The target logging bucket must be in the same AWS region</li>
+</ul><p>My-bucket</p>
+<p>Log all</p>
+<p>requests</p>
+<ul><li>The log format is at:</li>
+</ul><p>https://docs.aws.amazon.com/AmazonS3/latest/dev/LogFor</p>
+<p>mat.html</p>
+<p>Logging Bucket</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-216">
+          <div class="slide-number">Slide 216</div>
+          <div class="slide-content"><p>S3 Access Logs: Warning</p>
+<ul><li>Do not set your logging bucket to be the monitored bucket</li>
+<li>It will create a logging loop, and your bucket will grow</li>
+</ul><p>exponentially</p>
+<p>Logging loop</p>
+<p>PutObject</p>
+<p>App Bucket &amp;</p>
+<p>Logging Bucket</p>
+<p>Do not try this at home ☺</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-217">
+          <div class="slide-number">Slide 217</div>
+          <div class="slide-content"><p>S3 – Access Points</p>
+<p>Policy</p>
+<p>Grant R/W to</p>
+<p>Users /finance prefix Finance</p>
+<p>S3 Bucket</p>
+<p>(Finance) Access Point</p>
+<p>Simple Bucket</p>
+<p>Policy</p>
+<p>Policy</p>
+<p>Grant R/W to</p>
+<p>/finance/…</p>
+<p>Users /sales prefix Sales</p>
+<p>(Sales) Access Point</p>
+<p>Policy /sales/…</p>
+<p>Grant R to</p>
+<p>Users entire bucket Analytics</p>
+<p>(Analytics) Access Point</p>
+<ul><li>Access Points simplify security management for S3 Buckets</li>
+<li>Each Access Point has:</li>
+<li>its own DNS name (Internet Origin or VPC Origin)</li>
+<li>an access point policy (similar to bucket policy) – manage security at scale</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-218">
+          <div class="slide-number">Slide 218</div>
+          <div class="slide-content"><p>S3 – Access Points – VPC Origin</p>
+<ul><li>We can define the</li>
+</ul><p>VPC</p>
+<p>access point to be Access Point</p>
+<p>S3 Bucket</p>
+<p>EC2 Instance VPC Endpoint VPC Origin</p>
+<p>accessible only from</p>
+<p>within the VPC</p>
+<ul><li>You must create a VPC</li>
+</ul><p>Endpoint to access the Endpoint Access Point Bucket</p>
+<p>Policy Policy Policy</p>
+<p>Access Point (Gateway</p>
+<p>or Interface Endpoint)</p>
+<ul><li>The VPC Endpoint</li>
+</ul><p>Policy must allow</p>
+<p>access to the target</p>
+<p>bucket and Access</p>
+<p>Point</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+    </div>
+
+    <div class="section-nav">
+      <a href="index.html" class="btn-back">← Back to Overview</a>
+    </div>
+  </main>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

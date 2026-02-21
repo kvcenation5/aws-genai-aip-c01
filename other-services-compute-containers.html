@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Other Services - Compute & Containers – AWS GenAI Developer Pro (AIP-C01)</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="logo">☁️ AIP-C01</span>
+      <button class="close-btn" onclick="toggleSidebar()">✕</button>
+    </div>
+    <ul class="nav-list">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li class="divider">Course Sections</li>
+      <li class=""><a href="generative-ai-fundamentals-and-bedrock.html">Generative AI Fundamentals and Bedrock</a></li>
+<li class=""><a href="managing-data-for-generative-ai.html">Managing Data for Generative AI</a></li>
+<li class=""><a href="agentic-ai.html">Agentic AI</a></li>
+<li class=""><a href="operations-efficiency-and-optimization.html">Operations Efficiency and Optimization</a></li>
+<li class=""><a href="managing-models-with-sagemaker-ai.html">Managing Models with SageMaker AI</a></li>
+<li class=""><a href="more-tools-for-building-ai-applications.html">More Tools for Building AI Applications</a></li>
+<li class=""><a href="governance-and-qa.html">Governance and QA</a></li>
+<li class=""><a href="security-identity-and-compliance.html">Security, Identity, and Compliance</a></li>
+<li class=""><a href="other-services-analytics.html">Other Services - Analytics</a></li>
+<li class="active"><a href="other-services-compute-containers.html">Other Services - Compute & Containers</a></li>
+<li class=""><a href="other-services-database.html">Other Services - Database</a></li>
+<li class=""><a href="other-services-developer-tools.html">Other Services - Developer Tools</a></li>
+<li class=""><a href="other-services-machine-learning.html">Other Services - Machine Learning</a></li>
+<li class=""><a href="other-services-storage-networking.html">Other Services - Storage & Networking</a></li>
+<li class=""><a href="exam-preparation.html">Exam Preparation</a></li>
+
+    </ul>
+  </nav>
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <main class="main-content">
+    <header class="top-bar">
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+      <div class="breadcrumb">
+        <a href="index.html">AWS GenAI Pro</a> › <span>Other Services - Compute & Containers</span>
+      </div>
+      <div class="page-meta">18 slides · Pages 528–545</div>
+    </header>
+
+    <div class="section-hero">
+      <h1>Other Services - Compute & Containers</h1>
+      <p class="section-subtitle">AWS Certified Generative AI Developer – Professional (AIP-C01)</p>
+      <div class="section-stats">
+        <span>📄 18 slides</span>
+        <span>📑 Pages 528–545</span>
+      </div>
+    </div>
+
+    <div class="slides-container">
+      
+        <div class="slide" id="slide-528">
+          <div class="slide-number">Slide 528</div>
+          <div class="slide-content"><p>Other Services You</p>
+<p>Should Know</p>
+<p>Compute / Containers / Customer Engagement</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-529">
+          <div class="slide-number">Slide 529</div>
+          <div class="slide-content"><p>AWS App Runner</p>
+<ul><li>Fully managed service that makes it easy to deploy web</li>
+</ul><p>applications and APIs at scale</p>
+<p>Container Source</p>
+<p>Image (Docker) Code</p>
+<ul><li>No infrastructure experience required</li>
+<li>Start with your source code or container image</li>
+<li>Automatically builds and deploy the web app</li>
+</ul><p>Configure Settings</p>
+<p>vCPU, RAM,</p>
+<ul><li>Automatic scaling, highly available, load balancer,</li>
+</ul><p>Auto Scaling,</p>
+<p>encryption</p>
+<p>Health Check</p>
+<ul><li>VPC access support</li>
+<li>Connect to database, cache, and message queue</li>
+</ul><p>services</p>
+<p>Create &amp; Deploy</p>
+<ul><li>Use cases: web apps, APIs, microservices, rapid</li>
+</ul><p>production deployments</p>
+<p>Access using URL</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-530">
+          <div class="slide-number">Slide 530</div>
+          <div class="slide-content"><p>Amazon EC2</p>
+<ul><li>EC2 is one of the most popular of AWS’ offering</li>
+<li>EC2 = Elastic Compute Cloud = Infrastructure as a Service</li>
+<li>It mainly consists in the capability of :</li>
+<li>Renting virtual machines (EC2)</li>
+<li>Storing data on virtual drives (EBS)</li>
+<li>Distributing load across machines (ELB)</li>
+<li>Scaling the services using an auto-scaling group (ASG)</li>
+<li>Knowing EC2 is fundamental to understand how the Cloud</li>
+</ul><p>works</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-531">
+          <div class="slide-number">Slide 531</div>
+          <div class="slide-content"><p>EC2 sizing &amp; configuration options</p>
+<ul><li>Operating System (OS): Linux, Windows or Mac OS</li>
+<li>How much compute power &amp; cores (CPU)</li>
+<li>How much random-access memory (RAM)</li>
+<li>How much storage space:</li>
+<li>Network-attached (EBS &amp; EFS)</li>
+<li>hardware (EC2 Instance Store)</li>
+<li>Network card: speed of the card, Public IP address</li>
+<li>Firewall rules: security group</li>
+<li>Bootstrap script (configure at first launch): EC2 User Data</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-532">
+          <div class="slide-number">Slide 532</div>
+          <div class="slide-content"><p>EC2 User Data</p>
+<ul><li>It is possible to bootstrap our instances using an EC2 User data</li>
+</ul><p>script.</p>
+<ul><li>bootstrapping means launching commands when a machine starts</li>
+<li>That script is only run once at the instance first start</li>
+<li>EC2 user data is used to automate boot tasks such as:</li>
+<li>Installing updates</li>
+<li>Installing software</li>
+<li>Downloading common files from the internet</li>
+<li>Anything you can think of</li>
+<li>The EC2 User Data Script runs with the root user</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-533">
+          <div class="slide-number">Slide 533</div>
+          <div class="slide-content"><p>Hands-On:</p>
+<p>Launching an EC2 Instance running Linux</p>
+<ul><li>We’ll be launching our first virtual server using the AWS</li>
+</ul><p>Console</p>
+<ul><li>We’ll get a first high-level approach to the various parameters</li>
+<li>We’ll see that our web server is launched using EC2 user data</li>
+<li>We’ll learn how to start / stop / terminate our instance.</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-534">
+          <div class="slide-number">Slide 534</div>
+          <div class="slide-content"><p>Docker Containers Management on AWS</p>
+<ul><li>Amazon Elastic Container Service (Amazon ECS)</li>
+</ul><p>Amazon ECS</p>
+<ul><li>Amazon’s own container platform</li>
+<li>Amazon Elastic Kubernetes Service (Amazon EKS)</li>
+</ul><p>Amazon EKS</p>
+<ul><li>Amazon’s managed Kubernetes (open source)</li>
+<li>AWS Fargate</li>
+</ul><p>AWS Fargate</p>
+<ul><li>Amazon’s own Serverless container platform</li>
+<li>Works with ECS and with EKS</li>
+<li>Amazon ECR:</li>
+</ul><p>Amazon ECR</p>
+<ul><li>Store container images</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-535">
+          <div class="slide-number">Slide 535</div>
+          <div class="slide-content"><p>Amazon ECS - EC2 Launch</p>
+<p>Type</p>
+<p>Amazon ECS / ECS Cluster</p>
+<ul><li>ECS = Elastic Container Service</li>
+<li>Launch Docker containers on New Docker</li>
+</ul><p>AWS = Launch ECS Tasks on Container</p>
+<p>ECS Clusters</p>
+<ul><li>EC2 Launch Type: you must</li>
+</ul><p>provision &amp; maintain the</p>
+<p>infrastructure (the EC2 EC2 Instance EC2 Instance EC2 Instance</p>
+<p>instances)</p>
+<ul><li>Each EC2 Instance must run the</li>
+</ul><p>ECS Agent to register in the ECS</p>
+<p>Cluster</p>
+<ul><li>AWS takes care of starting /</li>
+</ul><p>stopping containers</p>
+<p>ECS Agent ECS Agent ECS Agent</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-536">
+          <div class="slide-number">Slide 536</div>
+          <div class="slide-content"><p>Amazon ECS – Fargate Launch Type</p>
+<ul><li>Launch Docker containers on AWS</li>
+</ul><p>New Docker</p>
+<ul><li>You do not provision the Container</li>
+</ul><p>infrastructure (no EC2 instances to</p>
+<p>manage)</p>
+<ul><li>It’s all Serverless!</li>
+</ul><p>AWS Fargate / ECS Cluster</p>
+<ul><li>You just create task definitions</li>
+<li>AWS just runs ECS Tasks for you</li>
+</ul><p>based on the CPU / RAM you need</p>
+<ul><li>To scale, just increase the number of</li>
+</ul><p>tasks. Simple - no more EC2 instances</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-537">
+          <div class="slide-number">Slide 537</div>
+          <div class="slide-content"><p>Amazon ECS – IAM Roles for ECS</p>
+<p>EC2 Instance Profile</p>
+<ul><li>EC2 Instance Profile (EC2 Launch</li>
+</ul><p>ECS</p>
+<p>Type only):</p>
+<p>EC2 Instance</p>
+<ul><li>Used by the ECS agent</li>
+</ul><p>ECR</p>
+<ul><li>Makes API calls to ECS service</li>
+<li>Send container logs to CloudWatch Logs</li>
+</ul><p>ECS Agent CloudWatch</p>
+<ul><li>Pull Docker image from ECR</li>
+</ul><p>Logs</p>
+<ul><li>Reference sensitive data in Secrets</li>
+</ul><p>ECS Task A Role</p>
+<p>Manager or SSM Parameter Store</p>
+<p>Task A S3</p>
+<ul><li>ECS Task Role:</li>
+<li>Allows each task to have a specific role</li>
+</ul><p>ECS Task B Role</p>
+<ul><li>Use different roles for the different ECS</li>
+</ul><p>Services you run</p>
+<p>Task B DynamoDB</p>
+<ul><li>Task Role is defined in the task definition</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-538">
+          <div class="slide-number">Slide 538</div>
+          <div class="slide-content"><p>Amazon ECS – Load Balancer</p>
+<p>Integrations</p>
+<ul><li>Application Load Balancer</li>
+</ul><p>EC2 Instance</p>
+<p>supported and works for most use</p>
+<p>cases</p>
+<p>ECS Task</p>
+<p>ECS Task</p>
+<ul><li>Network Load Balancer</li>
+</ul><p>recommended only for high throughput</p>
+<p>80/443</p>
+<p>/ high performance use cases, or to</p>
+<p>EC2 Instance</p>
+<p>pair it with AWS Private Link</p>
+<p>Users</p>
+<p>Application</p>
+<p>ECS Task</p>
+<p>Load Balancer</p>
+<ul><li>Classic Load Balancer supported but</li>
+</ul><p>not recommended (no advanced ECS Task</p>
+<p>features – no Fargate)</p>
+<p>ECS Cluster</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-539">
+          <div class="slide-number">Slide 539</div>
+          <div class="slide-content"><p>Amazon ECS – Data Volumes (EFS)</p>
+<ul><li>Mount EFS file systems onto ECS tasks</li>
+<li>Works for both EC2 and Fargate launch types</li>
+</ul><p>EC2 Instance Fargate</p>
+<ul><li>Tasks running in any AZ will share the same</li>
+</ul><p>data in the EFS file system</p>
+<ul><li>Fargate + EFS = Serverless</li>
+<li>Use cases: persistent multi-AZ shared storage</li>
+</ul><p>mount mount</p>
+<p>for your containers</p>
+<p>ECS Cluster</p>
+<ul><li>Note:</li>
+<li>Amazon S3 cannot be mounted as a file system</li>
+</ul><p>Amazon EFS</p>
+<p>File System</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-540">
+          <div class="slide-number">Slide 540</div>
+          <div class="slide-content"><p>Amazon EKS Overview</p>
+<ul><li>Amazon EKS = Amazon Elastic Kubernetes Service</li>
+<li>It is a way to launch managed Kubernetes clusters on AWS</li>
+<li>Kubernetes is an open-source system for automatic deployment, scaling</li>
+</ul><p>and management of containerized (usually Docker) application</p>
+<ul><li>It’s an alternative to ECS, similar goal but different API</li>
+<li>EKS supports EC2 if you want to deploy worker nodes or Fargate to</li>
+</ul><p>deploy serverless containers</p>
+<ul><li>Use case: if your company is already using Kubernetes on-premises or in</li>
+</ul><p>another cloud, and wants to migrate to AWS using Kubernetes</p>
+<ul><li>Kubernetes is cloud-agnostic (can be used in any cloud – Azure,</li>
+</ul><p>GCP…)</p>
+<ul><li>For multiple regions, deploy one EKS cluster per region</li>
+<li>Collect logs and metrics using CloudWatch Container Insights</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-541">
+          <div class="slide-number">Slide 541</div>
+          <div class="slide-content"><p>Amazon EKS - Diagram</p>
+<p>AWS Cloud</p>
+<p>Availability Zone 1 Availability Zone 2 Availability Zone 3</p>
+<p>VPC</p>
+<p>Public subnet 1 Public subnet 2 Public subnet 3</p>
+<p>EKS</p>
+<p>Public</p>
+<p>Service LB</p>
+<p>NGW NGW NGW</p>
+<p>ELB ELB ELB</p>
+<p>Private subnet 1 Private subnet 2 Private subnet 3 EKS</p>
+<p>Private</p>
+<p>Service LB</p>
+<p>ELB</p>
+<p>EKS node EKS node EKS node</p>
+<p>Auto Scaling Group</p>
+<p>EKS Pods EKS Pods EKS Pods</p>
+<p>EKS Worker Nodes</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-542">
+          <div class="slide-number">Slide 542</div>
+          <div class="slide-content"><p>Amazon EKS – Node Types</p>
+<ul><li>Managed Node Groups</li>
+<li>Creates and manages Nodes (EC2 instances) for you</li>
+<li>Nodes are part of an ASG managed by EKS</li>
+<li>Supports On-Demand or Spot Instances</li>
+<li>Self-Managed Nodes</li>
+<li>Nodes created by you and registered to the EKS cluster and managed by an</li>
+</ul><p>ASG</p>
+<ul><li>You can use prebuilt AMI - Amazon EKS Optimized AMI</li>
+<li>Supports On-Demand or Spot Instances</li>
+<li>AWS Fargate</li>
+<li>No maintenance required; no nodes managed</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-543">
+          <div class="slide-number">Slide 543</div>
+          <div class="slide-content"><p>Amazon EKS – Data Volumes</p>
+<ul><li>Need to specify StorageClass manifest on your EKS cluster</li>
+<li>Leverages a Container Storage Interface (CSI) compliant</li>
+</ul><p>driver</p>
+<ul><li>Support for…</li>
+<li>Amazon EBS</li>
+<li>Amazon EFS (works with Fargate)</li>
+<li>Amazon FSx for Lustre</li>
+<li>Amazon FSx for NetApp ONTAP</li>
+</ul><p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-544">
+          <div class="slide-number">Slide 544</div>
+          <div class="slide-content"><p>Amazon Lex &amp; Connect</p>
+<ul><li>Amazon Lex: (same technology that powers Alexa)</li>
+<li>Automatic Speech Recognition (ASR) to convert speech to text</li>
+<li>Natural Language Understanding to recognize the intent of text, callers</li>
+<li>Helps build chatbots, call center bots</li>
+<li>Amazon Connect:</li>
+<li>Receive calls, create contact flows, cloud-based virtual contact center</li>
+<li>Can integrate with other CRM systems or AWS</li>
+<li>No upfront payments, 80% cheaper than traditional contact center solutions</li>
+</ul><p>Phone Call</p>
+<p>call stream invoke schedule</p>
+<p>Schedule an</p>
+<p>Appointment</p>
+<p>Connect Lex Lambda</p>
+<p>CRM</p>
+<p>Intent recognized</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+        <div class="slide" id="slide-545">
+          <div class="slide-number">Slide 545</div>
+          <div class="slide-content"><p>Other Services You</p>
+<p>Should Know: Database</p>
+<p>sundog-education.com</p>
+<p>datacumulus.com</p>
+<p>© 2026 All Rights Reserved Worldwide</p></div>
+        </div>
+    </div>
+
+    <div class="section-nav">
+      <a href="index.html" class="btn-back">← Back to Overview</a>
+    </div>
+  </main>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
